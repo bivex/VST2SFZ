@@ -4,7 +4,7 @@ import numpy as np
 import os
 import soundfile as sf
 
-def create_bach_midi():
+def create_bach_midi(output_path="melody.mid"):
     # 4 bars of Bach's Prelude in C Major
     # We will represent absolute notes as: (time_sec, msg_type, note, velocity, duration)
     # We will build a list of absolute events (time, type, note, velocity)
@@ -39,22 +39,6 @@ def create_bach_midi():
                 abs_events.append((on_t, 'note_on', {'note': note_num, 'velocity': 90}))
                 abs_events.append((off_t, 'note_off', {'note': note_num, 'velocity': 0}))
 
-    # Bar 1: C Major
-    add_bar(0.0, 48, 52, 55, 60, 64) # C3, E3, G3, C4, E4
-    # Bar 2: D Minor
-    add_bar(4.0, 46, 50, 53, 57, 62) # Bb2? Wait, Bach's Bar 2 is: C3, D3, A3, D4, F4?
-    # Actually, Bar 2 notes: C3 (48), D3 (50), A3 (57), D4 (62), F4 (65)... wait, yes!
-    # Let's use correct Bach notes:
-    # Bar 2: D3, F3, A3, D4, F4 -> D3 (50), F3 (53), A3 (57), D4 (62), F4 (65)
-    # Let's update Bar 2:
-    # Actually, Bach's Bar 2 left hand is D3 (50) and F3 (53). Right hand is A3 (57), D4 (62), F4 (65).
-    # Bar 3 left hand: B2 (47) and D3 (50). Right hand is G3 (55), D4 (62), F4 (65).
-    # Bar 4 left hand: C3 (48) and E3 (52). Right hand is G3 (55), C4 (60), E4 (64).
-    # Let's write these exact notes!
-    
-    # Clear abs_events and rebuild with correct Bach notes:
-    abs_events.clear()
-    
     # Bar 1: C3, E3, G3, C4, E4
     add_bar(0.0, 48, 52, 55, 60, 64)
     # Bar 2: D3, F3, A3, D4, F4
@@ -64,29 +48,32 @@ def create_bach_midi():
     # Bar 4: C3, E3, G3, C4, E4
     add_bar(12.0, 48, 52, 55, 60, 64)
     
-    # Let's add a final resolving chord on Bar 5
-    # C2 (36), C3 (48), E3 (52), G3 (55), C4 (60) held for 4 seconds
-    final_time = 16.0
-    for note_num in [36, 48, 52, 55, 60, 64]:
-        abs_events.append((final_time, 'note_on', {'note': note_num, 'velocity': 85}))
-        abs_events.append((final_time + 4.0, 'note_off', {'note': note_num, 'velocity': 0}))
-
-    # Sort absolute events
-    # We sort by time, and put note_off before note_on at same time
+    # End on a long held C Major chord
+    abs_events.append((16.0, 'note_on', {'note': 36, 'velocity': 90})) # C2
+    abs_events.append((16.0, 'note_on', {'note': 48, 'velocity': 90})) # C3
+    abs_events.append((16.0, 'note_on', {'note': 52, 'velocity': 85})) # E3
+    abs_events.append((16.0, 'note_on', {'note': 55, 'velocity': 85})) # G3
+    abs_events.append((16.0, 'note_on', {'note': 60, 'velocity': 80})) # C4
+    abs_events.append((16.0, 'note_on', {'note': 64, 'velocity': 80})) # E4
+    
+    abs_events.append((20.0, 'note_off', {'note': 36, 'velocity': 0}))
+    abs_events.append((20.0, 'note_off', {'note': 48, 'velocity': 0}))
+    abs_events.append((20.0, 'note_off', {'note': 52, 'velocity': 0}))
+    abs_events.append((20.0, 'note_off', {'note': 55, 'velocity': 0}))
+    abs_events.append((20.0, 'note_off', {'note': 60, 'velocity': 0}))
+    abs_events.append((20.0, 'note_off', {'note': 64, 'velocity': 0}))
+    
+    # Sort events chronologically, note-offs before note-ons if they occur at the exact same tick
     abs_events.sort(key=lambda x: (x[0], 0 if x[1] == 'note_off' else 1))
     
-    # Convert absolute events to mido track
+    # Convert absolute events to mido delta events
     mid = mido.MidiFile()
     track = mido.MidiTrack()
     mid.tracks.append(track)
     
-    # Program change 0 at time 0
     track.append(mido.Message('program_change', program=0, time=0))
     
-    # We use 120 bpm, 480 ticks_per_beat.
-    # 1 second = 960 ticks.
-    ticks_per_second = 960
-    
+    ticks_per_second = 960 # Tick resolution
     prev_tick = 0
     for time_sec, msg_type, args in abs_events:
         abs_tick = int(round(time_sec * ticks_per_second))
@@ -96,12 +83,15 @@ def create_bach_midi():
         msg = mido.Message(msg_type, time=delta_tick, **args)
         track.append(msg)
         
-    mid_path = "melody.mid"
-    mid.save(mid_path)
-    return mid_path
+    mid.save(output_path)
+    return output_path
 
 def render_melody():
-    mid_path = create_bach_midi()
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.abspath(os.path.join(script_dir, ".."))
+    
+    mid_path = os.path.join(project_root, "temp_melody_vst.mid")
+    create_bach_midi(mid_path)
     print(f"Created MIDI file: {mid_path}")
     
     sr = 96000
@@ -136,7 +126,7 @@ def render_melody():
     
     processed = board(audio, sr)
     
-    output_path = "Surge_DX_Piano_Melody.wav"
+    output_path = os.path.join(project_root, "Surge_DX_Piano_Melody.wav")
     sf.write(output_path, processed.T, sr, subtype='PCM_24')
     print(f"Melody successfully rendered and saved to {output_path}!")
     

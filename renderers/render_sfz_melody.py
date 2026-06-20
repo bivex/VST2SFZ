@@ -42,7 +42,8 @@ def parse_sfz(sfz_path):
             
         if header_name == "control":
             if "default_path" in opcodes:
-                default_path = opcodes["default_path"]
+                sfz_dir = os.path.dirname(os.path.abspath(sfz_path))
+                default_path = os.path.join(sfz_dir, opcodes["default_path"])
         elif header_name == "region":
             regions.append(opcodes)
             
@@ -191,7 +192,9 @@ def find_matching_region(regions, note, velocity):
     return None
 
 def main():
-    sfz_path = "Surge_DX_Piano.sfz"
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.abspath(os.path.join(script_dir, ".."))
+    sfz_path = os.path.join(project_root, "Surge_DX_Piano.sfz")
     print(f"Parsing SFZ file: {sfz_path}")
     default_path, regions = parse_sfz(sfz_path)
     print(f"Loaded {len(regions)} regions. default_path: {default_path}")
@@ -286,7 +289,7 @@ def main():
     
     processed = board(output_audio.T, sr)
     
-    output_path = "Surge_DX_Piano_SFZ_Melody.wav"
+    output_path = os.path.join(project_root, "Surge_DX_Piano_SFZ_Melody.wav")
     sf.write(output_path, processed.T, sr, subtype='PCM_24')
     print(f"Melody successfully rendered using SFZ samples and saved to {output_path}!")
 

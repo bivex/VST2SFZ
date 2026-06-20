@@ -11,6 +11,7 @@ import soundfile as sf
 def parse_sfz(sfz_path):
     regions = []
     default_path = ""
+    sfz_dir = os.path.dirname(os.path.abspath(sfz_path))
     with open(sfz_path, "r") as f:
         content = f.read()
     content_clean = re.sub(r"//.*", "", content)
@@ -31,7 +32,7 @@ def parse_sfz(sfz_path):
             opcodes[key.lower()] = val
         if header_name == "control":
             if "default_path" in opcodes:
-                default_path = opcodes["default_path"]
+                default_path = os.path.join(sfz_dir, opcodes["default_path"])
         elif header_name == "region":
             regions.append(opcodes)
     return default_path, regions
@@ -128,10 +129,17 @@ def find_matching_region(regions, note, velocity):
     return None
 
 def main():
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.abspath(os.path.join(script_dir, ".."))
+    
+    default_midi = os.path.join(project_root, "midi", "6101-2d_moonlight_sonata_27-2_1_2_(nc)smythe.mid")
+    default_sfz = os.path.join(project_root, "Surge_DX_Piano.sfz")
+    default_output = os.path.join(project_root, "Surge_DX_Piano_SFZ_Moonlight_Full.wav")
+
     parser = argparse.ArgumentParser(description="Render a MIDI file to a WAV using an SFZ instrument.")
-    parser.add_argument("--midi", type=str, default="6101-2d_moonlight_sonata_27-2_1_2_(nc)smythe.mid", help="Path to input MIDI file")
-    parser.add_argument("--sfz", type=str, default="Surge_DX_Piano.sfz", help="Path to input SFZ mapping file")
-    parser.add_argument("--output", type=str, default="Surge_DX_Piano_SFZ_Moonlight_Full.wav", help="Path to output WAV file")
+    parser.add_argument("--midi", type=str, default=default_midi, help="Path to input MIDI file")
+    parser.add_argument("--sfz", type=str, default=default_sfz, help="Path to input SFZ mapping file")
+    parser.add_argument("--output", type=str, default=default_output, help="Path to output WAV file")
     parser.add_argument("--sr", type=int, default=96000, help="Rendering sample rate (Hz)")
     parser.add_argument("--release", type=float, default=2.0, help="Envelope release time (seconds)")
     args = parser.parse_args()

@@ -9,6 +9,7 @@ import soundfile as sf
 def parse_sfz(sfz_path):
     regions = []
     default_path = ""
+    sfz_dir = os.path.dirname(os.path.abspath(sfz_path))
     with open(sfz_path, "r") as f:
         content = f.read()
     content_clean = re.sub(r"//.*", "", content)
@@ -29,111 +30,65 @@ def parse_sfz(sfz_path):
             opcodes[key.lower()] = val
         if header_name == "control":
             if "default_path" in opcodes:
-                default_path = opcodes["default_path"]
+                default_path = os.path.join(sfz_dir, opcodes["default_path"])
         elif header_name == "region":
             regions.append(opcodes)
     return default_path, regions
 
-def create_moonlight_midi_in_memory():
+def create_gymnopedie_midi_in_memory():
     """
-    Generates Beethoven's Moonlight Sonata (1st mvt) MIDI events in memory.
-    Tempo: 54 BPM. 4/4 Time.
-    1 beat = 60 / 54 = 1.111 seconds.
-    1 triplet note = 1/3 beat = 0.370 seconds.
-    1 bar = 4 beats = 12 triplets = 4.444 seconds.
+    Generates Erik Satie's Gymnopédie No. 1 MIDI events in memory.
+    Tempo: 75 BPM. 3/4 Time signature.
+    1 beat = 0.8 seconds.
+    1 bar = 3 beats = 2.4 seconds.
     """
     abs_events = []
-    beat_dur = 60.0 / 54.0     # ~1.111s
-    triplet_dur = beat_dur / 3.0 # ~0.370s
-    bar_dur = beat_dur * 4.0   # ~4.444s
+    beat_dur = 0.8
+    bar_dur = 2.4
     
-    # Helper to add a bass octave (held for whole bar)
-    def add_bass_octave(bar_idx, note_num):
-        t_on = bar_idx * bar_dur
-        t_off = (bar_idx + 1) * bar_dur - 0.05
-        # Low octave notes
-        abs_events.append((t_on, 'note_on', {'note': note_num, 'velocity': 70}))
-        abs_events.append((t_off, 'note_off', {'note': note_num, 'velocity': 0}))
-        abs_events.append((t_on, 'note_on', {'note': note_num + 12, 'velocity': 65}))
-        abs_events.append((t_off, 'note_off', {'note': note_num + 12, 'velocity': 0}))
-
-    # Helper to add a triplet group (3 notes)
-    # n1, n2, n3: notes. Each note is held for 1.2s to create overlapping pedal wash.
-    def add_triplet(abs_start_time, n1, n2, n3):
-        notes = [n1, n2, n3]
-        for idx, note_num in enumerate(notes):
-            t_on = abs_start_time + idx * triplet_dur
-            t_off = t_on + 1.2 # Overlapping decay (pedal)
-            abs_events.append((t_on, 'note_on', {'note': note_num, 'velocity': 52}))
-            abs_events.append((t_off, 'note_off', {'note': note_num, 'velocity': 0}))
-
-    # Helper to add a melody note
-    def add_melody(abs_on_time, note_num, duration_in_beats):
-        t_on = abs_on_time
-        t_off = abs_on_time + duration_in_beats * beat_dur - 0.05
-        abs_events.append((t_on, 'note_on', {'note': note_num, 'velocity': 94}))
+    # Helper to add bass and accompaniment chord
+    def add_accompaniment(bar_index, bass_note, chord_notes):
+        t_bar = bar_index * bar_dur
+        # Bass note on beat 1 (holds for whole bar)
+        abs_events.append((t_bar, 'note_on', {'note': bass_note, 'velocity': 80}))
+        abs_events.append((t_bar + bar_dur - 0.05, 'note_off', {'note': bass_note, 'velocity': 0}))
+        
+        # Chord on beat 2 (holds for 2 beats)
+        t_chord = t_bar + beat_dur
+        for note_num in chord_notes:
+            abs_events.append((t_chord, 'note_on', {'note': note_num, 'velocity': 65}))
+            abs_events.append((t_chord + 2 * beat_dur - 0.05, 'note_off', {'note': note_num, 'velocity': 0}))
+            
+    # Helper to add melody note
+    def add_melody(time_in_beats, note_num, duration_in_beats, velocity=85):
+        t_on = time_in_beats * beat_dur
+        t_off = (time_in_beats + duration_in_beats) * beat_dur - 0.05
+        abs_events.append((t_on, 'note_on', {'note': note_num, 'velocity': velocity}))
         abs_events.append((t_off, 'note_off', {'note': note_num, 'velocity': 0}))
 
-    # 1. Bass accompaniment
-    add_bass_octave(0, 37) # C#2 (37) & C#3 (49)
-    add_bass_octave(1, 35) # B1 (35) & B2 (47)
-    # Bar 3 has two bass chords: A2 (33) for 2 beats, F#2 (30) for 2 beats
-    abs_events.append((2.0 * bar_dur, 'note_on', {'note': 33, 'velocity': 70}))
-    abs_events.append((2.0 * bar_dur, 'note_on', {'note': 45, 'velocity': 65}))
-    abs_events.append((2.0 * bar_dur + 2 * beat_dur - 0.05, 'note_off', {'note': 33, 'velocity': 0}))
-    abs_events.append((2.0 * bar_dur + 2 * beat_dur - 0.05, 'note_off', {'note': 45, 'velocity': 0}))
+    # Accompaniment (Bars 0 to 8)
+    # Alternating G2 (43) and D2 (38) bass with B3-D4-F#4 (59-62-66) chords
+    chord_g = [59, 62, 66] # B3, D4, F#4
+    for bar in range(8):
+        bass = 43 if bar % 2 == 0 else 38
+        add_accompaniment(bar, bass, chord_g)
+        
+    # Melody
+    # Bar 3: F#5 (78) held for 6 beats (2 bars)
+    add_melody(9, 78, 6)
+    # Bar 5: E5 (76) (1 beat), D5 (74) (1 beat), B4 (71) (1 beat)
+    add_melody(15, 76, 1)
+    add_melody(16, 74, 1)
+    add_melody(17, 71, 1)
+    # Bar 6: C#5 (73) (1 beat), D5 (74) (1 beat), B4 (71) (6 beats)
+    add_melody(18, 73, 1)
+    add_melody(19, 74, 1)
+    add_melody(20, 71, 6)
     
-    abs_events.append((2.0 * bar_dur + 2 * beat_dur, 'note_on', {'note': 30, 'velocity': 70}))
-    abs_events.append((2.0 * bar_dur + 2 * beat_dur, 'note_on', {'note': 42, 'velocity': 65}))
-    abs_events.append((3.0 * bar_dur - 0.05, 'note_off', {'note': 30, 'velocity': 0}))
-    abs_events.append((3.0 * bar_dur - 0.05, 'note_off', {'note': 42, 'velocity': 0}))
+    # Bar 8: Final resolving chord
+    # G1 (31) bass, B3-D4-F#4-A4 (59-62-66-69) chord
+    add_accompaniment(8, 31, [59, 62, 66, 69])
     
-    add_bass_octave(3, 32) # G#1 (32) & G#2 (44)
-    add_bass_octave(4, 37) # C#2 (37) & C#3 (49)
-
-    # 2. Right-hand triplets (4 groups per bar)
-    # Bar 0
-    for g in range(4):
-        add_triplet(0.0 * bar_dur + g * beat_dur, 56, 61, 64) # G#3, C#4, E4
-    # Bar 1
-    add_triplet(1.0 * bar_dur + 0 * beat_dur, 56, 61, 64)
-    add_triplet(1.0 * bar_dur + 1 * beat_dur, 56, 61, 64)
-    add_triplet(1.0 * bar_dur + 2 * beat_dur, 57, 61, 64) # A3, C#4, E4
-    add_triplet(1.0 * bar_dur + 3 * beat_dur, 57, 61, 64)
-    # Bar 2
-    add_triplet(2.0 * bar_dur + 0 * beat_dur, 57, 62, 66) # A3, D4, F#4
-    add_triplet(2.0 * bar_dur + 1 * beat_dur, 57, 62, 66)
-    add_triplet(2.0 * bar_dur + 2 * beat_dur, 56, 61, 64) # G#3, C#4, E4
-    add_triplet(2.0 * bar_dur + 3 * beat_dur, 56, 61, 63) # G#3, C#4, D#4
-    # Bar 3
-    add_triplet(3.0 * bar_dur + 0 * beat_dur, 56, 60, 63) # G#3, C4, D#4 (G#7)
-    add_triplet(3.0 * bar_dur + 1 * beat_dur, 54, 60, 63) # F#3, C4, D#4
-    add_triplet(3.0 * bar_dur + 2 * beat_dur, 56, 61, 63) # G#3, C#4, D#4
-    add_triplet(3.0 * bar_dur + 3 * beat_dur, 56, 61, 64) # G#3, C#4, E4
-    # Bar 4
-    for g in range(4):
-        add_triplet(4.0 * bar_dur + g * beat_dur, 56, 61, 64) # G#3, C#4, E4
-
-    # 3. Melody line
-    # Bar 1 (enters on the last beat of Bar 1)
-    add_melody(1.0 * bar_dur + 3 * beat_dur, 68, 1.0) # G#4 (68)
-    
-    # Bar 2
-    add_melody(2.0 * bar_dur, 68, 1.5)
-    add_melody(2.0 * bar_dur + 1.5 * beat_dur, 68, 0.5)
-    add_melody(2.0 * bar_dur + 2.0 * beat_dur, 68, 1.5)
-    add_melody(2.0 * bar_dur + 3.5 * beat_dur, 68, 0.5)
-    
-    # Bar 3
-    add_melody(3.0 * bar_dur, 68, 1.5)
-    add_melody(3.0 * bar_dur + 1.5 * beat_dur, 69, 0.5) # A4 (69)
-    add_melody(3.0 * bar_dur + 2.0 * beat_dur, 66, 1.5) # F#4 (66)
-    add_melody(3.0 * bar_dur + 3.5 * beat_dur, 68, 0.5) # G#4
-    
-    # Bar 4 (resolves)
-    add_melody(4.0 * bar_dur, 68, 3.0)
-
-    # Sort events
     abs_events.sort(key=lambda x: (x[0], 0 if x[1] == 'note_off' else 1))
     
     mid = mido.MidiFile()
@@ -214,16 +169,18 @@ def find_matching_region(regions, note, velocity):
     return None
 
 def main():
-    sfz_path = "Surge_DX_Piano.sfz"
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.abspath(os.path.join(script_dir, ".."))
+    sfz_path = os.path.join(project_root, "Surge_DX_Piano.sfz")
     print(f"Parsing SFZ file: {sfz_path}")
     default_path, regions = parse_sfz(sfz_path)
     
-    mid = create_moonlight_midi_in_memory()
+    mid = create_gymnopedie_midi_in_memory()
     midi_notes = parse_midi_object(mid)
-    print(f"Parsed {len(midi_notes)} notes from Moonlight Sonata MIDI.")
+    print(f"Parsed {len(midi_notes)} notes from Gymnopédie MIDI performance.")
     
-    sr = 96000 # HD quality render
-    release_time_sec = 2.0 # Extra long decay tail for the sonata
+    sr = 96000
+    release_time_sec = 1.5 # Slow, beautiful release decay
     release_samples = int(release_time_sec * sr)
     
     max_time = 0.0
@@ -291,15 +248,15 @@ def main():
     from pedalboard import Pedalboard, Reverb, Delay
     
     board = Pedalboard([
-        Reverb(room_size=0.78, wet_level=0.35, dry_level=0.65),
-        Delay(delay_seconds=0.555, feedback=0.25, mix=0.15) # Triplets matching delay
+        Reverb(room_size=0.7, wet_level=0.3, dry_level=0.7),
+        Delay(delay_seconds=0.4, feedback=0.25, mix=0.12)
     ])
     
     processed = board(output_audio.T, sr)
     
-    output_path = "Surge_DX_Piano_SFZ_Moonlight.wav"
+    output_path = os.path.join(project_root, "Surge_DX_Piano_SFZ_Gymnopedie.wav")
     sf.write(output_path, processed.T, sr, subtype='PCM_24')
-    print(f"Moonlight Sonata successfully rendered and saved to {output_path}!")
+    print(f"Gymnopédie successfully rendered and saved to {output_path}!")
 
 if __name__ == "__main__":
     main()
