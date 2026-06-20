@@ -1,57 +1,57 @@
-# VST2SFZ — Сэмплирование VST и Рендеринг SFZ
+# VST2SFZ — VST Sampling and SFZ Rendering
 
-Этот проект представляет собой автоматизированный пайплайн на Python для снятия сэмплов с VST-инструментов, создания файлов разметки в формате **SFZ** и последующего рендеринга мелодий с помощью автономного сэмплерного движка. 
+This project is an automated Python pipeline for sampling VST plugins, generating instrument mapping files in the **SFZ** format, and rendering MIDI performances using an offline sampler engine. 
 
-Вся аудио-обработка поддерживает высокую разрядность звука (до **24-bit / 96 kHz**).
-
----
-
-## 📁 Структура проекта
-
-* **`vst2sfz.py`** — основной консольный скрипт для автоматического сэмплирования VST-плагинов.
-* **`test_suite.py`** — тесты для проверки граничных условий сэмплирования и парсинга.
-* **`Surge_DX_Piano.sfz`** — готовый сэмплерный инструмент (SFZ-карта), связывающий WAV-файлы с клавишами и слоями громкости.
-* **`renderers/`** — папка со скриптами оффлайн-рендеринга мелодий:
-  * **`render_melody.py`** — рендеринг MIDI-мелодии (Бах) напрямую через VST-движок.
-  * **`render_sfz_melody.py`** — воспроизведение той же мелодии с использованием только отрендеренных WAV-сэмплов и SFZ-карты.
-  * **`render_sfz_gymnopedie.py`** — сэмплерный рендеринг пьесы «Гимнопедия № 1» Эрика Сати.
-  * **`render_sfz_moonlight.py`** — сэмплерный рендеринг «Лунной сонаты» Бетховена.
-  * **`render_sfz_midi.py`** — универсальный сэмплерный рендеринг любого MIDI-файла.
-* **`midi/`** — папка с MIDI-файлами:
-  * **`6101-2d_moonlight_sonata_27-2_1_2_(nc)smythe.mid`** — полная MIDI-запись Лунной сонаты.
-* **`.gitignore`** — исключает тяжелые бинарные аудиофайлы (`*_samples/*.wav` и `*.wav`) из репозитория.
+All audio processing supports high-definition rendering (up to **24-bit / 96 kHz**).
 
 ---
 
-## 🚀 Настройка окружения
+## 📁 Project Structure
 
-Для запуска скриптов необходимо активировать изолированное Conda-окружение, в котором установлены все необходимые библиотеки (`dawdreamer`, `pedalboard`, `numpy`, `soundfile`, `mido`):
+* **`vst2sfz.py`** — Main CLI utility to sample VST plugins and generate SFZ mappings automatically.
+* **`test_suite.py`** — Unit tests covering edge cases, note parsing, zoning, and loop point boundary calculations.
+* **`Surge_DX_Piano.sfz`** — Ready-to-use SFZ mapping file connecting WAV samples to MIDI notes and velocity zones.
+* **`renderers/`** — Directory containing offline rendering scripts (can be executed from any folder):
+  * **`render_melody.py`** — Offline renderer executing MIDI events directly via VST.
+  * **`render_sfz_melody.py`** — Offline renderer playing Bach's Prelude using the custom SFZ sampler (no VST required).
+  * **`render_sfz_gymnopedie.py`** — SFZ-based renderer for Erik Satie's "Gymnopédie No. 1".
+  * **`render_sfz_moonlight.py`** — SFZ-based renderer for Beethoven's "Moonlight Sonata" (1st movement mockup).
+  * **`render_sfz_midi.py`** — Universal offline renderer playing any MIDI file using the generated SFZ instrument.
+* **`midi/`** — Directory containing MIDI assets:
+  * **`6101-2d_moonlight_sonata_27-2_1_2_(nc)smythe.mid`** — Full Moonlight Sonata MIDI performance.
+* **`.gitignore`** — Excludes heavy binary audio files (`*_samples/*.wav` and `*.wav`) from being committed to repository.
+
+---
+
+## 🚀 Environment Setup
+
+Before running the scripts, make sure to activate the isolated Conda environment containing all required libraries (`dawdreamer`, `pedalboard`, `numpy`, `soundfile`, `mido`):
 
 ```bash
-# Активация окружения
+# Activate environment
 conda activate vst2sfz
 ```
 
 ---
 
-## 🎹 Как пользоваться сэмплером (`vst2sfz.py`)
+## 🎹 How to Use the Sampler (`vst2sfz.py`)
 
-Утилита запускается из консоли и принимает множество параметров для гибкой настройки сэмплирования.
+The utility is launched via the command line and accepts various options to customize the sampling process.
 
-### Основные аргументы:
-* `--vst` (обязательный) — абсолютный путь к плагину (VST3, VST2, AU).
-* `--midi-program` — отправляет VST-плагину MIDI-команду Program Change при запуске для выбора пресета (0-127).
-* `--notes` — диапазон или список нот (например, `C2-C7` или `60,64,67`).
-* `--step` — шаг сэмплирования в полутонах (например, `3` запишет каждую малую терцию, промежуточные ноты будут растянуты).
-* `--velocities` — слои громкости через запятую (например, `40,80,127`).
-* `--duration` — длительность удержания клавиши (note-on) в секундах.
-* `--release` — время записи хвоста релиза после отпускания клавиши.
-* `--sr` — частота дискретизации (например, `96000` или `44100`).
-* `--bit-depth` — разрядность WAV-файлов (`16`, `24` или `32` бита).
-* `--auto-loop` — рассчитывает фазово-выровненные циклы зацикливания для бесконечного сустейна в SFZ.
-* `--fx` — цепочка пост-обработки сэмплов (например, `reverb,delay,chorus,distortion`).
+### Core Arguments:
+* `--vst` (Required) — Absolute path to the plugin (VST3, VST2, AU).
+* `--midi-program` — Sends a Program Change MIDI command on startup to select the target preset (0-127).
+* `--notes` — A range or list of notes to sample (e.g., `C2-C7` or `60,64,67`).
+* `--step` — Sampling step in semitones (e.g., `3` records every minor third, and key zoning stretches the samples for intermediate keys).
+* `--velocities` — Comma-separated list of velocity layers (e.g., `40,80,127`).
+* `--duration` — The hold duration (note-on phase) of the MIDI note in seconds.
+* `--release` — The decay recording time (note-off phase) captured after release.
+* `--sr` — Sample rate for rendering (e.g., `96000` or `44100`).
+* `--bit-depth` — Bit depth of the WAV files (`16`, `24`, or `32`).
+* `--auto-loop` — Calculates phase-aligned loop boundaries for infinite sustain inside the SFZ file.
+* `--fx` — Post-processing effects chain (e.g., `reverb,delay,chorus,distortion`).
 
-### Пример сэмплирования пианино (24-bit / 96 kHz):
+### Example: Sampling a Piano at 24-bit / 96 kHz:
 ```bash
 python vst2sfz.py \
   --vst "/Library/Audio/Plug-Ins/VST3/Surge XT.vst3" \
@@ -68,44 +68,44 @@ python vst2sfz.py \
 
 ---
 
-## 🎶 Запуск воспроизведения мелодий
+## 🎶 Launching Melody Renderers
 
-Все скрипты рендеринга автоматически генерируют красивый стерео-звук в качестве **24-bit / 96 kHz** и сохраняют его в корневой каталог проекта. Скрипты можно запускать как из корня проекта, так и из папки `renderers/`.
+All rendering scripts synthesize high-fidelity stereo audio in **24-bit / 96 kHz** quality and save the resulting files to the project root directory.
 
-### 1. Рендеринг через оригинальный VST:
-Скрипт проигрывает Прелюдию Баха на оригинальном плагине Surge XT с загруженным пресетом:
+### 1. Rendering via original VST:
+Plays Bach's Prelude using the live Surge XT plugin instance:
 ```bash
 python renderers/render_melody.py
-# Создаст файл: Surge_DX_Piano_Melody.wav
+# Generates: Surge_DX_Piano_Melody.wav
 ```
 
-### 2. Рендеринг через SFZ-сэмплы (Прелюдия Баха):
-Проигрывает ту же мелодию с помощью автономного Python-сэмплера, используя файлы из папки `Surge_DX_Piano_samples` и разметку `Surge_DX_Piano.sfz`:
+### 2. Rendering via SFZ samples (Bach's Prelude):
+Plays Bach's Prelude via the custom offline SFZ sampler using WAV files in `Surge_DX_Piano_samples` and the `Surge_DX_Piano.sfz` mapping:
 ```bash
 python renderers/render_sfz_melody.py
-# Создаст файл: Surge_DX_Piano_SFZ_Melody.wav
+# Generates: Surge_DX_Piano_SFZ_Melody.wav
 ```
 
-### 3. Рендеринг через SFZ-сэмплы (Лунная соната):
-Проигрывает выразительную и медленную «Лунную сонату» Бетховена на сэмплах с глубоким ревербератором:
+### 3. Rendering via SFZ samples (Moonlight Sonata):
+Plays a expressive, slow arrangement of Moonlight Sonata utilizing custom SFZ samples with deep reverb and delay:
 ```bash
 python renderers/render_sfz_moonlight.py
-# Создаст файл: Surge_DX_Piano_SFZ_Moonlight.wav
+# Generates: Surge_DX_Piano_SFZ_Moonlight.wav
 ```
 
-### 4. Рендеринг через SFZ-сэмплы (Гимнопедия Сати):
-Проигрывает расслабляющую «Гимнопедию № 1» Эрика Сати с длинными затуханиями:
+### 4. Rendering via SFZ samples (Satie's Gymnopédie):
+Plays Satie's relaxing "Gymnopédie No. 1" with long, natural decay tails:
 ```bash
 python renderers/render_sfz_gymnopedie.py
-# Создаст файл: Surge_DX_Piano_SFZ_Gymnopedie.wav
+# Generates: Surge_DX_Piano_SFZ_Gymnopedie.wav
 ```
 
-### 5. Рендеринг любого MIDI-файла через SFZ-сэмплы:
-Позволяет отрендерить любой MIDI-файл с использованием созданного SFZ инструмента:
+### 5. Rendering any MIDI file via SFZ samples:
+Allows rendering of arbitrary MIDI files using the custom SFZ instrument, applying peak normalization after effects:
 ```bash
 python renderers/render_sfz_midi.py --midi midi/6101-2d_moonlight_sonata_27-2_1_2_(nc)smythe.mid --output Surge_DX_Piano_SFZ_Moonlight_Full.wav
 ```
 
 ---
 
-*Разработано в рамках автоматизированной сессии сэмплирования.*
+*Developed during an automated VST sampling session.*
