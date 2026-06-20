@@ -6,6 +6,51 @@ All audio processing supports high-definition rendering (up to **24-bit / 96 kHz
 
 ---
 
+## 📊 BPMN Process Workflow
+
+The diagram below illustrates the multi-lane BPMN process mapping the user actions, the automatic sampling logic inside `vst2sfz.py`, and the offline rendering pipeline inside `renderers/render_sfz_midi.py`:
+
+```mermaid
+graph TD
+    subgraph User / CLI Lane
+        Start([Start]) --> Conf[Configure parameters: notes, step, velocities, VST path, FX]
+        Conf --> RunSampler[Run vst2sfz.py]
+        MidiInput[Supply MIDI File] --> RunRenderer[Run render_sfz_midi.py]
+    end
+
+    subgraph Sampler Engine Lane (vst2sfz.py)
+        RunSampler --> InitVST[Initialize RenderEngine & Load VST]
+        InitVST --> LoadPreset[Load preset / Send Program Change & Render 0.2s silence]
+        LoadPreset --> CalcZones[Calculate key zones & velocity layers]
+        CalcZones --> LoopStart{For each note/vel/RR}
+        LoopStart -->|Next note| RenderNote[Trigger MIDI note-on & Render audio]
+        RenderNote --> ApplyFX[Apply Pedalboard FX]
+        ApplyFX --> WriteWAV[Save WAV sample]
+        WriteWAV --> CalcLoops[Calculate phase-aligned loops]
+        CalcLoops --> LoopStart
+        LoopStart -->|Done| GenSFZ[Generate SFZ mapping file]
+    end
+
+    subgraph Renderer Lane (render_sfz_midi.py)
+        GenSFZ --> RunRenderer
+        RunRenderer --> ParseMidi[Parse MIDI events to seconds]
+        ParseMidi --> MatchSFZ[Match MIDI notes to SFZ regions]
+        MatchSFZ --> Synth[Vectorized sample mixing & resampling]
+        Synth --> FinalFX[Apply reverb/delay post-effects]
+        FinalFX --> Normalize[Normalize peak amplitude to 0.95]
+        Normalize --> SaveWav[Write 24-bit PCM WAV master]
+        SaveWav --> End([End])
+    end
+
+    classDef lane fill:#f9f9f9,stroke:#333,stroke-width:2px;
+    classDef step fill:#e1f5fe,stroke:#01579b,stroke-width:1px;
+    classDef startend fill:#eceff1,stroke:#37474f,stroke-width:2px;
+    class Conf,InitVST,LoadPreset,CalcZones,RenderNote,ApplyFX,WriteWAV,CalcLoops,GenSFZ,ParseMidi,MatchSFZ,Synth,FinalFX,Normalize,SaveWav step;
+    class Start,End startend;
+```
+
+---
+
 ## 📁 Project Structure
 
 * **`vst2sfz.py`** — Main CLI utility to sample VST plugins and generate SFZ mappings automatically.
