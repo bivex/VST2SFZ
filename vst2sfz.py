@@ -216,6 +216,7 @@ def main():
     parser.add_argument("--duration", type=float, default=2.0, help="Hold duration of the MIDI note-on in seconds")
     parser.add_argument("--release", type=float, default=1.0, help="Release duration in seconds recorded after note-off")
     parser.add_argument("--sr", type=int, default=44100, help="Sample rate for rendering")
+    parser.add_argument("--bit-depth", type=int, choices=[16, 24, 32], default=16, help="Bit depth of the rendered WAV files (16, 24, 32)")
     parser.add_argument("--block-size", type=int, default=512, help="Block size for rendering engine")
     
     # Looping
@@ -406,7 +407,8 @@ def main():
                 
                 # Save WAV file
                 # soundfile expects (samples, channels)
-                sf.write(wav_path, audio.T, args.sr)
+                subtype = f"PCM_{args.bit_depth}"
+                sf.write(wav_path, audio.T, args.sr, subtype=subtype)
                 
                 # Auto-loop calculations
                 loop_opcodes = ""

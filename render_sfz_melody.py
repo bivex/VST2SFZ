@@ -201,7 +201,7 @@ def main():
     midi_notes = parse_midi_object(mid)
     print(f"Parsed {len(midi_notes)} notes from Bach MIDI performance.")
     
-    sr = 44100
+    sr = 96000
     # Use a musical release time (1.0 second decay on release)
     release_time_sec = 1.0
     release_samples = int(release_time_sec * sr)
@@ -287,7 +287,7 @@ def main():
     processed = board(output_audio.T, sr)
     
     output_path = "Surge_DX_Piano_SFZ_Melody.wav"
-    sf.write(output_path, processed.T, sr)
+    sf.write(output_path, processed.T, sr, subtype='PCM_24')
     print(f"Melody successfully rendered using SFZ samples and saved to {output_path}!")
 
 if __name__ == "__main__":

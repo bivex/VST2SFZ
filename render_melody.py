@@ -104,7 +104,7 @@ def render_melody():
     mid_path = create_bach_midi()
     print(f"Created MIDI file: {mid_path}")
     
-    sr = 44100
+    sr = 96000
     engine = daw.RenderEngine(sr, 512)
     
     vst_path = "/Library/Audio/Plug-Ins/VST3/Surge XT.vst3"
@@ -137,7 +137,7 @@ def render_melody():
     processed = board(audio, sr)
     
     output_path = "Surge_DX_Piano_Melody.wav"
-    sf.write(output_path, processed.T, sr)
+    sf.write(output_path, processed.T, sr, subtype='PCM_24')
     print(f"Melody successfully rendered and saved to {output_path}!")
     
     # Clean up temp midi file
