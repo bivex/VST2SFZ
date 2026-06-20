@@ -12,13 +12,13 @@ The diagram below illustrates the multi-lane BPMN process mapping the user actio
 
 ```mermaid
 graph TD
-    subgraph User / CLI Lane
+    subgraph "User / CLI Lane"
         Start([Start]) --> Conf[Configure parameters: notes, step, velocities, VST path, FX]
         Conf --> RunSampler[Run vst2sfz.py]
         MidiInput[Supply MIDI File] --> RunRenderer[Run render_sfz_midi.py]
     end
 
-    subgraph Sampler Engine Lane (vst2sfz.py)
+    subgraph "Sampler Engine Lane (vst2sfz.py)"
         RunSampler --> InitVST[Initialize RenderEngine & Load VST]
         InitVST --> LoadPreset[Load preset / Send Program Change & Render 0.2s silence]
         LoadPreset --> CalcZones[Calculate key zones & velocity layers]
@@ -31,7 +31,7 @@ graph TD
         LoopStart -->|Done| GenSFZ[Generate SFZ mapping file]
     end
 
-    subgraph Renderer Lane (render_sfz_midi.py)
+    subgraph "Renderer Lane (render_sfz_midi.py)"
         GenSFZ --> RunRenderer
         RunRenderer --> ParseMidi[Parse MIDI events to seconds]
         ParseMidi --> MatchSFZ[Match MIDI notes to SFZ regions]
