@@ -13,9 +13,14 @@ def note_to_midi(note_str):
     Converts note name (e.g. C4, D#3, Bb5) or MIDI number string to MIDI note integer.
     """
     if isinstance(note_str, int):
+        if note_str < 0 or note_str > 127:
+            raise ValueError(f"MIDI note out of bounds (0-127): {note_str}")
         return note_str
     if isinstance(note_str, str) and note_str.isdigit():
-        return int(note_str)
+        midi_num = int(note_str)
+        if midi_num < 0 or midi_num > 127:
+            raise ValueError(f"MIDI note out of bounds (0-127): {midi_num}")
+        return midi_num
         
     note_str = note_str.strip()
     # Match: letter (A-G), optional accidental (#, b, sharp, flat), octave (integer)
@@ -38,47 +43,50 @@ def note_to_midi(note_str):
             val -= 1
             
     midi = val + (octave + 1) * 12
+    if midi < 0 or midi > 127:
+        raise ValueError(f"MIDI note out of bounds (0-127): {midi} (from {note_str})")
     return midi
 
 def midi_to_note_name(midi_num):
     """
     Converts a MIDI note number to its standard name (e.g., 60 -> C4).
     """
+    if not isinstance(midi_num, int):
+        # Allow integer-like strings or float integers
+        try:
+            midi_num = int(midi_num)
+        except (ValueError, TypeError):
+            raise TypeError(f"MIDI note number must be an integer, got: {midi_num}")
+            
+    if midi_num < 0 or midi_num > 127:
+        raise ValueError(f"MIDI note out of bounds (0-127): {midi_num}")
+        
     notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
     octave = (midi_num // 12) - 1
     note_index = midi_num % 12
-    # Replace '#' with 's' or keep it as '#'? SFZ accepts #, but filenames are cleaner without special chars.
-    # We will use '#' in SFZ, but let's keep standard '#' naming for now.
     return f"{notes[note_index]}{octave}"
 
 def parse_note_range(notes_arg, step=1):
     """
     Parses notes argument which can be a single note, list of notes, or range (e.g. C3-C5).
     """
+    if not isinstance(step, int) or step <= 0:
+        raise ValueError(f"Step size must be a positive integer, got: {step}")
+        
     parts = notes_arg.split(',')
     midi_notes = set()
     
+    NOTE_PATTERN = r"[A-Ga-g](?:#|b|sharp|flat)?-?\d+|\d+"
+    range_regex = rf"^\s*({NOTE_PATTERN})\s*-\s*({NOTE_PATTERN})\s*$"
+    
     for part in parts:
         part = part.strip()
-        if '-' in part:
-            # Handle ranges: start-end
-            # Handle negative octaves carefully (e.g., C-1) by split from the right or matching regex
-            match = re.match(r"^([A-Za-z0-9#-]+)\s*-\s*([A-Za-z0-9#-]+)$", part)
-            if match:
-                start_note = note_to_midi(match.group(1))
-                end_note = note_to_midi(match.group(2))
-                for n in range(start_note, end_note + 1, step):
-                    midi_notes.add(n)
-            else:
-                # Raw numbers
-                match_num = re.match(r"^(\d+)\s*-\s*(\d+)$", part)
-                if match_num:
-                    start_note = int(match_num.group(1))
-                    end_note = int(match_num.group(2))
-                    for n in range(start_note, end_note + 1, step):
-                        midi_notes.add(n)
-                else:
-                    raise ValueError(f"Could not parse note range: {part}")
+        match = re.match(range_regex, part)
+        if match:
+            start_note = note_to_midi(match.group(1))
+            end_note = note_to_midi(match.group(2))
+            for n in range(start_note, end_note + 1, step):
+                midi_notes.add(n)
         else:
             midi_notes.add(note_to_midi(part))
             
