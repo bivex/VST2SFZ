@@ -212,13 +212,6 @@ def main():
         if mix_len > 0:
             output_audio[start_sample:end_sample] += note_audio[:mix_len]
             
-    # Normalize output to prevent clipping
-    max_val = np.max(np.abs(output_audio))
-    print(f"Max raw mixed amplitude: {max_val:.4f}")
-    if max_val > 0.95:
-        output_audio = output_audio * (0.90 / max_val)
-        print("Audio normalized to 0.90 peak level.")
-        
     print("Applying reverb and delay effects...")
     try:
         import pedalboard
@@ -233,6 +226,14 @@ def main():
     except Exception as e:
         print(f"Warning: pedalboard failed or not available, saving dry output. ({e})")
         output_data = output_audio
+        
+    # Normalize final output to target peak level (0.95) to guarantee clean, professional loudness
+    max_val = np.max(np.abs(output_data))
+    print(f"Max processed amplitude: {max_val:.4f}")
+    if max_val > 0.0:
+        target_peak = 0.95
+        output_data = output_data * (target_peak / max_val)
+        print(f"Audio normalized to {target_peak:.2f} peak level.")
         
     print(f"Saving WAV output to: {args.output}")
     sf.write(args.output, output_data, sr, subtype='PCM_24')
