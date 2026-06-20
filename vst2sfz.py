@@ -12,6 +12,11 @@ def note_to_midi(note_str):
     """
     Converts note name (e.g. C4, D#3, Bb5) or MIDI number string to MIDI note integer.
     """
+    if note_str is None:
+        raise TypeError("MIDI note cannot be None")
+    if not isinstance(note_str, (int, str)):
+        raise TypeError(f"MIDI note must be a string or integer, got: {type(note_str).__name__}")
+        
     if isinstance(note_str, int):
         if note_str < 0 or note_str > 127:
             raise ValueError(f"MIDI note out of bounds (0-127): {note_str}")
@@ -53,6 +58,8 @@ def midi_to_note_name(midi_num):
     """
     if not isinstance(midi_num, int):
         # Allow integer-like strings or float integers
+        if isinstance(midi_num, float) and not midi_num.is_integer():
+            raise TypeError(f"MIDI note number must be an integer, got: {midi_num}")
         try:
             midi_num = int(midi_num)
         except (ValueError, TypeError):
@@ -271,6 +278,33 @@ def main():
         
     if not midi_notes:
         print("Error: No midi notes selected to sample.")
+        sys.exit(1)
+        
+    # Validate velocities are within valid MIDI range
+    for v in velocities:
+        if v < 1 or v > 127:
+            print(f"Error: Velocity must be between 1 and 127, got: {v}")
+            sys.exit(1)
+            
+    # Validate durations and counts
+    if args.round_robin < 1:
+        print(f"Error: round-robin count must be at least 1, got: {args.round_robin}")
+        sys.exit(1)
+        
+    if args.duration <= 0:
+        print(f"Error: note duration must be positive, got: {args.duration}")
+        sys.exit(1)
+        
+    if args.release < 0:
+        print(f"Error: release duration must be non-negative, got: {args.release}")
+        sys.exit(1)
+        
+    if args.sr <= 0:
+        print(f"Error: sample rate must be positive, got: {args.sr}")
+        sys.exit(1)
+        
+    if args.block_size <= 0:
+        print(f"Error: block size must be positive, got: {args.block_size}")
         sys.exit(1)
         
     # Setup directories

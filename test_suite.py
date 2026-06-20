@@ -55,6 +55,13 @@ class TestVst2SfzEdgeCases(unittest.TestCase):
             vst2sfz.note_to_midi("-1")
         with self.assertRaises(ValueError):
             vst2sfz.note_to_midi("128")
+        # Invalid types
+        with self.assertRaises(TypeError):
+            vst2sfz.note_to_midi(None)
+        with self.assertRaises(TypeError):
+            vst2sfz.note_to_midi(60.5)
+        with self.assertRaises(TypeError):
+            vst2sfz.note_to_midi([60])
 
     # 1.5. Test midi_to_note_name
     def test_midi_to_note_name_valid(self):
@@ -63,6 +70,8 @@ class TestVst2SfzEdgeCases(unittest.TestCase):
         self.assertEqual(vst2sfz.midi_to_note_name(127), "G9")
         # Test string-like integer input compatibility
         self.assertEqual(vst2sfz.midi_to_note_name("60"), "C4")
+        # Test whole float values are allowed
+        self.assertEqual(vst2sfz.midi_to_note_name(60.0), "C4")
 
     def test_midi_to_note_name_invalid(self):
         with self.assertRaises(ValueError):
@@ -73,6 +82,8 @@ class TestVst2SfzEdgeCases(unittest.TestCase):
             vst2sfz.midi_to_note_name("C4")
         with self.assertRaises(TypeError):
             vst2sfz.midi_to_note_name(None)
+        with self.assertRaises(TypeError):
+            vst2sfz.midi_to_note_name(60.5)
 
     # 2. Test parse_note_range
     def test_parse_note_range_formats(self):
