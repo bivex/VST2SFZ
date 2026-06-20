@@ -313,6 +313,26 @@ def main():
             
     engine.load_graph([(synth, [])])
     
+    # Send MIDI Program Change once at startup to select correct preset
+    if args.midi_program is not None:
+        print(f"Sending MIDI Program Change {args.midi_program} to switch VST preset...")
+        try:
+            import mido
+            mid = mido.MidiFile()
+            track = mido.MidiTrack()
+            mid.tracks.append(track)
+            track.append(mido.Message('program_change', program=args.midi_program, time=0))
+            temp_init_pc = "temp_init_pc.mid"
+            mid.save(temp_init_pc)
+            synth.load_midi(temp_init_pc)
+            engine.render(0.2) # Render a fraction of a second to apply the program change
+            synth.clear_midi()
+            if os.path.exists(temp_init_pc):
+                os.remove(temp_init_pc)
+            print("VST preset switched successfully.")
+        except Exception as e:
+            print(f"Warning: Failed to send Program Change initialization: {e}")
+    
     # Pedalboard configuration
     fx_names = []
     if args.fx:
@@ -349,27 +369,10 @@ def main():
                 
                 # Render MIDI Note
                 synth.clear_midi()
-                if args.midi_program is not None:
-                    import mido
-                    mid = mido.MidiFile()
-                    track = mido.MidiTrack()
-                    mid.tracks.append(track)
-                    track.append(mido.Message('program_change', program=args.midi_program, time=0))
-                    track.append(mido.Message('note_on', note=note, velocity=vel, time=0))
-                    ticks = int(round(args.duration * 960))
-                    track.append(mido.Message('note_off', note=note, velocity=vel, time=ticks))
-                    temp_mid_path = f"temp_{note}_{vel}_{rr}.mid"
-                    mid.save(temp_mid_path)
-                    synth.load_midi(temp_mid_path)
-                else:
-                    synth.add_midi_note(note, vel, 0.0, args.duration)
+                synth.add_midi_note(note, vel, 0.0, args.duration)
                 
                 total_duration = args.duration + args.release
                 engine.render(total_duration)
-                
-                # Clean up temporary MIDI file
-                if args.midi_program is not None and os.path.exists(temp_mid_path):
-                    os.remove(temp_mid_path)
                 
                 audio = engine.get_audio() # Shape is (channels, samples)
                 
