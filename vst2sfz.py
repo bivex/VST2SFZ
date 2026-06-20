@@ -203,6 +203,7 @@ def main():
     # Core settings
     parser.add_argument("--vst", type=str, required=True, help="Path to VST3/VST2/AU plugin (e.g. /path/to/plugin.vst3)")
     parser.add_argument("--preset", type=str, default=None, help="Path to preset/state file to load (.vstpreset, .fxp, .bin, .state)")
+    parser.add_argument("--midi-program", type=int, default=None, help="MIDI program change number to send before note-on")
     parser.add_argument("--output-name", type=str, default=None, help="Name of output instrument. Defaults to VST name.")
     
     # Sampling range
@@ -348,11 +349,27 @@ def main():
                 
                 # Render MIDI Note
                 synth.clear_midi()
-                # add_midi_note(pitch, velocity, start, duration)
-                synth.add_midi_note(note, vel, 0.0, args.duration)
+                if args.midi_program is not None:
+                    import mido
+                    mid = mido.MidiFile()
+                    track = mido.MidiTrack()
+                    mid.tracks.append(track)
+                    track.append(mido.Message('program_change', program=args.midi_program, time=0))
+                    track.append(mido.Message('note_on', note=note, velocity=vel, time=0))
+                    ticks = int(round(args.duration * 960))
+                    track.append(mido.Message('note_off', note=note, velocity=vel, time=ticks))
+                    temp_mid_path = f"temp_{note}_{vel}_{rr}.mid"
+                    mid.save(temp_mid_path)
+                    synth.load_midi(temp_mid_path)
+                else:
+                    synth.add_midi_note(note, vel, 0.0, args.duration)
                 
                 total_duration = args.duration + args.release
                 engine.render(total_duration)
+                
+                # Clean up temporary MIDI file
+                if args.midi_program is not None and os.path.exists(temp_mid_path):
+                    os.remove(temp_mid_path)
                 
                 audio = engine.get_audio() # Shape is (channels, samples)
                 
