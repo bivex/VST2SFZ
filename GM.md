@@ -8,33 +8,33 @@ Each instrument is sampled at 4 pitch levels across the keyboard range (C2, C4, 
 
 ---
 
-## 2. Why Surge XT Presets Sounded Synthetic
-In initial attempts, we sampled the **Surge XT** synthesizer. However:
-* Surge XT is a subtractive/wavetable synthesizer.
-* Even though it has named factory presets (like "Violin", "Clarinet", "Nylon Guitar"), these are physical-modeling or subtractive approximations.
-* Consequently, they sound like "ordinary synth bleeps/waves" rather than realistic acoustic instruments.
+## 2. Sound Engine: Surge XT
+The pack is sampled from **Surge XT** (`/Library/Audio/Plug-Ins/VST3/Surge XT.vst3`), an open-source subtractive/wavetable synthesizer with a large factory patch library.
+
+Each of the 128 GM program slots is bound to a **single, hand-picked factory preset** via an explicit mapping table in `sample_gm_pack.py` (`build_preset_mapping`). The mapping is:
+* **Deterministic** — no fuzzy matching or "first unused" fallbacks; every slot maps to a specific preset path.
+* **Unique** — all 128 presets are distinct (zero duplicates).
+* **Validated** — a missing or renamed preset raises `FileNotFoundError` at load time instead of silently degrading the pack.
+* **Documented** — each slot carries a comment with its GM instrument name.
+
+Presets are loaded by copying each mapped factory patch into Surge XT's user patch library (`~/Documents/Surge XT/Patches/MIDI Programs`) as program slot `i`, then switching the active patch with a MIDI `program_change` event. The script backs up any existing user presets before the run and restores them afterwards, so the user's library is left untouched.
+
+> Note: `synth.load_state(preset_path)` does NOT reliably switch the active patch through DawDreamer (the spectral output stays identical regardless of the preset). The MIDI program_change path is required for preset switching to actually take effect.
+
+> Note: Surge XT presets are subtractive/wavetable approximations of acoustic instruments, so the timbres are synthetic-sounding rather than recorded samples. This is a deliberate trade-off for a self-contained, reproducible, cross-platform engine.
 
 ---
 
-## 3. The Solution: Apple DLSMusicDevice
-To get actual acoustic instruments (pianos, strings, woodwinds, brass), we switched the sampler engine to macOS's built-in **Apple DLSMusicDevice**:
-* **Location:** Located inside `/System/Library/Components/CoreAudio.component`.
-* **Sound Source:** Hosts Apple's system DLS sound bank (Roland Sound Canvas GS/GM samples).
-* **Authenticity:** Provides genuine acoustic recorded instrument samples.
-* **Compatibility:** Natively processes standard MIDI Program Change messages (0–127) to switch between the 128 GM instruments.
+## 3. How the Sampling Script Works
+The script [sample_gm_pack.py](file:///Volumes/External/Code/VST2SFZ/sample_gm_pack.py) automates the process using `DawDreamer`:
 
----
-
-## 4. How the Sampling Script Works
-The script [sample_gm_pack.py](file:///Volumes/External/Code/VST2SFZ/sample_gm_pack.py) automates the process using `DawDreamer` and `mido`:
-
-1. **Host Setup:** Loads the DLSMusicDevice Audio Unit inside a DawDreamer render engine.
-2. **Program Selection:** For each of the 128 GM instruments:
-   * Generates a temporary MIDI file containing a `program_change` message for the program `i`.
-   * Loads and renders the program change event to switch the active instrument.
+1. **Host Setup:** Loads the Surge XT VST3 inside a DawDreamer render engine at 96 kHz.
+2. **Preset Selection:** For each of the 128 GM instruments:
+   * Looks up the bound factory preset from the explicit mapping table.
+   * Copies it into Surge XT's user patch library as program slot `i`.
+   * Switches the active patch with a MIDI `program_change` event (1.5 s settle render).
 3. **Note Sampling:** Renders notes C2, C4, C6, and C8 at a velocity of 100:
    * Duration: 1.0 second hold, 0.5 seconds release (1.5 seconds total).
-   * **Stereo Slicing:** Slices the output of the plugin to the first 2 channels (`audio[:2]`) because DLSMusicDevice outputs 4 channels by default (with the last 2 being empty).
    * **Format:** Saves the audio as a standard 24-bit stereo PCM WAV file at 96 kHz.
 4. **SFZ Mapping:** 
    * Generates individual `.sfz` files for each instrument under [General_MIDI_instruments/](file:///Volumes/External/Code/VST2SFZ/General_MIDI_instruments/).
@@ -42,8 +42,8 @@ The script [sample_gm_pack.py](file:///Volumes/External/Code/VST2SFZ/sample_gm_p
 
 ---
 
-## 5. How to Run the Script
-To run the sampling process and generate/overwrite the instrument files using the DLSMusicDevice:
+## 4. How to Run the Script
+To run the sampling process and generate/overwrite the instrument files using Surge XT:
 
 ```bash
 /opt/homebrew/Caskroom/miniconda/base/envs/vst2sfz/bin/python sample_gm_pack.py
@@ -56,7 +56,7 @@ To run the sampling process and generate/overwrite the instrument files using th
 
 ---
 
-## 6. Build Steps (Quick Reference)
+## 5. Build Steps (Quick Reference)
 End-to-end pipeline to (re)generate the pack from scratch:
 
 1. **Verify environment** — the dedicated conda env with `dawdreamer`, `mido`, `soundfile`, `numpy`:
@@ -109,7 +109,7 @@ Each instrument spans the full keyboard 0–127, split at the midpoints between 
 
 ---
 
-## 7. Previewing
+## 6. Previewing
 To quickly audition instruments, concatenate a subset of C4 WAVs and play:
 
 ```bash

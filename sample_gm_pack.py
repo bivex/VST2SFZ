@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 import os
 import sys
-import re
 import glob
-import math
 import shutil
 import numpy as np
 import soundfile as sf
@@ -202,19 +200,15 @@ def midi_to_note_name(midi_num):
     return f"{notes[note_index]}{octave}"
 
 def main():
-    # Detect if we are on macOS and can use the built-in General MIDI Apple DLS Music Device
-    vst_path = "/System/Library/Components/CoreAudio.component"
-    use_apple_dls = False
-    
-    if os.path.exists(vst_path):
-        print(f"Found Apple DLSMusicDevice at {vst_path}. Using it for realistic General MIDI samples...")
-        use_apple_dls = True
-    else:
-        vst_path = "/Library/Audio/Plug-Ins/VST3/Surge XT.vst3"
-        print(f"Apple DLSMusicDevice not found. Falling back to Surge XT VST3 at {vst_path}...")
-        if not os.path.exists(vst_path):
-            print(f"Error: Surge XT VST3 not found at {vst_path}")
-            sys.exit(1)
+    # Use Surge XT as the sole sound engine, driven by explicitly-mapped
+    # factory presets (one per GM instrument). Presets are loaded directly
+    # via load_state, which is more reliable than the program_change-over-MIDI
+    # approach and needs no user patch library manipulation.
+    vst_path = "/Library/Audio/Plug-Ins/VST3/Surge XT.vst3"
+    if not os.path.exists(vst_path):
+        print(f"Error: Surge XT VST3 not found at {vst_path}")
+        sys.exit(1)
+    print(f"Using Surge XT at {vst_path}...")
 
     # Directories
     samples_dir = "General_MIDI_samples"
@@ -222,30 +216,35 @@ def main():
     os.makedirs(samples_dir, exist_ok=True)
     os.makedirs(instruments_dir, exist_ok=True)
 
+    print("Mapping 128 GM slots to Surge XT presets...")
+    factory_dir = "/Library/Application Support/Surge XT/patches_factory"
+    preset_mapping = build_preset_mapping(factory_dir)
+
+    # Surge XT loads user presets by MIDI program number from its user patch
+    # library (~/Documents/Surge XT/Patches/MIDI Programs). To select a preset
+    # we copy each mapped factory preset into that folder as program slot `i`
+    # and then switch via a MIDI program_change event. load_state() does NOT
+    # reliably switch the active patch in DawDreamer, so this MIDI-based path
+    # is required. We back up any existing user presets and restore them when
+    # done so the user's library is left untouched.
+    midi_programs_dir = os.path.expanduser("~/Documents/Surge XT/Patches/MIDI Programs")
     backup_files = {}
-    midi_programs_dir = "/Users/password9090/Documents/Surge XT/Patches/MIDI Programs"
-    
-    if not use_apple_dls:
-        print("Mapping 128 GM slots to Surge XT presets...")
-        factory_dir = "/Library/Application Support/Surge XT/patches_factory"
-        preset_mapping = build_preset_mapping(factory_dir)
-        
-        print("Backing up existing user MIDI Programs...")
-        if os.path.exists(midi_programs_dir):
-            for f in glob.glob(os.path.join(midi_programs_dir, "*")):
-                if os.path.isfile(f):
-                    with open(f, "rb") as src:
-                        backup_files[os.path.basename(f)] = src.read()
-                    os.remove(f)
-        else:
-            os.makedirs(midi_programs_dir, exist_ok=True)
-            
-        print("Copying mapped preset files to user MIDI Programs folder...")
-        for i in range(128):
-            inst_name = GM_NAMES[i]
-            src_preset = preset_mapping[i]
-            dest_preset = os.path.join(midi_programs_dir, f"{i:03d}_{inst_name}.fxp")
-            shutil.copy2(src_preset, dest_preset)
+    print("Backing up existing user MIDI Programs...")
+    if os.path.exists(midi_programs_dir):
+        for f in glob.glob(os.path.join(midi_programs_dir, "*")):
+            if os.path.isfile(f):
+                with open(f, "rb") as src:
+                    backup_files[os.path.basename(f)] = src.read()
+                os.remove(f)
+    else:
+        os.makedirs(midi_programs_dir, exist_ok=True)
+
+    print("Copying mapped preset files to user MIDI Programs folder...")
+    for i in range(128):
+        inst_name = GM_NAMES[i]
+        src_preset = preset_mapping[i]
+        dest_preset = os.path.join(midi_programs_dir, f"{i:03d}_{inst_name}.fxp")
+        shutil.copy2(src_preset, dest_preset)
 
     try:
         # Configure DawDreamer engine (24-bit / 96 kHz master resolution)
@@ -265,19 +264,18 @@ def main():
         
         with open(master_sfz_path, "w") as master_f:
             master_f.write("// General MIDI 128 Instrument Pack\n")
-            if use_apple_dls:
-                master_f.write("// Generated from Apple DLSMusicDevice (Roland Sound Canvas samples)\n\n")
-            else:
-                master_f.write("// Generated from Surge XT factory presets\n\n")
+            master_f.write("// Generated from Surge XT factory presets\n\n")
             master_f.write("<control>\n")
             master_f.write(f"default_path={samples_dir}/\n\n")
             
             for i in range(128):
                 inst_name = GM_NAMES[i]
+                preset_path = preset_mapping[i]
                 
-                print(f"Sampling [{i:03d}/127] {inst_name}...")
+                print(f"Sampling [{i:03d}/127] {inst_name} (Preset: {os.path.basename(preset_path)})...")
                 
-                # Send MIDI Program Change to load the preset
+                # Switch the active preset via a MIDI program_change event.
+                # Surge XT resolves program `i` to the file copied above.
                 synth.clear_midi()
                 mid = mido.MidiFile()
                 track = mido.MidiTrack()
@@ -285,13 +283,9 @@ def main():
                 track.append(mido.Message('program_change', program=i, time=0))
                 temp_mid_path = "temp_pc_run.mid"
                 mid.save(temp_mid_path)
-                
                 synth.load_midi(temp_mid_path, all_events=True)
-                # DLS Music Device loads instantly; 0.2s is plenty to process the event
-                wait_time = 0.2 if use_apple_dls else 1.5
-                engine.render(wait_time)
+                engine.render(1.5)  # let the patch change settle
                 synth.clear_midi()
-                
                 if os.path.exists(temp_mid_path):
                     os.remove(temp_mid_path)
                 
@@ -317,9 +311,6 @@ def main():
                         synth.add_midi_note(note, 100, 0.0, duration)
                         engine.render(total_duration)
                         audio = engine.get_audio()
-                        # Slice to first 2 channels (stereo) to avoid empty channels from DLSMusicDevice
-                        if audio.shape[0] > 2:
-                            audio = audio[:2]
                         
                         # Save WAV as 24-bit PCM
                         sf.write(sample_path, audio.T, sr, subtype='PCM_24')
@@ -350,17 +341,14 @@ def main():
         print(f"Sample WAV files: {samples_dir}/")
 
     finally:
-        if not use_apple_dls:
-            print("Cleaning up copied MIDI Programs and restoring original files...")
-            # Clear copied presets
-            for f in glob.glob(os.path.join(midi_programs_dir, "*")):
-                if os.path.isfile(f):
-                    os.remove(f)
-            # Restore backup
-            for name, content in backup_files.items():
-                with open(os.path.join(midi_programs_dir, name), "wb") as dest:
-                    dest.write(content)
-            print("Restored original user MIDI Programs.")
+        print("Cleaning up copied MIDI Programs and restoring original files...")
+        for f in glob.glob(os.path.join(midi_programs_dir, "*")):
+            if os.path.isfile(f):
+                os.remove(f)
+        for name, content in backup_files.items():
+            with open(os.path.join(midi_programs_dir, name), "wb") as dest:
+                dest.write(content)
+        print("Restored original user MIDI Programs.")
 
 if __name__ == "__main__":
     main()
