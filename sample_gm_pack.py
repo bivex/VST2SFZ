@@ -4,8 +4,10 @@ import sys
 import re
 import glob
 import math
+import shutil
 import numpy as np
 import soundfile as sf
+import mido
 import dawdreamer as daw
 
 # 128 standard GM instrument names (cleaned for filenames)
@@ -29,101 +31,152 @@ GM_NAMES = [
 ]
 
 def build_preset_mapping(factory_dir):
-    folders = ["Basses", "Brass", "Keys", "Leads", "Pads", "Percussion", "Plucks", "Polysynths", "Winds", "FX"]
-    presets_by_folder = {}
-    for fld in folders:
-        path = os.path.join(factory_dir, fld)
-        if os.path.exists(path):
-            presets_by_folder[fld.lower()] = sorted(glob.glob(os.path.join(path, "*.fxp")))
+    # Walk factory directory to collect all available .fxp presets
+    all_presets = {}
+    for root, dirs, files in os.walk(factory_dir):
+        for file in files:
+            if file.endswith('.fxp'):
+                fld = os.path.basename(root)
+                all_presets[os.path.join(fld, file)] = os.path.join(root, file)
 
     mapping = {}
-    used_presets = set()
+    used = set()
 
-    def get_preset(folder_name, keywords=None):
-        files = presets_by_folder.get(folder_name.lower(), [])
-        if not files:
-            return None
-        # Try matching keywords
-        if keywords:
-            for kw in keywords:
-                for f in files:
-                    if kw.lower() in os.path.basename(f).lower() and f not in used_presets:
-                        used_presets.add(f)
-                        return f
-        # Fallback to first unused file
-        for f in files:
-            if f not in used_presets:
-                used_presets.add(f)
-                return f
-        # If all used, recycle one
-        return files[0] if files else None
+    def find_unique_preset(keywords, preferred_folders):
+        # Try keywords in preferred folders
+        for kw in keywords:
+            for f, path in all_presets.items():
+                if path in used:
+                    continue
+                fld = os.path.basename(os.path.dirname(path)).lower()
+                if fld in [pf.lower() for pf in preferred_folders] and kw.lower() in f.lower():
+                    used.add(path)
+                    return path
 
-    # Map all 128 GM slots
+        # Try keywords globally
+        for kw in keywords:
+            for f, path in all_presets.items():
+                if path in used:
+                    continue
+                if kw.lower() in f.lower():
+                    used.add(path)
+                    return path
+
+        # Fallback to preferred folders (first unused)
+        for f, path in all_presets.items():
+            if path in used:
+                continue
+            fld = os.path.basename(os.path.dirname(path)).lower()
+            if fld in [pf.lower() for pf in preferred_folders]:
+                used.add(path)
+                return path
+
+        # Global fallback (first unused anywhere)
+        for f, path in all_presets.items():
+            if path not in used:
+                used.add(path)
+                return path
+
+        return None
+
+    # Explicit hand-picked presets for critical instruments
+    explicit_presets = {
+        0: 'Plucks/Piano Remains 1.fxp', # Acoustic Grand Piano
+        1: 'Plucks/Piano Remains 2.fxp', # Bright Acoustic Piano
+        2: 'Keys/Artificial 1.fxp',      # Electric Grand Piano
+        3: 'Keys/Experiment.fxp',        # Honky-Tonk Piano
+        4: 'Keys/EP 1.fxp',              # Electric Piano 1
+        5: 'Keys/DX EP.fxp',             # Electric Piano 2
+        6: 'Keys/Digi Harpsi.fxp',       # Harpsichord
+        7: 'Keys/Dirt.fxp',              # Clavinet
+        10: 'Plucks/Magic Music Box.fxp',# Music Box
+        16: 'Keys/Organ 1.fxp',          # Drawbar Organ
+        17: 'Keys/Organ 2.fxp',          # Percussive Organ
+        18: 'Keys/Organ 3.fxp',          # Rock Organ
+        19: 'Keys/Church.fxp',           # Church Organ
+        32: 'Basses/Wide Bassline.fxp',  # Acoustic Bass
+        33: 'Basses/Fingered.fxp',       # Electric Bass (finger)
+        34: 'Basses/Bass 1.fxp',         # Electric Bass (pick)
+        35: 'Basses/Bass 2.fxp',         # Fretless Bass
+        36: 'Basses/FM Slap.fxp',        # Slap Bass 1
+        37: 'Basses/Bass 3.fxp',         # Slap Bass 2
+        38: 'Basses/Lord Sawtooth.fxp',  # Synth Bass 1
+        39: 'Basses/Saw Lo-Fi.fxp',      # Synth Bass 2
+        40: 'Polysynths/Violini Poly.fxp', # Violin
+        41: 'Pads/Subtle Comb Strings.fxp', # Viola
+        48: 'Polysynths/Juno-60 Strings.fxp', # String Ensemble 1
+        49: 'Pads/Choir Pad Thing.fxp',   # String Ensemble 2
+        52: 'Pads/Retro Choir.fxp',       # Choir Aahs
+        53: 'Pads/Robochoir 1.fxp',       # Voice Oohs
+        54: 'Pads/Robochoir 2.fxp',       # Synth Voice
+        56: 'Brass/Reso Brassy.fxp',
+        57: 'Brass/Buggy Brass.fxp',
+        58: 'Brass/Crisp Noise Brass.fxp',
+        59: 'Brass/JX-10 Double Brass.fxp',
+        60: 'Brass/Plastic Brass.fxp',
+        61: 'Brass/Toto Brass.fxp',
+        62: 'Brass/Synth Brass 1.fxp',
+        63: 'Brass/Synth Brass 2.fxp',
+        71: 'Winds/Clarinet.fxp',
+        73: 'Winds/Flute 1.fxp',
+        74: 'Winds/Flute 2.fxp',
+        75: 'Winds/Dreamy Flute.fxp',
+        80: 'Leads/Square.fxp',          # Lead 1 (square)
+        81: 'Leads/Moogy Saw.fxp',       # Lead 2 (sawtooth)
+    }
+
+    # Resolve explicit ones first to reserve them
+    for i, path_rel in explicit_presets.items():
+        full_path = os.path.join(factory_dir, path_rel)
+        if os.path.exists(full_path):
+            mapping[i] = full_path
+            used.add(full_path)
+
+    # Map the rest dynamically
     for i in range(128):
-        grp = i // 8
-        fld = "polysynths"
-        kws = None
+        if i in mapping:
+            continue
         
-        if grp == 0:  # Piano
-            fld = "keys"
-            if i == 0: kws = ["grand", "remains", "organ"]
-            elif i == 1: kws = ["bright"]
-            elif i == 4: kws = ["ep 1", "suitcase"]
-            elif i == 5: kws = ["dx ep", "ep 2"]
-            elif i == 6: kws = ["harpsi"]
-            elif i == 7: kws = ["clav"]
-        elif grp == 1:  # Chromatic Percussion
-            fld = "plucks"
-            if i == 8: kws = ["celesta", "bell"]
-            elif i == 9: kws = ["glock"]
-            elif i == 10: kws = ["box"]
-            elif i == 11: kws = ["vibe"]
-            elif i == 12: kws = ["marimba"]
-            elif i == 13: kws = ["xylo"]
-            elif i == 14: kws = ["bell"]
-        elif grp == 2:  # Organ
-            fld = "keys"
-            kws = ["organ", "church", "circus"]
-        elif grp == 3:  # Guitar
-            fld = "plucks"
-            kws = ["guitar", "nylon", "steel", "clean"]
-        elif grp == 4:  # Bass
-            fld = "basses"
-            if i == 32: kws = ["acoustic", "upright"]
-            elif i == 33: kws = ["finger"]
-            elif i == 34: kws = ["pick"]
-            elif i == 35: kws = ["fretless"]
-            elif i in (36, 37): kws = ["slap"]
-            else: kws = ["synth", "acid", "saw"]
-        elif grp in (5, 6):  # Strings / Ensemble
-            fld = "pads" if grp == 6 else "polysynths"
-            kws = ["string", "violin", "cello", "ensemble", "choir", "voice", "aah", "ooh"]
-        elif grp == 7:  # Brass
-            fld = "brass"
-            kws = ["brass", "trumpet", "horn", "section"]
-        elif grp in (8, 9):  # Reed / Pipe
-            fld = "winds"
-            kws = ["wind", "flute", "clarinet", "sax", "oboe"]
-        elif grp == 10:  # Synth Lead
-            fld = "leads"
-            kws = ["square", "saw", "lead", "syn"]
-        elif grp == 11:  # Synth Pad
-            fld = "pads"
-            kws = ["pad", "warm", "sweep", "space"]
-        elif grp == 12:  # Synth Effects
-            fld = "fx"
-            kws = ["fx", "rain", "crystal", "soundtrack"]
-        elif grp == 13:  # Ethnic
-            fld = "plucks"
-            kws = ["sitar", "banjo", "koto", "pipe", "fiddle"]
-        elif grp == 14:  # Percussive
-            fld = "percussion"
-            kws = ["perc", "drum", "bell", "block"]
-        elif grp == 15:  # Sound Effects
-            fld = "fx"
-            kws = ["fx", "noise", "helicopter", "phone"]
-            
-        mapping[i] = get_preset(fld, kws)
+        grp = i // 8
+        name = GM_NAMES[i]
+        kws = [name.replace('_', ' ')] + name.split('_')
+        
+        # Target folders and backup keywords
+        flds = []
+        if grp == 0:
+            flds, kws = ['keys', 'plucks', 'polysynths'], kws + ['keys', 'ep', 'piano', 'harpsi']
+        elif grp == 1:
+            flds, kws = ['plucks', 'percussion'], kws + ['bell', 'music', 'box', 'vibe', 'marimba', 'pluck']
+        elif grp == 2:
+            flds, kws = ['keys', 'leads'], kws + ['organ', 'accordion', 'circus']
+        elif grp == 3:
+            flds, kws = ['plucks', 'leads'], kws + ['guitar', 'pluck', 'clean', 'distortion']
+        elif grp == 4:
+            flds, kws = ['basses'], kws + ['bass', 'sub', 'fm']
+        elif grp in [5, 6]:
+            if i == 47: # Timpani
+                flds, kws = ['percussion'], kws + ['tom', 'drum', 'perc']
+            else:
+                flds, kws = ['polysynths', 'pads'], kws + ['strings', 'violin', 'choir', 'voice', 'pad']
+        elif grp == 7:
+            flds, kws = ['brass', 'polysynths', 'leads'], kws + ['brass', 'trumpet', 'horn', 'section']
+        elif grp in [8, 9]:
+            flds, kws = ['winds', 'leads', 'polysynths'], kws + ['flute', 'wind', 'clarinet', 'sax', 'whistle']
+        elif grp == 10:
+            flds, kws = ['leads'], kws + ['lead', 'saw', 'square']
+        elif grp == 11:
+            flds, kws = ['pads'], kws + ['pad', 'warm', 'space']
+        elif grp == 12:
+            flds, kws = ['fx', 'leads'], kws + ['fx', 'space', 'soundtrack']
+        elif grp == 13:
+            flds, kws = ['plucks', 'winds', 'leads'], kws + ['sitar', 'banjo', 'pluck', 'fiddle']
+        elif grp == 14:
+            flds, kws = ['percussion', 'plucks'], kws + ['drum', 'perc', 'tom', 'cymbal']
+        elif grp == 15:
+            flds, kws = ['fx'], kws + ['noise', 'helicopter', 'phone', 'fx']
+
+        res = find_unique_preset(kws, flds)
+        mapping[i] = res
 
     return mapping
 
@@ -134,103 +187,165 @@ def midi_to_note_name(midi_num):
     return f"{notes[note_index]}{octave}"
 
 def main():
-    vst_path = "/Library/Audio/Plug-Ins/VST3/Surge XT.vst3"
-    factory_dir = "/Library/Application Support/Surge XT/patches_factory"
+    # Detect if we are on macOS and can use the built-in General MIDI Apple DLS Music Device
+    vst_path = "/System/Library/Components/CoreAudio.component"
+    use_apple_dls = False
     
-    if not os.path.exists(vst_path):
-        print(f"Error: Surge XT VST3 not found at {vst_path}")
-        sys.exit(1)
-        
-    print("Mapping 128 GM slots to Surge XT presets...")
-    preset_mapping = build_preset_mapping(factory_dir)
-    
+    if os.path.exists(vst_path):
+        print(f"Found Apple DLSMusicDevice at {vst_path}. Using it for realistic General MIDI samples...")
+        use_apple_dls = True
+    else:
+        vst_path = "/Library/Audio/Plug-Ins/VST3/Surge XT.vst3"
+        print(f"Apple DLSMusicDevice not found. Falling back to Surge XT VST3 at {vst_path}...")
+        if not os.path.exists(vst_path):
+            print(f"Error: Surge XT VST3 not found at {vst_path}")
+            sys.exit(1)
+
     # Directories
     samples_dir = "General_MIDI_samples"
     instruments_dir = "General_MIDI_instruments"
     os.makedirs(samples_dir, exist_ok=True)
     os.makedirs(instruments_dir, exist_ok=True)
+
+    backup_files = {}
+    midi_programs_dir = "/Users/password9090/Documents/Surge XT/Patches/MIDI Programs"
     
-    # Configure DawDreamer engine
-    # Using 44100 Hz, 16-bit for lighter and standard General MIDI sizing
-    sr = 44100
-    engine = daw.RenderEngine(sr, 512)
-    synth = engine.make_plugin_processor("synth", vst_path)
-    engine.load_graph([(synth, [])])
-    
-    # 4 standard pitch levels across the keyboard (2 octaves apart)
-    notes_to_sample = [36, 60, 84, 108]  # C2, C4, C6, C8
-    duration = 1.0
-    release = 0.5
-    total_duration = duration + release
-    
-    master_sfz_path = "General_MIDI.sfz"
-    print(f"Writing master SFZ: {master_sfz_path}...")
-    
-    with open(master_sfz_path, "w") as master_f:
-        master_f.write("// General MIDI 128 Instrument Pack\n")
-        master_f.write("// Generated from Surge XT factory presets\n\n")
-        master_f.write("<control>\n")
-        master_f.write(f"default_path={samples_dir}/\n\n")
+    if not use_apple_dls:
+        print("Mapping 128 GM slots to Surge XT presets...")
+        factory_dir = "/Library/Application Support/Surge XT/patches_factory"
+        preset_mapping = build_preset_mapping(factory_dir)
         
+        print("Backing up existing user MIDI Programs...")
+        if os.path.exists(midi_programs_dir):
+            for f in glob.glob(os.path.join(midi_programs_dir, "*")):
+                if os.path.isfile(f):
+                    with open(f, "rb") as src:
+                        backup_files[os.path.basename(f)] = src.read()
+                    os.remove(f)
+        else:
+            os.makedirs(midi_programs_dir, exist_ok=True)
+            
+        print("Copying mapped preset files to user MIDI Programs folder...")
         for i in range(128):
             inst_name = GM_NAMES[i]
-            preset_path = preset_mapping[i]
+            src_preset = preset_mapping[i]
+            dest_preset = os.path.join(midi_programs_dir, f"{i:03d}_{inst_name}.fxp")
+            shutil.copy2(src_preset, dest_preset)
+
+    try:
+        # Configure DawDreamer engine
+        sr = 44100
+        engine = daw.RenderEngine(sr, 512)
+        synth = engine.make_plugin_processor("synth", vst_path)
+        engine.load_graph([(synth, [])])
+        
+        # 4 standard pitch levels across the keyboard (2 octaves apart)
+        notes_to_sample = [36, 60, 84, 108]  # C2, C4, C6, C8
+        duration = 1.0
+        release = 0.5
+        total_duration = duration + release
+        
+        master_sfz_path = "General_MIDI.sfz"
+        print(f"Writing master SFZ: {master_sfz_path}...")
+        
+        with open(master_sfz_path, "w") as master_f:
+            master_f.write("// General MIDI 128 Instrument Pack\n")
+            if use_apple_dls:
+                master_f.write("// Generated from Apple DLSMusicDevice (Roland Sound Canvas samples)\n\n")
+            else:
+                master_f.write("// Generated from Surge XT factory presets\n\n")
+            master_f.write("<control>\n")
+            master_f.write(f"default_path={samples_dir}/\n\n")
             
-            print(f"Sampling [{i:03d}/127] {inst_name} (Preset: {os.path.basename(preset_path)})...")
-            
-            # Load the preset state
-            synth.load_state(preset_path)
-            
-            # Individual instrument SFZ
-            indiv_sfz_path = os.path.join(instruments_dir, f"gm_{i:03d}_{inst_name}.sfz")
-            with open(indiv_sfz_path, "w") as indiv_f:
-                indiv_f.write(f"// GM Program {i}: {inst_name}\n")
-                indiv_f.write(f"default_path=../{samples_dir}/\n\n")
-                indiv_f.write("<group>\n")
+            for i in range(128):
+                inst_name = GM_NAMES[i]
                 
-                master_f.write(f"// GM Program {i}: {inst_name}\n")
-                master_f.write("<group>\n")
-                master_f.write(f"prg_num={i}\n")
+                print(f"Sampling [{i:03d}/127] {inst_name}...")
                 
-                # Sample the 4 notes
-                for idx, note in enumerate(notes_to_sample):
-                    note_name = midi_to_note_name(note)
-                    sample_name = f"gm_{i:03d}_{note_name}.wav"
-                    sample_path = os.path.join(samples_dir, sample_name)
+                # Send MIDI Program Change to load the preset
+                synth.clear_midi()
+                mid = mido.MidiFile()
+                track = mido.MidiTrack()
+                mid.tracks.append(track)
+                track.append(mido.Message('program_change', program=i, time=0))
+                temp_mid_path = "temp_pc_run.mid"
+                mid.save(temp_mid_path)
+                
+                synth.load_midi(temp_mid_path, all_events=True)
+                # DLS Music Device loads instantly; 0.2s is plenty to process the event
+                wait_time = 0.2 if use_apple_dls else 1.5
+                engine.render(wait_time)
+                synth.clear_midi()
+                
+                if os.path.exists(temp_mid_path):
+                    os.remove(temp_mid_path)
+                
+                # Individual instrument SFZ
+                indiv_sfz_path = os.path.join(instruments_dir, f"gm_{i:03d}_{inst_name}.sfz")
+                with open(indiv_sfz_path, "w") as indiv_f:
+                    indiv_f.write(f"// GM Program {i}: {inst_name}\n")
+                    indiv_f.write(f"default_path=../{samples_dir}/\n\n")
+                    indiv_f.write("<group>\n")
                     
-                    # Render note
-                    synth.clear_midi()
-                    synth.add_midi_note(note, 100, 0.0, duration)
-                    engine.render(total_duration)
-                    audio = engine.get_audio()
+                    master_f.write(f"// GM Program {i}: {inst_name}\n")
+                    master_f.write("<group>\n")
+                    master_f.write(f"prg_num={i}\n")
                     
-                    # Save WAV as 16-bit PCM
-                    sf.write(sample_path, audio.T, sr, subtype='PCM_16')
-                    
-                    # Calculate key boundaries
-                    if idx == 0:
-                        lokey = 0
-                    else:
-                        lokey = (notes_to_sample[idx-1] + note) // 2 + 1
+                    # Sample the 4 notes
+                    for idx, note in enumerate(notes_to_sample):
+                        note_name = midi_to_note_name(note)
+                        sample_name = f"gm_{i:03d}_{note_name}.wav"
+                        sample_path = os.path.join(samples_dir, sample_name)
                         
-                    if idx == len(notes_to_sample) - 1:
-                        hikey = 127
-                    else:
-                        hikey = (note + notes_to_sample[idx+1]) // 2
+                        # Render note
+                        synth.clear_midi()
+                        synth.add_midi_note(note, 100, 0.0, duration)
+                        engine.render(total_duration)
+                        audio = engine.get_audio()
+                        # Slice to first 2 channels (stereo) to avoid empty channels from DLSMusicDevice
+                        if audio.shape[0] > 2:
+                            audio = audio[:2]
                         
-                    # Write region to individual SFZ
-                    line = f"<region> sample={sample_name} pitch_keycenter={note} lokey={lokey} hikey={hikey}\n"
-                    indiv_f.write(line)
+                        # Save WAV as 16-bit PCM
+                        sf.write(sample_path, audio.T, sr, subtype='PCM_16')
+                        
+                        # Calculate key boundaries
+                        if idx == 0:
+                            lokey = 0
+                        else:
+                            lokey = (notes_to_sample[idx-1] + note) // 2 + 1
+                            
+                        if idx == len(notes_to_sample) - 1:
+                            hikey = 127
+                        else:
+                            hikey = (note + notes_to_sample[idx+1]) // 2
+                            
+                        # Write region to individual SFZ
+                        line = f"<region> sample={sample_name} pitch_keycenter={note} lokey={lokey} hikey={hikey}\n"
+                        indiv_f.write(line)
+                        
+                        # Write region to master SFZ
+                        master_f.write(line)
+                        
+                    master_f.write("\n")
                     
-                    # Write region to master SFZ
-                    master_f.write(line)
-                    
-                master_f.write("\n")
-                
-    print("\nGeneral MIDI 128 pack rendering complete!")
-    print(f"Master file: {master_sfz_path}")
-    print(f"Individual SFZ files: {instruments_dir}/")
-    print(f"Sample WAV files: {samples_dir}/")
+        print("\nGeneral MIDI 128 pack rendering complete!")
+        print(f"Master file: {master_sfz_path}")
+        print(f"Individual SFZ files: {instruments_dir}/")
+        print(f"Sample WAV files: {samples_dir}/")
+
+    finally:
+        if not use_apple_dls:
+            print("Cleaning up copied MIDI Programs and restoring original files...")
+            # Clear copied presets
+            for f in glob.glob(os.path.join(midi_programs_dir, "*")):
+                if os.path.isfile(f):
+                    os.remove(f)
+            # Restore backup
+            for name, content in backup_files.items():
+                with open(os.path.join(midi_programs_dir, name), "wb") as dest:
+                    dest.write(content)
+            print("Restored original user MIDI Programs.")
 
 if __name__ == "__main__":
     main()
