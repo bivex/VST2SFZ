@@ -252,9 +252,17 @@ def main():
         program = n["program"]
         channel = n["channel"]
 
-        # Channel 10 (index 9) is the GM drum channel.
-        if channel == 9:
-            # Drum channel: use program 0 bank as fallback, lookup by absolute key.
+        # Channel 10 (index 9) is the GM drum channel, but only when no
+        # explicit melodic program_change is set. Heuristic:
+        #   - program 0 on ch9  => standard GM drum kit (key-percussion mapping)
+        #   - program != 0 on ch9 => melodic instrument placed on the drum
+        #     channel (non-standard but valid; e.g. some files put a lead
+        #     voice there). Render it normally via its own program.
+        drum_mode = False
+        if channel == 9 and program == 0:
+            drum_mode = True
+            # Our SFZ bank has no dedicated percussion kit; fall back to
+            # program 0 (Acoustic Grand Piano) regions as the nearest stand-in.
             regions = program_regions.get(0, [])
         else:
             regions = program_regions.get(program, [])
@@ -280,7 +288,12 @@ def main():
         sample_data, sample_sr = sample_cache[sample_file_path]
 
         keycenter = int(region.get("pitch_keycenter", 60))
-        ratio = 2.0 ** ((note - keycenter) / 12.0)
+        # Drum kit: play back at native pitch (no key-based transpose), since
+        # each key is a distinct percussion sound rather than a pitched note.
+        if drum_mode:
+            ratio = 1.0
+        else:
+            ratio = 2.0 ** ((note - keycenter) / 12.0)
         if sample_sr != sr:
             ratio *= (sample_sr / sr)
 
