@@ -66,6 +66,8 @@ def parse_sfz(sfz_path):
             current_group_ops = opcodes
             if "prg_num" in opcodes:
                 current_prg = int(opcodes["prg_num"])
+            elif "loprog" in opcodes:
+                current_prg = int(opcodes["loprog"])
         elif header_name == "region":
             # Region inherits group opcodes, then region opcodes override
             merged = dict(current_group_ops)
@@ -339,7 +341,7 @@ def main():
 
     print(f"Saving WAV output to: {args.output}")
     os.makedirs(os.path.dirname(os.path.abspath(args.output)), exist_ok=True)
-    sf.write(args.output, output_data, sr, subtype='PCM_24')
+    sf.write(args.output, output_data, sr, subtype='FLOAT')
     print("Render complete! Enjoy your audio.")
 
 
