@@ -84,7 +84,7 @@ def parse_midi_file(midi_path):
     print(f"Parsing MIDI file: {midi_path}")
     mid = mido.MidiFile(midi_path)
     notes = []
-    active_notes = {}  # (channel, note) -> (start_time, velocity)
+    active_notes = {}  # (channel, note) -> (start_time, velocity, program)
     channel_programs = {}  # channel -> current program (default 0)
     current_time_sec = 0.0
 

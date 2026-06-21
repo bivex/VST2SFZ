@@ -247,33 +247,39 @@ def main():
         shutil.copy2(src_preset, dest_preset)
 
     try:
-        # Configure DawDreamer engine (24-bit / 96 kHz master resolution)
-        sr = 96000
-        engine = daw.RenderEngine(sr, 512)
-        synth = engine.make_plugin_processor("synth", vst_path)
-        engine.load_graph([(synth, [])])
-        
         # 4 standard pitch levels across the keyboard (2 octaves apart)
         notes_to_sample = [36, 60, 84, 108]  # C2, C4, C6, C8
         duration = 1.0
         release = 0.5
         total_duration = duration + release
-        
+        sr = 96000
+
         master_sfz_path = "General_MIDI.sfz"
         print(f"Writing master SFZ: {master_sfz_path}...")
-        
+
         with open(master_sfz_path, "w") as master_f:
             master_f.write("// General MIDI 128 Instrument Pack\n")
             master_f.write("// Generated from Surge XT factory presets\n\n")
             master_f.write("<control>\n")
             master_f.write(f"default_path={samples_dir}/\n\n")
-            
+
             for i in range(128):
                 inst_name = GM_NAMES[i]
                 preset_path = preset_mapping[i]
-                
+
                 print(f"Sampling [{i:03d}/127] {inst_name} (Preset: {os.path.basename(preset_path)})...")
-                
+
+                # Recreate the DawDreamer engine per instrument. Reusing one
+                # engine across preset switches leaves residual state (release
+                # tails, LFO phases) that, for some presets, lands a note at
+                # exactly the moment their envelope passes through zero —
+                # producing fully silent samples. A fresh engine guarantees the
+                # program_change is the first event the plugin sees, so the
+                # patch settles cleanly before sampling.
+                engine = daw.RenderEngine(sr, 512)
+                synth = engine.make_plugin_processor("synth", vst_path)
+                engine.load_graph([(synth, [])])
+
                 # Switch the active preset via a MIDI program_change event.
                 # Surge XT resolves program `i` to the file copied above.
                 synth.clear_midi()
@@ -293,25 +299,90 @@ def main():
                 indiv_sfz_path = os.path.join(instruments_dir, f"gm_{i:03d}_{inst_name}.sfz")
                 with open(indiv_sfz_path, "w") as indiv_f:
                     indiv_f.write(f"// GM Program {i}: {inst_name}\n")
+                    # <control> header is required so players pick up
+                    # default_path; a bare default_path line outside <control>
+                    # is silently dropped by some parsers (incl. ours).
+                    indiv_f.write("<control>\n")
                     indiv_f.write(f"default_path=../{samples_dir}/\n\n")
                     indiv_f.write("<group>\n")
+                    # prg_num mirrors the master file so the multi-timbral
+                    # renderer keys these regions to the correct program even
+                    # when loading a single-instrument SFZ.
+                    indiv_f.write(f"prg_num={i}\n")
                     
                     master_f.write(f"// GM Program {i}: {inst_name}\n")
                     master_f.write("<group>\n")
                     master_f.write(f"prg_num={i}\n")
                     
-                    # Sample the 4 notes
+                    # Sample the 4 notes. Audio is kept in memory first so that
+                    # any note still silent after the settle-retry can be
+                    # replaced with a neighbor note's audio (the SFZ engine
+                    # transposes via pitch_keycenter, so reusing a neighbor's
+                    # raw file with the silent note's pitch_keycenter plays at
+                    # the right pitch instead of leaving a dead key zone).
+                    rendered_audio = {}  # idx -> audio array
+                    silent_indices = []  # idx of notes that stayed silent
+
                     for idx, note in enumerate(notes_to_sample):
                         note_name = midi_to_note_name(note)
                         sample_name = f"gm_{i:03d}_{note_name}.wav"
                         sample_path = os.path.join(samples_dir, sample_name)
-                        
+
                         # Render note
                         synth.clear_midi()
                         synth.add_midi_note(note, 100, 0.0, duration)
                         engine.render(total_duration)
                         audio = engine.get_audio()
-                        
+
+                        # Detect silent renders (caused by residual plugin state
+                        # colliding with the patch settle). If a note comes out
+                        # silent, retry once with a longer settle render before
+                        # giving up and logging a warning.
+                        if float(np.max(np.abs(audio))) < 0.001:
+                            print(f"  ! silent {note_name}, retrying with longer settle...")
+                            retry_mid = "temp_pc_retry.mid"
+                            synth.clear_midi()
+                            mid2 = mido.MidiFile(); tr2 = mido.MidiTrack(); mid2.tracks.append(tr2)
+                            tr2.append(mido.Message('program_change', program=i, time=0))
+                            mid2.save(retry_mid)
+                            synth.load_midi(retry_mid, all_events=True)
+                            engine.render(3.0)
+                            synth.clear_midi()
+                            if os.path.exists(retry_mid):
+                                os.remove(retry_mid)
+                            synth.add_midi_note(note, 100, 0.0, duration)
+                            engine.render(total_duration)
+                            audio = engine.get_audio()
+                            if float(np.max(np.abs(audio))) < 0.001:
+                                print(f"  !! still silent after retry; will borrow neighbor audio")
+                                silent_indices.append(idx)
+
+                        rendered_audio[idx] = audio
+
+                    # Neighbor-fallback: for any note that stayed silent, borrow
+                    # the closest audible neighbor's audio. The SFZ region keeps
+                    # the silent note's pitch_keycenter, so the engine transposes
+                    # the borrowed sample to the correct pitch.
+                    if silent_indices:
+                        audible = [j for j in range(len(notes_to_sample)) if j not in silent_indices]
+                        if audible:
+                            for sidx in silent_indices:
+                                donor = min(audible, key=lambda j: abs(j - sidx))
+                                rendered_audio[sidx] = rendered_audio[donor]
+                                donor_note = midi_to_note_name(notes_to_sample[donor])
+                                silent_note = midi_to_note_name(notes_to_sample[sidx])
+                                print(f"  ~ borrowed {donor_note} audio for silent {silent_note} "
+                                      f"(pitch_keycenter stays at {silent_note})")
+                        else:
+                            print(f"  !! all 4 notes silent; writing silence (instrument {inst_name} may be broken)")
+
+                    # Persist + map regions
+                    for idx, note in enumerate(notes_to_sample):
+                        note_name = midi_to_note_name(note)
+                        sample_name = f"gm_{i:03d}_{note_name}.wav"
+                        sample_path = os.path.join(samples_dir, sample_name)
+                        audio = rendered_audio[idx]
+
                         # Save WAV as 24-bit PCM
                         sf.write(sample_path, audio.T, sr, subtype='PCM_24')
                         

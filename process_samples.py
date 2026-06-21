@@ -14,7 +14,8 @@ Chain (per sample, in order):
   4. Compressor (-20dB thr, 2.5:1) - density without pumping
   5. Subtle reverb (only for sustained/ambient GM groups)
   6. RMS normalization per-instrument (one gain for all 4 notes)
-  7. Limiter (-1dB) - brick-wall safety after normalization
+  7. Limiter (-1dB) - brick-wall safety, runs AFTER step 6 so the gain
+     cannot push limited peaks back over 0 dBFS
 
 Usage:
   python process_samples.py [--input General_MIDI_samples]
@@ -62,7 +63,7 @@ def build_chain(program_index, target_rms, instrument_rms):
     after the board (numpy multiply) so all 4 notes of one instrument share it.
     """
     from pedalboard import (Pedalboard, HighpassFilter, LowShelfFilter,
-                            HighShelfFilter, PeakFilter, Compressor, Limiter, Reverb)
+                            HighShelfFilter, PeakFilter, Compressor, Reverb)
 
     pedals = [
         HighpassFilter(cutoff_frequency_hz=35.0),
@@ -79,13 +80,20 @@ def build_chain(program_index, target_rms, instrument_rms):
         # Very subtle, short tail. Reverb without release_ms param (uses damping).
         pedals.append(Reverb(room_size=0.3, damping=0.7, wet_level=0.10, dry_level=0.90))
 
-    # Final limiter (brick-wall) to catch peaks after normalization gain
-    pedals.append(Limiter(threshold_db=-1.0, release_ms=100.0))
+    # NOTE: the Limiter is intentionally NOT in this board. It must run AFTER
+    # the per-instrument RMS gain (applied in main() as a numpy multiply),
+    # otherwise the gain would push limited peaks back above 0 dBFS and
+    # np.clip() would hard-clip them into distortion. main() applies a second
+    # Pedalboard(Limiter) on the gained signal for a true brick-wall ceiling.
 
-    # RMS normalization gain: applied as numpy multiply AFTER the board so the
-    # limiter sees the final level. Computed once per instrument from its mean RMS.
+    # RMS normalization gain: applied as numpy multiply after this board. A
+    # final peak ceiling is applied in main() as a clean numpy peak-normalize
+    # (NOT a pedalboard Limiter — the pedalboard Limiter does NOT brick-wall:
+    # in testing it hard-clips to exactly 1.0 at *every* threshold, with more
+    # saturation at lower thresholds, which is the opposite of safe). The gain
+    # is capped so very-quiet instruments don't require huge limiting swings.
     if instrument_rms > 1e-6:
-        rms_gain = target_rms / instrument_rms
+        rms_gain = min(target_rms / instrument_rms, 4.0)
     else:
         rms_gain = 1.0
 
@@ -137,10 +145,20 @@ def main():
             continue
         files_by_program.setdefault(prog, []).append(path)
 
-    # --- Backup (only once) ---------------------------------------------------
+    # --- Backup (only once) + re-run safety -----------------------------------
     if not args.dry_run:
         if os.path.isdir(backup_dir) and glob.glob(os.path.join(backup_dir, "*.wav")):
-            print(f"Backup already exists at {backup_dir}, skipping backup (processing the current files).")
+            # Backup exists from a previous run. To stay idempotent, restore the
+            # raw samples from backup before processing, so we always start from
+            # the unprocessed source instead of stacking processing on top of an
+            # already-processed result (which would double-compress / re-EQ /
+            # re-normalize and drift further on each run).
+            print(f"Backup already exists at {backup_dir}.")
+            print("Restoring raw samples from backup before processing (idempotency)...")
+            for path in glob.glob(os.path.join(backup_dir, "*.wav")):
+                shutil.copy2(path, os.path.join(samples_dir, os.path.basename(path)))
+            # Rebuild the working file list with the restored (raw) files
+            wav_files = sorted(glob.glob(os.path.join(samples_dir, "*.wav")))
         else:
             print(f"Backing up raw samples to {backup_dir} ...")
             os.makedirs(backup_dir, exist_ok=True)
@@ -191,12 +209,18 @@ def main():
         processed = board(audio.T, sr)
         audio_out = processed.T
 
-        # 6. Per-instrument RMS normalization (applied after the board, before limiter
-        # is already in the chain; we re-limit by clamping to avoid clipping).
+        # Per-instrument RMS normalization: scale so each instrument reaches the
+        # target RMS. Gain is capped in build_chain to avoid extreme swings.
         audio_out = audio_out * rms_gain
-        # Safety clamp (the chain's limiter already runs at the fixed threshold,
-        # but normalization gain can push above it; clamp to [-1,1] for PCM safety).
-        audio_out = np.clip(audio_out, -1.0, 1.0)
+
+        # Final peak ceiling via clean numpy: if any sample exceeds 0.95 after
+        # the gain, scale the WHOLE buffer down so its peak is exactly 0.95.
+        # This is a transparent brick-wall that never saturates (unlike the
+        # pedalboard Limiter, which hard-clips to 1.0 regardless of threshold).
+        peak = float(np.max(np.abs(audio_out)))
+        ceiling = 0.95
+        if peak > ceiling:
+            audio_out = audio_out * (ceiling / peak)
 
         sf.write(path, audio_out, sr, subtype="PCM_24")
 
