@@ -233,8 +233,8 @@ def main():
             shutil.copy2(src_preset, dest_preset)
 
     try:
-        # Configure DawDreamer engine
-        sr = 44100
+        # Configure DawDreamer engine (24-bit / 96 kHz master resolution)
+        sr = 96000
         engine = daw.RenderEngine(sr, 512)
         synth = engine.make_plugin_processor("synth", vst_path)
         engine.load_graph([(synth, [])])
@@ -306,8 +306,8 @@ def main():
                         if audio.shape[0] > 2:
                             audio = audio[:2]
                         
-                        # Save WAV as 16-bit PCM
-                        sf.write(sample_path, audio.T, sr, subtype='PCM_16')
+                        # Save WAV as 24-bit PCM
+                        sf.write(sample_path, audio.T, sr, subtype='PCM_24')
                         
                         # Calculate key boundaries
                         if idx == 0:

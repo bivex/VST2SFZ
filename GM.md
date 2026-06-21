@@ -4,7 +4,7 @@ This document details the task of generating a full General MIDI (128 instrument
 
 ## 1. Overview & Objective
 The goal is to produce a high-compatibility, lightweight, and authentic General MIDI (128 instruments) sample library in SFZ format. 
-Each instrument is sampled at 4 pitch levels across the keyboard range (C2, C4, C6, C8 / MIDI 36, 60, 84, 108) with high-quality 16-bit stereo `.wav` files.
+Each instrument is sampled at 4 pitch levels across the keyboard range (C2, C4, C6, C8 / MIDI 36, 60, 84, 108) with high-quality 24-bit stereo `.wav` files at 96 kHz.
 
 ---
 
@@ -35,7 +35,7 @@ The script [sample_gm_pack.py](file:///Volumes/External/Code/VST2SFZ/sample_gm_p
 3. **Note Sampling:** Renders notes C2, C4, C6, and C8 at a velocity of 100:
    * Duration: 1.0 second hold, 0.5 seconds release (1.5 seconds total).
    * **Stereo Slicing:** Slices the output of the plugin to the first 2 channels (`audio[:2]`) because DLSMusicDevice outputs 4 channels by default (with the last 2 being empty).
-   * **Format:** Saves the audio as a standard 16-bit stereo PCM WAV file.
+   * **Format:** Saves the audio as a standard 24-bit stereo PCM WAV file at 96 kHz.
 4. **SFZ Mapping:** 
    * Generates individual `.sfz` files for each instrument under [General_MIDI_instruments/](file:///Volumes/External/Code/VST2SFZ/General_MIDI_instruments/).
    * Appends the regions mapped by key range to the master [General_MIDI.sfz](file:///Volumes/External/Code/VST2SFZ/General_MIDI.sfz) file, using `prg_num` to select the patch in multi-timbral samplers.
@@ -85,7 +85,7 @@ Running `sample_gm_pack.py` produces three coordinated outputs in one pass:
 |----------|------:|-------------|
 | `General_MIDI.sfz` | 1 | Master file — 128 `<group>` blocks, each with `prg_num=i` and 4 key-zoned `<region>`s |
 | `General_MIDI_instruments/gm_###_*.sfz` | 128 | One SFZ per instrument (standalone loadable, `default_path=../General_MIDI_samples/`) |
-| `General_MIDI_samples/gm_###_*.wav` | 512 | 4 notes (C2/C4/C6/C8) per instrument, 16-bit stereo PCM, 1.5s |
+| `General_MIDI_samples/gm_###_*.wav` | 512 | 4 notes (C2/C4/C6/C8) per instrument, 24-bit stereo PCM, 96 kHz, 1.5s |
 
 ### Sample naming convention
 ```
