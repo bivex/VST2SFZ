@@ -1,0 +1,8 @@
+// GM Program 69: english_horn
+default_path=../General_MIDI_samples/
+
+<group>
+<region> sample=gm_069_C2.wav pitch_keycenter=36 lokey=0 hikey=48
+<region> sample=gm_069_C4.wav pitch_keycenter=60 lokey=49 hikey=72
+<region> sample=gm_069_C6.wav pitch_keycenter=84 lokey=73 hikey=96
+<region> sample=gm_069_C8.wav pitch_keycenter=108 lokey=97 hikey=127
