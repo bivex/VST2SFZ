@@ -191,6 +191,11 @@ def main():
         prog = program_from_name(os.path.basename(path))
         if prog is None:
             continue
+        if 32 <= prog <= 39:
+            # Skip studio processing for bass instruments to preserve full low-end power.
+            # Copy the raw sample directly from backup to the active sample dir.
+            shutil.copy2(os.path.join(backup_dir, os.path.basename(path)), path)
+            continue
         if idx % 50 == 0 or idx == len(wav_files) - 1:
             print(f"  [{idx+1}/{len(wav_files)}] {os.path.basename(path)}")
 
