@@ -29,14 +29,7 @@ GM_NAMES = [
 ]
 
 def build_preset_mapping(factory_dir):
-    """Map each of the 128 GM instruments to an explicit Surge XT factory preset.
-
-    Each GM program slot (0-127) is hand-matched to a single, unique factory
-    preset under factory_dir. This replaces the earlier fuzzy keyword matcher,
-    which could assign arbitrary "first unused" presets when no good keyword
-    match was found. Every entry is validated at load time, so a missing or
-    renamed preset fails loudly instead of silently degrading the pack.
-    """
+    """Map each of the 128 GM instruments to an explicit Surge XT factory preset."""
     # GM program index -> relative preset path under factory_dir.
     explicit = {
         # 0-7: Pianos
@@ -57,7 +50,7 @@ def build_preset_mapping(factory_dir):
          13: 'Plucks/Tinker.fxp',               # Xylophone
          14: 'Plucks/Belle.fxp',                # Tubular Bells
          15: 'Plucks/Metallic.fxp',             # Dulcimer
-        # 16-23: Organs
+        # 16-23: Organs & Accordions
          16: 'Keys/Organ 1.fxp',                # Drawbar Organ
          17: 'Keys/Organ 2.fxp',                # Percussive Organ
          18: 'Keys/Organ 3.fxp',                # Rock Organ
@@ -65,7 +58,7 @@ def build_preset_mapping(factory_dir):
          20: 'Keys/House Organ.fxp',            # Reed Organ
          21: 'Keys/Circus 1.fxp',               # Accordion
          22: 'Keys/Circus 2.fxp',               # Harmonica
-         23: 'Keys/Soft Suitcase.fxp',          # Tango Accordion
+         23: 'Keys/Circus 1.fxp',               # Tango Accordion (Fixed: Rhodes EP -> Accordion)
         # 24-31: Guitars
          24: 'Plucks/Guitar.fxp',               # Acoustic Guitar Nylon
          25: 'Plucks/Magical Guitar.fxp',       # Acoustic Guitar Steel
@@ -83,7 +76,7 @@ def build_preset_mapping(factory_dir):
          36: 'Basses/FM Slap.fxp',              # Slap Bass 1
          37: 'Basses/Bass 3.fxp',               # Slap Bass 2
          38: 'Basses/Lord Sawtooth.fxp',        # Synth Bass 1
-         39: 'Basses/Saw Lo-Fi.fxp',            # Synth Bass 2
+         39: 'Basses/Sub 1.fxp',                # Synth Bass 2 (Fixed: Saw Lo-Fi -> Pure Sub Bass)
         # 40-47: Strings
          40: 'Polysynths/Violini Poly.fxp',     # Violin
          41: 'Pads/Subtle Comb Strings.fxp',    # Viola
@@ -200,10 +193,6 @@ def midi_to_note_name(midi_num):
     return f"{notes[note_index]}{octave}"
 
 def main():
-    # Use Surge XT as the sole sound engine, driven by explicitly-mapped
-    # factory presets (one per GM instrument). Presets are loaded directly
-    # via load_state, which is more reliable than the program_change-over-MIDI
-    # approach and needs no user patch library manipulation.
     vst_path = "/Library/Audio/Plug-Ins/VST3/Surge XT.vst3"
     if not os.path.exists(vst_path):
         print(f"Error: Surge XT VST3 not found at {vst_path}")
@@ -220,13 +209,6 @@ def main():
     factory_dir = "/Library/Application Support/Surge XT/patches_factory"
     preset_mapping = build_preset_mapping(factory_dir)
 
-    # Surge XT loads user presets by MIDI program number from its user patch
-    # library (~/Documents/Surge XT/Patches/MIDI Programs). To select a preset
-    # we copy each mapped factory preset into that folder as program slot `i`
-    # and then switch via a MIDI program_change event. load_state() does NOT
-    # reliably switch the active patch in DawDreamer, so this MIDI-based path
-    # is required. We back up any existing user presets and restore them when
-    # done so the user's library is left untouched.
     midi_programs_dir = os.path.expanduser("~/Documents/Surge XT/Patches/MIDI Programs")
     backup_files = {}
     print("Backing up existing user MIDI Programs...")
@@ -247,169 +229,171 @@ def main():
         shutil.copy2(src_preset, dest_preset)
 
     try:
-        # 4 standard pitch levels across the keyboard (2 octaves apart)
-        notes_to_sample = [36, 60, 84, 108]  # C2, C4, C6, C8
+        # 7 key zones (every octave C2 to C8) and 2 velocity layers (64: Soft, 127: Hard)
+        notes_to_sample = [36, 48, 60, 72, 84, 96, 108]  # C2, C3, C4, C5, C6, C7, C8
+        velocities_to_sample = [64, 127]
+        vel_ranges = [(0, 80), (81, 127)]
+        
         duration = 1.0
         release = 0.5
         total_duration = duration + release
         sr = 96000
 
+        # Master SFZ files paths
         master_sfz_path = "General_MIDI.sfz"
-        print(f"Writing master SFZ: {master_sfz_path}...")
+        sfizz_sfz_path = "General_MIDI_sfizz.sfz"
+        sfizz_proc_sfz_path = "General_MIDI_sfizz_processed.sfz"
 
-        with open(master_sfz_path, "w") as master_f:
-            master_f.write("// General MIDI 128 Instrument Pack\n")
-            master_f.write("// Generated from Surge XT factory presets\n\n")
-            master_f.write("<control>\n")
-            master_f.write(f"default_path={samples_dir}/\n\n")
+        print("Opening master SFZ files...")
+        master_f = open(master_sfz_path, "w")
+        sfizz_sfz_f = open(sfizz_sfz_path, "w")
+        sfizz_proc_f = open(sfizz_proc_sfz_path, "w")
 
-            for i in range(128):
-                inst_name = GM_NAMES[i]
-                preset_path = preset_mapping[i]
+        # Write headers
+        for f, is_sfizz, is_proc in [(master_f, False, False), (sfizz_sfz_f, True, False), (sfizz_proc_f, True, True)]:
+            f.write(f"// General MIDI 128 Instrument Pack {'- sfizz variant' if is_sfizz else ''}\n")
+            f.write("// Generated from Surge XT factory presets (2 Velocity Layers, 7 Key Zones)\n\n")
+            f.write("<control>\n")
+            if not is_sfizz:
+                f.write(f"default_path={samples_dir}/\n")
+            f.write("\n")
 
-                print(f"Sampling [{i:03d}/127] {inst_name} (Preset: {os.path.basename(preset_path)})...")
+        for i in range(128):
+            inst_name = GM_NAMES[i]
+            preset_path = preset_mapping[i]
 
-                # Recreate the DawDreamer engine per instrument. Reusing one
-                # engine across preset switches leaves residual state (release
-                # tails, LFO phases) that, for some presets, lands a note at
-                # exactly the moment their envelope passes through zero —
-                # producing fully silent samples. A fresh engine guarantees the
-                # program_change is the first event the plugin sees, so the
-                # patch settles cleanly before sampling.
-                engine = daw.RenderEngine(sr, 512)
-                synth = engine.make_plugin_processor("synth", vst_path)
-                engine.load_graph([(synth, [])])
+            print(f"Sampling [{i:03d}/127] {inst_name} (Preset: {os.path.basename(preset_path)})...")
 
-                # Switch the active preset via a MIDI program_change event.
-                # Surge XT resolves program `i` to the file copied above.
-                synth.clear_midi()
-                mid = mido.MidiFile()
-                track = mido.MidiTrack()
-                mid.tracks.append(track)
-                track.append(mido.Message('program_change', program=i, time=0))
-                temp_mid_path = "temp_pc_run.mid"
-                mid.save(temp_mid_path)
-                synth.load_midi(temp_mid_path, all_events=True)
-                engine.render(1.5)  # let the patch change settle
-                synth.clear_midi()
-                if os.path.exists(temp_mid_path):
-                    os.remove(temp_mid_path)
-                
-                # Individual instrument SFZ
-                indiv_sfz_path = os.path.join(instruments_dir, f"gm_{i:03d}_{inst_name}.sfz")
-                with open(indiv_sfz_path, "w") as indiv_f:
-                    indiv_f.write(f"// GM Program {i}: {inst_name}\n")
-                    # <control> header is required so players pick up
-                    # default_path; a bare default_path line outside <control>
-                    # is silently dropped by some parsers (incl. ours).
-                    indiv_f.write("<control>\n")
-                    indiv_f.write(f"default_path=../{samples_dir}/\n\n")
-                    indiv_f.write("<group>\n")
-                    # prg_num mirrors the master file so the multi-timbral
-                    # renderer keys these regions to the correct program even
-                    # when loading a single-instrument SFZ.
-                    indiv_f.write(f"prg_num={i}\n")
+            engine = daw.RenderEngine(sr, 512)
+            synth = engine.make_plugin_processor("synth", vst_path)
+            engine.load_graph([(synth, [])])
+
+            # Switch preset
+            synth.clear_midi()
+            mid = mido.MidiFile()
+            track = mido.MidiTrack()
+            mid.tracks.append(track)
+            track.append(mido.Message('program_change', program=i, time=0))
+            temp_mid_path = "temp_pc_run.mid"
+            mid.save(temp_mid_path)
+            synth.load_midi(temp_mid_path, all_events=True)
+            engine.render(1.5)
+            synth.clear_midi()
+            if os.path.exists(temp_mid_path):
+                os.remove(temp_mid_path)
+            
+            # Individual instrument SFZ file
+            indiv_sfz_path = os.path.join(instruments_dir, f"gm_{i:03d}_{inst_name}.sfz")
+            indiv_f = open(indiv_sfz_path, "w")
+            indiv_f.write(f"// GM Program {i}: {inst_name}\n")
+            indiv_f.write("<control>\n")
+            indiv_f.write(f"default_path=../{samples_dir}/\n\n")
+
+            # Write groups to all file descriptors
+            indiv_f.write(f"<group>\nprg_num={i}\n")
+            master_f.write(f"<group>\nprg_num={i}\n")
+            sfizz_sfz_f.write(f"<group>\nloprog={i} hiprog={i}\n")
+            sfizz_proc_f.write(f"<group>\nloprog={i} hiprog={i}\n")
+
+            rendered_audio = {}  # (idx, v_idx) -> audio
+
+            for idx, note in enumerate(notes_to_sample):
+                for v_idx, vel in enumerate(velocities_to_sample):
+                    note_name = midi_to_note_name(note)
                     
-                    master_f.write(f"// GM Program {i}: {inst_name}\n")
-                    master_f.write("<group>\n")
-                    master_f.write(f"prg_num={i}\n")
-                    
-                    # Sample the 4 notes. Audio is kept in memory first so that
-                    # any note still silent after the settle-retry can be
-                    # replaced with a neighbor note's audio (the SFZ engine
-                    # transposes via pitch_keycenter, so reusing a neighbor's
-                    # raw file with the silent note's pitch_keycenter plays at
-                    # the right pitch instead of leaving a dead key zone).
-                    rendered_audio = {}  # idx -> audio array
-                    silent_indices = []  # idx of notes that stayed silent
+                    # Render note
+                    synth.clear_midi()
+                    synth.add_midi_note(note, vel, 0.0, duration)
+                    engine.render(total_duration)
+                    audio = engine.get_audio()
 
-                    for idx, note in enumerate(notes_to_sample):
-                        note_name = midi_to_note_name(note)
-                        sample_name = f"gm_{i:03d}_{note_name}.wav"
-                        sample_path = os.path.join(samples_dir, sample_name)
-
-                        # Render note
+                    # Silent check & Settle-Retry
+                    if float(np.max(np.abs(audio))) < 0.001:
+                        print(f"  ! silent {note_name} v{vel}, retrying with longer settle...")
+                        retry_mid = "temp_pc_retry.mid"
                         synth.clear_midi()
-                        synth.add_midi_note(note, 100, 0.0, duration)
+                        mid2 = mido.MidiFile(); tr2 = mido.MidiTrack(); mid2.tracks.append(tr2)
+                        tr2.append(mido.Message('program_change', program=i, time=0))
+                        mid2.save(retry_mid)
+                        synth.load_midi(retry_mid, all_events=True)
+                        engine.render(3.0)
+                        synth.clear_midi()
+                        if os.path.exists(retry_mid):
+                            os.remove(retry_mid)
+                        synth.add_midi_note(note, vel, 0.0, duration)
                         engine.render(total_duration)
                         audio = engine.get_audio()
 
-                        # Detect silent renders (caused by residual plugin state
-                        # colliding with the patch settle). If a note comes out
-                        # silent, retry once with a longer settle render before
-                        # giving up and logging a warning.
-                        if float(np.max(np.abs(audio))) < 0.001:
-                            print(f"  ! silent {note_name}, retrying with longer settle...")
-                            retry_mid = "temp_pc_retry.mid"
-                            synth.clear_midi()
-                            mid2 = mido.MidiFile(); tr2 = mido.MidiTrack(); mid2.tracks.append(tr2)
-                            tr2.append(mido.Message('program_change', program=i, time=0))
-                            mid2.save(retry_mid)
-                            synth.load_midi(retry_mid, all_events=True)
-                            engine.render(3.0)
-                            synth.clear_midi()
-                            if os.path.exists(retry_mid):
-                                os.remove(retry_mid)
-                            synth.add_midi_note(note, 100, 0.0, duration)
-                            engine.render(total_duration)
-                            audio = engine.get_audio()
-                            if float(np.max(np.abs(audio))) < 0.001:
-                                print(f"  !! still silent after retry; will borrow neighbor audio")
-                                silent_indices.append(idx)
+                    # Reshape to (samples, channels)
+                    if audio.ndim == 1:
+                        audio = np.column_stack((audio, audio))
+                    elif audio.shape[0] == 2:
+                        audio = audio.T
 
-                        rendered_audio[idx] = audio
+                    rendered_audio[(idx, v_idx)] = audio
 
-                    # Neighbor-fallback: for any note that stayed silent, borrow
-                    # the closest audible neighbor's audio. The SFZ region keeps
-                    # the silent note's pitch_keycenter, so the engine transposes
-                    # the borrowed sample to the correct pitch.
-                    if silent_indices:
-                        audible = [j for j in range(len(notes_to_sample)) if j not in silent_indices]
-                        if audible:
-                            for sidx in silent_indices:
-                                donor = min(audible, key=lambda j: abs(j - sidx))
-                                rendered_audio[sidx] = rendered_audio[donor]
-                                donor_note = midi_to_note_name(notes_to_sample[donor])
-                                silent_note = midi_to_note_name(notes_to_sample[sidx])
-                                print(f"  ~ borrowed {donor_note} audio for silent {silent_note} "
-                                      f"(pitch_keycenter stays at {silent_note})")
-                        else:
-                            print(f"  !! all 4 notes silent; writing silence (instrument {inst_name} may be broken)")
+            # Neighbor fallback per velocity layer
+            for v_idx, vel in enumerate(velocities_to_sample):
+                silent_indices = [idx for idx in range(len(notes_to_sample)) if float(np.max(np.abs(rendered_audio[(idx, v_idx)]))) < 0.001]
+                audible = [idx for idx in range(len(notes_to_sample)) if idx not in silent_indices]
+                if silent_indices:
+                    if audible:
+                        for sidx in silent_indices:
+                            donor = min(audible, key=lambda j: abs(j - sidx))
+                            rendered_audio[(sidx, v_idx)] = rendered_audio[(donor, v_idx)]
+                            donor_note = midi_to_note_name(notes_to_sample[donor])
+                            silent_note = midi_to_note_name(notes_to_sample[sidx])
+                            print(f"  ~ borrowed {donor_note} v{vel} audio for silent {silent_note}")
+                    else:
+                        print(f"  !! all notes silent for velocity {vel} (instrument {inst_name} may be broken)")
 
-                    # Persist + map regions
-                    for idx, note in enumerate(notes_to_sample):
-                        note_name = midi_to_note_name(note)
-                        sample_name = f"gm_{i:03d}_{note_name}.wav"
-                        sample_path = os.path.join(samples_dir, sample_name)
-                        audio = rendered_audio[idx]
-
-                        # Save WAV as 24-bit PCM
-                        sf.write(sample_path, audio.T, sr, subtype='PCM_24')
-                        
-                        # Calculate key boundaries
-                        if idx == 0:
-                            lokey = 0
-                        else:
-                            lokey = (notes_to_sample[idx-1] + note) // 2 + 1
-                            
-                        if idx == len(notes_to_sample) - 1:
-                            hikey = 127
-                        else:
-                            hikey = (note + notes_to_sample[idx+1]) // 2
-                            
-                        # Write region to individual SFZ
-                        line = f"<region> sample={sample_name} pitch_keycenter={note} lokey={lokey} hikey={hikey}\n"
-                        indiv_f.write(line)
-                        
-                        # Write region to master SFZ
-                        master_f.write(line)
-                        
-                    master_f.write("\n")
+            # Persist + map regions
+            for idx, note in enumerate(notes_to_sample):
+                # Calculate key boundaries
+                if idx == 0:
+                    lokey = 0
+                else:
+                    lokey = (notes_to_sample[idx-1] + note) // 2 + 1
                     
+                if idx == len(notes_to_sample) - 1:
+                    hikey = 127
+                else:
+                    hikey = (note + notes_to_sample[idx+1]) // 2
+
+                for v_idx, vel in enumerate(velocities_to_sample):
+                    lovel, hivel = vel_ranges[v_idx]
+                    note_name = midi_to_note_name(note)
+                    sample_name = f"gm_{i:03d}_{note_name}_v{vel}.wav"
+                    sample_path = os.path.join(samples_dir, sample_name)
+                    audio = rendered_audio[(idx, v_idx)]
+
+                    # Save WAV as 24-bit PCM
+                    sf.write(sample_path, audio, sr, subtype='PCM_24')
+
+                    # Write regions
+                    line_indiv = f"<region> sample={sample_name} pitch_keycenter={note} lokey={lokey} hikey={hikey} lovel={lovel} hivel={hivel}\n"
+                    line_master = f"<region> sample={sample_name} pitch_keycenter={note} lokey={lokey} hikey={hikey} lovel={lovel} hivel={hivel}\n"
+                    line_sfizz_raw = f"<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/{sample_name} pitch_keycenter={note} lokey={lokey} hikey={hikey} lovel={lovel} hivel={hivel}\n"
+                    line_sfizz_proc = f"<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/{sample_name} pitch_keycenter={note} lokey={lokey} hikey={hikey} lovel={lovel} hivel={hivel}\n"
+                    
+                    indiv_f.write(line_indiv)
+                    master_f.write(line_master)
+                    sfizz_sfz_f.write(line_sfizz_raw)
+                    sfizz_proc_f.write(line_sfizz_proc)
+
+            indiv_f.close()
+            master_f.write("\n")
+            sfizz_sfz_f.write("\n")
+            sfizz_proc_f.write("\n")
+
+        master_f.close()
+        sfizz_sfz_f.close()
+        sfizz_proc_f.close()
+
         print("\nGeneral MIDI 128 pack rendering complete!")
         print(f"Master file: {master_sfz_path}")
-        print(f"Individual SFZ files: {instruments_dir}/")
-        print(f"Sample WAV files: {samples_dir}/")
+        print(f"Sfizz file: {sfizz_sfz_path}")
+        print(f"Sfizz processed file: {sfizz_proc_sfz_path}")
 
     finally:
         print("Cleaning up copied MIDI Programs and restoring original files...")
