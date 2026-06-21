@@ -3,6 +3,6 @@ default_path=../General_MIDI_samples/
 
 <group>
 <region> sample=gm_031_C2.wav pitch_keycenter=-12 lokey=0 hikey=48
-<region> sample=gm_031_C4.wav pitch_keycenter=12 lokey=49 hikey=72
+<region> sample=gm_031_C4.wav pitch_keycenter=120 lokey=49 hikey=72
 <region> sample=gm_031_C6.wav pitch_keycenter=36 lokey=73 hikey=96
 <region> sample=gm_031_C8.wav pitch_keycenter=60 lokey=97 hikey=127

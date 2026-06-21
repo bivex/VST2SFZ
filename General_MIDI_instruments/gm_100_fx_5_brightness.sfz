@@ -2,7 +2,7 @@
 default_path=../General_MIDI_samples/
 
 <group>
-<region> sample=gm_100_C2.wav pitch_keycenter=0 lokey=0 hikey=48
-<region> sample=gm_100_C4.wav pitch_keycenter=24 lokey=49 hikey=72
-<region> sample=gm_100_C6.wav pitch_keycenter=48 lokey=73 hikey=96
-<region> sample=gm_100_C8.wav pitch_keycenter=72 lokey=97 hikey=127
+<region> sample=gm_100_C2.wav pitch_keycenter=31 lokey=0 hikey=48
+<region> sample=gm_100_C4.wav pitch_keycenter=55 lokey=49 hikey=72
+<region> sample=gm_100_C6.wav pitch_keycenter=79 lokey=73 hikey=96
+<region> sample=gm_100_C8.wav pitch_keycenter=103 lokey=97 hikey=127
