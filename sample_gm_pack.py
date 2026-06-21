@@ -31,153 +31,168 @@ GM_NAMES = [
 ]
 
 def build_preset_mapping(factory_dir):
-    # Walk factory directory to collect all available .fxp presets
-    all_presets = {}
-    for root, dirs, files in os.walk(factory_dir):
-        for file in files:
-            if file.endswith('.fxp'):
-                fld = os.path.basename(root)
-                all_presets[os.path.join(fld, file)] = os.path.join(root, file)
+    """Map each of the 128 GM instruments to an explicit Surge XT factory preset.
 
-    mapping = {}
-    used = set()
-
-    def find_unique_preset(keywords, preferred_folders):
-        # Try keywords in preferred folders
-        for kw in keywords:
-            for f, path in all_presets.items():
-                if path in used:
-                    continue
-                fld = os.path.basename(os.path.dirname(path)).lower()
-                if fld in [pf.lower() for pf in preferred_folders] and kw.lower() in f.lower():
-                    used.add(path)
-                    return path
-
-        # Try keywords globally
-        for kw in keywords:
-            for f, path in all_presets.items():
-                if path in used:
-                    continue
-                if kw.lower() in f.lower():
-                    used.add(path)
-                    return path
-
-        # Fallback to preferred folders (first unused)
-        for f, path in all_presets.items():
-            if path in used:
-                continue
-            fld = os.path.basename(os.path.dirname(path)).lower()
-            if fld in [pf.lower() for pf in preferred_folders]:
-                used.add(path)
-                return path
-
-        # Global fallback (first unused anywhere)
-        for f, path in all_presets.items():
-            if path not in used:
-                used.add(path)
-                return path
-
-        return None
-
-    # Explicit hand-picked presets for critical instruments
-    explicit_presets = {
-        0: 'Plucks/Piano Remains 1.fxp', # Acoustic Grand Piano
-        1: 'Plucks/Piano Remains 2.fxp', # Bright Acoustic Piano
-        2: 'Keys/Artificial 1.fxp',      # Electric Grand Piano
-        3: 'Keys/Experiment.fxp',        # Honky-Tonk Piano
-        4: 'Keys/EP 1.fxp',              # Electric Piano 1
-        5: 'Keys/DX EP.fxp',             # Electric Piano 2
-        6: 'Keys/Digi Harpsi.fxp',       # Harpsichord
-        7: 'Keys/Dirt.fxp',              # Clavinet
-        10: 'Plucks/Magic Music Box.fxp',# Music Box
-        16: 'Keys/Organ 1.fxp',          # Drawbar Organ
-        17: 'Keys/Organ 2.fxp',          # Percussive Organ
-        18: 'Keys/Organ 3.fxp',          # Rock Organ
-        19: 'Keys/Church.fxp',           # Church Organ
-        32: 'Basses/Wide Bassline.fxp',  # Acoustic Bass
-        33: 'Basses/Fingered.fxp',       # Electric Bass (finger)
-        34: 'Basses/Bass 1.fxp',         # Electric Bass (pick)
-        35: 'Basses/Bass 2.fxp',         # Fretless Bass
-        36: 'Basses/FM Slap.fxp',        # Slap Bass 1
-        37: 'Basses/Bass 3.fxp',         # Slap Bass 2
-        38: 'Basses/Lord Sawtooth.fxp',  # Synth Bass 1
-        39: 'Basses/Saw Lo-Fi.fxp',      # Synth Bass 2
-        40: 'Polysynths/Violini Poly.fxp', # Violin
-        41: 'Pads/Subtle Comb Strings.fxp', # Viola
-        48: 'Polysynths/Juno-60 Strings.fxp', # String Ensemble 1
-        49: 'Pads/Choir Pad Thing.fxp',   # String Ensemble 2
-        52: 'Pads/Retro Choir.fxp',       # Choir Aahs
-        53: 'Pads/Robochoir 1.fxp',       # Voice Oohs
-        54: 'Pads/Robochoir 2.fxp',       # Synth Voice
-        56: 'Brass/Reso Brassy.fxp',
-        57: 'Brass/Buggy Brass.fxp',
-        58: 'Brass/Crisp Noise Brass.fxp',
-        59: 'Brass/JX-10 Double Brass.fxp',
-        60: 'Brass/Plastic Brass.fxp',
-        61: 'Brass/Toto Brass.fxp',
-        62: 'Brass/Synth Brass 1.fxp',
-        63: 'Brass/Synth Brass 2.fxp',
-        71: 'Winds/Clarinet.fxp',
-        73: 'Winds/Flute 1.fxp',
-        74: 'Winds/Flute 2.fxp',
-        75: 'Winds/Dreamy Flute.fxp',
-        80: 'Leads/Square.fxp',          # Lead 1 (square)
-        81: 'Leads/Moogy Saw.fxp',       # Lead 2 (sawtooth)
+    Each GM program slot (0-127) is hand-matched to a single, unique factory
+    preset under factory_dir. This replaces the earlier fuzzy keyword matcher,
+    which could assign arbitrary "first unused" presets when no good keyword
+    match was found. Every entry is validated at load time, so a missing or
+    renamed preset fails loudly instead of silently degrading the pack.
+    """
+    # GM program index -> relative preset path under factory_dir.
+    explicit = {
+        # 0-7: Pianos
+          0: 'Plucks/Piano Remains 1.fxp',      # Acoustic Grand Piano
+          1: 'Keys/Artificial 2.fxp',           # Bright Acoustic Piano
+          2: 'Keys/Artificial 1.fxp',           # Electric Grand Piano
+          3: 'Keys/Experiment.fxp',             # Honky-Tonk Piano
+          4: 'Keys/EP 1.fxp',                   # Electric Piano 1
+          5: 'Keys/DX EP.fxp',                  # Electric Piano 2
+          6: 'Keys/Digi Harpsi.fxp',            # Harpsichord
+          7: 'Keys/Dirt.fxp',                   # Clavinet
+        # 8-15: Chromatic Percussion
+          8: 'Plucks/Bell 1.fxp',               # Celesta
+          9: 'Plucks/Bell 2.fxp',               # Glockenspiel
+         10: 'Plucks/Magic Music Box.fxp',      # Music Box
+         11: 'Plucks/Fantasy Bell.fxp',         # Vibraphone
+         12: 'Plucks/Woody.fxp',                # Marimba
+         13: 'Plucks/Tinker.fxp',               # Xylophone
+         14: 'Plucks/Belle.fxp',                # Tubular Bells
+         15: 'Plucks/Metallic.fxp',             # Dulcimer
+        # 16-23: Organs
+         16: 'Keys/Organ 1.fxp',                # Drawbar Organ
+         17: 'Keys/Organ 2.fxp',                # Percussive Organ
+         18: 'Keys/Organ 3.fxp',                # Rock Organ
+         19: 'Keys/Church.fxp',                 # Church Organ
+         20: 'Keys/House Organ.fxp',            # Reed Organ
+         21: 'Keys/Circus 1.fxp',               # Accordion
+         22: 'Keys/Circus 2.fxp',               # Harmonica
+         23: 'Keys/Soft Suitcase.fxp',          # Tango Accordion
+        # 24-31: Guitars
+         24: 'Plucks/Guitar.fxp',               # Acoustic Guitar Nylon
+         25: 'Plucks/Magical Guitar.fxp',       # Acoustic Guitar Steel
+         26: 'Plucks/Clean.fxp',                # Electric Guitar Jazz
+         27: 'Plucks/E-Guitar.fxp',             # Electric Guitar Clean
+         28: 'Plucks/Ambient E-Guitar.fxp',     # Electric Guitar Muted
+         29: 'Leads/Synth Guitar 1.fxp',        # Overdriven Guitar
+         30: 'Leads/Synth Guitar 2.fxp',        # Distorted Guitar
+         31: 'Plucks/Harmonics 1.fxp',          # Guitar Harmonics
+        # 32-39: Basses
+         32: 'Basses/Wide Bassline.fxp',        # Acoustic Bass
+         33: 'Basses/Fingered.fxp',             # Electric Bass (finger)
+         34: 'Basses/Bass 1.fxp',               # Electric Bass (pick)
+         35: 'Basses/Bass 2.fxp',               # Fretless Bass
+         36: 'Basses/FM Slap.fxp',              # Slap Bass 1
+         37: 'Basses/Bass 3.fxp',               # Slap Bass 2
+         38: 'Basses/Lord Sawtooth.fxp',        # Synth Bass 1
+         39: 'Basses/Saw Lo-Fi.fxp',            # Synth Bass 2
+        # 40-47: Strings
+         40: 'Polysynths/Violini Poly.fxp',     # Violin
+         41: 'Pads/Subtle Comb Strings.fxp',    # Viola
+         42: 'Polysynths/Anthemish 1.fxp',      # Cello
+         43: 'Basses/Deep End.fxp',             # Contrabass
+         44: 'Polysynths/Anthemish 2.fxp',      # Tremolo Strings
+         45: 'Plucks/Comb Pluck.fxp',           # Pizzicato Strings
+         46: 'Plucks/Simple Waveguide.fxp',     # Orchestral Harp
+         47: 'Percussion/Synth Tom 1.fxp',      # Timpani
+        # 48-55: Ensemble
+         48: 'Polysynths/Juno-60 Strings.fxp',  # String Ensemble 1
+         49: 'Pads/Sawteeth.fxp',               # String Ensemble 2
+         50: 'Polysynths/Notched Saws.fxp',     # Synth Strings 1
+         51: 'Pads/Harsh Saw.fxp',              # Synth Strings 2
+         52: 'Pads/Retro Choir.fxp',            # Choir Aahs
+         53: 'Pads/Ooh.fxp',                    # Voice Oohs
+         54: 'Pads/Synth Choir MW O-Ah.fxp',    # Synth Voice
+         55: 'Chords/Tek Stab.fxp',             # Orchestra Hit
+        # 56-63: Brass
+         56: 'Brass/Reso Brassy.fxp',           # Trumpet
+         57: 'Brass/Buggy Brass.fxp',           # Trombone
+         58: 'Brass/Crisp Noise Brass.fxp',     # Tuba
+         59: 'Brass/JX-10 Double Brass.fxp',    # Muted Trumpet
+         60: 'Brass/Plastic Brass.fxp',         # French Horn
+         61: 'Brass/Toto Brass.fxp',            # Brass Section
+         62: 'Brass/Synth Brass 1.fxp',         # Synth Brass 1
+         63: 'Brass/Synth Brass 2.fxp',         # Synth Brass 2
+        # 64-71: Reed
+         64: 'Winds/Tragic Winds.fxp',          # Soprano Sax
+         65: 'Winds/Fake Ethno.fxp',            # Alto Sax
+         66: 'Leads/Shanai.fxp',                # Tenor Sax
+         67: 'Winds/Low.fxp',                   # Baritone Sax
+         68: 'Leads/Violini Solo.fxp',          # Oboe
+         69: 'Winds/Flute 1.fxp',               # English Horn
+         70: 'Winds/Flute 2.fxp',               # Bassoon
+         71: 'Winds/Clarinet.fxp',              # Clarinet
+        # 72-79: Pipe
+         72: 'Winds/Dreamy Flute.fxp',          # Piccolo
+         73: 'Winds/Cyber Flute.fxp',           # Flute
+         74: 'Leads/Sine Lead.fxp',             # Recorder
+         75: 'Leads/Talky 1 MW.fxp',            # Pan Flute
+         76: 'Pads/Formants MW.fxp',            # Blown Bottle
+         77: 'Leads/Talky 2 MW.fxp',            # Shakuhachi
+         78: 'Leads/Vocal Lead.fxp',            # Whistle
+         79: 'Leads/Formant Pulse.fxp',         # Ocarina
+        # 80-87: Synth Lead
+         80: 'Leads/Square.fxp',                # Lead 1 (square)
+         81: 'Leads/Moogy Saw.fxp',             # Lead 2 (sawtooth)
+         82: 'Leads/Sync Lead.fxp',             # Lead 3 (calliope)
+         83: 'Leads/Crisp PWM.fxp',             # Lead 4 (chiff)
+         84: 'Leads/Resofest 1.fxp',            # Lead 5 (charang)
+         85: 'Leads/Classic Lead 1.fxp',        # Lead 6 (voice)
+         86: 'Leads/Saw Octaves.fxp',           # Lead 7 (fifths)
+         87: 'Leads/Tight Bassline.fxp',        # Lead 8 (bass + lead)
+        # 88-95: Synth Pad
+         88: 'Pads/FM Pad.fxp',                 # Pad 1 (new age)
+         89: 'Pads/MKS-70 Warm Pad.fxp',        # Pad 2 (warm)
+         90: 'Polysynths/Jupiter-8.fxp',        # Pad 3 (polysynth)
+         91: 'Pads/Choir Pad Thing.fxp',        # Pad 4 (choir)
+         92: 'Pads/Bell Pad.fxp',               # Pad 5 (bowed)
+         93: 'Pads/Chowning.fxp',               # Pad 6 (metallic)
+         94: 'Pads/Sparkly.fxp',                # Pad 7 (halo)
+         95: 'Pads/Harmonic Sweep.fxp',         # Pad 8 (sweep)
+        # 96-103: Synth Effects
+         96: 'FX/Radio Noise.fxp',              # FX 1 (rain)
+         97: 'FX/Space Adventure 1.fxp',        # FX 2 (soundtrack)
+         98: 'FX/Space Cadet.fxp',              # FX 3 (crystal)
+         99: 'FX/Space Adventure 2.fxp',        # FX 4 (atmosphere)
+        100: 'FX/Fireworks.fxp',                # FX 5 (brightness)
+        101: 'FX/Aliens.fxp',                   # FX 6 (goblins)
+        102: 'FX/Vinyl.fxp',                    # FX 7 (echoes)
+        103: 'FX/Geiger.fxp',                   # FX 8 (sci-fi)
+        # 104-111: Ethnic
+        104: 'Plucks/Mystic.fxp',               # Sitar
+        105: 'Leads/Banjo Remains.fxp',         # Banjo
+        106: 'Plucks/Saw Pluck.fxp',            # Shamisen
+        107: 'Plucks/Wire.fxp',                 # Koto
+        108: 'Plucks/Nice Pluck 1.fxp',         # Kalimba
+        109: 'Leads/Rundfunk Funk.fxp',         # Bagpipe
+        110: 'Leads/Classical.fxp',             # Fiddle
+        111: 'Leads/Scream Lead.fxp',           # Shanai
+        # 112-119: Percussive
+        112: 'Plucks/Nice Pluck 2.fxp',         # Tinkle Bell
+        113: 'Plucks/Nice Pluck 3.fxp',         # Agogo
+        114: 'Plucks/Nice Pluck 4.fxp',         # Steel Drums
+        115: 'Plucks/Square Pop.fxp',           # Woodblock
+        116: 'Percussion/Synth Tom 2.fxp',      # Taiko Drum
+        117: 'Percussion/Synth Tom 3.fxp',      # Melodic Tom
+        118: 'Percussion/Verber.fxp',           # Synth Drum
+        119: 'Percussion/Drum One.fxp',         # Reverse Cymbal
+        # 120-127: Sound Effects
+        120: 'FX/Crackling.fxp',                # Guitar Fret Noise
+        121: 'FX/Harm.fxp',                     # Breath Noise
+        122: 'FX/Rather Low.fxp',               # Seashore
+        123: 'FX/Bork.fxp',                     # Bird Tweet
+        124: 'FX/DTMF.fxp',                     # Telephone Ring
+        125: 'FX/Alarm.fxp',                    # Helicopter
+        126: 'FX/Busy.fxp',                     # Applause
+        127: 'FX/Damage Dealer.fxp',            # Gunshot
     }
 
-    # Resolve explicit ones first to reserve them
-    for i, path_rel in explicit_presets.items():
+    mapping = {}
+    for i, path_rel in explicit.items():
         full_path = os.path.join(factory_dir, path_rel)
-        if os.path.exists(full_path):
-            mapping[i] = full_path
-            used.add(full_path)
-
-    # Map the rest dynamically
-    for i in range(128):
-        if i in mapping:
-            continue
-        
-        grp = i // 8
-        name = GM_NAMES[i]
-        kws = [name.replace('_', ' ')] + name.split('_')
-        
-        # Target folders and backup keywords
-        flds = []
-        if grp == 0:
-            flds, kws = ['keys', 'plucks', 'polysynths'], kws + ['keys', 'ep', 'piano', 'harpsi']
-        elif grp == 1:
-            flds, kws = ['plucks', 'percussion'], kws + ['bell', 'music', 'box', 'vibe', 'marimba', 'pluck']
-        elif grp == 2:
-            flds, kws = ['keys', 'leads'], kws + ['organ', 'accordion', 'circus']
-        elif grp == 3:
-            flds, kws = ['plucks', 'leads'], kws + ['guitar', 'pluck', 'clean', 'distortion']
-        elif grp == 4:
-            flds, kws = ['basses'], kws + ['bass', 'sub', 'fm']
-        elif grp in [5, 6]:
-            if i == 47: # Timpani
-                flds, kws = ['percussion'], kws + ['tom', 'drum', 'perc']
-            else:
-                flds, kws = ['polysynths', 'pads'], kws + ['strings', 'violin', 'choir', 'voice', 'pad']
-        elif grp == 7:
-            flds, kws = ['brass', 'polysynths', 'leads'], kws + ['brass', 'trumpet', 'horn', 'section']
-        elif grp in [8, 9]:
-            flds, kws = ['winds', 'leads', 'polysynths'], kws + ['flute', 'wind', 'clarinet', 'sax', 'whistle']
-        elif grp == 10:
-            flds, kws = ['leads'], kws + ['lead', 'saw', 'square']
-        elif grp == 11:
-            flds, kws = ['pads'], kws + ['pad', 'warm', 'space']
-        elif grp == 12:
-            flds, kws = ['fx', 'leads'], kws + ['fx', 'space', 'soundtrack']
-        elif grp == 13:
-            flds, kws = ['plucks', 'winds', 'leads'], kws + ['sitar', 'banjo', 'pluck', 'fiddle']
-        elif grp == 14:
-            flds, kws = ['percussion', 'plucks'], kws + ['drum', 'perc', 'tom', 'cymbal']
-        elif grp == 15:
-            flds, kws = ['fx'], kws + ['noise', 'helicopter', 'phone', 'fx']
-
-        res = find_unique_preset(kws, flds)
-        mapping[i] = res
-
+        if not os.path.exists(full_path):
+            raise FileNotFoundError(f'GM preset not found for slot {i}: {full_path}')
+        mapping[i] = full_path
     return mapping
 
 def midi_to_note_name(midi_num):
