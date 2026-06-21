@@ -229,8 +229,8 @@ def main():
         shutil.copy2(src_preset, dest_preset)
 
     try:
-        # 8 key zones (every octave C1 to C8) and 2 velocity layers (64: Soft, 127: Hard)
-        notes_to_sample = [24, 36, 48, 60, 72, 84, 96, 108]  # C1, C2, C3, C4, C5, C6, C7, C8
+        # All 128 MIDI notes and 2 velocity layers (64: Soft, 127: Hard)
+        notes_to_sample = list(range(128))
         velocities_to_sample = [64, 127]
         vel_ranges = [(0, 80), (81, 127)]
         
@@ -252,7 +252,7 @@ def main():
         # Write headers
         for f, is_sfizz, is_proc in [(master_f, False, False), (sfizz_sfz_f, True, False), (sfizz_proc_f, True, True)]:
             f.write(f"// General MIDI 128 Instrument Pack {'- sfizz variant' if is_sfizz else ''}\n")
-            f.write("// Generated from Surge XT factory presets (2 Velocity Layers, 8 Key Zones)\n\n")
+            f.write("// Generated from Surge XT factory presets (2 Velocity Layers, All 128 Notes)\n\n")
             f.write("<control>\n")
             if not is_sfizz:
                 f.write(f"default_path={samples_dir}/\n")

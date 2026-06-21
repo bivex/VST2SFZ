@@ -4,11 +4,11 @@ This document details the task of generating a full General MIDI (128 instrument
 
 ## 1. Overview & Objective
 The goal is to produce a high-compatibility, high-quality, and authentic General MIDI (128 instruments) sample library in SFZ format.
-Each instrument is sampled at **7 pitch zones** across the keyboard range (C2, C3, C4, C5, C6, C7, C8 / MIDI 36, 48, 60, 72, 84, 96, 108) and **2 velocity layers**:
+Each instrument is sampled at **8 pitch zones** across the keyboard range (C1, C2, C3, C4, C5, C6, C7, C8 / MIDI 24, 36, 48, 60, 72, 84, 96, 108) and **2 velocity layers**:
 * **Soft:** velocity = 64 (ranges 0-80)
 * **Hard:** velocity = 127 (ranges 81-127)
 
-This matrix results in **1792 high-quality 24-bit stereo `.wav` files** at 96 kHz, producing incredibly expressive and realistic dynamic responses without "munchkin" transposition effects.
+This matrix results in **2048 high-quality 24-bit stereo `.wav` files** at 96 kHz, producing incredibly expressive and realistic dynamic responses without "munchkin" transposition effects.
 
 ---
 
@@ -75,13 +75,13 @@ End-to-end pipeline:
 | `General_MIDI.sfz` | 1 | Master file — 128 `<group>` blocks with `prg_num=i` |
 | `General_MIDI_sfizz_processed.sfz` | 1 | Sfizz master file using absolute paths to processed samples |
 | `General_MIDI_instruments/gm_###_*.sfz` | 128 | Individual standalone SFZs |
-| `General_MIDI_samples/gm_###_*.wav` | 1792 | 24-bit stereo PCM, 96 kHz, 1.5s, post-processed |
+| `General_MIDI_samples/gm_###_*.wav` | 2048 | 24-bit stereo PCM, 96 kHz, 1.5s, post-processed |
 
 ### Sample naming convention
 ```
 gm_{program:03d}_{note}_v{velocity}.wav
-gm_000_C2_v64.wav   ← Program 0 (Piano), C2, Soft
-gm_000_C2_v127.wav  ← Program 0 (Piano), C2, Hard
+gm_000_C1_v64.wav   ← Program 0 (Piano), C1, Soft
+gm_000_C1_v127.wav  ← Program 0 (Piano), C1, Hard
 ```
 
 ### SFZ region mapping (per instrument)
@@ -89,13 +89,14 @@ Each instrument spans the full keyboard 0–127, split at the midpoints between 
 
 | Sample | MIDI Note | `lokey`–`hikey` | Velocity Layer | `lovel`–`hivel` |
 |--------|----------:|-----------------|----------------|----------------:|
-| C2 | 36 | 0–42 | Soft / Hard | 0–80 / 81–127 |
-| C3 | 48 | 43–54 | Soft / Hard | 0–80 / 81–127 |
-| C4 | 60 | 55–66 | Soft / Hard | 0–80 / 81–127 |
-| C5 | 72 | 67–78 | Soft / Hard | 0–80 / 81–127 |
-| C6 | 84 | 79–90 | Soft / Hard | 0–80 / 81–127 |
-| C7 | 96 | 91–102 | Soft / Hard | 0–80 / 81–127 |
-| C8 | 108 | 103–127 | Soft / Hard | 0–80 / 81–127 |
+| C1     | 24        | 0–30            | Soft / Hard    | 0–80 / 81–127   |
+| C2     | 36        | 31–42           | Soft / Hard    | 0–80 / 81–127   |
+| C3     | 48        | 43–54           | Soft / Hard    | 0–80 / 81–127   |
+| C4     | 60        | 55–66           | Soft / Hard    | 0–80 / 81–127   |
+| C5     | 72        | 67–78           | Soft / Hard    | 0–80 / 81–127   |
+| C6     | 84        | 79–90           | Soft / Hard    | 0–80 / 81–127   |
+| C7     | 96        | 91–102          | Soft / Hard    | 0–80 / 81–127   |
+| C8     | 108       | 103–127         | Soft / Hard    | 0–80 / 81–127   |
 
 ---
 
@@ -104,7 +105,7 @@ When deciding how many notes to render per instrument, here is the size projecti
 
 | Sampling Density | Total Samples | Pack Size (on disk) | Surge Render Time | Pros/Cons |
 |------------------|--------------:|--------------------:|------------------:|-----------|
-| **7 key zones** (current) | 1,792 | **1.4 GB** | ~1 min | **Recommended.** Excellent quality/size ratio. Minor pitch stretch. |
+| **8 key zones** (current) | 2,048 | **1.8 GB** | ~1.2 min | **Recommended.** Excellent quality/size ratio. Very minor pitch stretch. |
 | **12 key zones** (every 3 st) | 3,072 | **2.5 GB** | ~1.7 min | Negligible pitch stretch. |
 | **88 key range** (every key) | 22,528 | **18.1 GB** | ~12 min | Perfect sound across standard piano range. High memory footprint. |
 | **128 key range** (every key) | 32,768 | **26.4 GB** | ~18 min | Zero transposition. Excessively large. |
