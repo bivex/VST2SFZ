@@ -319,10 +319,10 @@ prg_num=38
 // GM Program 39: synth_bass_2
 <group>
 prg_num=39
-<region> sample=gm_039_C2.wav pitch_keycenter=24 lokey=0 hikey=48
-<region> sample=gm_039_C4.wav pitch_keycenter=48 lokey=49 hikey=72
-<region> sample=gm_039_C6.wav pitch_keycenter=60 lokey=73 hikey=96
-<region> sample=gm_039_C8.wav pitch_keycenter=96 lokey=97 hikey=127
+<region> sample=gm_039_C2.wav pitch_keycenter=36 lokey=0 hikey=48
+<region> sample=gm_039_C4.wav pitch_keycenter=60 lokey=49 hikey=72
+<region> sample=gm_039_C6.wav pitch_keycenter=84 lokey=73 hikey=96
+<region> sample=gm_039_C8.wav pitch_keycenter=108 lokey=97 hikey=127
 
 // GM Program 40: violin
 <group>
