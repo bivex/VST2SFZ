@@ -218,6 +218,27 @@ def main():
         # target RMS. Gain is capped in build_chain to avoid extreme swings.
         audio_out = audio_out * rms_gain
 
+        # --- Production Post-Processing ---
+        # 1. Mid-Side stereo widening for strings (group 6) and pads (group 11)
+        group = prog // 8
+        if group in {6, 11}:
+            mid = (audio_out[:, 0] + audio_out[:, 1]) * 0.5
+            side = (audio_out[:, 0] - audio_out[:, 1]) * 0.5
+            side = side * 1.35  # Widen stereo field by 35%
+            audio_out[:, 0] = mid + side
+            audio_out[:, 1] = mid - side
+
+        # 2. Subtle analog tube saturation/excitation (even/odd harmonic warmth)
+        clipped = np.clip(audio_out, -1.0, 1.0)
+        sat = clipped - (clipped ** 3) / 6.0
+        audio_out = audio_out * 0.90 + sat * 0.10
+
+        # 3. Smooth cosine fade-out over last 150ms to prevent clicks/pop tails
+        fade_len = int(0.15 * sr)
+        if len(audio_out) > fade_len:
+            fade_curve = 0.5 * (1.0 + np.cos(np.linspace(0, np.pi, fade_len)))
+            audio_out[-fade_len:] *= fade_curve[:, np.newaxis]
+
         # Final peak ceiling via clean numpy: if any sample exceeds 0.95 after
         # the gain, scale the WHOLE buffer down so its peak is exactly 0.95.
         # This is a transparent brick-wall that never saturates (unlike the
