@@ -343,6 +343,13 @@ def main():
             elif ext == '.fxp':
                 print(f"Loading FXP Preset: {args.preset}")
                 success = synth.load_preset(args.preset)
+                if not success:
+                    print("load_preset failed/unsupported. Attempting load_state as fallback...")
+                    try:
+                        synth.load_state(args.preset)
+                        success = True
+                    except Exception as state_err:
+                        print(f"load_state fallback also failed: {state_err}")
             else:
                 print(f"Loading Generic State/Bin file: {args.preset}")
                 synth.load_state(args.preset)

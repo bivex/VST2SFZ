@@ -178,8 +178,8 @@ def main():
             
             print(f"Sampling [{i:03d}/127] {inst_name} (Preset: {os.path.basename(preset_path)})...")
             
-            # Load the preset
-            synth.load_preset(preset_path)
+            # Load the preset state
+            synth.load_state(preset_path)
             
             # Individual instrument SFZ
             indiv_sfz_path = os.path.join(instruments_dir, f"gm_{i:03d}_{inst_name}.sfz")
