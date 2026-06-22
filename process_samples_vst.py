@@ -413,6 +413,15 @@ def apply_preset(tape, pro_q, pro_mb, reverb, chorus, stereo, fresh_air, spiff, 
         fresh_air.set_parameter(1, fresh_settings["high"])
         fresh_air.set_parameter(3, 1.0)  # Trim 0.0 dB
 
+    # Configure FabFilter Pro-MB
+    mb_settings = preset["pro_mb"]
+    if mb_settings["bypass"]:
+        pro_mb.set_parameter(138, 1.0)  # Bypass ON
+    else:
+        pro_mb.set_parameter(138, 0.0)  # Bypass OFF
+        for idx, val in mb_settings["params"].items():
+            pro_mb.set_parameter(idx, val)
+
 def configure_kotelnikov_ge(kotelnikov):
     """TDR Kotelnikov GE: transparent mastering compressor."""
     kotelnikov.set_parameter(0, 0.279)   # Threshold -14 dBFS
@@ -442,7 +451,7 @@ def program_from_name(filename):
 # Sequential Processing Loop
 # ---------------------------------------------------------------------------
 
-def process_file(filepath, out_dir, engine, pb, tape, spiff, pro_q, reverb, chorus, stereo, fresh_air, sdrr, soothe):
+def process_file(filepath, out_dir, engine, pb, tape, spiff, pro_q, pro_mb, reverb, chorus, stereo, fresh_air, sdrr, soothe):
     # Note: kotelnikov and limiter are configured once globally in main() and omitted here
     filename = os.path.basename(filepath)
     prog = program_from_name(filename)
@@ -476,7 +485,7 @@ def process_file(filepath, out_dir, engine, pb, tape, spiff, pro_q, reverb, chor
         pb.set_data(audio_2d)
         
         # Configure presets
-        apply_preset(tape, pro_q, reverb, chorus, stereo, fresh_air, spiff, sdrr, soothe, preset)
+        apply_preset(tape, pro_q, pro_mb, reverb, chorus, stereo, fresh_air, spiff, sdrr, soothe, preset)
         
         duration = len(audio) / sr
         engine.render(duration)
@@ -516,6 +525,7 @@ def main():
     # Validate VST paths before starting
     for name, path in [("CHOWTape", CHOW_PATH), ("SDRR2", SDRR_PATH), ("spiff", SPIFF_PATH),
                         ("soothe2", SOOTHE_PATH), ("FabFilter Pro-Q 4", PRO_Q_PATH),
+                        ("FabFilter Pro-MB", PRO_MB_PATH),
                         ("TDR Kotelnikov GE", KOTELNIKOV_GE_PATH), ("Fresh Air", FRESH_AIR_PATH),
                         ("Chorus", CHORUS_PATH), ("StereoControl", STEREO_PATH),
                         ("FabFilter Pro-R 2", PRO_R_PATH), ("FabFilter Pro-L 2", PRO_L_PATH)]:
@@ -536,6 +546,7 @@ def main():
         spiff = engine.make_plugin_processor("spiff", SPIFF_PATH)
         soothe = engine.make_plugin_processor("soothe", SOOTHE_PATH)
         pro_q = engine.make_plugin_processor("pro_q", PRO_Q_PATH)
+        pro_mb = engine.make_plugin_processor("pro_mb", PRO_MB_PATH)
         kotelnikov_ge = engine.make_plugin_processor("kot", KOTELNIKOV_GE_PATH)
         fresh_air = engine.make_plugin_processor("fresh", FRESH_AIR_PATH)
         chorus = engine.make_plugin_processor("cho", CHORUS_PATH)
@@ -561,7 +572,8 @@ def main():
         (spiff, ["sdrr"]),
         (soothe, ["spiff"]),
         (pro_q, ["soothe"]),
-        (kotelnikov_ge, ["pro_q"]),
+        (pro_mb, ["pro_q"]),
+        (kotelnikov_ge, ["pro_mb"]),
         (fresh_air, ["kot"]),
         (chorus, ["fresh"]),
         (reverb, ["cho"]),
@@ -574,7 +586,7 @@ def main():
     total = len(files)
     for idx, filepath in enumerate(files, 1):
         filename = os.path.basename(filepath)
-        success, err = process_file(filepath, out_dir, engine, pb, tape, spiff, pro_q, reverb, chorus, stereo, fresh_air, sdrr, soothe)
+        success, err = process_file(filepath, out_dir, engine, pb, tape, spiff, pro_q, pro_mb, reverb, chorus, stereo, fresh_air, sdrr, soothe)
         if not success:
             print(f"  [{idx}/{total}] FAILED: {filename} - {err}")
         elif idx % 100 == 0 or idx == total:
