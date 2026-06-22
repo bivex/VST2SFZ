@@ -208,6 +208,11 @@ def apply_preset(tape, eq, reverb, chorus, stereo, fresh_air, spiff, preset):
     if rvb_settings is not None:
         for idx, val in rvb_settings.items():
             reverb.set_parameter(idx, val)
+    else:
+        # Dry only (bypass reverb effect)
+        reverb.set_parameter(2, 1.0)  # Dry Level 100%
+        reverb.set_parameter(3, 0.0)  # Early Level 0%
+        reverb.set_parameter(5, 0.0)  # Late Level 0%
             
     # Configure Chorus (TAL-Chorus-LX)
     chorus_wet = preset.get("chorus_wet", 0.0)
@@ -277,7 +282,7 @@ def program_from_name(filename):
 # Sequential Processing Loop
 # ---------------------------------------------------------------------------
 
-def process_file(filepath, out_dir, engine, tape, spiff, eq, kotelnikov, fresh_air, chorus, stereo, reverb, limiter):
+def process_file(filepath, out_dir, engine, pb, tape, spiff, eq, reverb, chorus, stereo, fresh_air):
     filename = os.path.basename(filepath)
     prog = program_from_name(filename)
     preset = get_preset_for_program(prog)
@@ -297,30 +302,12 @@ def process_file(filepath, out_dir, engine, tape, spiff, eq, kotelnikov, fresh_a
             return True, None
             
         audio_2d = audio.T.astype(np.float32)
+        
+        # Load audio into playback processor
+        pb.set_data(audio_2d)
+        
+        # Configure presets
         apply_preset(tape, eq, reverb, chorus, stereo, fresh_air, spiff, preset)
-        
-        # Build dynamic graph: pb → tape → spiff → eq → kotelnikov → fresh_air → chorus → [reverb] → stereo → limiter
-        pb = engine.make_playback_processor("pb", audio_2d)
-        
-        connections = [
-            (pb, []),
-            (tape, ["pb"]),
-            (spiff, ["tape"]),
-            (eq, ["spiff"]),
-            (kotelnikov, ["eq"]),
-            (fresh_air, ["kot"]),
-            (chorus, ["fresh"]),
-        ]
-        
-        last_node = "cho"
-        if preset["reverb"] is not None:
-            connections.append((reverb, ["cho"]))
-            last_node = "reverb"
-            
-        connections.append((stereo, [last_node]))
-        connections.append((limiter, ["ste"]))
-        
-        engine.load_graph(connections)
         
         duration = len(audio) / sr
         engine.render(duration)
@@ -366,31 +353,64 @@ def main():
             print(f"Error: {name} not found at {path}")
             sys.exit(1)
 
-    print("Initializing DawDreamer engine and VST plugins (single-threaded)...")
-    engine = daw.RenderEngine(SAMPLE_RATE, BUFFER_SIZE)
-    tape = engine.make_plugin_processor("tape", CHOW_PATH)
-    spiff = engine.make_plugin_processor("spiff", SPIFF_PATH)
-    eq = engine.make_plugin_processor("eq", NOVA_PATH)
-    kotelnikov = engine.make_plugin_processor("kot", KOTELNIKOV_PATH)
-    fresh_air = engine.make_plugin_processor("fresh", FRESH_AIR_PATH)
-    chorus = engine.make_plugin_processor("cho", CHORUS_PATH)
-    stereo = engine.make_plugin_processor("ste", STEREO_PATH)
-    reverb = engine.make_plugin_processor("reverb", DRAGONFLY_PATH)
-    limiter = engine.make_plugin_processor("limiter", LIMITER_PATH)
-    configure_kotelnikov(kotelnikov)
-    configure_limiter(limiter)
+    # Silencing low-level stderr during VST load to hide iLok socket errors
+    devnull = open(os.devnull, 'w')
+    old_stderr = os.dup(2)
+    os.dup2(devnull.fileno(), 2)
+
+    try:
+        print("Initializing DawDreamer engine and VST plugins (single-threaded)...")
+        engine = daw.RenderEngine(SAMPLE_RATE, BUFFER_SIZE)
+        tape = engine.make_plugin_processor("tape", CHOW_PATH)
+        spiff = engine.make_plugin_processor("spiff", SPIFF_PATH)
+        eq = engine.make_plugin_processor("eq", NOVA_PATH)
+        kotelnikov = engine.make_plugin_processor("kot", KOTELNIKOV_PATH)
+        fresh_air = engine.make_plugin_processor("fresh", FRESH_AIR_PATH)
+        chorus = engine.make_plugin_processor("cho", CHORUS_PATH)
+        stereo = engine.make_plugin_processor("ste", STEREO_PATH)
+        reverb = engine.make_plugin_processor("reverb", DRAGONFLY_PATH)
+        limiter = engine.make_plugin_processor("limiter", LIMITER_PATH)
+        configure_kotelnikov(kotelnikov)
+        configure_limiter(limiter)
+    finally:
+        os.dup2(old_stderr, 2)
+        os.close(old_stderr)
+        devnull.close()
+
+    print("Building processing graph (reused for all samples)...")
+    # Initialize with a silent dummy buffer
+    dummy = np.zeros((2, BUFFER_SIZE), dtype=np.float32)
+    pb = engine.make_playback_processor("pb", dummy)
+    
+    connections = [
+        (pb, []),
+        (tape, ["pb"]),
+        (spiff, ["tape"]),
+        (eq, ["spiff"]),
+        (kotelnikov, ["eq"]),
+        (fresh_air, ["kot"]),
+        (chorus, ["fresh"]),
+        (reverb, ["cho"]),
+        (stereo, ["reverb"]),
+        (limiter, ["ste"]),
+    ]
+    engine.load_graph(connections)
 
     print(f"Processing {len(files)} samples sequentially...")
     total = len(files)
     for idx, filepath in enumerate(files, 1):
         filename = os.path.basename(filepath)
-        success, err = process_file(filepath, out_dir, engine, tape, spiff, eq, kotelnikov, fresh_air, chorus, stereo, reverb, limiter)
+        success, err = process_file(filepath, out_dir, engine, pb, tape, spiff, eq, reverb, chorus, stereo, fresh_air)
         if not success:
             print(f"  [{idx}/{total}] FAILED: {filename} - {err}")
         elif idx % 100 == 0 or idx == total:
             print(f"  Processed [{idx}/{total}] samples... Last: {filename}")
 
     print(f"\n✓ Done! All {len(files)} samples processed → {out_dir}")
+    
+    # Explicit clean teardown
+    engine.load_graph([])
+    del engine
 
 if __name__ == "__main__":
     main()
