@@ -1,0 +1,28 @@
+// GM Drum Kit — sfizz variant
+// Key-mapped drum samples (no program/channel filtering).
+// Loaded by a SEPARATE sfizz instance in Birka for channel-10 notes.
+// Uses ABSOLUTE paths (sfizz resets default_path per <group>).
+
+<group>
+ampeg_attack=0.001 ampeg_release=0.08
+
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N35_v064.wav lokey=35 hikey=35 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N35_v127.wav lokey=35 hikey=35 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N36_v064.wav lokey=36 hikey=36 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N36_v127.wav lokey=36 hikey=36 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N38_v064.wav lokey=38 hikey=38 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N38_v127.wav lokey=38 hikey=38 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N41_v064.wav lokey=41 hikey=41 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N41_v127.wav lokey=41 hikey=41 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N43_v064.wav lokey=43 hikey=43 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N43_v127.wav lokey=43 hikey=43 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N45_v064.wav lokey=45 hikey=45 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N45_v127.wav lokey=45 hikey=45 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N46_v064.wav lokey=46 hikey=46 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N46_v127.wav lokey=46 hikey=46 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N47_v064.wav lokey=47 hikey=47 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N47_v127.wav lokey=47 hikey=47 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N49_v064.wav lokey=49 hikey=49 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N49_v127.wav lokey=49 hikey=49 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N57_v064.wav lokey=57 hikey=57 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N57_v127.wav lokey=57 hikey=57 lovel=81 hivel=127

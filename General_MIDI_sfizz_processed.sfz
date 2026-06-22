@@ -2559,27 +2559,3 @@ ampeg_attack=0.003 ampeg_release=0.15
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_127_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_127_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_127_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=81 hivel=127
-
-
-
-<group>
-midi_channel=10
-ampeg_attack=0.001 ampeg_release=0.08
-<region> sample=General_MIDI_samples_drums/gm_drum_N35_v064.wav pitch_keycenter=35 lokey=35 hikey=35 lovel=0 hivel=80
-<region> sample=General_MIDI_samples_drums/gm_drum_N35_v127.wav pitch_keycenter=35 lokey=35 hikey=35 lovel=81 hivel=127
-<region> sample=General_MIDI_samples_drums/gm_drum_N36_v064.wav pitch_keycenter=36 lokey=36 hikey=36 lovel=0 hivel=80
-<region> sample=General_MIDI_samples_drums/gm_drum_N36_v127.wav pitch_keycenter=36 lokey=36 hikey=36 lovel=81 hivel=127
-<region> sample=General_MIDI_samples_drums/gm_drum_N38_v064.wav pitch_keycenter=38 lokey=38 hikey=38 lovel=0 hivel=80
-<region> sample=General_MIDI_samples_drums/gm_drum_N38_v127.wav pitch_keycenter=38 lokey=38 hikey=38 lovel=81 hivel=127
-<region> sample=General_MIDI_samples_drums/gm_drum_N41_v064.wav pitch_keycenter=41 lokey=41 hikey=41 lovel=0 hivel=80
-<region> sample=General_MIDI_samples_drums/gm_drum_N41_v127.wav pitch_keycenter=41 lokey=41 hikey=41 lovel=81 hivel=127
-<region> sample=General_MIDI_samples_drums/gm_drum_N43_v064.wav pitch_keycenter=43 lokey=43 hikey=43 lovel=0 hivel=80
-<region> sample=General_MIDI_samples_drums/gm_drum_N43_v127.wav pitch_keycenter=43 lokey=43 hikey=43 lovel=81 hivel=127
-<region> sample=General_MIDI_samples_drums/gm_drum_N45_v064.wav pitch_keycenter=45 lokey=45 hikey=45 lovel=0 hivel=80
-<region> sample=General_MIDI_samples_drums/gm_drum_N45_v127.wav pitch_keycenter=45 lokey=45 hikey=45 lovel=81 hivel=127
-<region> sample=General_MIDI_samples_drums/gm_drum_N47_v064.wav pitch_keycenter=47 lokey=47 hikey=47 lovel=0 hivel=80
-<region> sample=General_MIDI_samples_drums/gm_drum_N47_v127.wav pitch_keycenter=47 lokey=47 hikey=47 lovel=81 hivel=127
-<region> sample=General_MIDI_samples_drums/gm_drum_N49_v064.wav pitch_keycenter=49 lokey=49 hikey=49 lovel=0 hivel=80
-<region> sample=General_MIDI_samples_drums/gm_drum_N49_v127.wav pitch_keycenter=49 lokey=49 hikey=49 lovel=81 hivel=127
-<region> sample=General_MIDI_samples_drums/gm_drum_N57_v064.wav pitch_keycenter=57 lokey=57 hikey=57 lovel=0 hivel=80
-<region> sample=General_MIDI_samples_drums/gm_drum_N57_v127.wav pitch_keycenter=57 lokey=57 hikey=57 lovel=81 hivel=127
