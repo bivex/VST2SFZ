@@ -17,7 +17,6 @@ import argparse
 import numpy as np
 import soundfile as sf
 import dawdreamer as daw
-import multiprocessing
 
 CHOW_PATH = "/Library/Audio/Plug-Ins/VST3/CHOWTapeModel.vst3"
 NOVA_PATH = "/Library/Audio/Plug-Ins/VST3/TDR Nova.vst3"
@@ -29,16 +28,6 @@ LIMITER_PATH = "/Library/Audio/Plug-Ins/VST3/BasicLimiter.vst3"
 
 SAMPLE_RATE = 96000
 BUFFER_SIZE = 512
-
-# Worker globals initialized once per process
-_engine = None
-_tape = None
-_eq = None
-_kotelnikov = None
-_chorus = None
-_stereo = None
-_reverb = None
-_limiter = None
 
 # ---------------------------------------------------------------------------
 # Per-group presets.
@@ -221,26 +210,10 @@ def program_from_name(filename):
     return int(m.group(1)) if m else 0
 
 # ---------------------------------------------------------------------------
-# Multiprocessing Worker Setup
+# Sequential Processing Loop
 # ---------------------------------------------------------------------------
 
-def init_worker():
-    """Initializes global DawDreamer engine and VST processors once per process."""
-    global _engine, _tape, _eq, _kotelnikov, _chorus, _stereo, _reverb, _limiter
-    _engine = daw.RenderEngine(SAMPLE_RATE, BUFFER_SIZE)
-    _tape = _engine.make_plugin_processor("tape", CHOW_PATH)
-    _eq = _engine.make_plugin_processor("eq", NOVA_PATH)
-    _kotelnikov = _engine.make_plugin_processor("kot", KOTELNIKOV_PATH)
-    _chorus = _engine.make_plugin_processor("cho", CHORUS_PATH)
-    _stereo = _engine.make_plugin_processor("ste", STEREO_PATH)
-    _reverb = _engine.make_plugin_processor("reverb", DRAGONFLY_PATH)
-    _limiter = _engine.make_plugin_processor("limiter", LIMITER_PATH)
-    configure_kotelnikov(_kotelnikov)
-    configure_limiter(_limiter)
-
-def process_file_worker(args):
-    """Processes a single WAV sample inside a worker process."""
-    filepath, out_dir = args
+def process_file(filepath, out_dir, engine, tape, eq, kotelnikov, chorus, stereo, reverb, limiter):
     filename = os.path.basename(filepath)
     prog = program_from_name(filename)
     preset = get_preset_for_program(prog)
@@ -257,35 +230,35 @@ def process_file_worker(args):
             if peak > 1e-6:
                 out = out * (0.95 / peak)
             sf.write(os.path.join(out_dir, filename), out.T, SAMPLE_RATE, subtype="PCM_24")
-            return filename, True, None
+            return True, None
             
         audio_2d = audio.T.astype(np.float32)
-        apply_preset(_tape, _eq, _reverb, _chorus, _stereo, preset)
+        apply_preset(tape, eq, reverb, chorus, stereo, preset)
         
         # Build dynamic graph: pb → tape → eq → kotelnikov → chorus → [reverb] → stereo → limiter
-        pb = _engine.make_playback_processor("pb", audio_2d)
+        pb = engine.make_playback_processor("pb", audio_2d)
         
         connections = [
             (pb, []),
-            (_tape, ["pb"]),
-            (_eq, ["tape"]),
-            (_kotelnikov, ["eq"]),
-            (_chorus, ["kot"]),
+            (tape, ["pb"]),
+            (eq, ["tape"]),
+            (kotelnikov, ["eq"]),
+            (chorus, ["kot"]),
         ]
         
         last_node = "cho"
         if preset["reverb"] is not None:
-            connections.append((_reverb, ["cho"]))
+            connections.append((reverb, ["cho"]))
             last_node = "reverb"
             
-        connections.append((_stereo, [last_node]))
-        connections.append((_limiter, ["ste"]))
+        connections.append((stereo, [last_node]))
+        connections.append((limiter, ["ste"]))
         
-        _engine.load_graph(connections)
+        engine.load_graph(connections)
         
         duration = len(audio) / SAMPLE_RATE
-        _engine.render(duration)
-        out = _engine.get_audio()
+        engine.render(duration)
+        out = engine.get_audio()
         
         # Peak-normalize to 0.95
         peak = float(np.max(np.abs(out)))
@@ -293,21 +266,20 @@ def process_file_worker(args):
             out = out * (0.95 / peak)
             
         sf.write(os.path.join(out_dir, filename), out.T, SAMPLE_RATE, subtype="PCM_24")
-        return filename, True, None
+        return True, None
     except Exception as e:
         import traceback
         tb = traceback.format_exc()
-        return filename, False, f"{e}\n{tb}"
+        return False, f"{e}\n{tb}"
 
 # ---------------------------------------------------------------------------
 # Main Execution
 # ---------------------------------------------------------------------------
 
 def main():
-    parser = argparse.ArgumentParser(description="Multiprocessed VST color chain processing.")
+    parser = argparse.ArgumentParser(description="Single-threaded VST color chain processing.")
     parser.add_argument("--input", default="General_MIDI_samples_raw")
     parser.add_argument("--output", default="General_MIDI_samples")
-    parser.add_argument("--workers", type=int, default=None, help="Number of parallel worker processes")
     args = parser.parse_args()
 
     src_dir, out_dir = args.input, args.output
@@ -319,7 +291,7 @@ def main():
         sys.exit(1)
     print(f"Found {len(files)} raw samples in {src_dir}")
 
-    # Validate VST paths before launching processes
+    # Validate VST paths before starting
     for name, path in [("CHOWTape", CHOW_PATH), ("TDR Nova", NOVA_PATH),
                         ("Kotelnikov", KOTELNIKOV_PATH), ("Chorus", CHORUS_PATH),
                         ("StereoControl", STEREO_PATH), ("Dragonfly", DRAGONFLY_PATH),
@@ -328,26 +300,27 @@ def main():
             print(f"Error: {name} not found at {path}")
             sys.exit(1)
 
-    # Set start method to 'spawn' for safety on macOS (essential for VST threads)
-    multiprocessing.set_start_method("spawn", force=True)
+    print("Initializing DawDreamer engine and VST plugins (single-threaded)...")
+    engine = daw.RenderEngine(SAMPLE_RATE, BUFFER_SIZE)
+    tape = engine.make_plugin_processor("tape", CHOW_PATH)
+    eq = engine.make_plugin_processor("eq", NOVA_PATH)
+    kotelnikov = engine.make_plugin_processor("kot", KOTELNIKOV_PATH)
+    chorus = engine.make_plugin_processor("cho", CHORUS_PATH)
+    stereo = engine.make_plugin_processor("ste", STEREO_PATH)
+    reverb = engine.make_plugin_processor("reverb", DRAGONFLY_PATH)
+    limiter = engine.make_plugin_processor("limiter", LIMITER_PATH)
+    configure_kotelnikov(kotelnikov)
+    configure_limiter(limiter)
 
-    # Launch parallel process pool
-    num_workers = args.workers or multiprocessing.cpu_count()
-    print(f"Starting parallel processing pool with {num_workers} workers...")
-    
-    pool_args = [(f, out_dir) for f in files]
-    
-    completed = 0
+    print(f"Processing {len(files)} samples sequentially...")
     total = len(files)
-    
-    with multiprocessing.Pool(processes=num_workers, initializer=init_worker) as pool:
-        # Use imap_unordered for speed as the order of completion doesn't matter
-        for filename, success, err in pool.imap_unordered(process_file_worker, pool_args):
-            completed += 1
-            if not success:
-                print(f"  FAILED: {filename} - {err}")
-            elif completed % 100 == 0 or completed == total:
-                print(f"  Processed [{completed}/{total}] samples... Last: {filename}")
+    for idx, filepath in enumerate(files, 1):
+        filename = os.path.basename(filepath)
+        success, err = process_file(filepath, out_dir, engine, tape, eq, kotelnikov, chorus, stereo, reverb, limiter)
+        if not success:
+            print(f"  [{idx}/{total}] FAILED: {filename} - {err}")
+        elif idx % 100 == 0 or idx == total:
+            print(f"  Processed [{idx}/{total}] samples... Last: {filename}")
 
     print(f"\n✓ Done! All {len(files)} samples processed → {out_dir}")
 
