@@ -2,7 +2,7 @@
 
 <group>
 loprog=0 hiprog=0
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_000_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_000_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_000_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -22,7 +22,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=1 hiprog=1
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_001_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_001_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_001_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -42,7 +42,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=2 hiprog=2
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_002_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_002_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_002_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -62,7 +62,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=3 hiprog=3
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_003_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_003_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_003_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -82,7 +82,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=4 hiprog=4
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_004_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_004_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_004_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -102,7 +102,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=5 hiprog=5
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_005_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_005_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_005_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -122,7 +122,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=6 hiprog=6
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_006_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_006_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_006_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -142,7 +142,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=7 hiprog=7
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_007_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_007_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_007_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -162,7 +162,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=8 hiprog=8
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_008_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_008_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_008_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -182,7 +182,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=9 hiprog=9
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_009_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_009_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_009_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -202,7 +202,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=10 hiprog=10
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_010_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_010_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_010_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -222,7 +222,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=11 hiprog=11
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_011_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_011_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_011_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -242,7 +242,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=12 hiprog=12
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_012_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_012_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_012_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -262,7 +262,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=13 hiprog=13
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_013_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_013_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_013_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -282,7 +282,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=14 hiprog=14
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_014_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_014_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_014_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -302,7 +302,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=15 hiprog=15
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_015_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_015_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_015_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -322,7 +322,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=16 hiprog=16
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_016_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_016_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_016_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -342,7 +342,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=17 hiprog=17
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_017_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_017_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_017_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -362,7 +362,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=18 hiprog=18
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_018_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_018_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_018_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -382,7 +382,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=19 hiprog=19
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_019_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_019_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_019_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -402,7 +402,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=20 hiprog=20
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_020_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_020_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_020_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -422,7 +422,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=21 hiprog=21
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_021_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_021_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_021_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -442,7 +442,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=22 hiprog=22
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_022_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_022_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_022_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -462,7 +462,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=23 hiprog=23
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_023_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_023_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_023_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -482,7 +482,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=24 hiprog=24
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_024_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_024_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_024_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -502,7 +502,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=25 hiprog=25
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_025_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_025_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_025_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -522,7 +522,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=26 hiprog=26
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_026_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_026_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_026_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -542,7 +542,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=27 hiprog=27
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_027_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_027_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_027_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -562,7 +562,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=28 hiprog=28
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_028_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_028_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_028_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -582,7 +582,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=29 hiprog=29
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_029_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_029_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_029_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -602,7 +602,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=30 hiprog=30
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_030_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_030_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_030_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -622,7 +622,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=31 hiprog=31
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_031_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_031_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_031_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -642,7 +642,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=32 hiprog=32
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_032_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_032_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_032_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -662,7 +662,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=33 hiprog=33
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_033_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_033_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_033_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -682,7 +682,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=34 hiprog=34
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_034_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_034_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_034_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -702,7 +702,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=35 hiprog=35
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_035_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_035_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_035_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -722,7 +722,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=36 hiprog=36
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_036_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_036_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_036_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -742,7 +742,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=37 hiprog=37
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_037_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_037_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_037_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -762,7 +762,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=38 hiprog=38
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_038_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_038_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_038_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -782,7 +782,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=39 hiprog=39
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_039_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_039_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_039_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -802,7 +802,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=40 hiprog=40
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_040_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_040_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_040_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -822,7 +822,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=41 hiprog=41
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_041_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_041_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_041_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -842,7 +842,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=42 hiprog=42
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_042_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_042_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_042_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -862,7 +862,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=43 hiprog=43
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_043_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_043_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_043_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -882,7 +882,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=44 hiprog=44
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_044_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_044_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_044_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -902,7 +902,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=45 hiprog=45
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_045_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_045_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_045_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -922,7 +922,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=46 hiprog=46
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_046_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_046_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_046_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -942,7 +942,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=47 hiprog=47
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_047_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_047_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_047_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -962,7 +962,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=48 hiprog=48
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_048_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_048_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_048_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -982,7 +982,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=49 hiprog=49
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_049_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_049_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_049_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1002,7 +1002,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=50 hiprog=50
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_050_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_050_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_050_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1022,7 +1022,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=51 hiprog=51
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_051_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_051_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_051_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1042,7 +1042,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=52 hiprog=52
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_052_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_052_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_052_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1062,7 +1062,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=53 hiprog=53
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_053_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_053_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_053_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1082,7 +1082,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=54 hiprog=54
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_054_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_054_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_054_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1102,7 +1102,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=55 hiprog=55
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_055_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_055_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_055_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1122,7 +1122,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=56 hiprog=56
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_056_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_056_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_056_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1142,7 +1142,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=57 hiprog=57
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_057_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_057_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_057_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1162,7 +1162,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=58 hiprog=58
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_058_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_058_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_058_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1182,7 +1182,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=59 hiprog=59
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_059_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_059_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_059_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1202,7 +1202,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=60 hiprog=60
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_060_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_060_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_060_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1222,7 +1222,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=61 hiprog=61
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_061_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_061_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_061_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1242,7 +1242,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=62 hiprog=62
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_062_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_062_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_062_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1262,7 +1262,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=63 hiprog=63
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_063_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_063_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_063_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1282,7 +1282,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=64 hiprog=64
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_064_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_064_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_064_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1302,7 +1302,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=65 hiprog=65
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_065_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_065_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_065_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1322,7 +1322,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=66 hiprog=66
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_066_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_066_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_066_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1342,7 +1342,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=67 hiprog=67
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_067_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_067_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_067_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1362,7 +1362,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=68 hiprog=68
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_068_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_068_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_068_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1382,7 +1382,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=69 hiprog=69
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_069_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_069_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_069_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1402,7 +1402,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=70 hiprog=70
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_070_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_070_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_070_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1422,7 +1422,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=71 hiprog=71
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_071_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_071_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_071_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1442,7 +1442,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=72 hiprog=72
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_072_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_072_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_072_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1462,7 +1462,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=73 hiprog=73
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_073_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_073_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_073_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1482,7 +1482,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=74 hiprog=74
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_074_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_074_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_074_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1502,7 +1502,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=75 hiprog=75
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_075_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_075_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_075_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1522,7 +1522,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=76 hiprog=76
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_076_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_076_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_076_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1542,7 +1542,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=77 hiprog=77
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_077_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_077_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_077_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1562,7 +1562,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=78 hiprog=78
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_078_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_078_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_078_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1582,7 +1582,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=79 hiprog=79
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_079_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_079_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_079_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1602,7 +1602,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=80 hiprog=80
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_080_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_080_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_080_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1622,7 +1622,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=81 hiprog=81
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_081_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_081_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_081_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1642,7 +1642,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=82 hiprog=82
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_082_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_082_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_082_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1662,7 +1662,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=83 hiprog=83
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_083_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_083_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_083_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1682,7 +1682,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=84 hiprog=84
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_084_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_084_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_084_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1702,7 +1702,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=85 hiprog=85
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_085_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_085_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_085_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1722,7 +1722,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=86 hiprog=86
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_086_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_086_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_086_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1742,7 +1742,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=87 hiprog=87
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_087_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_087_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_087_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1762,7 +1762,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=88 hiprog=88
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_088_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_088_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_088_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1782,7 +1782,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=89 hiprog=89
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_089_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_089_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_089_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1802,7 +1802,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=90 hiprog=90
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_090_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_090_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_090_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1822,7 +1822,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=91 hiprog=91
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_091_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_091_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_091_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1842,7 +1842,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=92 hiprog=92
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_092_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_092_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_092_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1862,7 +1862,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=93 hiprog=93
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_093_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_093_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_093_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1882,7 +1882,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=94 hiprog=94
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_094_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_094_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_094_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1902,7 +1902,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=95 hiprog=95
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_095_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_095_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_095_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1922,7 +1922,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=96 hiprog=96
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_096_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_096_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_096_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1942,7 +1942,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=97 hiprog=97
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_097_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_097_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_097_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1962,7 +1962,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=98 hiprog=98
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_098_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_098_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_098_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -1982,7 +1982,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=99 hiprog=99
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_099_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_099_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_099_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -2002,7 +2002,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=100 hiprog=100
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_100_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_100_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_100_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -2022,7 +2022,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=101 hiprog=101
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_101_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_101_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_101_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -2042,7 +2042,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=102 hiprog=102
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_102_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_102_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_102_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -2062,7 +2062,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=103 hiprog=103
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_103_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_103_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_103_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -2082,7 +2082,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=104 hiprog=104
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_104_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_104_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_104_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -2102,7 +2102,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=105 hiprog=105
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_105_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_105_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_105_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -2122,7 +2122,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=106 hiprog=106
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_106_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_106_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_106_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -2142,7 +2142,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=107 hiprog=107
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_107_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_107_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_107_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -2162,7 +2162,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=108 hiprog=108
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_108_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_108_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_108_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -2182,7 +2182,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=109 hiprog=109
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_109_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_109_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_109_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -2202,7 +2202,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=110 hiprog=110
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_110_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_110_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_110_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -2222,7 +2222,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=111 hiprog=111
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_111_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_111_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_111_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -2242,7 +2242,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=112 hiprog=112
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_112_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_112_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_112_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -2262,7 +2262,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=113 hiprog=113
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_113_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_113_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_113_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -2282,7 +2282,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=114 hiprog=114
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_114_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_114_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_114_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -2302,7 +2302,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=115 hiprog=115
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_115_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_115_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_115_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -2322,7 +2322,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=116 hiprog=116
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_116_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_116_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_116_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -2342,7 +2342,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=117 hiprog=117
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_117_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_117_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_117_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -2362,7 +2362,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=118 hiprog=118
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_118_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_118_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_118_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -2382,7 +2382,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=119 hiprog=119
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_119_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_119_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_119_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -2402,7 +2402,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=120 hiprog=120
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_120_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_120_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_120_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -2422,7 +2422,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=121 hiprog=121
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_121_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_121_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_121_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -2442,7 +2442,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=122 hiprog=122
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_122_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_122_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_122_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -2462,7 +2462,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=123 hiprog=123
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_123_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_123_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_123_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -2482,7 +2482,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=124 hiprog=124
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_124_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_124_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_124_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -2502,7 +2502,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=125 hiprog=125
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_125_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_125_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_125_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -2522,7 +2522,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=126 hiprog=126
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_126_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_126_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_126_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
@@ -2542,7 +2542,7 @@ ampeg_attack=0.003 ampeg_release=0.15
 
 <group>
 loprog=127 hiprog=127
-ampeg_attack=0.003 ampeg_release=0.15
+ampeg_attack=0.005 ampeg_release=0.3
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_127_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_127_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/gm_127_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
