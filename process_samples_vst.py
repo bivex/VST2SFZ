@@ -22,6 +22,7 @@ import dawdreamer as daw
 
 CHOW_PATH = "/Library/Audio/Plug-Ins/VST3/CHOWTapeModel.vst3"
 NOVA_PATH = "/Library/Audio/Plug-Ins/VST3/TDR Nova.vst3"
+KOTELNIKOV_PATH = "/Library/Audio/Plug-Ins/VST3/TDR Kotelnikov.vst3"
 DRAGONFLY_PATH = "/Library/Audio/Plug-Ins/VST3/DragonflyRoomReverb.vst3"
 LIMITER_PATH = "/Library/Audio/Plug-Ins/VST3/BasicLimiter.vst3"
 
@@ -164,6 +165,25 @@ def apply_preset(tape, eq, reverb, preset):
             reverb.set_parameter(idx, val)
 
 
+def configure_kotelnikov(kotelnikov):
+    """TDR Kotelnikov: transparent mastering compressor.
+
+    Runs AFTER EQ, BEFORE reverb. Glues the sound together and controls
+    dynamics transparently (Kotelnikov is designed to be "invisible" — no
+    tonal coloration, just gentle level management). Settings are gentle:
+    -1 dB threshold, 1.5:1 ratio, fast peak + slow RMS release. This makes
+    sfizz render output as dense and consistent as the my-py renderer.
+    """
+    kotelnikov.set_parameter(0, 0.45)   # Threshold ~-14 dBFS (catches peaks)
+    kotelnikov.set_parameter(3, 0.45)   # Ratio 1.5:1 (very gentle)
+    kotelnikov.set_parameter(4, 0.30)   # Attack ~3 ms (fast but not clicky)
+    kotelnikov.set_parameter(5, 0.40)   # Release Peak ~100 ms
+    kotelnikov.set_parameter(6, 0.55)   # Release RMS ~300 ms (slow, transparent)
+    kotelnikov.set_parameter(8, 0.0)    # Dry Mix off
+    kotelnikov.set_parameter(9, 1.0)    # Dry Wet 100% (full compression)
+    kotelnikov.set_parameter(11, 0.55)  # Out Gain +3 dB makeup
+
+
 def configure_limiter(limiter):
     """BasicLimiter: true brick-wall ceiling at -1 dBFS."""
     limiter.set_parameter(0, 0.0)   # bypass off
@@ -193,6 +213,7 @@ def main():
     print(f"Found {len(files)} raw samples.")
 
     for name, path in [("CHOWTape", CHOW_PATH), ("TDR Nova", NOVA_PATH),
+                        ("Kotelnikov", KOTELNIKOV_PATH),
                         ("Dragonfly", DRAGONFLY_PATH), ("BasicLimiter", LIMITER_PATH)]:
         if not os.path.exists(path):
             print(f"Error: {name} not found at {path}")
@@ -201,8 +222,10 @@ def main():
     engine = daw.RenderEngine(SAMPLE_RATE, BUFFER_SIZE)
     tape = engine.make_plugin_processor("tape", CHOW_PATH)
     eq = engine.make_plugin_processor("eq", NOVA_PATH)
+    kotelnikov = engine.make_plugin_processor("kot", KOTELNIKOV_PATH)
     reverb = engine.make_plugin_processor("reverb", DRAGONFLY_PATH)
     limiter = engine.make_plugin_processor("limiter", LIMITER_PATH)
+    configure_kotelnikov(kotelnikov)
     configure_limiter(limiter)
 
     # Group files by GM group for logging
@@ -237,23 +260,25 @@ def main():
         audio_2d = audio.T.astype(np.float32)
         apply_preset(tape, eq, reverb, preset)
 
-        # Build graph: playback → tape → eq → [reverb] → limiter
+        # Build graph: playback → tape → eq → kotelnikov → [reverb] → limiter
         pb = engine.make_playback_processor("pb", audio_2d)
         if preset["reverb"] is not None:
             engine.load_graph([
                 (pb, []),
                 (tape, ["pb"]),
                 (eq, ["tape"]),
-                (reverb, ["eq"]),
+                (kotelnikov, ["eq"]),
+                (reverb, ["kot"]),
                 (limiter, ["reverb"]),
             ])
         else:
-            # No reverb (e.g. bass): eq → limiter directly
+            # No reverb (e.g. bass): eq → kotelnikov → limiter
             engine.load_graph([
                 (pb, []),
                 (tape, ["pb"]),
                 (eq, ["tape"]),
-                (limiter, ["eq"]),
+                (kotelnikov, ["eq"]),
+                (limiter, ["kot"]),
             ])
 
         duration = len(audio) / SAMPLE_RATE
