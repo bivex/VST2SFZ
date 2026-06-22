@@ -25,6 +25,7 @@ import dawdreamer as daw
 CHOW_PATH = "/Library/Audio/Plug-Ins/VST3/CHOWTapeModel.vst3"
 NOVA_PATH = "/Library/Audio/Plug-Ins/VST3/TDR Nova.vst3"
 DRAGONFLY_PATH = "/Library/Audio/Plug-Ins/VST3/DragonflyRoomReverb.vst3"
+LIMITER_PATH = "/Library/Audio/Plug-Ins/VST3/BasicLimiter.vst3"
 
 SAMPLE_RATE = 96000
 BUFFER_SIZE = 512
@@ -65,6 +66,21 @@ def configure_reverb(reverb):
     reverb.set_parameter(9, 0.03)  # Decay — short (0.4s)
 
 
+def configure_limiter(limiter):
+    """BasicLimiter: true brick-wall ceiling at -1 dBFS.
+
+    Runs LAST in the chain so no downstream gain can push peaks over 0 dBFS.
+    True-peak mode catches inter-sample peaks that float ceiling misses.
+    """
+    # Bypass: off (index 0)
+    limiter.set_parameter(0, 0.0)
+    # Threshold: -1.0 dBFS (index 1, normalized 0..1 maps to linear)
+    # Default ~0.988; lower = lower ceiling. -1 dB ≈ 0.89 linear → set ~0.49
+    limiter.set_parameter(1, 0.45)
+    # True peak: on (index 7)
+    limiter.set_parameter(7, 1.0)
+
+
 def main():
     parser = argparse.ArgumentParser(description="VST color chain processing for GM samples.")
     parser.add_argument("--input", default="General_MIDI_samples_raw")
@@ -82,7 +98,7 @@ def main():
     print(f"Found {len(files)} raw samples in {src_dir}")
 
     for name, path in [("CHOWTape", CHOW_PATH), ("TDR Nova", NOVA_PATH),
-                        ("Dragonfly", DRAGONFLY_PATH)]:
+                        ("Dragonfly", DRAGONFLY_PATH), ("BasicLimiter", LIMITER_PATH)]:
         if not os.path.exists(path):
             print(f"Error: {name} not found at {path}")
             sys.exit(1)
@@ -93,9 +109,11 @@ def main():
     tape = engine.make_plugin_processor("tape", CHOW_PATH)
     eq = engine.make_plugin_processor("eq", NOVA_PATH)
     reverb = engine.make_plugin_processor("reverb", DRAGONFLY_PATH)
+    limiter = engine.make_plugin_processor("limiter", LIMITER_PATH)
     configure_tape(tape)
     configure_eq(eq)
     configure_reverb(reverb)
+    configure_limiter(limiter)
 
     print(f"Processing {len(files)} samples...")
     for idx, f in enumerate(files):
@@ -115,13 +133,15 @@ def main():
             (tape, ["pb"]),
             (eq, ["tape"]),
             (reverb, ["eq"]),
+            (limiter, ["reverb"]),
         ])
 
         duration = len(audio) / SAMPLE_RATE
         engine.render(duration)
         out = engine.get_audio()
 
-        # Peak-normalize to 0.95
+        # Peak-normalize to 0.95 (limiter ceiling is -1 dB, but normalize
+        # gives consistent output level across all samples)
         peak = float(np.max(np.abs(out)))
         if peak > 1e-6:
             out = out * (0.95 / peak)
