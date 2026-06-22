@@ -576,6 +576,15 @@ def main():
 
     print(f"\n✓ Done! All {len(files)} samples processed → {out_dir}")
     
+    # Run patch_sfz_pitches.py on the processed samples folder
+    print("\nRunning pitch auto-aligner on the finalized mastered samples...")
+    import subprocess
+    cmd = [sys.executable, "patch_sfz_pitches.py", "--raw-dir", out_dir]
+    try:
+        subprocess.run(cmd, check=True)
+    except Exception as e:
+        print(f"Warning: Pitch auto-aligner failed to run: {e}")
+
     # Explicit clean teardown
     engine.load_graph([])
     del engine
