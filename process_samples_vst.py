@@ -144,7 +144,12 @@ GROUP_PRESETS = {
                 b3_gain=-2.0, b3_freq=1000.0,
                 rvb_dry=1.0,
                 stereo_width=0.50,
-                fresh_mid=0.0, fresh_high=0.0),
+                fresh_mid=0.0, fresh_high=0.0,
+                mb_bypass=False,
+                mb_params={
+                    0: 1.0, 1: 0.0, 3: 0.20, 6: 0.70, 7: 0.40, 8: 0.40,  # Band 1 (Low: 20Hz - 120Hz)
+                    22: 1.0, 23: 0.20, 25: 1.0, 29: 0.50                 # Band 2 (Mid-High: 120Hz - 20kHz, no compression)
+                }),
     5:  _preset(tape_drive=0.20, tape_sat=0.25,                              # Strings: wide, spacious orchestra
                 sdrr_bypass=False, sdrr_mode=3.0, sdrr_drive=0.10, sdrr_mix=0.20, # desk console feel
                 soothe_bypass=False, soothe_depth=0.40, soothe_sharpness=0.45, # smooth strings bowing
@@ -198,7 +203,16 @@ GROUP_PRESETS = {
                 rvb_dry=0.65, rvb_early=0.10, rvb_late=0.25,
                 rvb_decay=0.30, rvb_size=0.50, rvb_diffuse=0.95, rvb_spin=0.25,
                 stereo_width=0.75, chorus_wet=0.40,
-                fresh_mid=0.08, fresh_high=0.15),
+                fresh_mid=0.08, fresh_high=0.15,
+                mb_bypass=False,
+                mb_params={
+                    # Band 1 (Low: 20Hz - 150Hz)
+                    0: 1.0, 1: 0.0, 3: 0.23, 6: 0.75, 7: 0.45, 8: 0.40,
+                    # Band 2 (Mid: 150Hz - 3.7kHz)
+                    22: 1.0, 23: 0.23, 25: 0.70, 28: 0.75, 29: 0.45, 30: 0.40,
+                    # Band 3 (High: 3.7kHz - 20kHz)
+                    44: 1.0, 45: 0.70, 47: 1.0, 50: 0.75, 51: 0.45, 52: 0.40
+                }),
     12: _preset(tape_drive=0.10, tape_sat=0.15,                              # FX: atmospheric, massive field
                 sdrr_bypass=False, sdrr_mode=0.0, sdrr_drive=0.20, sdrr_mix=0.30,
                 rvb_dry=0.60, rvb_early=0.10, rvb_late=0.30,
