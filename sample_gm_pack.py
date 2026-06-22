@@ -21,10 +21,10 @@ def detect_pitch_midi(audio, sr):
     sfizz transpose the sample to whatever key is played, canceling the
     preset's built-in offset.
 
-    Uses the HPS (Harmonic Product Spectrum) algorithm: multiply the spectrum
-    by downsampled copies of itself (1x, 2x, 3x, 4x frequency) so harmonically
-    related peaks reinforce the fundamental while isolated overtones vanish.
-    Much more reliable than plain autocorrelation on harmonically rich timbres.
+    Uses the lowest-peak method: scans the spectrum from low to high frequency,
+    selecting the first local peak exceeding 10% of the absolute maximum magnitude.
+    This prevents grabbing upper harmonics on instruments with a weak fundamental
+    like strings/violins.
     """
     mono = audio.mean(axis=1) if audio.ndim > 1 else audio
     # Sustain window: skip attack (first 0.1s), take next 0.6s
@@ -36,33 +36,45 @@ def detect_pitch_midi(audio, sr):
     seg = seg * np.hanning(len(seg))
     spec = np.abs(np.fft.rfft(seg))
     freqs = np.fft.rfftfreq(len(seg), 1.0 / sr)
+    
     # Only consider frequencies corresponding to MIDI 12..120 (~16Hz..8372Hz).
-    # Below 16Hz autocorrelation/FFT both get noisy; above 8kHz overtones of
-    # high notes start hitting Nyquist artifacts.
-    valid = (freqs >= 16) & (freqs <= 8400)
-    if not np.any(valid):
+    valid_indices = np.where((freqs >= 16) & (freqs <= 8400))[0]
+    if len(valid_indices) == 0:
         return None
-    spec_valid = spec.copy()
-    spec_valid[~valid] = 0
-    # Harmonic Product Spectrum: multiply downsampled spectra. This boosts the
-    # fundamental relative to its harmonics.
-    hps = spec_valid.copy()
-    for d in (2, 3, 4):
-        ds = np.interp(freqs, freqs[::d], spec_valid[::d])
-        hps = hps * (ds + 1e-12)
-    best_idx = int(np.argmax(hps))
-    if hps[best_idx] <= 0:
+        
+    # Find the maximum amplitude in the valid range
+    max_mag = float(np.max(spec[valid_indices]))
+    if max_mag < 1e-5:
         return None
+        
+    threshold = 0.10 * max_mag
+    
+    # Scan from low to high frequency to find the first local peak exceeding threshold
+    best_idx = None
+    for idx in valid_indices:
+        # Check if it is a local peak: higher than neighbors
+        if idx > 0 and idx < len(spec) - 1:
+            if spec[idx] >= spec[idx - 1] and spec[idx] >= spec[idx + 1]:
+                if spec[idx] >= threshold:
+                    best_idx = idx
+                    break
+                    
+    # Fallback to absolute maximum if no local peak found
+    if best_idx is None:
+        best_idx = int(valid_indices[np.argmax(spec[valid_indices])])
+        
     freq = freqs[best_idx]
     if freq <= 0:
         return None
+        
     # Parabolic interpolation around the peak bin for sub-bin accuracy.
     if 0 < best_idx < len(freqs) - 1:
-        a0, a1, a2 = hps[best_idx - 1], hps[best_idx], hps[best_idx + 1]
+        a0, a1, a2 = spec[best_idx - 1], spec[best_idx], spec[best_idx + 1]
         denom = (a0 - 2 * a1 + a2)
         if denom != 0:
             offset = 0.5 * (a0 - a2) / denom
             freq = freqs[best_idx] + offset * (freqs[1] - freqs[0])
+            
     midi = 69 + 12 * np.log2(freq / 440.0)
     return int(round(midi))
 
