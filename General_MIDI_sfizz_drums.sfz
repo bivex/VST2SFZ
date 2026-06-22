@@ -1,6 +1,4 @@
-// GM Drum Kit — sfizz variant (synthesized)
-// Key-mapped drum samples with distinct sounds per note.
-
+// GM Drum Kit — sfizz (KSHMR Vol.5)
 <group>
 ampeg_attack=0.001 ampeg_release=0.05
 
@@ -12,6 +10,8 @@ ampeg_attack=0.001 ampeg_release=0.05
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N37_v127.wav lokey=37 hikey=37 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N38_v064.wav lokey=38 hikey=38 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N38_v127.wav lokey=38 hikey=38 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N40_v064.wav lokey=40 hikey=40 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N40_v127.wav lokey=40 hikey=40 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N41_v064.wav lokey=41 hikey=41 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N41_v127.wav lokey=41 hikey=41 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N42_v064.wav lokey=42 hikey=42 lovel=0 hivel=80
