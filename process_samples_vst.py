@@ -15,6 +15,7 @@ import glob
 import argparse
 import numpy as np
 import soundfile as sf
+import scipy.signal
 import dawdreamer as daw
 
 CHOW_PATH = "/Library/Audio/Plug-Ins/VST3/CHOWTapeModel.vst3"
@@ -448,7 +449,6 @@ def process_file(filepath, out_dir, engine, pb, tape, spiff, pro_q, reverb, chor
             
         # Resample to the processing sample rate if necessary
         if sr != SAMPLE_RATE:
-            import scipy.signal
             gcd = int(np.gcd(sr, SAMPLE_RATE))
             up = SAMPLE_RATE // gcd
             down = sr // gcd
@@ -576,10 +576,10 @@ def main():
 
     print(f"\n✓ Done! All {len(files)} samples processed → {out_dir}")
     
-    # Run patch_sfz_pitches.py on the processed samples folder
-    print("\nRunning pitch auto-aligner on the finalized mastered samples...")
+    # Run patch_sfz_pitches.py on the raw (dry) samples folder to avoid FX-induced pitch detection errors
+    print("\nRunning pitch auto-aligner on the raw dry samples...")
     import subprocess
-    cmd = [sys.executable, "patch_sfz_pitches.py", "--raw-dir", out_dir]
+    cmd = [sys.executable, "patch_sfz_pitches.py", "--raw-dir", src_dir]
     try:
         subprocess.run(cmd, check=True)
     except Exception as e:
