@@ -192,9 +192,29 @@ def main():
         if prog is None:
             continue
         if 32 <= prog <= 39:
-            # Skip studio processing for bass instruments to preserve full low-end power.
-            # Copy the raw sample directly from backup to the active sample dir.
-            shutil.copy2(os.path.join(backup_dir, os.path.basename(path)), path)
+            # Bass instruments: skip the full studio chain to preserve low-end
+            # power, BUT still declip — Surge XT renders bass patches hard-clipped
+            # on high notes (e.g. gm_033 C7/C8 has 20k+ samples pinned at 1.0),
+            # and those flat-top segments crackle on playback. Apply a soft
+            # declamper (cubic waveshaper) that rounds the hard shoulders into
+            # smooth arcs, then peak-normalize to 0.95.
+            raw_path = os.path.join(backup_dir, os.path.basename(path))
+            shutil.copy2(raw_path, path)
+            audio, sr = sf.read(path)
+            if audio.ndim == 1:
+                audio = np.column_stack((audio, audio))
+            audio = audio.astype(np.float32, copy=True)
+            # Cubic soft-clip: y = x - (1/3)*x^3 for |x|<=1, smoothly limiting.
+            # Maps ±1 → ±0.667 with zero derivative at the limit, removing the
+            # flat clipped shoulders entirely while preserving sub-0.5 samples
+            # almost linearly.
+            clipped = np.abs(audio) >= 0.999
+            if np.any(clipped):
+                audio = audio - (1.0 / 3.0) * np.power(audio, 3)
+            peak = float(np.max(np.abs(audio)))
+            if peak > 0.95:
+                audio = audio * (0.95 / peak)
+            sf.write(path, audio, sr, subtype="PCM_24")
             continue
         if idx % 50 == 0 or idx == len(wav_files) - 1:
             print(f"  [{idx+1}/{len(wav_files)}] {os.path.basename(path)}")
