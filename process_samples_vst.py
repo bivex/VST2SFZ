@@ -437,15 +437,34 @@ def apply_preset(tape, pro_q, pro_mb, reverb, chorus, stereo, fresh_air, spiff, 
             pro_mb.set_parameter(idx, val)
 
 def configure_kotelnikov_ge(kotelnikov):
-    """TDR Kotelnikov GE: transparent mastering compressor."""
-    kotelnikov.set_parameter(0, 0.279)   # Threshold -14 dBFS
-    kotelnikov.set_parameter(5, 0.2682)  # Ratio 1.5:1
-    kotelnikov.set_parameter(6, 0.3291)  # Attack 3.0 ms
-    kotelnikov.set_parameter(7, 0.4337)  # Release Peak 100 ms
-    kotelnikov.set_parameter(8, 0.5877)  # Release RMS 300 ms
+    """TDR Kotelnikov GE: transparent mastering compressor.
+
+    Calibrated against verified parameter defaults (audit data):
+      idx 0 = Threshold  (0.0 = 0 dBFS, → negative dB)
+      idx 1 = Peak Crest (0.4091 = 3.0 dB)
+      idx 2 = Soft Knee  (0.0625 = 1.0 dB)
+      idx 5 = Ratio      (0.5000 = 2.0:1, 0.43 ≈ 1.5:1)
+      idx 6 = Attack     (0.3933 = 6 ms)
+      idx 7 = Release Peak (0.3925 = 80 ms)
+      idx 8 = Release RMS  (0.5207 = 220 ms)
+      idx 10 = Makeup     (0.5000 = 0 dB, 0.6 ≈ +3 dB)
+      idx 11 = Dry Mix    (0.0 = off)
+      idx 12 = Dry Wet    (1.0 = 100% wet)
+      idx 14 = Out Gain   (0.5000 = 0 dB, 0.5738 ≈ +3 dB)
+
+    Settings: gentle transparent glue. Threshold catches peaks around
+    -18 dBFS, ratio 1.5:1 barely touches dynamics, makeup +2 dB to
+    compensate for the tiny level reduction.
+    """
+    kotelnikov.set_parameter(0, 0.30)    # Threshold ~-18 dBFS
+    kotelnikov.set_parameter(5, 0.43)    # Ratio 1.5:1
+    kotelnikov.set_parameter(6, 0.39)    # Attack ~6 ms (default)
+    kotelnikov.set_parameter(7, 0.42)    # Release Peak ~100 ms
+    kotelnikov.set_parameter(8, 0.55)    # Release RMS ~280 ms
+    kotelnikov.set_parameter(10, 0.58)   # Makeup +2 dB
     kotelnikov.set_parameter(11, 0.0)    # Dry Mix off
-    kotelnikov.set_parameter(12, 1.0)    # Dry Wet 0.0 (100% wet)
-    kotelnikov.set_parameter(14, 0.5738) # Out Gain +3.0 dB makeup
+    kotelnikov.set_parameter(12, 1.0)    # Dry Wet 100% (full compression)
+    kotelnikov.set_parameter(14, 0.55)   # Out Gain +2 dB
 
 def configure_limiter(limiter):
     """FabFilter Pro-L 2: true peak mastering limiter."""
