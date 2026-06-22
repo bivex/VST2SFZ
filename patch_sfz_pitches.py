@@ -2,7 +2,7 @@
 """
 Multiprocessed pitch correction tool for General MIDI SFZ packs.
 
-Analyzes raw WAV samples in parallel using the "lowest-peak" method,
+Analyzes raw WAV samples in parallel using the "loudest-peak" method,
 and patches pitch_keycenter opcodes in all target SFZ files in-place.
 """
 import os
@@ -22,7 +22,17 @@ DEFAULT_SFZ_FILES = [
 ]
 
 def detect_pitch_midi(audio, sr):
-    """Detects fundamental pitch using the lowest-peak method."""
+    """Detects perceived pitch using the loudest-peak method.
+
+    For many synth presets (especially bass), the fundamental frequency is
+    weak while the first harmonic (one octave up) dominates the spectrum.
+    Using the lowest peak finds the weak fundamental → wrong keycenter →
+    sfizz transposes from the wrong reference → notes come out an octave off.
+
+    The loudest peak represents the *perceived* pitch — what the listener
+    actually hears as the note. Setting pitch_keycenter to this value makes
+    sfizz transpose correctly regardless of harmonic balance.
+    """
     mono = audio.mean(axis=1) if audio.ndim > 1 else audio
     # Sustain window: skip attack (first 0.1s), take next 0.6s
     start = int(sr * 0.1)
@@ -34,27 +44,17 @@ def detect_pitch_midi(audio, sr):
     spec = np.abs(np.fft.rfft(seg))
     freqs = np.fft.rfftfreq(len(seg), 1.0 / sr)
     
-    valid_indices = np.where((freqs >= 16) & (freqs <= 8400))[0]
-    if len(valid_indices) == 0:
+    # Restrict to audible musical range
+    valid = (freqs >= 20) & (freqs <= 8400)
+    if not np.any(valid):
         return None
-        
-    max_mag = float(np.max(spec[valid_indices]))
-    if max_mag < 1e-5:
-        return None
-        
-    threshold = 0.10 * max_mag
     
-    # Scan from low to high frequency for the first local peak exceeding threshold
-    best_idx = None
-    for idx in valid_indices:
-        if idx > 0 and idx < len(spec) - 1:
-            if spec[idx] >= spec[idx - 1] and spec[idx] >= spec[idx + 1]:
-                if spec[idx] >= threshold:
-                    best_idx = idx
-                    break
-                    
-    if best_idx is None:
-        best_idx = int(valid_indices[np.argmax(spec[valid_indices])])
+    # Mask out-of-range frequencies, then find the LOUDEST peak
+    masked_spec = spec.copy()
+    masked_spec[~valid] = 0
+    best_idx = int(np.argmax(masked_spec))
+    if masked_spec[best_idx] <= 0:
+        return None
         
     freq = freqs[best_idx]
     if freq <= 0:
