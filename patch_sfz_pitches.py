@@ -5,6 +5,7 @@ Multiprocessed pitch correction tool for General MIDI SFZ packs.
 Analyzes raw WAV samples in parallel using the "loudest-peak" method,
 and patches pitch_keycenter opcodes in all target SFZ files in-place.
 """
+
 import os
 import re
 import glob
@@ -18,8 +19,9 @@ DEFAULT_RAW_DIR = "/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw"
 DEFAULT_SFZ_FILES = [
     "/Volumes/External/Code/VST2SFZ/General_MIDI.sfz",
     "/Volumes/External/Code/VST2SFZ/General_MIDI_sfizz.sfz",
-    "/Volumes/External/Code/VST2SFZ/General_MIDI_sfizz_processed.sfz"
+    "/Volumes/External/Code/VST2SFZ/General_MIDI_sfizz_processed.sfz",
 ]
+
 
 def detect_pitch_midi(audio, sr):
     """Detects perceived pitch using the loudest-peak method.
@@ -36,39 +38,40 @@ def detect_pitch_midi(audio, sr):
     mono = audio.mean(axis=1) if audio.ndim > 1 else audio
     # Sustain window: skip attack (first 0.1s), take next 0.6s
     start = int(sr * 0.1)
-    seg = mono[start:start + int(sr * 0.6)]
+    seg = mono[start : start + int(sr * 0.6)]
     if seg.size == 0 or float(np.max(np.abs(seg))) < 1e-5:
         return None
     seg = seg - float(np.mean(seg))  # remove DC
     seg = seg * np.hanning(len(seg))
     spec = np.abs(np.fft.rfft(seg))
     freqs = np.fft.rfftfreq(len(seg), 1.0 / sr)
-    
+
     # Restrict to audible musical range
     valid = (freqs >= 20) & (freqs <= 8400)
     if not np.any(valid):
         return None
-    
+
     # Mask out-of-range frequencies, then find the LOUDEST peak
     masked_spec = spec.copy()
     masked_spec[~valid] = 0
     best_idx = int(np.argmax(masked_spec))
     if masked_spec[best_idx] <= 0:
         return None
-        
+
     freq = freqs[best_idx]
     if freq <= 0:
         return None
-        
+
     if 0 < best_idx < len(freqs) - 1:
         a0, a1, a2 = spec[best_idx - 1], spec[best_idx], spec[best_idx + 1]
-        denom = (a0 - 2 * a1 + a2)
+        denom = a0 - 2 * a1 + a2
         if denom != 0:
             offset = 0.5 * (a0 - a2) / denom
             freq = freqs[best_idx] + offset * (freqs[1] - freqs[0])
-            
+
     midi = 69 + 12 * np.log2(freq / 440.0)
     return int(round(midi))
+
 
 def process_single_file(path):
     """Worker task: reads a WAV file and returns its detected pitch."""
@@ -81,29 +84,43 @@ def process_single_file(path):
     except Exception as e:
         # Silently fail or log to stderr; main process handles fallback
         pass
-        
+
     # Extract fallback pitch from note name in filename
-    # Format: gm_000_C4_v64.wav -> C4
+    # Melodic format: gm_000_C4_v64.wav -> C4
+    # Drum format:    gm_drum_N57_v127.wav -> MIDI note 57
     default_note = 60
-    m = re.search(r'gm_\d{3}_([A-Ga-g]#?\d+)_v', filename)
+    m = re.search(r"gm_\d{3}_([A-Ga-g]#?\d+)_v", filename)
     if m:
         note_str = m.group(1)
-        notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
-        letter_match = re.match(r'^([A-G]#?)(-?\d+)$', note_str)
+        notes = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
+        letter_match = re.match(r"^([A-G]#?)(-?\d+)$", note_str)
         if letter_match:
             letter = letter_match.group(1)
             octave = int(letter_match.group(2))
             if letter in notes:
                 val = notes.index(letter)
                 default_note = val + (octave + 1) * 12
-            
+    else:
+        m_drum = re.search(r"gm_drum_N(\d+)_v", filename)
+        if m_drum:
+            default_note = int(m_drum.group(1))
+
     return filename, default_note
 
+
 def main():
-    parser = argparse.ArgumentParser(description="Fast, parallelized pitch correction for SFZs.")
-    parser.add_argument("--raw-dir", default=DEFAULT_RAW_DIR, help="Directory containing raw WAV files")
-    parser.add_argument("--sfz", nargs="*", default=DEFAULT_SFZ_FILES, help="SFZ files to patch")
-    parser.add_argument("--workers", type=int, default=None, help="Number of parallel worker processes")
+    parser = argparse.ArgumentParser(
+        description="Fast, parallelized pitch correction for SFZs."
+    )
+    parser.add_argument(
+        "--raw-dir", default=DEFAULT_RAW_DIR, help="Directory containing raw WAV files"
+    )
+    parser.add_argument(
+        "--sfz", nargs="*", default=DEFAULT_SFZ_FILES, help="SFZ files to patch"
+    )
+    parser.add_argument(
+        "--workers", type=int, default=None, help="Number of parallel worker processes"
+    )
     args = parser.parse_args()
 
     if not os.path.isdir(args.raw_dir):
@@ -116,7 +133,9 @@ def main():
         return
 
     print(f"Found {len(wav_files)} raw samples in {args.raw_dir}")
-    print(f"Analyzing pitches in parallel using {args.workers or 'all available'} CPU cores...")
+    print(
+        f"Analyzing pitches in parallel using {args.workers or 'all available'} CPU cores..."
+    )
 
     pitch_map = {}
     completed = 0
@@ -129,7 +148,9 @@ def main():
             pitch_map[filename] = pitch
             completed += 1
             if completed % 250 == 0 or completed == total:
-                print(f"  Processed [{completed}/{total}] samples... Last: {filename} -> pitch={pitch}")
+                print(
+                    f"  Processed [{completed}/{total}] samples... Last: {filename} -> pitch={pitch}"
+                )
 
     # Align soft velocity pitches to the loudest velocity (v127) pitch for each note
     print("\nAligning soft velocity layers to loudest velocity (v127) pitches...")
@@ -153,32 +174,42 @@ def main():
             continue
 
         print(f"Updating {os.path.basename(sfz_path)}...")
-        with open(sfz_path, 'r') as f:
+        with open(sfz_path, "r") as f:
             lines = f.readlines()
 
         updated_lines = []
         replaced_count = 0
         for line in lines:
             if "<region>" in line:
-                m_sample = re.search(r'sample=([^ ]+\.wav)', line)
+                m_sample = re.search(r"sample=([^ ]+\.wav)", line)
                 if m_sample:
                     sample_path = m_sample.group(1)
                     sample_name = os.path.basename(sample_path)
-                    
+
                     if sample_name in pitch_map:
                         new_pitch = pitch_map[sample_name]
-                        # In-place regex substitution of the pitch_keycenter parameter
-                        line_new, count = re.subn(r'pitch_keycenter=\d+', f'pitch_keycenter={new_pitch}', line)
-                        if count > 0:
-                            line = line_new
+                        if re.search(r"pitch_keycenter=\d+", line):
+                            line_new, count = re.subn(
+                                r"pitch_keycenter=\d+",
+                                f"pitch_keycenter={new_pitch}",
+                                line,
+                            )
+                            if count > 0:
+                                line = line_new
+                                replaced_count += 1
+                        else:
+                            line = line.rstrip() + f" pitch_keycenter={new_pitch}\n"
                             replaced_count += 1
             updated_lines.append(line)
 
-        with open(sfz_path, 'w') as f:
+        with open(sfz_path, "w") as f:
             f.writelines(updated_lines)
-        print(f"  → Successfully patched {replaced_count} regions in {os.path.basename(sfz_path)}")
+        print(
+            f"  → Successfully patched {replaced_count} regions in {os.path.basename(sfz_path)}"
+        )
 
     print("\n✓ Parallel pitch patching complete!")
+
 
 if __name__ == "__main__":
     main()
