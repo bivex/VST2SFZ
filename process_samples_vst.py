@@ -29,6 +29,7 @@ CHORUS_PATH = "/Library/Audio/Plug-Ins/VST3/TAL-Chorus-LX.vst3"
 STEREO_PATH = "/Library/Audio/Plug-Ins/VST3/A1StereoControl.vst3"
 PRO_R_PATH = "/Library/Audio/Plug-Ins/VST3/FabFilter Pro-R 2.vst3"
 PRO_L_PATH = "/Library/Audio/Plug-Ins/VST3/FabFilter Pro-L 2.vst3"
+PRO_MB_PATH = "/Library/Audio/Plug-Ins/VST3/FabFilter Pro-MB.vst3"
 
 SAMPLE_RATE = 96000
 BUFFER_SIZE = 512
@@ -50,6 +51,7 @@ def _preset(tape_drive=0.35, tape_sat=0.4, tape_bass=0.5, tape_treble=0.5,
             rvb_diffuse=0.7, rvb_spin=0.16, rvb_hicut=1.0,
             stereo_width=0.50, chorus_wet=0.0,
             fresh_mid=0.0, fresh_high=0.0,
+            mb_bypass=True, mb_params=None,
             bypass=False):
     return {
         "bypass": bypass,
@@ -98,6 +100,10 @@ def _preset(tape_drive=0.35, tape_sat=0.4, tape_bass=0.5, tape_treble=0.5,
             "bypass": fresh_mid == 0.0 and fresh_high == 0.0,
             "mid": fresh_mid,
             "high": fresh_high
+        },
+        "pro_mb": {
+            "bypass": mb_bypass,
+            "params": mb_params or {}
         }
     }
 
@@ -239,7 +245,7 @@ def get_preset_for_program(prog):
         
     return preset
 
-def apply_preset(tape, pro_q, reverb, chorus, stereo, fresh_air, spiff, sdrr, soothe, preset):
+def apply_preset(tape, pro_q, pro_mb, reverb, chorus, stereo, fresh_air, spiff, sdrr, soothe, preset):
     """Configure all plugins for a given preset dict."""
     # CHOWTape
     for idx, val in preset["tape"].items():

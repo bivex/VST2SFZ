@@ -93,8 +93,9 @@ def process_single_file(path):
         if letter_match:
             letter = letter_match.group(1)
             octave = int(letter_match.group(2))
-            val = notes.index(letter)
-            default_note = val + (octave + 1) * 12
+            if letter in notes:
+                val = notes.index(letter)
+                default_note = val + (octave + 1) * 12
             
     return filename, default_note
 
