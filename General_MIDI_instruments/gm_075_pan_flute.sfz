@@ -14,9 +14,9 @@ prg_num=75
 <region> sample=gm_075_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
 <region> sample=gm_075_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_075_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
-<region> sample=gm_075_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
-<region> sample=gm_075_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
-<region> sample=gm_075_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
-<region> sample=gm_075_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_075_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
-<region> sample=gm_075_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=81 hivel=127
+<region> sample=gm_075_C6_v64.wav pitch_keycenter=72 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=gm_075_C6_v127.wav pitch_keycenter=72 lokey=79 hikey=90 lovel=81 hivel=127
+<region> sample=gm_075_C7_v64.wav pitch_keycenter=84 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=gm_075_C7_v127.wav pitch_keycenter=84 lokey=91 hikey=102 lovel=81 hivel=127
+<region> sample=gm_075_C8_v64.wav pitch_keycenter=96 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_075_C8_v127.wav pitch_keycenter=96 lokey=103 hikey=127 lovel=81 hivel=127

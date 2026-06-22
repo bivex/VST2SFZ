@@ -335,9 +335,18 @@ def main():
 
             print(f"Sampling [{i:03d}/127] {inst_name} (Preset: {os.path.basename(preset_path)})...")
 
-            engine = daw.RenderEngine(sr, 512)
-            synth = engine.make_plugin_processor("synth", vst_path)
-            engine.load_graph([(synth, [])])
+            # Silencing low-level stderr during VST initialization to hide URI mapping warnings
+            devnull = open(os.devnull, 'w')
+            old_stderr = os.dup(2)
+            os.dup2(devnull.fileno(), 2)
+            try:
+                engine = daw.RenderEngine(sr, 512)
+                synth = engine.make_plugin_processor("synth", vst_path)
+                engine.load_graph([(synth, [])])
+            finally:
+                os.dup2(old_stderr, 2)
+                os.close(old_stderr)
+                devnull.close()
 
             # Switch preset
             synth.clear_midi()
@@ -352,6 +361,35 @@ def main():
             synth.clear_midi()
             if os.path.exists(temp_mid_path):
                 os.remove(temp_mid_path)
+
+            # Detect Preset Transposition
+            preset_transpose = 0
+            # Play a reference note (MIDI 60 = C4) to see what pitch the VST actually outputs
+            ref_note = 60
+            synth.add_midi_note(ref_note, 127, 0.0, 0.6)
+            engine.render(1.0)
+            ref_audio = engine.get_audio()
+            synth.clear_midi()
+            
+            if ref_audio.ndim == 1:
+                ref_audio = np.column_stack((ref_audio, ref_audio))
+            elif ref_audio.shape[0] == 2:
+                ref_audio = ref_audio.T
+                
+            detected_ref_pitch = detect_pitch_midi(ref_audio, sr)
+            if detected_ref_pitch is not None:
+                diff = detected_ref_pitch - ref_note
+                # Synthesizer presets are almost always transposed in octaves (multiples of 12).
+                # We round to the nearest octave and only apply if within 1 semitone of it.
+                nearest_octave = int(round(diff / 12.0)) * 12
+                if abs(diff - nearest_octave) <= 1 and abs(nearest_octave) <= 36:
+                    preset_transpose = nearest_octave
+                    if preset_transpose != 0:
+                        print(f"  Detected preset transposition: {preset_transpose:+} semitones")
+                else:
+                    preset_transpose = 0
+            else:
+                print("  Could not detect preset pitch, using 0 transpose offset")
             
             # Individual instrument SFZ file
             indiv_sfz_path = os.path.join(instruments_dir, f"gm_{i:03d}_{inst_name}.sfz")
@@ -372,9 +410,10 @@ def main():
                 for v_idx, vel in enumerate(velocities_to_sample):
                     note_name = midi_to_note_name(note)
                     
-                    # Render note
+                    # Render note with inverse transposition applied
                     synth.clear_midi()
-                    synth.add_midi_note(note, vel, 0.0, duration)
+                    play_note = max(0, min(127, note - preset_transpose))
+                    synth.add_midi_note(play_note, vel, 0.0, duration)
                     engine.render(total_duration)
                     audio = engine.get_audio()
 
@@ -391,7 +430,7 @@ def main():
                         synth.clear_midi()
                         if os.path.exists(retry_mid):
                             os.remove(retry_mid)
-                        synth.add_midi_note(note, vel, 0.0, duration)
+                        synth.add_midi_note(play_note, vel, 0.0, duration)
                         engine.render(total_duration)
                         audio = engine.get_audio()
 
