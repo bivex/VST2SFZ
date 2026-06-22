@@ -1597,3 +1597,136 @@ loprog=83 hiprog=83
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_083_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_083_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_083_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_083_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=81 hivel=127
+
+<group>
+loprog=84 hiprog=84
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_084_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_084_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_084_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_084_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_084_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_084_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_084_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_084_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_084_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_084_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_084_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_084_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_084_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_084_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_084_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_084_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=81 hivel=127
+
+<group>
+loprog=85 hiprog=85
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_085_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_085_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_085_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_085_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_085_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_085_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_085_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_085_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_085_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_085_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_085_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_085_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_085_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_085_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_085_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_085_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=81 hivel=127
+
+<group>
+loprog=86 hiprog=86
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_086_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_086_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_086_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_086_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_086_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_086_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_086_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_086_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_086_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_086_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_086_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_086_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_086_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_086_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_086_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_086_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=81 hivel=127
+
+<group>
+loprog=87 hiprog=87
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_087_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_087_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_087_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_087_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_087_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_087_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_087_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_087_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_087_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_087_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_087_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_087_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_087_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_087_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_087_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_087_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=81 hivel=127
+
+<group>
+loprog=88 hiprog=88
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_088_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_088_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_088_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_088_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_088_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_088_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_088_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_088_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_088_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_088_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_088_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_088_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_088_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_088_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_088_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_088_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=81 hivel=127
+
+<group>
+loprog=89 hiprog=89
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_089_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_089_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_089_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_089_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_089_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_089_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_089_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_089_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_089_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_089_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_089_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_089_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_089_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_089_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_089_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_089_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=81 hivel=127
+
+<group>
+loprog=90 hiprog=90
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_090_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_090_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_090_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_090_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_090_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_090_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_090_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_090_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_090_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_090_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_090_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_090_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_090_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_090_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_090_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
