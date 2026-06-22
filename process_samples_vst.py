@@ -3,7 +3,7 @@
 Sequential VST color chain processing for GM samples.
 
 Uses DawDreamer to apply a high-quality production mastering/coloring chain:
-  CHOWTape → spiff → TDR Nova → TDR Kotelnikov → Fresh Air → TAL-Chorus-LX → Dragonfly Room → A1StereoControl → BasicLimiter
+  CHOWTape → SDRR2 → spiff → soothe2 → TDR Nova → TDR Kotelnikov → Fresh Air → TAL-Chorus-LX → Dragonfly Room → A1StereoControl → BasicLimiter
 
 Runs sequentially in a single thread to prevent CPU overload.
 """
@@ -18,7 +18,9 @@ import soundfile as sf
 import dawdreamer as daw
 
 CHOW_PATH = "/Library/Audio/Plug-Ins/VST3/CHOWTapeModel.vst3"
+SDRR_PATH = "/Library/Audio/Plug-Ins/VST3/SDRR2.vst3"
 SPIFF_PATH = "/Library/Audio/Plug-Ins/VST3/spiff.vst3"
+SOOTHE_PATH = "/Library/Audio/Plug-Ins/VST3/soothe2.vst3"
 NOVA_PATH = "/Library/Audio/Plug-Ins/VST3/TDR Nova.vst3"
 KOTELNIKOV_PATH = "/Library/Audio/Plug-Ins/VST3/TDR Kotelnikov.vst3"
 FRESH_AIR_PATH = "/Library/Audio/Plug-Ins/VST3/Fresh Air.vst3"
@@ -35,6 +37,9 @@ BUFFER_SIZE = 512
 # ---------------------------------------------------------------------------
 
 def _preset(tape_drive=0.35, tape_sat=0.4, tape_bass=0.5, tape_treble=0.5,
+            sdrr_bypass=True, sdrr_mode=0.0, sdrr_drive=0.20, sdrr_mix=0.50,
+            spiff_mode=1.0, spiff_boost=0.0, spiff_cut=0.0, spiff_sens=0.5, spiff_bypass=True,
+            soothe_bypass=True, soothe_depth=0.35, soothe_sharpness=0.50, soothe_selectivity=0.40,
             hp_freq=0.087, b1_gain=0.444, b1_q=0.339, b1_freq=0.32,
             b3_gain=0.562, b3_q=0.393, b3_freq=0.68,
             b4_gain=0.583, b4_q=0.438, b4_freq=0.85,
@@ -43,13 +48,31 @@ def _preset(tape_drive=0.35, tape_sat=0.4, tape_bass=0.5, tape_treble=0.5,
             rvb_diffuse=0.7, rvb_spin=0.16, rvb_hicut=1.0,
             stereo_width=0.50, chorus_wet=0.0,
             fresh_mid=0.0, fresh_high=0.0,
-            spiff_mode=1.0, spiff_boost=0.0, spiff_cut=0.0, spiff_sens=0.5, spiff_bypass=True,
             bypass=False):
     return {
         "bypass": bypass,
         "tape": {0: 0.889, 1: 0.5, 2: 1.0,
                  16: tape_drive, 17: tape_sat, 18: 0.5,
                  8: tape_bass, 9: tape_treble},
+        "sdrr": {
+            "bypass": sdrr_bypass,
+            "mode": sdrr_mode,
+            "drive": sdrr_drive,
+            "mix": sdrr_mix
+        },
+        "spiff": {
+            "bypass": spiff_bypass,
+            "mode": spiff_mode,  # 1.0 = boost, 0.0 = cut
+            "boost": spiff_boost,
+            "cut": spiff_cut,
+            "sens": spiff_sens
+        },
+        "soothe": {
+            "bypass": soothe_bypass,
+            "depth": soothe_depth,
+            "sharpness": soothe_sharpness,
+            "selectivity": soothe_selectivity
+        },
         "eq": {50: hp_freq,
                2: b1_gain, 3: b1_q, 4: b1_freq,
                26: b3_gain, 27: b3_q, 28: b3_freq,
@@ -64,18 +87,12 @@ def _preset(tape_drive=0.35, tape_sat=0.4, tape_bass=0.5, tape_treble=0.5,
             "bypass": fresh_mid == 0.0 and fresh_high == 0.0,
             "mid": fresh_mid,
             "high": fresh_high
-        },
-        "spiff": {
-            "bypass": spiff_bypass,
-            "mode": spiff_mode,  # 1.0 = boost, 0.0 = cut
-            "boost": spiff_boost,
-            "cut": spiff_cut,
-            "sens": spiff_sens
         }
     }
 
 GROUP_PRESETS = {
     0:  _preset(tape_drive=0.30, tape_sat=0.35, tape_treble=0.55,            # Pianos: bright, warm
+                sdrr_bypass=False, sdrr_mode=3.0, sdrr_drive=0.15, sdrr_mix=0.25, # subtle desk saturation
                 b4_gain=0.583, b4_freq=0.85,
                 rvb_dry=0.85, rvb_early=0.10, rvb_late=0.05,
                 rvb_decay=0.05, rvb_size=0.20,
@@ -89,6 +106,7 @@ GROUP_PRESETS = {
                 fresh_mid=0.05, fresh_high=0.15,
                 spiff_mode=1.0, spiff_boost=0.15, spiff_sens=0.40, spiff_bypass=False),
     2:  _preset(tape_drive=0.50, tape_sat=0.50, tape_bass=0.45,              # Organs: warm, rotary motion
+                sdrr_bypass=False, sdrr_mode=0.0, sdrr_drive=0.20, sdrr_mix=0.35, # tube crunch
                 b1_gain=0.375, b1_freq=0.30,
                 b3_gain=0.562, b3_freq=0.62,
                 rvb_dry=0.82, rvb_early=0.08, rvb_late=0.10,
@@ -96,13 +114,16 @@ GROUP_PRESETS = {
                 stereo_width=0.60, chorus_wet=0.15,
                 fresh_mid=0.02, fresh_high=0.02),
     3:  _preset(tape_drive=0.40, tape_sat=0.45,                              # Guitars: dense, warm pick attack
+                sdrr_bypass=False, sdrr_mode=0.0, sdrr_drive=0.20, sdrr_mix=0.30, # tube preamp color
+                spiff_mode=1.0, spiff_boost=0.10, spiff_sens=0.40, spiff_bypass=False,
+                soothe_bypass=False, soothe_depth=0.35, soothe_sharpness=0.50, # soothe resonances
                 b3_gain=0.583, b3_freq=0.72,
                 rvb_dry=0.88, rvb_early=0.06, rvb_late=0.06,
                 rvb_decay=0.04, rvb_size=0.15,
                 stereo_width=0.55,
-                fresh_mid=0.10, fresh_high=0.18,
-                spiff_mode=1.0, spiff_boost=0.10, spiff_sens=0.40, spiff_bypass=False),
+                fresh_mid=0.10, fresh_high=0.18),
     4:  _preset(tape_drive=0.60, tape_sat=0.55, tape_bass=0.60,              # Bass: powerful, centered low-end
+                sdrr_bypass=False, sdrr_mode=0.0, sdrr_drive=0.40, sdrr_mix=0.60, # fat tube harmonics
                 hp_freq=0.06,
                 b1_gain=0.625, b1_freq=0.18,
                 b3_gain=0.444, b3_freq=0.55,
@@ -110,36 +131,46 @@ GROUP_PRESETS = {
                 stereo_width=0.50,
                 fresh_mid=0.0, fresh_high=0.0),
     5:  _preset(tape_drive=0.20, tape_sat=0.25,                              # Strings: wide, spacious orchestra
+                sdrr_bypass=False, sdrr_mode=3.0, sdrr_drive=0.10, sdrr_mix=0.20, # desk console feel
+                soothe_bypass=False, soothe_depth=0.40, soothe_sharpness=0.45, # smooth strings bowing
                 b3_gain=0.583, b3_freq=0.72,
                 rvb_dry=0.75, rvb_early=0.10, rvb_late=0.15,
                 rvb_decay=0.18, rvb_size=0.40, rvb_diffuse=0.85,
                 stereo_width=0.70,
                 fresh_mid=0.05, fresh_high=0.10),
     6:  _preset(tape_drive=0.15, tape_sat=0.20,                              # Ensemble: voluminous, huge field
+                sdrr_bypass=False, sdrr_mode=3.0, sdrr_drive=0.10, sdrr_mix=0.20,
+                soothe_bypass=False, soothe_depth=0.40, soothe_sharpness=0.45,
                 b4_gain=0.604, b4_freq=0.88,
                 rvb_dry=0.70, rvb_early=0.12, rvb_late=0.18,
                 rvb_decay=0.25, rvb_size=0.45, rvb_diffuse=0.9,
                 stereo_width=0.75,
                 fresh_mid=0.04, fresh_high=0.08),
     7:  _preset(tape_drive=0.45, tape_sat=0.50,                              # Brass: bright, powerful
+                sdrr_bypass=False, sdrr_mode=3.0, sdrr_drive=0.15, sdrr_mix=0.20,
+                soothe_bypass=False, soothe_depth=0.45, soothe_sharpness=0.55, # suppress brass harshness
                 b3_gain=0.604, b3_freq=0.68,
                 rvb_dry=0.82, rvb_early=0.10, rvb_late=0.08,
                 rvb_decay=0.10, rvb_size=0.25,
                 stereo_width=0.60,
                 fresh_mid=0.03, fresh_high=0.05),
     8:  _preset(tape_drive=0.25, tape_sat=0.30,                              # Reed: warm, expressive
+                soothe_bypass=False, soothe_depth=0.35, soothe_sharpness=0.45,
                 b3_gain=0.583, b3_freq=0.62,
                 rvb_dry=0.85, rvb_early=0.08, rvb_late=0.07,
                 rvb_decay=0.07, rvb_size=0.20,
                 stereo_width=0.55,
                 fresh_mid=0.05, fresh_high=0.10),
     9:  _preset(tape_drive=0.15, tape_sat=0.20,                              # Pipe: open, airy, wide cathedral
+                soothe_bypass=False, soothe_depth=0.35, soothe_sharpness=0.45,
                 b4_gain=0.604, b4_freq=0.88,
                 rvb_dry=0.78, rvb_early=0.10, rvb_late=0.12,
                 rvb_decay=0.15, rvb_size=0.35, rvb_diffuse=0.85,
                 stereo_width=0.65,
                 fresh_mid=0.05, fresh_high=0.10),
     10: _preset(tape_drive=0.50, tape_sat=0.50,                              # Synth Leads: punchy, thick lead
+                sdrr_bypass=False, sdrr_mode=0.0, sdrr_drive=0.35, sdrr_mix=0.50, # saturated leads
+                soothe_bypass=False, soothe_depth=0.35, soothe_sharpness=0.50, # suppress resonance spikes
                 b1_gain=0.458, b1_freq=0.25,
                 b3_gain=0.583, b3_freq=0.75,
                 rvb_dry=0.88, rvb_early=0.06, rvb_late=0.06,
@@ -147,6 +178,8 @@ GROUP_PRESETS = {
                 stereo_width=0.55, chorus_wet=0.20,
                 fresh_mid=0.15, fresh_high=0.20),
     11: _preset(tape_drive=0.30, tape_sat=0.35,                              # Synth Pads: deep, wide, lush chorus
+                sdrr_bypass=False, sdrr_mode=3.0, sdrr_drive=0.15, sdrr_mix=0.25,
+                soothe_bypass=False, soothe_depth=0.30, soothe_sharpness=0.40,
                 b1_gain=0.375, b1_freq=0.30,
                 b4_gain=0.562, b4_freq=0.88,
                 rvb_dry=0.65, rvb_early=0.10, rvb_late=0.25,
@@ -154,18 +187,22 @@ GROUP_PRESETS = {
                 stereo_width=0.75, chorus_wet=0.40,
                 fresh_mid=0.08, fresh_high=0.15),
     12: _preset(tape_drive=0.10, tape_sat=0.15,                              # FX: atmospheric, massive field
+                sdrr_bypass=False, sdrr_mode=0.0, sdrr_drive=0.20, sdrr_mix=0.30,
                 rvb_dry=0.60, rvb_early=0.10, rvb_late=0.30,
                 rvb_decay=0.40, rvb_size=0.60, rvb_diffuse=0.95, rvb_spin=0.30,
                 stereo_width=0.80, chorus_wet=0.30,
                 fresh_mid=0.10, fresh_high=0.20),
     13: _preset(tape_drive=0.30, tape_sat=0.35,                              # Ethnic: authentic strings
+                sdrr_bypass=False, sdrr_mode=0.0, sdrr_drive=0.20, sdrr_mix=0.30,
+                spiff_mode=1.0, spiff_boost=0.20, spiff_sens=0.50, spiff_bypass=False,
+                soothe_bypass=False, soothe_depth=0.35, soothe_sharpness=0.50,
                 b3_gain=0.583, b3_freq=0.72,
                 rvb_dry=0.82, rvb_early=0.08, rvb_late=0.10,
                 rvb_decay=0.10, rvb_size=0.25,
                 stereo_width=0.55,
-                fresh_mid=0.08, fresh_high=0.12,
-                spiff_mode=1.0, spiff_boost=0.20, spiff_sens=0.50, spiff_bypass=False),
+                fresh_mid=0.08, fresh_high=0.12),
     14: _preset(tape_drive=0.20, tape_sat=0.25,                              # Percussive: punchy, tight center drums
+                sdrr_bypass=False, sdrr_mode=0.0, sdrr_drive=0.25, sdrr_mix=0.35, # round tube saturation
                 b3_gain=0.604, b3_freq=0.72,
                 rvb_dry=0.80, rvb_early=0.10, rvb_late=0.10,
                 rvb_decay=0.07, rvb_diffuse=0.8,
@@ -195,15 +232,63 @@ def get_preset_for_program(prog):
         
     return preset
 
-def apply_preset(tape, eq, reverb, chorus, stereo, fresh_air, spiff, preset):
+def apply_preset(tape, eq, reverb, chorus, stereo, fresh_air, spiff, sdrr, soothe, preset):
     """Configure all plugins for a given preset dict."""
     # CHOWTape
     for idx, val in preset["tape"].items():
         tape.set_parameter(idx, val)
+        
+    # SDRR2 (Saturator)
+    sdrr_settings = preset["sdrr"]
+    if sdrr_settings["bypass"]:
+        sdrr.set_parameter(56, 1.0)  # Bypass ON
+    else:
+        sdrr.set_parameter(56, 0.0)  # Bypass OFF
+        sdrr_mode = sdrr_settings["mode"]
+        sdrr.set_parameter(0, sdrr_mode)  # Mode
+        
+        if sdrr_mode == 0.0:  # Tube
+            sdrr.set_parameter(2, sdrr_settings["drive"])
+            sdrr.set_parameter(10, sdrr_settings["mix"])
+        elif sdrr_mode == 3.0:  # Desk
+            sdrr.set_parameter(37, sdrr_settings["drive"])
+            sdrr.set_parameter(49, sdrr_settings["mix"])
+
+    # spiff (oeksound)
+    spiff_settings = preset["spiff"]
+    if spiff_settings["bypass"]:
+        spiff.set_parameter(38, 1.0)  # Bypass ON
+        spiff.set_parameter(41, 1.0)  # Bypass ON
+    else:
+        spiff.set_parameter(38, 0.0)  # Bypass OFF
+        spiff.set_parameter(41, 0.0)  # Bypass OFF
+        spiff.set_parameter(0, spiff_settings["mode"])  # 1.0 = boost
+        if spiff_settings["mode"] > 0.5:
+            spiff.set_parameter(2, spiff_settings["boost"])  # boost depth
+        else:
+            spiff.set_parameter(1, spiff_settings["cut"])    # cut depth
+        spiff.set_parameter(3, spiff_settings["sens"])       # sensitivity
+        spiff.set_parameter(35, 1.0)                         # Mix 100%
+
+    # soothe2 (oeksound)
+    soothe_settings = preset["soothe"]
+    if soothe_settings["bypass"]:
+        soothe.set_parameter(53, 1.0)  # Bypass ON
+    else:
+        soothe.set_parameter(53, 0.0)  # Bypass OFF
+        soothe.set_parameter(3, 0.0)   # Mode: soft
+        soothe.set_parameter(4, soothe_settings["depth"])
+        soothe.set_parameter(5, soothe_settings["sharpness"])
+        soothe.set_parameter(6, soothe_settings["selectivity"])
+        soothe.set_parameter(7, 0.15)  # Attack 1.5ms
+        soothe.set_parameter(8, 0.20)  # Release (medium fast)
+        soothe.set_parameter(50, 1.0)  # Mix 100%
+
     # TDR Nova
     for idx, val in preset["eq"].items():
         eq.set_parameter(idx, val)
         
+    # Reverb (Dragonfly)
     rvb_settings = preset["reverb"]
     if rvb_settings is not None:
         for idx, val in rvb_settings.items():
@@ -240,22 +325,6 @@ def apply_preset(tape, eq, reverb, chorus, stereo, fresh_air, spiff, preset):
         fresh_air.set_parameter(1, fresh_settings["high"])
         fresh_air.set_parameter(3, 1.0)  # Trim 0.0 dB
 
-    # Configure spiff (oeksound)
-    spiff_settings = preset["spiff"]
-    if spiff_settings["bypass"]:
-        spiff.set_parameter(38, 1.0)  # Bypass ON
-        spiff.set_parameter(41, 1.0)  # Bypass ON
-    else:
-        spiff.set_parameter(38, 0.0)  # Bypass OFF
-        spiff.set_parameter(41, 0.0)  # Bypass OFF
-        spiff.set_parameter(0, spiff_settings["mode"])  # 1.0 = boost
-        if spiff_settings["mode"] > 0.5:
-            spiff.set_parameter(2, spiff_settings["boost"])  # boost depth
-        else:
-            spiff.set_parameter(1, spiff_settings["cut"])    # cut depth
-        spiff.set_parameter(3, spiff_settings["sens"])       # sensitivity
-        spiff.set_parameter(35, 1.0)                         # Mix 100%
-
 def configure_kotelnikov(kotelnikov):
     """TDR Kotelnikov: transparent mastering compressor."""
     kotelnikov.set_parameter(0, 0.45)   # Threshold ~-14 dBFS
@@ -282,7 +351,7 @@ def program_from_name(filename):
 # Sequential Processing Loop
 # ---------------------------------------------------------------------------
 
-def process_file(filepath, out_dir, engine, pb, tape, spiff, eq, reverb, chorus, stereo, fresh_air):
+def process_file(filepath, out_dir, engine, pb, tape, spiff, eq, reverb, chorus, stereo, fresh_air, sdrr, soothe):
     # Note: kotelnikov and limiter are configured once globally in main() and omitted here
     filename = os.path.basename(filepath)
     prog = program_from_name(filename)
@@ -308,7 +377,7 @@ def process_file(filepath, out_dir, engine, pb, tape, spiff, eq, reverb, chorus,
         pb.set_data(audio_2d)
         
         # Configure presets
-        apply_preset(tape, eq, reverb, chorus, stereo, fresh_air, spiff, preset)
+        apply_preset(tape, eq, reverb, chorus, stereo, fresh_air, spiff, sdrr, soothe, preset)
         
         duration = len(audio) / sr
         engine.render(duration)
@@ -346,7 +415,8 @@ def main():
     print(f"Found {len(files)} raw samples in {src_dir}")
 
     # Validate VST paths before starting
-    for name, path in [("CHOWTape", CHOW_PATH), ("spiff", SPIFF_PATH), ("TDR Nova", NOVA_PATH),
+    for name, path in [("CHOWTape", CHOW_PATH), ("SDRR2", SDRR_PATH), ("spiff", SPIFF_PATH),
+                        ("soothe2", SOOTHE_PATH), ("TDR Nova", NOVA_PATH),
                         ("Kotelnikov", KOTELNIKOV_PATH), ("Fresh Air", FRESH_AIR_PATH),
                         ("Chorus", CHORUS_PATH), ("StereoControl", STEREO_PATH),
                         ("Dragonfly", DRAGONFLY_PATH), ("BasicLimiter", LIMITER_PATH)]:
@@ -363,7 +433,9 @@ def main():
         print("Initializing DawDreamer engine and VST plugins (single-threaded)...")
         engine = daw.RenderEngine(SAMPLE_RATE, BUFFER_SIZE)
         tape = engine.make_plugin_processor("tape", CHOW_PATH)
+        sdrr = engine.make_plugin_processor("sdrr", SDRR_PATH)
         spiff = engine.make_plugin_processor("spiff", SPIFF_PATH)
+        soothe = engine.make_plugin_processor("soothe", SOOTHE_PATH)
         eq = engine.make_plugin_processor("eq", NOVA_PATH)
         kotelnikov = engine.make_plugin_processor("kot", KOTELNIKOV_PATH)
         fresh_air = engine.make_plugin_processor("fresh", FRESH_AIR_PATH)
@@ -386,8 +458,10 @@ def main():
     connections = [
         (pb, []),
         (tape, ["pb"]),
-        (spiff, ["tape"]),
-        (eq, ["spiff"]),
+        (sdrr, ["tape"]),
+        (spiff, ["sdrr"]),
+        (soothe, ["spiff"]),
+        (eq, ["soothe"]),
         (kotelnikov, ["eq"]),
         (fresh_air, ["kot"]),
         (chorus, ["fresh"]),
@@ -401,13 +475,13 @@ def main():
     total = len(files)
     for idx, filepath in enumerate(files, 1):
         filename = os.path.basename(filepath)
-        success, err = process_file(filepath, out_dir, engine, pb, tape, spiff, eq, reverb, chorus, stereo, fresh_air)
+        success, err = process_file(filepath, out_dir, engine, pb, tape, spiff, eq, reverb, chorus, stereo, fresh_air, sdrr, soothe)
         if not success:
-            print(f"\n  [{idx}/{total}] FAILED: {filename} - {err}")
-        else:
-            print(f"\r  Processed [{idx}/{total}] samples... Last: {filename}\033[K", end="", flush=True)
+            print(f"  [{idx}/{total}] FAILED: {filename} - {err}")
+        elif idx % 100 == 0 or idx == total:
+            print(f"  Processed [{idx}/{total}] samples... Last: {filename}")
 
-    print(f"\n\n✓ Done! All {len(files)} samples processed → {out_dir}")
+    print(f"\n✓ Done! All {len(files)} samples processed → {out_dir}")
     
     # Explicit clean teardown
     engine.load_graph([])
