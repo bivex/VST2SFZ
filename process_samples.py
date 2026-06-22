@@ -187,8 +187,11 @@ def main():
 
     # --- Process --------------------------------------------------------------
     print(f"\nProcessing {len(wav_files)} samples...")
-    for idx, path in enumerate(wav_files):
-        prog = program_from_name(os.path.basename(path))
+    total = len(wav_files)
+    for idx, path in enumerate(wav_files, 1):
+        filename = os.path.basename(path)
+        print(f"\r  Processed [{idx}/{total}] samples... Last: {filename}\033[K", end="", flush=True)
+        prog = program_from_name(filename)
         if prog is None:
             continue
         if 32 <= prog <= 39:
@@ -198,7 +201,7 @@ def main():
             # and those flat-top segments crackle on playback. Apply a soft
             # declamper (cubic waveshaper) that rounds the hard shoulders into
             # smooth arcs, then peak-normalize to 0.95.
-            raw_path = os.path.join(backup_dir, os.path.basename(path))
+            raw_path = os.path.join(backup_dir, filename)
             shutil.copy2(raw_path, path)
             audio, sr = sf.read(path)
             if audio.ndim == 1:
@@ -216,8 +219,6 @@ def main():
                 audio = audio * (0.95 / peak)
             sf.write(path, audio, sr, subtype="PCM_24")
             continue
-        if idx % 50 == 0 or idx == len(wav_files) - 1:
-            print(f"  [{idx+1}/{len(wav_files)}] {os.path.basename(path)}")
 
         audio, sr = sf.read(path)
         if audio.ndim == 1:

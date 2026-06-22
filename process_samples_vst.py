@@ -403,11 +403,11 @@ def main():
         filename = os.path.basename(filepath)
         success, err = process_file(filepath, out_dir, engine, pb, tape, spiff, eq, reverb, chorus, stereo, fresh_air)
         if not success:
-            print(f"  [{idx}/{total}] FAILED: {filename} - {err}")
-        elif idx % 100 == 0 or idx == total:
-            print(f"  Processed [{idx}/{total}] samples... Last: {filename}")
+            print(f"\n  [{idx}/{total}] FAILED: {filename} - {err}")
+        else:
+            print(f"\r  Processed [{idx}/{total}] samples... Last: {filename}\033[K", end="", flush=True)
 
-    print(f"\n✓ Done! All {len(files)} samples processed → {out_dir}")
+    print(f"\n\n✓ Done! All {len(files)} samples processed → {out_dir}")
     
     # Explicit clean teardown
     engine.load_graph([])
