@@ -355,13 +355,27 @@ def apply_preset(tape, pro_q, reverb, chorus, stereo, fresh_air, spiff, sdrr, so
     rvb_settings = preset["reverb"]
     if rvb_settings is not None:
         reverb.set_parameter(132, 0.0)           # Bypass OFF
-        dry = rvb_settings.get(2, 0.88)          # Dry level
+        dry = rvb_settings.get(2, 0.88)          # rvb_dry (key 2)
         mix = 1.0 - dry
         reverb.set_parameter(9, mix)             # Mix (0.0 to 1.0)
-        size = rvb_settings.get(6, 0.167)        # Size/Space
-        reverb.set_parameter(0, size)            # Space
-        reverb.set_parameter(5, 0.50)            # Character (50% Clean/Chorus)
-        reverb.set_parameter(7, 0.70)            # Stereo Width (70%)
+        
+        # In Pro-R 2, Space (parameter 0) controls room size and decay time.
+        # We map the preset's rvb_decay (key 9) directly to Space.
+        decay_val = rvb_settings.get(9, 0.10)
+        reverb.set_parameter(0, decay_val)       # Space (parameter 0)
+        
+        # Keep Decay Rate (parameter 1) at 100% (value 0.50)
+        reverb.set_parameter(1, 0.50)
+        
+        # Predelay (key 8) maps to Predelay (parameter 16)
+        predelay_val = rvb_settings.get(8, 0.08)
+        reverb.set_parameter(16, predelay_val)
+        
+        # Set Character (parameter 5) to 50% (value 0.50)
+        reverb.set_parameter(5, 0.50)
+        
+        # Set Stereo Width (parameter 7) to 70% (value 0.58 corresponds to 70%)
+        reverb.set_parameter(7, 0.58)
     else:
         reverb.set_parameter(132, 1.0)           # Bypass ON
         reverb.set_parameter(9, 0.0)             # Mix 0%
@@ -432,13 +446,22 @@ def process_file(filepath, out_dir, engine, pb, tape, spiff, pro_q, reverb, chor
         if audio.ndim == 1:
             audio = np.column_stack((audio, audio))
             
+        # Resample to the processing sample rate if necessary
+        if sr != SAMPLE_RATE:
+            import scipy.signal
+            gcd = int(np.gcd(sr, SAMPLE_RATE))
+            up = SAMPLE_RATE // gcd
+            down = sr // gcd
+            audio = scipy.signal.resample_poly(audio, up, down, axis=0)
+            sr = SAMPLE_RATE
+            
         if preset["bypass"]:
             # Raw passthrough — just normalize and copy
             out = audio.T.astype(np.float32)
             peak = float(np.max(np.abs(out)))
             if peak > 1e-6:
                 out = out * (0.95 / peak)
-            sf.write(os.path.join(out_dir, filename), out.T, sr, subtype="PCM_24")
+            sf.write(os.path.join(out_dir, filename), out.T, SAMPLE_RATE, subtype="PCM_24")
             return True, None
             
         audio_2d = audio.T.astype(np.float32)
