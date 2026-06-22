@@ -130,6 +130,21 @@ def main():
             if completed % 250 == 0 or completed == total:
                 print(f"  Processed [{completed}/{total}] samples... Last: {filename} -> pitch={pitch}")
 
+    # Align soft velocity pitches to the loudest velocity (v127) pitch for each note
+    print("\nAligning soft velocity layers to loudest velocity (v127) pitches...")
+    aligned_count = 0
+    for filename in list(pitch_map.keys()):
+        if "_v64.wav" in filename:
+            v127_name = filename.replace("_v64.wav", "_v127.wav")
+            if v127_name in pitch_map:
+                v64_pitch = pitch_map[filename]
+                v127_pitch = pitch_map[v127_name]
+                if v64_pitch != v127_pitch:
+                    pitch_map[filename] = v127_pitch
+                    aligned_count += 1
+    if aligned_count > 0:
+        print(f"  → Aligned {aligned_count} soft velocity layers' pitches.")
+
     print("\nPatching SFZ files...")
     for sfz_path in args.sfz:
         if not os.path.exists(sfz_path):

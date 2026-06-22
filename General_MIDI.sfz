@@ -6,21 +6,21 @@ default_path=General_MIDI_samples/
 
 <group>
 prg_num=0
-<region> sample=gm_000_C1_v64.wav pitch_keycenter=72 lokey=0 hikey=30 lovel=0 hivel=80
+<region> sample=gm_000_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=gm_000_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=gm_000_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
 <region> sample=gm_000_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
 <region> sample=gm_000_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_000_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
-<region> sample=gm_000_C4_v64.wav pitch_keycenter=48 lokey=55 hikey=66 lovel=0 hivel=80
+<region> sample=gm_000_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_000_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
 <region> sample=gm_000_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_000_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
-<region> sample=gm_000_C6_v64.wav pitch_keycenter=72 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=gm_000_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_000_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
-<region> sample=gm_000_C7_v64.wav pitch_keycenter=84 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=gm_000_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_000_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_000_C8_v64.wav pitch_keycenter=77 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_000_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_000_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
@@ -54,11 +54,11 @@ prg_num=2
 <region> sample=gm_002_C4_v127.wav pitch_keycenter=66 lokey=55 hikey=66 lovel=81 hivel=127
 <region> sample=gm_002_C5_v64.wav pitch_keycenter=78 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_002_C5_v127.wav pitch_keycenter=78 lokey=67 hikey=78 lovel=81 hivel=127
-<region> sample=gm_002_C6_v64.wav pitch_keycenter=89 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=gm_002_C6_v64.wav pitch_keycenter=90 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_002_C6_v127.wav pitch_keycenter=90 lokey=79 hikey=90 lovel=81 hivel=127
-<region> sample=gm_002_C7_v64.wav pitch_keycenter=102 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=gm_002_C7_v64.wav pitch_keycenter=101 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_002_C7_v127.wav pitch_keycenter=101 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_002_C8_v64.wav pitch_keycenter=114 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_002_C8_v64.wav pitch_keycenter=113 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_002_C8_v127.wav pitch_keycenter=113 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
@@ -73,11 +73,11 @@ prg_num=3
 <region> sample=gm_003_C4_v127.wav pitch_keycenter=48 lokey=55 hikey=66 lovel=81 hivel=127
 <region> sample=gm_003_C5_v64.wav pitch_keycenter=60 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_003_C5_v127.wav pitch_keycenter=60 lokey=67 hikey=78 lovel=81 hivel=127
-<region> sample=gm_003_C6_v64.wav pitch_keycenter=60 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=gm_003_C6_v64.wav pitch_keycenter=71 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_003_C6_v127.wav pitch_keycenter=71 lokey=79 hikey=90 lovel=81 hivel=127
-<region> sample=gm_003_C7_v64.wav pitch_keycenter=72 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=gm_003_C7_v64.wav pitch_keycenter=84 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_003_C7_v127.wav pitch_keycenter=84 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_003_C8_v64.wav pitch_keycenter=84 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_003_C8_v64.wav pitch_keycenter=96 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_003_C8_v127.wav pitch_keycenter=96 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
@@ -126,7 +126,7 @@ prg_num=6
 <region> sample=gm_006_C2_v127.wav pitch_keycenter=24 lokey=31 hikey=42 lovel=81 hivel=127
 <region> sample=gm_006_C3_v64.wav pitch_keycenter=36 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_006_C3_v127.wav pitch_keycenter=36 lokey=43 hikey=54 lovel=81 hivel=127
-<region> sample=gm_006_C4_v64.wav pitch_keycenter=48 lokey=55 hikey=66 lovel=0 hivel=80
+<region> sample=gm_006_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_006_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
 <region> sample=gm_006_C5_v64.wav pitch_keycenter=60 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_006_C5_v127.wav pitch_keycenter=60 lokey=67 hikey=78 lovel=81 hivel=127
@@ -134,7 +134,7 @@ prg_num=6
 <region> sample=gm_006_C6_v127.wav pitch_keycenter=72 lokey=79 hikey=90 lovel=81 hivel=127
 <region> sample=gm_006_C7_v64.wav pitch_keycenter=84 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_006_C7_v127.wav pitch_keycenter=84 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_006_C8_v64.wav pitch_keycenter=84 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_006_C8_v64.wav pitch_keycenter=96 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_006_C8_v127.wav pitch_keycenter=96 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
@@ -200,17 +200,17 @@ prg_num=10
 <region> sample=gm_010_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=gm_010_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
 <region> sample=gm_010_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
-<region> sample=gm_010_C3_v64.wav pitch_keycenter=36 lokey=43 hikey=54 lovel=0 hivel=80
+<region> sample=gm_010_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_010_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
-<region> sample=gm_010_C4_v64.wav pitch_keycenter=48 lokey=55 hikey=66 lovel=0 hivel=80
+<region> sample=gm_010_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_010_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
 <region> sample=gm_010_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_010_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
-<region> sample=gm_010_C6_v64.wav pitch_keycenter=72 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=gm_010_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_010_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
-<region> sample=gm_010_C7_v64.wav pitch_keycenter=84 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=gm_010_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_010_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_010_C8_v64.wav pitch_keycenter=96 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_010_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_010_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
@@ -263,9 +263,9 @@ prg_num=13
 <region> sample=gm_013_C4_v127.wav pitch_keycenter=48 lokey=55 hikey=66 lovel=81 hivel=127
 <region> sample=gm_013_C5_v64.wav pitch_keycenter=60 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_013_C5_v127.wav pitch_keycenter=60 lokey=67 hikey=78 lovel=81 hivel=127
-<region> sample=gm_013_C6_v64.wav pitch_keycenter=72 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=gm_013_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_013_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
-<region> sample=gm_013_C7_v64.wav pitch_keycenter=72 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=gm_013_C7_v64.wav pitch_keycenter=84 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_013_C7_v127.wav pitch_keycenter=84 lokey=91 hikey=102 lovel=81 hivel=127
 <region> sample=gm_013_C8_v64.wav pitch_keycenter=92 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_013_C8_v127.wav pitch_keycenter=92 lokey=103 hikey=127 lovel=81 hivel=127
@@ -280,11 +280,11 @@ prg_num=14
 <region> sample=gm_014_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
 <region> sample=gm_014_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_014_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
-<region> sample=gm_014_C5_v64.wav pitch_keycenter=60 lokey=67 hikey=78 lovel=0 hivel=80
+<region> sample=gm_014_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_014_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
 <region> sample=gm_014_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_014_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
-<region> sample=gm_014_C7_v64.wav pitch_keycenter=84 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=gm_014_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_014_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
 <region> sample=gm_014_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_014_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=81 hivel=127
@@ -354,15 +354,15 @@ prg_num=18
 <region> sample=gm_018_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
 <region> sample=gm_018_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_018_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
-<region> sample=gm_018_C4_v64.wav pitch_keycenter=72 lokey=55 hikey=66 lovel=0 hivel=80
+<region> sample=gm_018_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_018_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
 <region> sample=gm_018_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_018_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
-<region> sample=gm_018_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=gm_018_C6_v64.wav pitch_keycenter=96 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_018_C6_v127.wav pitch_keycenter=96 lokey=79 hikey=90 lovel=81 hivel=127
 <region> sample=gm_018_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_018_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_018_C8_v64.wav pitch_keycenter=120 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_018_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_018_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
@@ -502,57 +502,57 @@ prg_num=25
 prg_num=26
 <region> sample=gm_026_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=gm_026_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
-<region> sample=gm_026_C2_v64.wav pitch_keycenter=24 lokey=31 hikey=42 lovel=0 hivel=80
+<region> sample=gm_026_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
 <region> sample=gm_026_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
-<region> sample=gm_026_C3_v64.wav pitch_keycenter=36 lokey=43 hikey=54 lovel=0 hivel=80
+<region> sample=gm_026_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_026_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
-<region> sample=gm_026_C4_v64.wav pitch_keycenter=48 lokey=55 hikey=66 lovel=0 hivel=80
+<region> sample=gm_026_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_026_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
-<region> sample=gm_026_C5_v64.wav pitch_keycenter=60 lokey=67 hikey=78 lovel=0 hivel=80
+<region> sample=gm_026_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_026_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
-<region> sample=gm_026_C6_v64.wav pitch_keycenter=72 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=gm_026_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_026_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
-<region> sample=gm_026_C7_v64.wav pitch_keycenter=84 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=gm_026_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_026_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_026_C8_v64.wav pitch_keycenter=96 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_026_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_026_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
 prg_num=27
 <region> sample=gm_027_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=gm_027_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
-<region> sample=gm_027_C2_v64.wav pitch_keycenter=24 lokey=31 hikey=42 lovel=0 hivel=80
+<region> sample=gm_027_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
 <region> sample=gm_027_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
-<region> sample=gm_027_C3_v64.wav pitch_keycenter=36 lokey=43 hikey=54 lovel=0 hivel=80
+<region> sample=gm_027_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_027_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
-<region> sample=gm_027_C4_v64.wav pitch_keycenter=48 lokey=55 hikey=66 lovel=0 hivel=80
+<region> sample=gm_027_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_027_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
-<region> sample=gm_027_C5_v64.wav pitch_keycenter=60 lokey=67 hikey=78 lovel=0 hivel=80
+<region> sample=gm_027_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_027_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
-<region> sample=gm_027_C6_v64.wav pitch_keycenter=72 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=gm_027_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_027_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
-<region> sample=gm_027_C7_v64.wav pitch_keycenter=84 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=gm_027_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_027_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_027_C8_v64.wav pitch_keycenter=96 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_027_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_027_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
 prg_num=28
 <region> sample=gm_028_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=gm_028_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
-<region> sample=gm_028_C2_v64.wav pitch_keycenter=24 lokey=31 hikey=42 lovel=0 hivel=80
+<region> sample=gm_028_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
 <region> sample=gm_028_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
-<region> sample=gm_028_C3_v64.wav pitch_keycenter=36 lokey=43 hikey=54 lovel=0 hivel=80
+<region> sample=gm_028_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_028_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
-<region> sample=gm_028_C4_v64.wav pitch_keycenter=48 lokey=55 hikey=66 lovel=0 hivel=80
+<region> sample=gm_028_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_028_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
-<region> sample=gm_028_C5_v64.wav pitch_keycenter=60 lokey=67 hikey=78 lovel=0 hivel=80
+<region> sample=gm_028_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_028_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
-<region> sample=gm_028_C6_v64.wav pitch_keycenter=72 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=gm_028_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_028_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
 <region> sample=gm_028_C7_v64.wav pitch_keycenter=24 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_028_C7_v127.wav pitch_keycenter=24 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_028_C8_v64.wav pitch_keycenter=24 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_028_C8_v64.wav pitch_keycenter=36 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_028_C8_v127.wav pitch_keycenter=36 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
@@ -609,7 +609,7 @@ prg_num=31
 <region> sample=gm_031_C6_v127.wav pitch_keycenter=72 lokey=79 hikey=90 lovel=81 hivel=127
 <region> sample=gm_031_C7_v64.wav pitch_keycenter=84 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_031_C7_v127.wav pitch_keycenter=84 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_031_C8_v64.wav pitch_keycenter=96 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_031_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_031_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
@@ -690,19 +690,19 @@ prg_num=35
 
 <group>
 prg_num=36
-<region> sample=gm_036_C1_v64.wav pitch_keycenter=36 lokey=0 hikey=30 lovel=0 hivel=80
+<region> sample=gm_036_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=gm_036_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
-<region> sample=gm_036_C2_v64.wav pitch_keycenter=48 lokey=31 hikey=42 lovel=0 hivel=80
+<region> sample=gm_036_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
 <region> sample=gm_036_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
-<region> sample=gm_036_C3_v64.wav pitch_keycenter=60 lokey=43 hikey=54 lovel=0 hivel=80
+<region> sample=gm_036_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_036_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
-<region> sample=gm_036_C4_v64.wav pitch_keycenter=72 lokey=55 hikey=66 lovel=0 hivel=80
+<region> sample=gm_036_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_036_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
-<region> sample=gm_036_C5_v64.wav pitch_keycenter=84 lokey=67 hikey=78 lovel=0 hivel=80
+<region> sample=gm_036_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_036_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
-<region> sample=gm_036_C6_v64.wav pitch_keycenter=96 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=gm_036_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_036_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
-<region> sample=gm_036_C7_v64.wav pitch_keycenter=108 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=gm_036_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_036_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
 <region> sample=gm_036_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_036_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=81 hivel=127
@@ -723,22 +723,22 @@ prg_num=37
 <region> sample=gm_037_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
 <region> sample=gm_037_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_037_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_037_C8_v64.wav pitch_keycenter=73 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_037_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_037_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
 prg_num=38
-<region> sample=gm_038_C1_v64.wav pitch_keycenter=31 lokey=0 hikey=30 lovel=0 hivel=80
+<region> sample=gm_038_C1_v64.wav pitch_keycenter=36 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=gm_038_C1_v127.wav pitch_keycenter=36 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=gm_038_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
 <region> sample=gm_038_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
-<region> sample=gm_038_C3_v64.wav pitch_keycenter=36 lokey=43 hikey=54 lovel=0 hivel=80
+<region> sample=gm_038_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_038_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
 <region> sample=gm_038_C4_v64.wav pitch_keycenter=48 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_038_C4_v127.wav pitch_keycenter=48 lokey=55 hikey=66 lovel=81 hivel=127
 <region> sample=gm_038_C5_v64.wav pitch_keycenter=60 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_038_C5_v127.wav pitch_keycenter=60 lokey=67 hikey=78 lovel=81 hivel=127
-<region> sample=gm_038_C6_v64.wav pitch_keycenter=72 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=gm_038_C6_v64.wav pitch_keycenter=60 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_038_C6_v127.wav pitch_keycenter=60 lokey=79 hikey=90 lovel=81 hivel=127
 <region> sample=gm_038_C7_v64.wav pitch_keycenter=84 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_038_C7_v127.wav pitch_keycenter=84 lokey=91 hikey=102 lovel=81 hivel=127
@@ -810,15 +810,15 @@ prg_num=42
 <region> sample=gm_042_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
 <region> sample=gm_042_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_042_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
-<region> sample=gm_042_C4_v64.wav pitch_keycenter=58 lokey=55 hikey=66 lovel=0 hivel=80
+<region> sample=gm_042_C4_v64.wav pitch_keycenter=59 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_042_C4_v127.wav pitch_keycenter=59 lokey=55 hikey=66 lovel=81 hivel=127
-<region> sample=gm_042_C5_v64.wav pitch_keycenter=62 lokey=67 hikey=78 lovel=0 hivel=80
+<region> sample=gm_042_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_042_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
-<region> sample=gm_042_C6_v64.wav pitch_keycenter=73 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=gm_042_C6_v64.wav pitch_keycenter=83 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_042_C6_v127.wav pitch_keycenter=83 lokey=79 hikey=90 lovel=81 hivel=127
-<region> sample=gm_042_C7_v64.wav pitch_keycenter=85 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=gm_042_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_042_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_042_C8_v64.wav pitch_keycenter=93 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_042_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_042_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
@@ -844,7 +844,7 @@ prg_num=43
 prg_num=44
 <region> sample=gm_044_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=gm_044_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
-<region> sample=gm_044_C2_v64.wav pitch_keycenter=35 lokey=31 hikey=42 lovel=0 hivel=80
+<region> sample=gm_044_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
 <region> sample=gm_044_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
 <region> sample=gm_044_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_044_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
@@ -852,11 +852,11 @@ prg_num=44
 <region> sample=gm_044_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
 <region> sample=gm_044_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_044_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
-<region> sample=gm_044_C6_v64.wav pitch_keycenter=72 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=gm_044_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_044_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
-<region> sample=gm_044_C7_v64.wav pitch_keycenter=84 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=gm_044_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_044_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_044_C8_v64.wav pitch_keycenter=96 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_044_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_044_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
@@ -894,7 +894,7 @@ prg_num=46
 <region> sample=gm_046_C6_v127.wav pitch_keycenter=85 lokey=79 hikey=90 lovel=81 hivel=127
 <region> sample=gm_046_C7_v64.wav pitch_keycenter=109 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_046_C7_v127.wav pitch_keycenter=109 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_046_C8_v64.wav pitch_keycenter=15 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_046_C8_v64.wav pitch_keycenter=14 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_046_C8_v127.wav pitch_keycenter=14 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
@@ -907,32 +907,32 @@ prg_num=47
 <region> sample=gm_047_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
 <region> sample=gm_047_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_047_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
-<region> sample=gm_047_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
-<region> sample=gm_047_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
-<region> sample=gm_047_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=gm_047_C5_v64.wav pitch_keycenter=13 lokey=67 hikey=78 lovel=0 hivel=80
+<region> sample=gm_047_C5_v127.wav pitch_keycenter=13 lokey=67 hikey=78 lovel=81 hivel=127
+<region> sample=gm_047_C6_v64.wav pitch_keycenter=16 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_047_C6_v127.wav pitch_keycenter=16 lokey=79 hikey=90 lovel=81 hivel=127
-<region> sample=gm_047_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
-<region> sample=gm_047_C7_v127.wav pitch_keycenter=16 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_047_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
-<region> sample=gm_047_C8_v127.wav pitch_keycenter=16 lokey=103 hikey=127 lovel=81 hivel=127
+<region> sample=gm_047_C7_v64.wav pitch_keycenter=18 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=gm_047_C7_v127.wav pitch_keycenter=18 lokey=91 hikey=102 lovel=81 hivel=127
+<region> sample=gm_047_C8_v64.wav pitch_keycenter=20 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_047_C8_v127.wav pitch_keycenter=20 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
 prg_num=48
 <region> sample=gm_048_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=gm_048_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
-<region> sample=gm_048_C2_v64.wav pitch_keycenter=24 lokey=31 hikey=42 lovel=0 hivel=80
+<region> sample=gm_048_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
 <region> sample=gm_048_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
-<region> sample=gm_048_C3_v64.wav pitch_keycenter=36 lokey=43 hikey=54 lovel=0 hivel=80
+<region> sample=gm_048_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_048_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
-<region> sample=gm_048_C4_v64.wav pitch_keycenter=48 lokey=55 hikey=66 lovel=0 hivel=80
+<region> sample=gm_048_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_048_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
-<region> sample=gm_048_C5_v64.wav pitch_keycenter=60 lokey=67 hikey=78 lovel=0 hivel=80
+<region> sample=gm_048_C5_v64.wav pitch_keycenter=71 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_048_C5_v127.wav pitch_keycenter=71 lokey=67 hikey=78 lovel=81 hivel=127
-<region> sample=gm_048_C6_v64.wav pitch_keycenter=72 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=gm_048_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_048_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
-<region> sample=gm_048_C7_v64.wav pitch_keycenter=84 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=gm_048_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_048_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_048_C8_v64.wav pitch_keycenter=96 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_048_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_048_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
@@ -943,15 +943,15 @@ prg_num=49
 <region> sample=gm_049_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
 <region> sample=gm_049_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_049_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
-<region> sample=gm_049_C4_v64.wav pitch_keycenter=48 lokey=55 hikey=66 lovel=0 hivel=80
+<region> sample=gm_049_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_049_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
-<region> sample=gm_049_C5_v64.wav pitch_keycenter=60 lokey=67 hikey=78 lovel=0 hivel=80
+<region> sample=gm_049_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_049_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
 <region> sample=gm_049_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_049_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
-<region> sample=gm_049_C7_v64.wav pitch_keycenter=84 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=gm_049_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_049_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_049_C8_v64.wav pitch_keycenter=96 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_049_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_049_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
@@ -960,7 +960,7 @@ prg_num=50
 <region> sample=gm_050_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=gm_050_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
 <region> sample=gm_050_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
-<region> sample=gm_050_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
+<region> sample=gm_050_C3_v64.wav pitch_keycenter=45 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_050_C3_v127.wav pitch_keycenter=45 lokey=43 hikey=54 lovel=81 hivel=127
 <region> sample=gm_050_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_050_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
@@ -977,19 +977,19 @@ prg_num=50
 prg_num=51
 <region> sample=gm_051_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=gm_051_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
-<region> sample=gm_051_C2_v64.wav pitch_keycenter=24 lokey=31 hikey=42 lovel=0 hivel=80
+<region> sample=gm_051_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
 <region> sample=gm_051_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
-<region> sample=gm_051_C3_v64.wav pitch_keycenter=36 lokey=43 hikey=54 lovel=0 hivel=80
+<region> sample=gm_051_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_051_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
-<region> sample=gm_051_C4_v64.wav pitch_keycenter=48 lokey=55 hikey=66 lovel=0 hivel=80
+<region> sample=gm_051_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_051_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
-<region> sample=gm_051_C5_v64.wav pitch_keycenter=60 lokey=67 hikey=78 lovel=0 hivel=80
+<region> sample=gm_051_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_051_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
-<region> sample=gm_051_C6_v64.wav pitch_keycenter=72 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=gm_051_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_051_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
-<region> sample=gm_051_C7_v64.wav pitch_keycenter=84 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=gm_051_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_051_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_051_C8_v64.wav pitch_keycenter=96 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_051_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_051_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
@@ -1015,19 +1015,19 @@ prg_num=52
 prg_num=53
 <region> sample=gm_053_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=gm_053_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
-<region> sample=gm_053_C2_v64.wav pitch_keycenter=24 lokey=31 hikey=42 lovel=0 hivel=80
+<region> sample=gm_053_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
 <region> sample=gm_053_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
-<region> sample=gm_053_C3_v64.wav pitch_keycenter=36 lokey=43 hikey=54 lovel=0 hivel=80
+<region> sample=gm_053_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_053_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
 <region> sample=gm_053_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_053_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
 <region> sample=gm_053_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_053_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
-<region> sample=gm_053_C6_v64.wav pitch_keycenter=72 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=gm_053_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_053_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
-<region> sample=gm_053_C7_v64.wav pitch_keycenter=84 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=gm_053_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_053_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_053_C8_v64.wav pitch_keycenter=96 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_053_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_053_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
@@ -1061,11 +1061,11 @@ prg_num=55
 <region> sample=gm_055_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
 <region> sample=gm_055_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_055_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
-<region> sample=gm_055_C6_v64.wav pitch_keycenter=80 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=gm_055_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_055_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
 <region> sample=gm_055_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_055_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_055_C8_v64.wav pitch_keycenter=96 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_055_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_055_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
@@ -1209,7 +1209,7 @@ prg_num=63
 <region> sample=gm_063_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
 <region> sample=gm_063_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_063_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
-<region> sample=gm_063_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
+<region> sample=gm_063_C4_v64.wav pitch_keycenter=59 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_063_C4_v127.wav pitch_keycenter=59 lokey=55 hikey=66 lovel=81 hivel=127
 <region> sample=gm_063_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_063_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
@@ -1234,9 +1234,9 @@ prg_num=64
 <region> sample=gm_064_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
 <region> sample=gm_064_C6_v64.wav pitch_keycenter=85 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_064_C6_v127.wav pitch_keycenter=85 lokey=79 hikey=90 lovel=81 hivel=127
-<region> sample=gm_064_C7_v64.wav pitch_keycenter=82 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=gm_064_C7_v64.wav pitch_keycenter=97 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_064_C7_v127.wav pitch_keycenter=97 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_064_C8_v64.wav pitch_keycenter=85 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_064_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_064_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
@@ -1289,9 +1289,9 @@ prg_num=67
 <region> sample=gm_067_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
 <region> sample=gm_067_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_067_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
-<region> sample=gm_067_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=gm_067_C6_v64.wav pitch_keycenter=83 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_067_C6_v127.wav pitch_keycenter=83 lokey=79 hikey=90 lovel=81 hivel=127
-<region> sample=gm_067_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=gm_067_C7_v64.wav pitch_keycenter=95 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_067_C7_v127.wav pitch_keycenter=95 lokey=91 hikey=102 lovel=81 hivel=127
 <region> sample=gm_067_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_067_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=81 hivel=127
@@ -1365,11 +1365,11 @@ prg_num=71
 <region> sample=gm_071_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
 <region> sample=gm_071_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_071_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
-<region> sample=gm_071_C6_v64.wav pitch_keycenter=85 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=gm_071_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_071_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
-<region> sample=gm_071_C7_v64.wav pitch_keycenter=90 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=gm_071_C7_v64.wav pitch_keycenter=97 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_071_C7_v127.wav pitch_keycenter=97 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_071_C8_v64.wav pitch_keycenter=93 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_071_C8_v64.wav pitch_keycenter=110 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_071_C8_v127.wav pitch_keycenter=110 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
@@ -1521,7 +1521,7 @@ prg_num=79
 <region> sample=gm_079_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
 <region> sample=gm_079_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_079_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_079_C8_v64.wav pitch_keycenter=18 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_079_C8_v64.wav pitch_keycenter=19 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_079_C8_v127.wav pitch_keycenter=19 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
@@ -1616,12 +1616,12 @@ prg_num=84
 <region> sample=gm_084_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
 <region> sample=gm_084_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_084_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_084_C8_v64.wav pitch_keycenter=93 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_084_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_084_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
 prg_num=85
-<region> sample=gm_085_C1_v64.wav pitch_keycenter=36 lokey=0 hikey=30 lovel=0 hivel=80
+<region> sample=gm_085_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=gm_085_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=gm_085_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
 <region> sample=gm_085_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
@@ -1680,7 +1680,7 @@ prg_num=87
 prg_num=88
 <region> sample=gm_088_C1_v64.wav pitch_keycenter=36 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=gm_088_C1_v127.wav pitch_keycenter=36 lokey=0 hikey=30 lovel=81 hivel=127
-<region> sample=gm_088_C2_v64.wav pitch_keycenter=48 lokey=31 hikey=42 lovel=0 hivel=80
+<region> sample=gm_088_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
 <region> sample=gm_088_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
 <region> sample=gm_088_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_088_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
@@ -1690,9 +1690,9 @@ prg_num=88
 <region> sample=gm_088_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
 <region> sample=gm_088_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_088_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
-<region> sample=gm_088_C7_v64.wav pitch_keycenter=85 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=gm_088_C7_v64.wav pitch_keycenter=87 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_088_C7_v127.wav pitch_keycenter=87 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_088_C8_v64.wav pitch_keycenter=17 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_088_C8_v64.wav pitch_keycenter=12 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_088_C8_v127.wav pitch_keycenter=12 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
@@ -1703,15 +1703,15 @@ prg_num=89
 <region> sample=gm_089_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
 <region> sample=gm_089_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_089_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
-<region> sample=gm_089_C4_v64.wav pitch_keycenter=48 lokey=55 hikey=66 lovel=0 hivel=80
+<region> sample=gm_089_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_089_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
-<region> sample=gm_089_C5_v64.wav pitch_keycenter=60 lokey=67 hikey=78 lovel=0 hivel=80
+<region> sample=gm_089_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_089_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
-<region> sample=gm_089_C6_v64.wav pitch_keycenter=72 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=gm_089_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_089_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
-<region> sample=gm_089_C7_v64.wav pitch_keycenter=84 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=gm_089_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_089_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_089_C8_v64.wav pitch_keycenter=33 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_089_C8_v64.wav pitch_keycenter=17 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_089_C8_v127.wav pitch_keycenter=17 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
@@ -1724,7 +1724,7 @@ prg_num=90
 <region> sample=gm_090_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
 <region> sample=gm_090_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_090_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
-<region> sample=gm_090_C5_v64.wav pitch_keycenter=71 lokey=67 hikey=78 lovel=0 hivel=80
+<region> sample=gm_090_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_090_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
 <region> sample=gm_090_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_090_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
@@ -1735,7 +1735,7 @@ prg_num=90
 
 <group>
 prg_num=91
-<region> sample=gm_091_C1_v64.wav pitch_keycenter=43 lokey=0 hikey=30 lovel=0 hivel=80
+<region> sample=gm_091_C1_v64.wav pitch_keycenter=36 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=gm_091_C1_v127.wav pitch_keycenter=36 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=gm_091_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
 <region> sample=gm_091_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
@@ -1768,7 +1768,7 @@ prg_num=92
 <region> sample=gm_092_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
 <region> sample=gm_092_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_092_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_092_C8_v64.wav pitch_keycenter=96 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_092_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_092_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
@@ -1794,34 +1794,34 @@ prg_num=93
 prg_num=94
 <region> sample=gm_094_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=gm_094_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
-<region> sample=gm_094_C2_v64.wav pitch_keycenter=24 lokey=31 hikey=42 lovel=0 hivel=80
+<region> sample=gm_094_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
 <region> sample=gm_094_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
-<region> sample=gm_094_C3_v64.wav pitch_keycenter=36 lokey=43 hikey=54 lovel=0 hivel=80
+<region> sample=gm_094_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_094_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
-<region> sample=gm_094_C4_v64.wav pitch_keycenter=48 lokey=55 hikey=66 lovel=0 hivel=80
+<region> sample=gm_094_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_094_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
-<region> sample=gm_094_C5_v64.wav pitch_keycenter=60 lokey=67 hikey=78 lovel=0 hivel=80
+<region> sample=gm_094_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_094_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
-<region> sample=gm_094_C6_v64.wav pitch_keycenter=72 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=gm_094_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_094_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
-<region> sample=gm_094_C7_v64.wav pitch_keycenter=84 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=gm_094_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_094_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_094_C8_v64.wav pitch_keycenter=96 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_094_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_094_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
 prg_num=95
-<region> sample=gm_095_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
+<region> sample=gm_095_C1_v64.wav pitch_keycenter=36 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=gm_095_C1_v127.wav pitch_keycenter=36 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=gm_095_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
 <region> sample=gm_095_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
-<region> sample=gm_095_C3_v64.wav pitch_keycenter=36 lokey=43 hikey=54 lovel=0 hivel=80
+<region> sample=gm_095_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_095_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
-<region> sample=gm_095_C4_v64.wav pitch_keycenter=72 lokey=55 hikey=66 lovel=0 hivel=80
+<region> sample=gm_095_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_095_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
 <region> sample=gm_095_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_095_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
-<region> sample=gm_095_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=gm_095_C6_v64.wav pitch_keycenter=96 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_095_C6_v127.wav pitch_keycenter=96 lokey=79 hikey=90 lovel=81 hivel=127
 <region> sample=gm_095_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_095_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
@@ -1830,21 +1830,21 @@ prg_num=95
 
 <group>
 prg_num=96
-<region> sample=gm_096_C1_v64.wav pitch_keycenter=19 lokey=0 hikey=30 lovel=0 hivel=80
+<region> sample=gm_096_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=gm_096_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
-<region> sample=gm_096_C2_v64.wav pitch_keycenter=17 lokey=31 hikey=42 lovel=0 hivel=80
+<region> sample=gm_096_C2_v64.wav pitch_keycenter=18 lokey=31 hikey=42 lovel=0 hivel=80
 <region> sample=gm_096_C2_v127.wav pitch_keycenter=18 lokey=31 hikey=42 lovel=81 hivel=127
-<region> sample=gm_096_C3_v64.wav pitch_keycenter=24 lokey=43 hikey=54 lovel=0 hivel=80
+<region> sample=gm_096_C3_v64.wav pitch_keycenter=16 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_096_C3_v127.wav pitch_keycenter=16 lokey=43 hikey=54 lovel=81 hivel=127
-<region> sample=gm_096_C4_v64.wav pitch_keycenter=17 lokey=55 hikey=66 lovel=0 hivel=80
+<region> sample=gm_096_C4_v64.wav pitch_keycenter=18 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_096_C4_v127.wav pitch_keycenter=18 lokey=55 hikey=66 lovel=81 hivel=127
-<region> sample=gm_096_C5_v64.wav pitch_keycenter=16 lokey=67 hikey=78 lovel=0 hivel=80
+<region> sample=gm_096_C5_v64.wav pitch_keycenter=17 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_096_C5_v127.wav pitch_keycenter=17 lokey=67 hikey=78 lovel=81 hivel=127
-<region> sample=gm_096_C6_v64.wav pitch_keycenter=24 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=gm_096_C6_v64.wav pitch_keycenter=17 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_096_C6_v127.wav pitch_keycenter=17 lokey=79 hikey=90 lovel=81 hivel=127
-<region> sample=gm_096_C7_v64.wav pitch_keycenter=12 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=gm_096_C7_v64.wav pitch_keycenter=20 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_096_C7_v127.wav pitch_keycenter=20 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_096_C8_v64.wav pitch_keycenter=17 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_096_C8_v64.wav pitch_keycenter=16 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_096_C8_v127.wav pitch_keycenter=16 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
@@ -1855,7 +1855,7 @@ prg_num=97
 <region> sample=gm_097_C2_v127.wav pitch_keycenter=60 lokey=31 hikey=42 lovel=81 hivel=127
 <region> sample=gm_097_C3_v64.wav pitch_keycenter=60 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_097_C3_v127.wav pitch_keycenter=60 lokey=43 hikey=54 lovel=81 hivel=127
-<region> sample=gm_097_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
+<region> sample=gm_097_C4_v64.wav pitch_keycenter=61 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_097_C4_v127.wav pitch_keycenter=61 lokey=55 hikey=66 lovel=81 hivel=127
 <region> sample=gm_097_C5_v64.wav pitch_keycenter=60 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_097_C5_v127.wav pitch_keycenter=60 lokey=67 hikey=78 lovel=81 hivel=127
@@ -1863,7 +1863,7 @@ prg_num=97
 <region> sample=gm_097_C6_v127.wav pitch_keycenter=60 lokey=79 hikey=90 lovel=81 hivel=127
 <region> sample=gm_097_C7_v64.wav pitch_keycenter=59 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_097_C7_v127.wav pitch_keycenter=59 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_097_C8_v64.wav pitch_keycenter=61 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_097_C8_v64.wav pitch_keycenter=60 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_097_C8_v127.wav pitch_keycenter=60 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
@@ -1882,14 +1882,14 @@ prg_num=98
 <region> sample=gm_098_C6_v127.wav pitch_keycenter=103 lokey=79 hikey=90 lovel=81 hivel=127
 <region> sample=gm_098_C7_v64.wav pitch_keycenter=115 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_098_C7_v127.wav pitch_keycenter=115 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_098_C8_v64.wav pitch_keycenter=40 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_098_C8_v64.wav pitch_keycenter=46 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_098_C8_v127.wav pitch_keycenter=46 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
 prg_num=99
 <region> sample=gm_099_C1_v64.wav pitch_keycenter=52 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=gm_099_C1_v127.wav pitch_keycenter=52 lokey=0 hikey=30 lovel=81 hivel=127
-<region> sample=gm_099_C2_v64.wav pitch_keycenter=50 lokey=31 hikey=42 lovel=0 hivel=80
+<region> sample=gm_099_C2_v64.wav pitch_keycenter=52 lokey=31 hikey=42 lovel=0 hivel=80
 <region> sample=gm_099_C2_v127.wav pitch_keycenter=52 lokey=31 hikey=42 lovel=81 hivel=127
 <region> sample=gm_099_C3_v64.wav pitch_keycenter=54 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_099_C3_v127.wav pitch_keycenter=54 lokey=43 hikey=54 lovel=81 hivel=127
@@ -1901,58 +1901,58 @@ prg_num=99
 <region> sample=gm_099_C6_v127.wav pitch_keycenter=69 lokey=79 hikey=90 lovel=81 hivel=127
 <region> sample=gm_099_C7_v64.wav pitch_keycenter=77 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_099_C7_v127.wav pitch_keycenter=77 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_099_C8_v64.wav pitch_keycenter=86 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_099_C8_v64.wav pitch_keycenter=87 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_099_C8_v127.wav pitch_keycenter=87 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
 prg_num=100
-<region> sample=gm_100_C1_v64.wav pitch_keycenter=38 lokey=0 hikey=30 lovel=0 hivel=80
+<region> sample=gm_100_C1_v64.wav pitch_keycenter=39 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=gm_100_C1_v127.wav pitch_keycenter=39 lokey=0 hikey=30 lovel=81 hivel=127
-<region> sample=gm_100_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
+<region> sample=gm_100_C2_v64.wav pitch_keycenter=41 lokey=31 hikey=42 lovel=0 hivel=80
 <region> sample=gm_100_C2_v127.wav pitch_keycenter=41 lokey=31 hikey=42 lovel=81 hivel=127
 <region> sample=gm_100_C3_v64.wav pitch_keycenter=41 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_100_C3_v127.wav pitch_keycenter=41 lokey=43 hikey=54 lovel=81 hivel=127
-<region> sample=gm_100_C4_v64.wav pitch_keycenter=45 lokey=55 hikey=66 lovel=0 hivel=80
+<region> sample=gm_100_C4_v64.wav pitch_keycenter=41 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_100_C4_v127.wav pitch_keycenter=41 lokey=55 hikey=66 lovel=81 hivel=127
-<region> sample=gm_100_C5_v64.wav pitch_keycenter=40 lokey=67 hikey=78 lovel=0 hivel=80
+<region> sample=gm_100_C5_v64.wav pitch_keycenter=41 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_100_C5_v127.wav pitch_keycenter=41 lokey=67 hikey=78 lovel=81 hivel=127
-<region> sample=gm_100_C6_v64.wav pitch_keycenter=36 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=gm_100_C6_v64.wav pitch_keycenter=37 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_100_C6_v127.wav pitch_keycenter=37 lokey=79 hikey=90 lovel=81 hivel=127
-<region> sample=gm_100_C7_v64.wav pitch_keycenter=42 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=gm_100_C7_v64.wav pitch_keycenter=38 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_100_C7_v127.wav pitch_keycenter=38 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_100_C8_v64.wav pitch_keycenter=41 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_100_C8_v64.wav pitch_keycenter=45 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_100_C8_v127.wav pitch_keycenter=45 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
 prg_num=101
-<region> sample=gm_101_C1_v64.wav pitch_keycenter=90 lokey=0 hikey=30 lovel=0 hivel=80
+<region> sample=gm_101_C1_v64.wav pitch_keycenter=56 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=gm_101_C1_v127.wav pitch_keycenter=56 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=gm_101_C2_v64.wav pitch_keycenter=75 lokey=31 hikey=42 lovel=0 hivel=80
 <region> sample=gm_101_C2_v127.wav pitch_keycenter=75 lokey=31 hikey=42 lovel=81 hivel=127
-<region> sample=gm_101_C3_v64.wav pitch_keycenter=73 lokey=43 hikey=54 lovel=0 hivel=80
+<region> sample=gm_101_C3_v64.wav pitch_keycenter=61 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_101_C3_v127.wav pitch_keycenter=61 lokey=43 hikey=54 lovel=81 hivel=127
-<region> sample=gm_101_C4_v64.wav pitch_keycenter=76 lokey=55 hikey=66 lovel=0 hivel=80
+<region> sample=gm_101_C4_v64.wav pitch_keycenter=63 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_101_C4_v127.wav pitch_keycenter=63 lokey=55 hikey=66 lovel=81 hivel=127
-<region> sample=gm_101_C5_v64.wav pitch_keycenter=82 lokey=67 hikey=78 lovel=0 hivel=80
+<region> sample=gm_101_C5_v64.wav pitch_keycenter=58 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_101_C5_v127.wav pitch_keycenter=58 lokey=67 hikey=78 lovel=81 hivel=127
-<region> sample=gm_101_C6_v64.wav pitch_keycenter=82 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=gm_101_C6_v64.wav pitch_keycenter=94 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_101_C6_v127.wav pitch_keycenter=94 lokey=79 hikey=90 lovel=81 hivel=127
-<region> sample=gm_101_C7_v64.wav pitch_keycenter=99 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=gm_101_C7_v64.wav pitch_keycenter=67 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_101_C7_v127.wav pitch_keycenter=67 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_101_C8_v64.wav pitch_keycenter=60 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_101_C8_v64.wav pitch_keycenter=69 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_101_C8_v127.wav pitch_keycenter=69 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
 prg_num=102
-<region> sample=gm_102_C1_v64.wav pitch_keycenter=20 lokey=0 hikey=30 lovel=0 hivel=80
+<region> sample=gm_102_C1_v64.wav pitch_keycenter=16 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=gm_102_C1_v127.wav pitch_keycenter=16 lokey=0 hikey=30 lovel=81 hivel=127
-<region> sample=gm_102_C2_v64.wav pitch_keycenter=13 lokey=31 hikey=42 lovel=0 hivel=80
+<region> sample=gm_102_C2_v64.wav pitch_keycenter=14 lokey=31 hikey=42 lovel=0 hivel=80
 <region> sample=gm_102_C2_v127.wav pitch_keycenter=14 lokey=31 hikey=42 lovel=81 hivel=127
 <region> sample=gm_102_C3_v64.wav pitch_keycenter=18 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_102_C3_v127.wav pitch_keycenter=18 lokey=43 hikey=54 lovel=81 hivel=127
 <region> sample=gm_102_C4_v64.wav pitch_keycenter=13 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_102_C4_v127.wav pitch_keycenter=13 lokey=55 hikey=66 lovel=81 hivel=127
-<region> sample=gm_102_C5_v64.wav pitch_keycenter=29 lokey=67 hikey=78 lovel=0 hivel=80
+<region> sample=gm_102_C5_v64.wav pitch_keycenter=30 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_102_C5_v127.wav pitch_keycenter=30 lokey=67 hikey=78 lovel=81 hivel=127
 <region> sample=gm_102_C6_v64.wav pitch_keycenter=20 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_102_C6_v127.wav pitch_keycenter=20 lokey=79 hikey=90 lovel=81 hivel=127
@@ -1967,36 +1967,36 @@ prg_num=103
 <region> sample=gm_103_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
 <region> sample=gm_103_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
 <region> sample=gm_103_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
-<region> sample=gm_103_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
+<region> sample=gm_103_C3_v64.wav pitch_keycenter=37 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_103_C3_v127.wav pitch_keycenter=37 lokey=43 hikey=54 lovel=81 hivel=127
-<region> sample=gm_103_C4_v64.wav pitch_keycenter=14 lokey=55 hikey=66 lovel=0 hivel=80
+<region> sample=gm_103_C4_v64.wav pitch_keycenter=12 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_103_C4_v127.wav pitch_keycenter=12 lokey=55 hikey=66 lovel=81 hivel=127
-<region> sample=gm_103_C5_v64.wav pitch_keycenter=14 lokey=67 hikey=78 lovel=0 hivel=80
+<region> sample=gm_103_C5_v64.wav pitch_keycenter=13 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_103_C5_v127.wav pitch_keycenter=13 lokey=67 hikey=78 lovel=81 hivel=127
-<region> sample=gm_103_C6_v64.wav pitch_keycenter=15 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=gm_103_C6_v64.wav pitch_keycenter=18 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_103_C6_v127.wav pitch_keycenter=18 lokey=79 hikey=90 lovel=81 hivel=127
-<region> sample=gm_103_C7_v64.wav pitch_keycenter=12 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=gm_103_C7_v64.wav pitch_keycenter=18 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_103_C7_v127.wav pitch_keycenter=18 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_103_C8_v64.wav pitch_keycenter=16 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_103_C8_v64.wav pitch_keycenter=13 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_103_C8_v127.wav pitch_keycenter=13 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
 prg_num=104
 <region> sample=gm_104_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=gm_104_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
-<region> sample=gm_104_C2_v64.wav pitch_keycenter=24 lokey=31 hikey=42 lovel=0 hivel=80
+<region> sample=gm_104_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
 <region> sample=gm_104_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
-<region> sample=gm_104_C3_v64.wav pitch_keycenter=36 lokey=43 hikey=54 lovel=0 hivel=80
+<region> sample=gm_104_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_104_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
-<region> sample=gm_104_C4_v64.wav pitch_keycenter=48 lokey=55 hikey=66 lovel=0 hivel=80
+<region> sample=gm_104_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_104_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
-<region> sample=gm_104_C5_v64.wav pitch_keycenter=60 lokey=67 hikey=78 lovel=0 hivel=80
+<region> sample=gm_104_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_104_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
-<region> sample=gm_104_C6_v64.wav pitch_keycenter=72 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=gm_104_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_104_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
-<region> sample=gm_104_C7_v64.wav pitch_keycenter=81 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=gm_104_C7_v64.wav pitch_keycenter=95 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_104_C7_v127.wav pitch_keycenter=95 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_104_C8_v64.wav pitch_keycenter=94 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_104_C8_v64.wav pitch_keycenter=95 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_104_C8_v127.wav pitch_keycenter=95 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
@@ -2015,64 +2015,64 @@ prg_num=105
 <region> sample=gm_105_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
 <region> sample=gm_105_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_105_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_105_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_105_C8_v64.wav pitch_keycenter=44 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_105_C8_v127.wav pitch_keycenter=44 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
 prg_num=106
 <region> sample=gm_106_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=gm_106_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
-<region> sample=gm_106_C2_v64.wav pitch_keycenter=24 lokey=31 hikey=42 lovel=0 hivel=80
+<region> sample=gm_106_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
 <region> sample=gm_106_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
-<region> sample=gm_106_C3_v64.wav pitch_keycenter=36 lokey=43 hikey=54 lovel=0 hivel=80
+<region> sample=gm_106_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_106_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
-<region> sample=gm_106_C4_v64.wav pitch_keycenter=48 lokey=55 hikey=66 lovel=0 hivel=80
+<region> sample=gm_106_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_106_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
-<region> sample=gm_106_C5_v64.wav pitch_keycenter=60 lokey=67 hikey=78 lovel=0 hivel=80
+<region> sample=gm_106_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_106_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
-<region> sample=gm_106_C6_v64.wav pitch_keycenter=72 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=gm_106_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_106_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
-<region> sample=gm_106_C7_v64.wav pitch_keycenter=84 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=gm_106_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_106_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_106_C8_v64.wav pitch_keycenter=96 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_106_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_106_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
 prg_num=107
 <region> sample=gm_107_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=gm_107_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
-<region> sample=gm_107_C2_v64.wav pitch_keycenter=24 lokey=31 hikey=42 lovel=0 hivel=80
+<region> sample=gm_107_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
 <region> sample=gm_107_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
 <region> sample=gm_107_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_107_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
 <region> sample=gm_107_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_107_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
-<region> sample=gm_107_C5_v64.wav pitch_keycenter=60 lokey=67 hikey=78 lovel=0 hivel=80
+<region> sample=gm_107_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_107_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
 <region> sample=gm_107_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_107_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
-<region> sample=gm_107_C7_v64.wav pitch_keycenter=84 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=gm_107_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_107_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_107_C8_v64.wav pitch_keycenter=95 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_107_C8_v64.wav pitch_keycenter=107 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_107_C8_v127.wav pitch_keycenter=107 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
 prg_num=108
 <region> sample=gm_108_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=gm_108_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
-<region> sample=gm_108_C2_v64.wav pitch_keycenter=24 lokey=31 hikey=42 lovel=0 hivel=80
+<region> sample=gm_108_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
 <region> sample=gm_108_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
-<region> sample=gm_108_C3_v64.wav pitch_keycenter=36 lokey=43 hikey=54 lovel=0 hivel=80
+<region> sample=gm_108_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_108_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
-<region> sample=gm_108_C4_v64.wav pitch_keycenter=47 lokey=55 hikey=66 lovel=0 hivel=80
+<region> sample=gm_108_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_108_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
-<region> sample=gm_108_C5_v64.wav pitch_keycenter=60 lokey=67 hikey=78 lovel=0 hivel=80
+<region> sample=gm_108_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_108_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
-<region> sample=gm_108_C6_v64.wav pitch_keycenter=72 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=gm_108_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_108_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
-<region> sample=gm_108_C7_v64.wav pitch_keycenter=83 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=gm_108_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_108_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_108_C8_v64.wav pitch_keycenter=96 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_108_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_108_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
@@ -2110,7 +2110,7 @@ prg_num=110
 <region> sample=gm_110_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
 <region> sample=gm_110_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_110_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_110_C8_v64.wav pitch_keycenter=96 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_110_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_110_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
@@ -2136,19 +2136,19 @@ prg_num=111
 prg_num=112
 <region> sample=gm_112_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=gm_112_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=81 hivel=127
-<region> sample=gm_112_C2_v64.wav pitch_keycenter=24 lokey=31 hikey=42 lovel=0 hivel=80
+<region> sample=gm_112_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
 <region> sample=gm_112_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
-<region> sample=gm_112_C3_v64.wav pitch_keycenter=36 lokey=43 hikey=54 lovel=0 hivel=80
+<region> sample=gm_112_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_112_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
-<region> sample=gm_112_C4_v64.wav pitch_keycenter=47 lokey=55 hikey=66 lovel=0 hivel=80
+<region> sample=gm_112_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_112_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
-<region> sample=gm_112_C5_v64.wav pitch_keycenter=60 lokey=67 hikey=78 lovel=0 hivel=80
+<region> sample=gm_112_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_112_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
-<region> sample=gm_112_C6_v64.wav pitch_keycenter=71 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=gm_112_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_112_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
-<region> sample=gm_112_C7_v64.wav pitch_keycenter=84 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=gm_112_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_112_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_112_C8_v64.wav pitch_keycenter=96 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_112_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_112_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
@@ -2197,9 +2197,9 @@ prg_num=115
 <region> sample=gm_115_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
 <region> sample=gm_115_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_115_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
-<region> sample=gm_115_C4_v64.wav pitch_keycenter=59 lokey=55 hikey=66 lovel=0 hivel=80
+<region> sample=gm_115_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_115_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
-<region> sample=gm_115_C5_v64.wav pitch_keycenter=71 lokey=67 hikey=78 lovel=0 hivel=80
+<region> sample=gm_115_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_115_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=81 hivel=127
 <region> sample=gm_115_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_115_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=81 hivel=127
@@ -2218,13 +2218,13 @@ prg_num=116
 <region> sample=gm_116_C3_v127.wav pitch_keycenter=36 lokey=43 hikey=54 lovel=81 hivel=127
 <region> sample=gm_116_C4_v64.wav pitch_keycenter=46 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_116_C4_v127.wav pitch_keycenter=46 lokey=55 hikey=66 lovel=81 hivel=127
-<region> sample=gm_116_C5_v64.wav pitch_keycenter=58 lokey=67 hikey=78 lovel=0 hivel=80
+<region> sample=gm_116_C5_v64.wav pitch_keycenter=54 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_116_C5_v127.wav pitch_keycenter=54 lokey=67 hikey=78 lovel=81 hivel=127
 <region> sample=gm_116_C6_v64.wav pitch_keycenter=70 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_116_C6_v127.wav pitch_keycenter=70 lokey=79 hikey=90 lovel=81 hivel=127
 <region> sample=gm_116_C7_v64.wav pitch_keycenter=83 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_116_C7_v127.wav pitch_keycenter=83 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_116_C8_v64.wav pitch_keycenter=93 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_116_C8_v64.wav pitch_keycenter=95 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_116_C8_v127.wav pitch_keycenter=95 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
@@ -2243,7 +2243,7 @@ prg_num=117
 <region> sample=gm_117_C6_v127.wav pitch_keycenter=83 lokey=79 hikey=90 lovel=81 hivel=127
 <region> sample=gm_117_C7_v64.wav pitch_keycenter=93 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_117_C7_v127.wav pitch_keycenter=93 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_117_C8_v64.wav pitch_keycenter=54 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_117_C8_v64.wav pitch_keycenter=28 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_117_C8_v127.wav pitch_keycenter=28 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
@@ -2286,49 +2286,49 @@ prg_num=119
 
 <group>
 prg_num=120
-<region> sample=gm_120_C1_v64.wav pitch_keycenter=65 lokey=0 hikey=30 lovel=0 hivel=80
+<region> sample=gm_120_C1_v64.wav pitch_keycenter=64 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=gm_120_C1_v127.wav pitch_keycenter=64 lokey=0 hikey=30 lovel=81 hivel=127
-<region> sample=gm_120_C2_v64.wav pitch_keycenter=60 lokey=31 hikey=42 lovel=0 hivel=80
+<region> sample=gm_120_C2_v64.wav pitch_keycenter=62 lokey=31 hikey=42 lovel=0 hivel=80
 <region> sample=gm_120_C2_v127.wav pitch_keycenter=62 lokey=31 hikey=42 lovel=81 hivel=127
-<region> sample=gm_120_C3_v64.wav pitch_keycenter=77 lokey=43 hikey=54 lovel=0 hivel=80
+<region> sample=gm_120_C3_v64.wav pitch_keycenter=79 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_120_C3_v127.wav pitch_keycenter=79 lokey=43 hikey=54 lovel=81 hivel=127
 <region> sample=gm_120_C4_v64.wav pitch_keycenter=81 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_120_C4_v127.wav pitch_keycenter=81 lokey=55 hikey=66 lovel=81 hivel=127
-<region> sample=gm_120_C5_v64.wav pitch_keycenter=80 lokey=67 hikey=78 lovel=0 hivel=80
+<region> sample=gm_120_C5_v64.wav pitch_keycenter=83 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_120_C5_v127.wav pitch_keycenter=83 lokey=67 hikey=78 lovel=81 hivel=127
-<region> sample=gm_120_C6_v64.wav pitch_keycenter=81 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=gm_120_C6_v64.wav pitch_keycenter=79 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_120_C6_v127.wav pitch_keycenter=79 lokey=79 hikey=90 lovel=81 hivel=127
-<region> sample=gm_120_C7_v64.wav pitch_keycenter=33 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=gm_120_C7_v64.wav pitch_keycenter=19 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_120_C7_v127.wav pitch_keycenter=19 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_120_C8_v64.wav pitch_keycenter=16 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_120_C8_v64.wav pitch_keycenter=12 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_120_C8_v127.wav pitch_keycenter=12 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
 prg_num=121
-<region> sample=gm_121_C1_v64.wav pitch_keycenter=98 lokey=0 hikey=30 lovel=0 hivel=80
+<region> sample=gm_121_C1_v64.wav pitch_keycenter=99 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=gm_121_C1_v127.wav pitch_keycenter=99 lokey=0 hikey=30 lovel=81 hivel=127
-<region> sample=gm_121_C2_v64.wav pitch_keycenter=98 lokey=31 hikey=42 lovel=0 hivel=80
+<region> sample=gm_121_C2_v64.wav pitch_keycenter=99 lokey=31 hikey=42 lovel=0 hivel=80
 <region> sample=gm_121_C2_v127.wav pitch_keycenter=99 lokey=31 hikey=42 lovel=81 hivel=127
 <region> sample=gm_121_C3_v64.wav pitch_keycenter=98 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_121_C3_v127.wav pitch_keycenter=98 lokey=43 hikey=54 lovel=81 hivel=127
 <region> sample=gm_121_C4_v64.wav pitch_keycenter=99 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_121_C4_v127.wav pitch_keycenter=99 lokey=55 hikey=66 lovel=81 hivel=127
-<region> sample=gm_121_C5_v64.wav pitch_keycenter=99 lokey=67 hikey=78 lovel=0 hivel=80
+<region> sample=gm_121_C5_v64.wav pitch_keycenter=98 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_121_C5_v127.wav pitch_keycenter=98 lokey=67 hikey=78 lovel=81 hivel=127
-<region> sample=gm_121_C6_v64.wav pitch_keycenter=95 lokey=79 hikey=90 lovel=0 hivel=80
+<region> sample=gm_121_C6_v64.wav pitch_keycenter=99 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_121_C6_v127.wav pitch_keycenter=99 lokey=79 hikey=90 lovel=81 hivel=127
-<region> sample=gm_121_C7_v64.wav pitch_keycenter=95 lokey=91 hikey=102 lovel=0 hivel=80
+<region> sample=gm_121_C7_v64.wav pitch_keycenter=97 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_121_C7_v127.wav pitch_keycenter=97 lokey=91 hikey=102 lovel=81 hivel=127
 <region> sample=gm_121_C8_v64.wav pitch_keycenter=97 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_121_C8_v127.wav pitch_keycenter=97 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>
 prg_num=122
-<region> sample=gm_122_C1_v64.wav pitch_keycenter=18 lokey=0 hikey=30 lovel=0 hivel=80
+<region> sample=gm_122_C1_v64.wav pitch_keycenter=16 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=gm_122_C1_v127.wav pitch_keycenter=16 lokey=0 hikey=30 lovel=81 hivel=127
-<region> sample=gm_122_C2_v64.wav pitch_keycenter=12 lokey=31 hikey=42 lovel=0 hivel=80
+<region> sample=gm_122_C2_v64.wav pitch_keycenter=22 lokey=31 hikey=42 lovel=0 hivel=80
 <region> sample=gm_122_C2_v127.wav pitch_keycenter=22 lokey=31 hikey=42 lovel=81 hivel=127
-<region> sample=gm_122_C3_v64.wav pitch_keycenter=12 lokey=43 hikey=54 lovel=0 hivel=80
+<region> sample=gm_122_C3_v64.wav pitch_keycenter=19 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_122_C3_v127.wav pitch_keycenter=19 lokey=43 hikey=54 lovel=81 hivel=127
 <region> sample=gm_122_C4_v64.wav pitch_keycenter=12 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_122_C4_v127.wav pitch_keycenter=12 lokey=55 hikey=66 lovel=81 hivel=127
@@ -2349,9 +2349,9 @@ prg_num=123
 <region> sample=gm_123_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
 <region> sample=gm_123_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_123_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
-<region> sample=gm_123_C4_v64.wav pitch_keycenter=44 lokey=55 hikey=66 lovel=0 hivel=80
+<region> sample=gm_123_C4_v64.wav pitch_keycenter=53 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_123_C4_v127.wav pitch_keycenter=53 lokey=55 hikey=66 lovel=81 hivel=127
-<region> sample=gm_123_C5_v64.wav pitch_keycenter=65 lokey=67 hikey=78 lovel=0 hivel=80
+<region> sample=gm_123_C5_v64.wav pitch_keycenter=64 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_123_C5_v127.wav pitch_keycenter=64 lokey=67 hikey=78 lovel=81 hivel=127
 <region> sample=gm_123_C6_v64.wav pitch_keycenter=16 lokey=79 hikey=90 lovel=0 hivel=80
 <region> sample=gm_123_C6_v127.wav pitch_keycenter=16 lokey=79 hikey=90 lovel=81 hivel=127
@@ -2383,11 +2383,11 @@ prg_num=124
 prg_num=125
 <region> sample=gm_125_C1_v64.wav pitch_keycenter=43 lokey=0 hikey=30 lovel=0 hivel=80
 <region> sample=gm_125_C1_v127.wav pitch_keycenter=43 lokey=0 hikey=30 lovel=81 hivel=127
-<region> sample=gm_125_C2_v64.wav pitch_keycenter=55 lokey=31 hikey=42 lovel=0 hivel=80
+<region> sample=gm_125_C2_v64.wav pitch_keycenter=48 lokey=31 hikey=42 lovel=0 hivel=80
 <region> sample=gm_125_C2_v127.wav pitch_keycenter=48 lokey=31 hikey=42 lovel=81 hivel=127
 <region> sample=gm_125_C3_v64.wav pitch_keycenter=67 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=gm_125_C3_v127.wav pitch_keycenter=67 lokey=43 hikey=54 lovel=81 hivel=127
-<region> sample=gm_125_C4_v64.wav pitch_keycenter=84 lokey=55 hikey=66 lovel=0 hivel=80
+<region> sample=gm_125_C4_v64.wav pitch_keycenter=79 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=gm_125_C4_v127.wav pitch_keycenter=79 lokey=55 hikey=66 lovel=81 hivel=127
 <region> sample=gm_125_C5_v64.wav pitch_keycenter=84 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=gm_125_C5_v127.wav pitch_keycenter=84 lokey=67 hikey=78 lovel=81 hivel=127
@@ -2395,7 +2395,7 @@ prg_num=125
 <region> sample=gm_125_C6_v127.wav pitch_keycenter=96 lokey=79 hikey=90 lovel=81 hivel=127
 <region> sample=gm_125_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=80
 <region> sample=gm_125_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_125_C8_v64.wav pitch_keycenter=102 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_125_C8_v64.wav pitch_keycenter=103 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_125_C8_v127.wav pitch_keycenter=103 lokey=103 hikey=127 lovel=81 hivel=127
 
 <group>

@@ -457,6 +457,15 @@ def main():
                     else:
                         print(f"  !! all notes silent for velocity {vel} (instrument {inst_name} may be broken)")
 
+            # Detect pitch for each note based on the loudest velocity (v127) layer
+            note_pitches = {}
+            for idx, note in enumerate(notes_to_sample):
+                audio_v127 = rendered_audio[(idx, 1)]  # v127 corresponds to velocities_to_sample[1]
+                detected_pitch = detect_pitch_midi(audio_v127, sr)
+                if detected_pitch is None:
+                    detected_pitch = note
+                note_pitches[idx] = detected_pitch
+
             # Persist + map regions
             for idx, note in enumerate(notes_to_sample):
                 # Calculate key boundaries
@@ -470,6 +479,8 @@ def main():
                 else:
                     hikey = (note + notes_to_sample[idx+1]) // 2
 
+                actual_pitch = note_pitches[idx]
+
                 for v_idx, vel in enumerate(velocities_to_sample):
                     lovel, hivel = vel_ranges[v_idx]
                     note_name = midi_to_note_name(note)
@@ -479,14 +490,6 @@ def main():
 
                     # Save WAV as 24-bit PCM
                     sf.write(sample_path, audio, sr, subtype='PCM_24')
-
-                    # Detect the sample's actual pitch and use it as
-                    # pitch_keycenter. Surge XT presets often bake in a
-                    # transposition; writing the real pitch here makes sfizz
-                    # apply the inverse transpose when playing a given key.
-                    actual_pitch = detect_pitch_midi(audio, sr)
-                    if actual_pitch is None:
-                        actual_pitch = note  # fallback to requested note
 
                     # Write regions
                     line_indiv = f"<region> sample={sample_name} pitch_keycenter={actual_pitch} lokey={lokey} hikey={hikey} lovel={lovel} hivel={hivel}\n"
