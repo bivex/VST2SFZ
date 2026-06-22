@@ -23,6 +23,8 @@ import dawdreamer as daw
 CHOW_PATH = "/Library/Audio/Plug-Ins/VST3/CHOWTapeModel.vst3"
 NOVA_PATH = "/Library/Audio/Plug-Ins/VST3/TDR Nova.vst3"
 KOTELNIKOV_PATH = "/Library/Audio/Plug-Ins/VST3/TDR Kotelnikov.vst3"
+CHORUS_PATH = "/Library/Audio/Plug-Ins/VST3/TAL-Chorus-LX.vst3"
+STEREO_PATH = "/Library/Audio/Plug-Ins/VST3/A1StereoControl.vst3"
 DRAGONFLY_PATH = "/Library/Audio/Plug-Ins/VST3/DragonflyRoomReverb.vst3"
 LIMITER_PATH = "/Library/Audio/Plug-Ins/VST3/BasicLimiter.vst3"
 
@@ -55,6 +57,7 @@ def _preset(tape_drive=0.35, tape_sat=0.4, tape_bass=0.5, tape_treble=0.5,
             rvb_dry=0.88, rvb_early=0.08, rvb_late=0.04,
             rvb_size=0.167, rvb_predelay=0.08, rvb_decay=0.03,
             rvb_diffuse=0.7, rvb_spin=0.16, rvb_hicut=1.0,
+            stereo_width=0.50, chorus_wet=0.0,
             bypass=False):
     return {
         "bypass": bypass,
@@ -69,6 +72,8 @@ def _preset(tape_drive=0.35, tape_sat=0.4, tape_bass=0.5, tape_treble=0.5,
             2: rvb_dry, 3: rvb_early, 5: rvb_late,
             6: rvb_size, 8: rvb_predelay, 9: rvb_decay,
             10: rvb_diffuse, 11: rvb_spin, 13: rvb_hicut},
+        "chorus_wet": chorus_wet,
+        "stereo": {3: stereo_width, 19: 1.0}  # 3: width, 19: SafeBass ON
     }
 
 
@@ -81,67 +86,82 @@ GROUP_PRESETS = {
     0:  _preset(tape_drive=0.30, tape_sat=0.35, tape_treble=0.55,            # Pianos: bright, warm
                 b4_gain=0.583, b4_freq=0.85,                                 # +2dB air @ 10kHz
                 rvb_dry=0.85, rvb_early=0.10, rvb_late=0.05,
-                rvb_decay=0.05, rvb_size=0.20),                              # small room, 0.5s
+                rvb_decay=0.05, rvb_size=0.20,
+                stereo_width=0.50, chorus_wet=0.0),                          # small room, 0.5s
     1:  _preset(tape_drive=0.15, tape_sat=0.20,                              # Chrom Perc: clear, bright
                 b3_gain=0.604, b3_freq=0.72,                                 # +3dB @ 5kHz attack
                 rvb_dry=0.80, rvb_early=0.12, rvb_late=0.08,
-                rvb_decay=0.10, rvb_diffuse=0.8),                            # plate-ish, 0.8s
-    2:  _preset(tape_drive=0.50, tape_sat=0.50, tape_bass=0.45,              # Organs: warm, fat
+                rvb_decay=0.10, rvb_diffuse=0.8,
+                stereo_width=0.55),                                          # plate-ish, 0.8s
+    2:  _preset(tape_drive=0.50, tape_sat=0.50, tape_bass=0.45,              # Organs: warm, rotary motion
                 b1_gain=0.375, b1_freq=0.30,                                 # -3dB @ 300Hz de-box
                 b3_gain=0.562, b3_freq=0.62,                                 # +2dB @ 2kHz
                 rvb_dry=0.82, rvb_early=0.08, rvb_late=0.10,
-                rvb_decay=0.12, rvb_size=0.30),                              # large room, 1.0s
+                rvb_decay=0.12, rvb_size=0.30,
+                stereo_width=0.60, chorus_wet=0.15),                         # large room, 1.0s
     3:  _preset(tape_drive=0.40, tape_sat=0.45,                              # Guitars: dense, warm
                 b3_gain=0.583, b3_freq=0.72,                                 # +2dB @ 5kHz presence
                 rvb_dry=0.88, rvb_early=0.06, rvb_late=0.06,
-                rvb_decay=0.04, rvb_size=0.15),                              # small room, 0.4s
-    4:  _preset(tape_drive=0.60, tape_sat=0.55, tape_bass=0.60,              # Bass: powerful, tight
+                rvb_decay=0.04, rvb_size=0.15,
+                stereo_width=0.55),                                          # small room, 0.4s
+    4:  _preset(tape_drive=0.60, tape_sat=0.55, tape_bass=0.60,              # Bass: powerful, centered low-end
                 hp_freq=0.06,                                                # HP ~30Hz
                 b1_gain=0.625, b1_freq=0.18,                                 # +3dB @ 80Hz sub
                 b3_gain=0.444, b3_freq=0.55,                                 # -2dB @ 400Hz mud
-                rvb_dry=1.0),                                                # NO reverb
-    5:  _preset(tape_drive=0.20, tape_sat=0.25,                              # Strings: wide, spacious
+                rvb_dry=1.0,
+                stereo_width=0.50),                                          # NO reverb, SafeBass keeps sub mono
+    5:  _preset(tape_drive=0.20, tape_sat=0.25,                              # Strings: wide, spacious orchestra
                 b3_gain=0.583, b3_freq=0.72,                                 # +2dB @ 5kHz bow
                 rvb_dry=0.75, rvb_early=0.10, rvb_late=0.15,
-                rvb_decay=0.18, rvb_size=0.40, rvb_diffuse=0.85),            # hall, 1.5s
-    6:  _preset(tape_drive=0.15, tape_sat=0.20,                              # Ensemble: voluminous
+                rvb_decay=0.18, rvb_size=0.40, rvb_diffuse=0.85,
+                stereo_width=0.70),                                          # hall, 1.5s
+    6:  _preset(tape_drive=0.15, tape_sat=0.20,                              # Ensemble: voluminous, huge field
                 b4_gain=0.604, b4_freq=0.88,                                 # +3dB @ 8kHz air
                 rvb_dry=0.70, rvb_early=0.12, rvb_late=0.18,
-                rvb_decay=0.25, rvb_size=0.45, rvb_diffuse=0.9),             # large hall, 2.0s
+                rvb_decay=0.25, rvb_size=0.45, rvb_diffuse=0.9,
+                stereo_width=0.75),                                          # large hall, 2.0s
     7:  _preset(tape_drive=0.45, tape_sat=0.50,                              # Brass: bright, powerful
                 b3_gain=0.604, b3_freq=0.68,                                 # +3dB @ 3kHz brightness
                 rvb_dry=0.82, rvb_early=0.10, rvb_late=0.08,
-                rvb_decay=0.10, rvb_size=0.25),                              # medium room, 0.8s
+                rvb_decay=0.10, rvb_size=0.25,
+                stereo_width=0.60),                                          # medium room, 0.8s
     8:  _preset(tape_drive=0.25, tape_sat=0.30,                              # Reed: warm, expressive
                 b3_gain=0.583, b3_freq=0.62,                                 # +2dB @ 2kHz presence
                 rvb_dry=0.85, rvb_early=0.08, rvb_late=0.07,
-                rvb_decay=0.07, rvb_size=0.20),                              # small room, 0.6s
-    9:  _preset(tape_drive=0.15, tape_sat=0.20,                              # Pipe: open, airy
+                rvb_decay=0.07, rvb_size=0.20,
+                stereo_width=0.55),                                          # small room, 0.6s
+    9:  _preset(tape_drive=0.15, tape_sat=0.20,                              # Pipe: open, airy, wide cathedral
                 b4_gain=0.604, b4_freq=0.88,                                 # +3dB @ 10kHz breath
                 rvb_dry=0.78, rvb_early=0.10, rvb_late=0.12,
-                rvb_decay=0.15, rvb_size=0.35, rvb_diffuse=0.85),            # hall, 1.2s
-    10: _preset(tape_drive=0.50, tape_sat=0.50,                              # Synth Leads: punchy
+                rvb_decay=0.15, rvb_size=0.35, rvb_diffuse=0.85,
+                stereo_width=0.65),                                          # hall, 1.2s
+    10: _preset(tape_drive=0.50, tape_sat=0.50,                              # Synth Leads: punchy, thick lead
                 b1_gain=0.458, b1_freq=0.25,                                 # -2dB @ 200Hz
                 b3_gain=0.583, b3_freq=0.75,                                 # +2dB @ 4kHz
                 rvb_dry=0.88, rvb_early=0.06, rvb_late=0.06,
-                rvb_decay=0.02, rvb_size=0.10),                              # tiny room, 0.3s
-    11: _preset(tape_drive=0.30, tape_sat=0.35,                              # Synth Pads: deep, wide
+                rvb_decay=0.02, rvb_size=0.10,
+                stereo_width=0.55, chorus_wet=0.20),                         # tiny room, 0.3s
+    11: _preset(tape_drive=0.30, tape_sat=0.35,                              # Synth Pads: deep, wide, lush chorus
                 b1_gain=0.375, b1_freq=0.30,                                 # -3dB @ 300Hz
                 b4_gain=0.562, b4_freq=0.88,                                 # +1dB @ 8kHz
                 rvb_dry=0.65, rvb_early=0.10, rvb_late=0.25,
-                rvb_decay=0.30, rvb_size=0.50, rvb_diffuse=0.95, rvb_spin=0.25),  # huge hall, 2.5s
-    12: _preset(tape_drive=0.10, tape_sat=0.15,                              # FX: atmospheric
+                rvb_decay=0.30, rvb_size=0.50, rvb_diffuse=0.95, rvb_spin=0.25,
+                stereo_width=0.75, chorus_wet=0.40),                         # huge hall, 2.5s
+    12: _preset(tape_drive=0.10, tape_sat=0.15,                              # FX: atmospheric, massive field
                 rvb_dry=0.60, rvb_early=0.10, rvb_late=0.30,
-                rvb_decay=0.40, rvb_size=0.60, rvb_diffuse=0.95, rvb_spin=0.30),  # massive, 3.0s
+                rvb_decay=0.40, rvb_size=0.60, rvb_diffuse=0.95, rvb_spin=0.30,
+                stereo_width=0.80, chorus_wet=0.30),                         # massive, 3.0s
     13: _preset(tape_drive=0.30, tape_sat=0.35,                              # Ethnic: authentic
                 b3_gain=0.583, b3_freq=0.72,                                 # +2dB @ 4kHz
                 rvb_dry=0.82, rvb_early=0.08, rvb_late=0.10,
-                rvb_decay=0.10, rvb_size=0.25),                              # medium room, 0.8s
-    14: _preset(tape_drive=0.20, tape_sat=0.25,                              # Percussive: punchy
+                rvb_decay=0.10, rvb_size=0.25,
+                stereo_width=0.55),                                          # medium room, 0.8s
+    14: _preset(tape_drive=0.20, tape_sat=0.25,                              # Percussive: punchy, tight center
                 b3_gain=0.604, b3_freq=0.72,                                 # +3dB @ 5kHz punch
                 rvb_dry=0.80, rvb_early=0.10, rvb_late=0.10,
-                rvb_decay=0.07, rvb_diffuse=0.8),                            # plate, 0.6s
-    15: _preset(bypass=True),                                               # Sound FX: raw passthrough
+                rvb_decay=0.07, rvb_diffuse=0.8,
+                stereo_width=0.50),                                          # plate, 0.6s
+    15: _preset(bypass=True),                                                # Sound FX: raw passthrough
 }
 
 
@@ -153,16 +173,46 @@ GROUP_NAMES = {
 }
 
 
-def apply_preset(tape, eq, reverb, preset):
+def get_preset_for_program(prog):
+    """Returns the preset configuration customized for the specific GM program."""
+    group = prog // 8
+    preset = GROUP_PRESETS.get(group, GROUP_PRESETS[0]).copy()
+    
+    # Custom tweaks for specific instruments:
+    if prog in (4, 5):  # Electric Piano 1 (Rhodes) and Electric Piano 2 (DX EP)
+        # Enable lush chorus and widen the stereo field
+        preset["chorus_wet"] = 0.45
+        preset["stereo"] = {3: 0.65, 19: 1.0}  # Width 130%, SafeBass ON
+        
+    return preset
+
+
+def apply_preset(tape, eq, reverb, chorus, stereo, preset):
     """Configure all plugins for a given preset dict."""
     for idx, val in preset["tape"].items():
         tape.set_parameter(idx, val)
     for idx, val in preset["eq"].items():
         eq.set_parameter(idx, val)
+        
     rvb_settings = preset["reverb"]
     if rvb_settings is not None:
         for idx, val in rvb_settings.items():
             reverb.set_parameter(idx, val)
+            
+    # Configure Chorus (TAL-Chorus-LX)
+    chorus_wet = preset.get("chorus_wet", 0.0)
+    if chorus_wet > 0.0:
+        chorus.set_parameter(1, chorus_wet)  # Dry/Wet
+        chorus.set_parameter(2, 1.0)         # Stereo Width 10.0
+        chorus.set_parameter(3, 1.0)         # Chorus 1 ON
+        chorus.set_parameter(4, 0.0)         # Chorus 2 OFF
+        chorus.set_parameter(6, 0.0)         # Bypass OFF (Active)
+    else:
+        chorus.set_parameter(6, 1.0)         # Bypass ON
+        
+    # Configure Stereo (A1StereoControl)
+    for idx, val in preset["stereo"].items():
+        stereo.set_parameter(idx, val)
 
 
 def configure_kotelnikov(kotelnikov):
@@ -213,8 +263,9 @@ def main():
     print(f"Found {len(files)} raw samples.")
 
     for name, path in [("CHOWTape", CHOW_PATH), ("TDR Nova", NOVA_PATH),
-                        ("Kotelnikov", KOTELNIKOV_PATH),
-                        ("Dragonfly", DRAGONFLY_PATH), ("BasicLimiter", LIMITER_PATH)]:
+                        ("Kotelnikov", KOTELNIKOV_PATH), ("Chorus", CHORUS_PATH),
+                        ("StereoControl", STEREO_PATH), ("Dragonfly", DRAGONFLY_PATH),
+                        ("BasicLimiter", LIMITER_PATH)]:
         if not os.path.exists(path):
             print(f"Error: {name} not found at {path}")
             sys.exit(1)
@@ -223,6 +274,8 @@ def main():
     tape = engine.make_plugin_processor("tape", CHOW_PATH)
     eq = engine.make_plugin_processor("eq", NOVA_PATH)
     kotelnikov = engine.make_plugin_processor("kot", KOTELNIKOV_PATH)
+    chorus = engine.make_plugin_processor("cho", CHORUS_PATH)
+    stereo = engine.make_plugin_processor("ste", STEREO_PATH)
     reverb = engine.make_plugin_processor("reverb", DRAGONFLY_PATH)
     limiter = engine.make_plugin_processor("limiter", LIMITER_PATH)
     configure_kotelnikov(kotelnikov)
@@ -236,7 +289,7 @@ def main():
         name = os.path.basename(f)
         prog = program_from_name(name)
         group = prog // 8
-        preset = GROUP_PRESETS.get(group, GROUP_PRESETS[0])
+        preset = get_preset_for_program(prog)
 
         if group != last_group:
             gname = GROUP_NAMES.get(group, f"Group {group}")
@@ -258,28 +311,28 @@ def main():
             continue
 
         audio_2d = audio.T.astype(np.float32)
-        apply_preset(tape, eq, reverb, preset)
+        apply_preset(tape, eq, reverb, chorus, stereo, preset)
 
-        # Build graph: playback → tape → eq → kotelnikov → [reverb] → limiter
+        # Build dynamic graph: pb → tape → eq → kotelnikov → chorus → [reverb] → stereo → limiter
         pb = engine.make_playback_processor("pb", audio_2d)
+        
+        connections = [
+            (pb, []),
+            (tape, ["pb"]),
+            (eq, ["tape"]),
+            (kotelnikov, ["eq"]),
+            (chorus, ["kot"]),
+        ]
+        
+        last_node = "cho"
         if preset["reverb"] is not None:
-            engine.load_graph([
-                (pb, []),
-                (tape, ["pb"]),
-                (eq, ["tape"]),
-                (kotelnikov, ["eq"]),
-                (reverb, ["kot"]),
-                (limiter, ["reverb"]),
-            ])
-        else:
-            # No reverb (e.g. bass): eq → kotelnikov → limiter
-            engine.load_graph([
-                (pb, []),
-                (tape, ["pb"]),
-                (eq, ["tape"]),
-                (kotelnikov, ["eq"]),
-                (limiter, ["kot"]),
-            ])
+            connections.append((reverb, ["cho"]))
+            last_node = "reverb"
+            
+        connections.append((stereo, [last_node]))
+        connections.append((limiter, ["ste"]))
+        
+        engine.load_graph(connections)
 
         duration = len(audio) / SAMPLE_RATE
         engine.render(duration)
