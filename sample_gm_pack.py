@@ -19,9 +19,12 @@ def detect_pitch_midi(audio, sr):
 
     Detecting the actual pitch and writing THAT as pitch_keycenter makes
     sfizz transpose the sample to whatever key is played, canceling the
-    preset's built-in offset. Uses the autocorrelation peak over the sustain
-    portion of the note (more reliable than the raw FFT peak for harmonically
-    rich timbres, where an overtone can dominate the spectrum).
+    preset's built-in offset.
+
+    Uses the HPS (Harmonic Product Spectrum) algorithm: multiply the spectrum
+    by downsampled copies of itself (1x, 2x, 3x, 4x frequency) so harmonically
+    related peaks reinforce the fundamental while isolated overtones vanish.
+    Much more reliable than plain autocorrelation on harmonically rich timbres.
     """
     mono = audio.mean(axis=1) if audio.ndim > 1 else audio
     # Sustain window: skip attack (first 0.1s), take next 0.6s
@@ -31,21 +34,35 @@ def detect_pitch_midi(audio, sr):
         return None
     seg = seg - float(np.mean(seg))  # remove DC
     seg = seg * np.hanning(len(seg))
-    # Autocorrelation: lag in samples → period → frequency → MIDI
-    corr = np.correlate(seg, seg, mode="full")
-    corr = corr[len(seg):]  # keep right half (positive lags)
-    # Ignore lags below ~MIDI 108 (4186 Hz) and above ~MIDI 0 (8 Hz)
-    min_lag = max(2, int(sr / 4200))
-    max_lag = min(len(corr) - 1, int(sr / 60))
-    if max_lag <= min_lag:
+    spec = np.abs(np.fft.rfft(seg))
+    freqs = np.fft.rfftfreq(len(seg), 1.0 / sr)
+    # Only consider frequencies corresponding to MIDI 12..120 (~16Hz..8372Hz).
+    # Below 16Hz autocorrelation/FFT both get noisy; above 8kHz overtones of
+    # high notes start hitting Nyquist artifacts.
+    valid = (freqs >= 16) & (freqs <= 8400)
+    if not np.any(valid):
         return None
-    region = corr[min_lag:max_lag + 1]
-    if region.size == 0:
+    spec_valid = spec.copy()
+    spec_valid[~valid] = 0
+    # Harmonic Product Spectrum: multiply downsampled spectra. This boosts the
+    # fundamental relative to its harmonics.
+    hps = spec_valid.copy()
+    for d in (2, 3, 4):
+        ds = np.interp(freqs, freqs[::d], spec_valid[::d])
+        hps = hps * (ds + 1e-12)
+    best_idx = int(np.argmax(hps))
+    if hps[best_idx] <= 0:
         return None
-    best_lag = int(np.argmax(region)) + min_lag
-    freq = sr / best_lag
+    freq = freqs[best_idx]
     if freq <= 0:
         return None
+    # Parabolic interpolation around the peak bin for sub-bin accuracy.
+    if 0 < best_idx < len(freqs) - 1:
+        a0, a1, a2 = hps[best_idx - 1], hps[best_idx], hps[best_idx + 1]
+        denom = (a0 - 2 * a1 + a2)
+        if denom != 0:
+            offset = 0.5 * (a0 - a2) / denom
+            freq = freqs[best_idx] + offset * (freqs[1] - freqs[0])
     midi = 69 + 12 * np.log2(freq / 440.0)
     return int(round(midi))
 
