@@ -283,6 +283,7 @@ def program_from_name(filename):
 # ---------------------------------------------------------------------------
 
 def process_file(filepath, out_dir, engine, pb, tape, spiff, eq, reverb, chorus, stereo, fresh_air):
+    # Note: kotelnikov and limiter are configured once globally in main() and omitted here
     filename = os.path.basename(filepath)
     prog = program_from_name(filename)
     preset = get_preset_for_program(prog)
@@ -298,7 +299,7 @@ def process_file(filepath, out_dir, engine, pb, tape, spiff, eq, reverb, chorus,
             peak = float(np.max(np.abs(out)))
             if peak > 1e-6:
                 out = out * (0.95 / peak)
-            sf.write(os.path.join(out_dir, filename), out.T, SAMPLE_RATE, subtype="PCM_24")
+            sf.write(os.path.join(out_dir, filename), out.T, sr, subtype="PCM_24")
             return True, None
             
         audio_2d = audio.T.astype(np.float32)
