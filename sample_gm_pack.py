@@ -8,6 +8,48 @@ import soundfile as sf
 import mido
 import dawdreamer as daw
 
+
+def detect_pitch_midi(audio, sr):
+    """Detect the fundamental pitch of a rendered sample, return as MIDI note.
+
+    Surge XT factory presets often bake in a key transpose (e.g. the "Piano
+    Remains 1" patch plays a requested C4 as C5, +12 semitones). If we set
+    pitch_keycenter to the *requested* note, sfizz assumes the sample is in
+    that key and applies no correction — so the note comes out transposed.
+
+    Detecting the actual pitch and writing THAT as pitch_keycenter makes
+    sfizz transpose the sample to whatever key is played, canceling the
+    preset's built-in offset. Uses the autocorrelation peak over the sustain
+    portion of the note (more reliable than the raw FFT peak for harmonically
+    rich timbres, where an overtone can dominate the spectrum).
+    """
+    mono = audio.mean(axis=1) if audio.ndim > 1 else audio
+    # Sustain window: skip attack (first 0.1s), take next 0.6s
+    start = int(sr * 0.1)
+    seg = mono[start:start + int(sr * 0.6)]
+    if seg.size == 0 or float(np.max(np.abs(seg))) < 1e-5:
+        return None
+    seg = seg - float(np.mean(seg))  # remove DC
+    seg = seg * np.hanning(len(seg))
+    # Autocorrelation: lag in samples → period → frequency → MIDI
+    corr = np.correlate(seg, seg, mode="full")
+    corr = corr[len(seg):]  # keep right half (positive lags)
+    # Ignore lags below ~MIDI 108 (4186 Hz) and above ~MIDI 0 (8 Hz)
+    min_lag = max(2, int(sr / 4200))
+    max_lag = min(len(corr) - 1, int(sr / 60))
+    if max_lag <= min_lag:
+        return None
+    region = corr[min_lag:max_lag + 1]
+    if region.size == 0:
+        return None
+    best_lag = int(np.argmax(region)) + min_lag
+    freq = sr / best_lag
+    if freq <= 0:
+        return None
+    midi = 69 + 12 * np.log2(freq / 440.0)
+    return int(round(midi))
+
+
 # 128 standard GM instrument names (cleaned for filenames)
 GM_NAMES = [
     "acoustic_grand_piano", "bright_acoustic_piano", "electric_grand_piano", "honky_tonk_piano", "electric_piano_1", "electric_piano_2", "harpsichord", "clavinet",
@@ -370,11 +412,19 @@ def main():
                     # Save WAV as 24-bit PCM
                     sf.write(sample_path, audio, sr, subtype='PCM_24')
 
+                    # Detect the sample's actual pitch and use it as
+                    # pitch_keycenter. Surge XT presets often bake in a
+                    # transposition; writing the real pitch here makes sfizz
+                    # apply the inverse transpose when playing a given key.
+                    actual_pitch = detect_pitch_midi(audio, sr)
+                    if actual_pitch is None:
+                        actual_pitch = note  # fallback to requested note
+
                     # Write regions
-                    line_indiv = f"<region> sample={sample_name} pitch_keycenter={note} lokey={lokey} hikey={hikey} lovel={lovel} hivel={hivel}\n"
-                    line_master = f"<region> sample={sample_name} pitch_keycenter={note} lokey={lokey} hikey={hikey} lovel={lovel} hivel={hivel}\n"
-                    line_sfizz_raw = f"<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/{sample_name} pitch_keycenter={note} lokey={lokey} hikey={hikey} lovel={lovel} hivel={hivel}\n"
-                    line_sfizz_proc = f"<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/{sample_name} pitch_keycenter={note} lokey={lokey} hikey={hikey} lovel={lovel} hivel={hivel}\n"
+                    line_indiv = f"<region> sample={sample_name} pitch_keycenter={actual_pitch} lokey={lokey} hikey={hikey} lovel={lovel} hivel={hivel}\n"
+                    line_master = f"<region> sample={sample_name} pitch_keycenter={actual_pitch} lokey={lokey} hikey={hikey} lovel={lovel} hivel={hivel}\n"
+                    line_sfizz_raw = f"<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/{sample_name} pitch_keycenter={actual_pitch} lokey={lokey} hikey={hikey} lovel={lovel} hivel={hivel}\n"
+                    line_sfizz_proc = f"<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/{sample_name} pitch_keycenter={actual_pitch} lokey={lokey} hikey={hikey} lovel={lovel} hivel={hivel}\n"
                     
                     indiv_f.write(line_indiv)
                     master_f.write(line_master)
