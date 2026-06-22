@@ -3,7 +3,7 @@
 Sequential VST color chain processing for GM samples.
 
 Uses DawDreamer to apply a high-quality production mastering/coloring chain:
-  CHOWTape → SDRR2 → spiff → soothe2 → FabFilter Pro-Q 4 → TDR Kotelnikov GE → Fresh Air → TAL-Chorus-LX → Dragonfly Room → A1StereoControl → BasicLimiter
+  CHOWTape → SDRR2 → spiff → soothe2 → FabFilter Pro-Q 4 → TDR Kotelnikov GE → Fresh Air → TAL-Chorus-LX → FabFilter Pro-R 2 → A1StereoControl → FabFilter Pro-L 2
 
 Runs sequentially in a single thread to prevent CPU overload.
 """
@@ -26,8 +26,8 @@ KOTELNIKOV_GE_PATH = "/Library/Audio/Plug-Ins/VST3/TDR Kotelnikov GE.vst3"
 FRESH_AIR_PATH = "/Library/Audio/Plug-Ins/VST3/Fresh Air.vst3"
 CHORUS_PATH = "/Library/Audio/Plug-Ins/VST3/TAL-Chorus-LX.vst3"
 STEREO_PATH = "/Library/Audio/Plug-Ins/VST3/A1StereoControl.vst3"
-DRAGONFLY_PATH = "/Library/Audio/Plug-Ins/VST3/DragonflyRoomReverb.vst3"
-LIMITER_PATH = "/Library/Audio/Plug-Ins/VST3/BasicLimiter.vst3"
+PRO_R_PATH = "/Library/Audio/Plug-Ins/VST3/FabFilter Pro-R 2.vst3"
+PRO_L_PATH = "/Library/Audio/Plug-Ins/VST3/FabFilter Pro-L 2.vst3"
 
 SAMPLE_RATE = 96000
 BUFFER_SIZE = 512
@@ -351,16 +351,20 @@ def apply_preset(tape, pro_q, reverb, chorus, stereo, fresh_air, spiff, sdrr, so
     pro_q.set_parameter(78, gain_to_val(0.0))
     pro_q.set_parameter(79, 0.0)                 # Dynamics Disabled
 
-    # Reverb (Dragonfly)
+    # FabFilter Pro-R 2 (Reverb)
     rvb_settings = preset["reverb"]
     if rvb_settings is not None:
-        for idx, val in rvb_settings.items():
-            reverb.set_parameter(idx, val)
+        reverb.set_parameter(132, 0.0)           # Bypass OFF
+        dry = rvb_settings.get(2, 0.88)          # Dry level
+        mix = 1.0 - dry
+        reverb.set_parameter(9, mix)             # Mix (0.0 to 1.0)
+        size = rvb_settings.get(6, 0.167)        # Size/Space
+        reverb.set_parameter(0, size)            # Space
+        reverb.set_parameter(5, 0.50)            # Character (50% Clean/Chorus)
+        reverb.set_parameter(7, 0.70)            # Stereo Width (70%)
     else:
-        # Dry only (bypass reverb effect)
-        reverb.set_parameter(2, 1.0)  # Dry Level 100%
-        reverb.set_parameter(3, 0.0)  # Early Level 0%
-        reverb.set_parameter(5, 0.0)  # Late Level 0%
+        reverb.set_parameter(132, 1.0)           # Bypass ON
+        reverb.set_parameter(9, 0.0)             # Mix 0%
             
     # Configure Chorus (TAL-Chorus-LX)
     chorus_wet = preset.get("chorus_wet", 0.0)
@@ -400,10 +404,13 @@ def configure_kotelnikov_ge(kotelnikov):
     kotelnikov.set_parameter(14, 0.5738) # Out Gain +3.0 dB makeup
 
 def configure_limiter(limiter):
-    """BasicLimiter: true brick-wall ceiling at -1 dBFS."""
-    limiter.set_parameter(0, 0.0)   # bypass off
-    limiter.set_parameter(1, 0.45)  # threshold ~-1 dB
-    limiter.set_parameter(7, 1.0)   # true peak on
+    """FabFilter Pro-L 2: true peak mastering limiter."""
+    limiter.set_parameter(17, 0.0)       # Bypass: Not Bypassed
+    limiter.set_parameter(0, 0.0)        # Gain: 0.00 dB
+    limiter.set_parameter(1, 0.7143)     # Style: Modern
+    limiter.set_parameter(18, 0.96635)   # Output Level: -1.00 dBTP
+    limiter.set_parameter(10, 1.0)       # True Peak Limiting: On
+    limiter.set_parameter(9, 0.11)       # Oversampling: 2x
 
 def program_from_name(filename):
     """Extract GM program index from gm_NNN_*.wav."""
@@ -482,7 +489,7 @@ def main():
                         ("soothe2", SOOTHE_PATH), ("FabFilter Pro-Q 4", PRO_Q_PATH),
                         ("TDR Kotelnikov GE", KOTELNIKOV_GE_PATH), ("Fresh Air", FRESH_AIR_PATH),
                         ("Chorus", CHORUS_PATH), ("StereoControl", STEREO_PATH),
-                        ("Dragonfly", DRAGONFLY_PATH), ("BasicLimiter", LIMITER_PATH)]:
+                        ("FabFilter Pro-R 2", PRO_R_PATH), ("FabFilter Pro-L 2", PRO_L_PATH)]:
         if not os.path.exists(path):
             print(f"Error: {name} not found at {path}")
             sys.exit(1)
@@ -504,8 +511,8 @@ def main():
         fresh_air = engine.make_plugin_processor("fresh", FRESH_AIR_PATH)
         chorus = engine.make_plugin_processor("cho", CHORUS_PATH)
         stereo = engine.make_plugin_processor("ste", STEREO_PATH)
-        reverb = engine.make_plugin_processor("reverb", DRAGONFLY_PATH)
-        limiter = engine.make_plugin_processor("limiter", LIMITER_PATH)
+        reverb = engine.make_plugin_processor("reverb", PRO_R_PATH)
+        limiter = engine.make_plugin_processor("limiter", PRO_L_PATH)
         configure_kotelnikov_ge(kotelnikov_ge)
         configure_limiter(limiter)
     finally:
