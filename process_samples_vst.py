@@ -985,27 +985,14 @@ def main():
     print("\nRunning pitch auto-aligner on the raw dry samples...")
     import subprocess
 
-    # Determine which SFZ files to patch based on the input directory
-    script_dir = os.path.dirname(os.path.abspath(__file__))
     if "drums" in src_dir.lower():
-        sfz_files = [os.path.join(script_dir, "General_MIDI_sfizz_drums.sfz")]
+        print("  → Skipping pitch auto-aligner for drum samples (not applicable).")
     else:
-        sfz_files = [
-            os.path.join(script_dir, "General_MIDI.sfz"),
-            os.path.join(script_dir, "General_MIDI_sfizz.sfz"),
-            os.path.join(script_dir, "General_MIDI_sfizz_processed.sfz"),
-        ]
-    cmd = [
-        sys.executable,
-        "patch_sfz_pitches.py",
-        "--raw-dir",
-        src_dir,
-        "--sfz",
-    ] + sfz_files
-    try:
-        subprocess.run(cmd, check=True)
-    except Exception as e:
-        print(f"Warning: Pitch auto-aligner failed to run: {e}")
+        cmd = [sys.executable, "patch_sfz_pitches.py", "--raw-dir", src_dir]
+        try:
+            subprocess.run(cmd, check=True)
+        except Exception as e:
+            print(f"Warning: Pitch auto-aligner failed to run: {e}")
 
     # Explicit clean teardown
     engine.load_graph([])
