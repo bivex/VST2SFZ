@@ -254,9 +254,9 @@ prg_num=28
 <region> sample=gm_028_Ds9_v127.wav pitch_keycenter=123 lokey=123 hikey=123 lovel=81 hivel=127
 <region> sample=gm_028_E9_v64.wav pitch_keycenter=124 lokey=124 hikey=124 lovel=0 hivel=80
 <region> sample=gm_028_E9_v127.wav pitch_keycenter=124 lokey=124 hikey=124 lovel=81 hivel=127
-<region> sample=gm_028_F9_v64.wav pitch_keycenter=125 lokey=125 hikey=125 lovel=0 hivel=80
-<region> sample=gm_028_F9_v127.wav pitch_keycenter=125 lokey=125 hikey=125 lovel=81 hivel=127
-<region> sample=gm_028_Fs9_v64.wav pitch_keycenter=126 lokey=126 hikey=126 lovel=0 hivel=80
-<region> sample=gm_028_Fs9_v127.wav pitch_keycenter=126 lokey=126 hikey=126 lovel=81 hivel=127
-<region> sample=gm_028_G9_v64.wav pitch_keycenter=127 lokey=127 hikey=127 lovel=0 hivel=80
-<region> sample=gm_028_G9_v127.wav pitch_keycenter=127 lokey=127 hikey=127 lovel=81 hivel=127
+<region> sample=gm_028_F9_v64.wav pitch_keycenter=101 lokey=125 hikey=125 lovel=0 hivel=80
+<region> sample=gm_028_F9_v127.wav pitch_keycenter=101 lokey=125 hikey=125 lovel=81 hivel=127
+<region> sample=gm_028_Fs9_v64.wav pitch_keycenter=78 lokey=126 hikey=126 lovel=0 hivel=80
+<region> sample=gm_028_Fs9_v127.wav pitch_keycenter=78 lokey=126 hikey=126 lovel=81 hivel=127
+<region> sample=gm_028_G9_v64.wav pitch_keycenter=55 lokey=127 hikey=127 lovel=0 hivel=80
+<region> sample=gm_028_G9_v127.wav pitch_keycenter=55 lokey=127 hikey=127 lovel=81 hivel=127
