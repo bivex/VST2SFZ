@@ -9,6 +9,7 @@ Runs sequentially in a single thread to prevent CPU overload.
 """
 import os
 import re
+import copy
 import sys
 import glob
 import argparse
@@ -184,7 +185,7 @@ GROUP_NAMES = {
 def get_preset_for_program(prog):
     """Returns the preset configuration customized for the specific GM program."""
     group = prog // 8
-    preset = GROUP_PRESETS.get(group, GROUP_PRESETS[0]).copy()
+    preset = copy.deepcopy(GROUP_PRESETS.get(group, GROUP_PRESETS[0]))
     
     # Custom tweaks for specific instruments:
     if prog in (4, 5):  # Electric Piano 1 (Rhodes) and Electric Piano 2 (DX EP)
@@ -217,6 +218,7 @@ def apply_preset(tape, eq, reverb, chorus, stereo, fresh_air, spiff, preset):
         chorus.set_parameter(4, 0.0)         # Chorus 2 OFF
         chorus.set_parameter(6, 0.0)         # Bypass OFF (Active)
     else:
+        chorus.set_parameter(1, 0.0)         # Dry/Wet to 0.0
         chorus.set_parameter(6, 1.0)         # Bypass ON
         
     # Configure Stereo (A1StereoControl)
@@ -320,9 +322,9 @@ def process_file(filepath, out_dir, engine, tape, spiff, eq, kotelnikov, fresh_a
         
         engine.load_graph(connections)
         
-        duration = len(audio) / SAMPLE_RATE
+        duration = len(audio) / sr
         engine.render(duration)
-        out = engine.get_audio()
+        out = engine.get_audio("limiter")
         
         # Peak-normalize to 0.95
         peak = float(np.max(np.abs(out)))
