@@ -4,19 +4,13 @@ default_path=../General_MIDI_samples/
 
 <group>
 prg_num=97
-<region> sample=gm_097_C1_v64.wav pitch_keycenter=60 lokey=0 hikey=30 lovel=0 hivel=80
-<region> sample=gm_097_C1_v127.wav pitch_keycenter=60 lokey=0 hikey=30 lovel=81 hivel=127
-<region> sample=gm_097_C2_v64.wav pitch_keycenter=60 lokey=31 hikey=42 lovel=0 hivel=80
-<region> sample=gm_097_C2_v127.wav pitch_keycenter=60 lokey=31 hikey=42 lovel=81 hivel=127
-<region> sample=gm_097_C3_v64.wav pitch_keycenter=60 lokey=43 hikey=54 lovel=0 hivel=80
-<region> sample=gm_097_C3_v127.wav pitch_keycenter=60 lokey=43 hikey=54 lovel=81 hivel=127
-<region> sample=gm_097_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
-<region> sample=gm_097_C4_v127.wav pitch_keycenter=61 lokey=55 hikey=66 lovel=81 hivel=127
-<region> sample=gm_097_C5_v64.wav pitch_keycenter=60 lokey=67 hikey=78 lovel=0 hivel=80
-<region> sample=gm_097_C5_v127.wav pitch_keycenter=60 lokey=67 hikey=78 lovel=81 hivel=127
-<region> sample=gm_097_C6_v64.wav pitch_keycenter=60 lokey=79 hikey=90 lovel=0 hivel=80
-<region> sample=gm_097_C6_v127.wav pitch_keycenter=60 lokey=79 hikey=90 lovel=81 hivel=127
-<region> sample=gm_097_C7_v64.wav pitch_keycenter=59 lokey=91 hikey=102 lovel=0 hivel=80
-<region> sample=gm_097_C7_v127.wav pitch_keycenter=59 lokey=91 hikey=102 lovel=81 hivel=127
-<region> sample=gm_097_C8_v64.wav pitch_keycenter=61 lokey=103 hikey=127 lovel=0 hivel=80
+<region> sample=gm_097_C2_v64.wav pitch_keycenter=60 lokey=0 hikey=48 lovel=0 hivel=80
+<region> sample=gm_097_C2_v127.wav pitch_keycenter=60 lokey=0 hikey=48 lovel=81 hivel=127
+<region> sample=gm_097_C4_v64.wav pitch_keycenter=61 lokey=49 hikey=66 lovel=0 hivel=80
+<region> sample=gm_097_C4_v127.wav pitch_keycenter=61 lokey=49 hikey=66 lovel=81 hivel=127
+<region> sample=gm_097_C5_v64.wav pitch_keycenter=60 lokey=67 hikey=84 lovel=0 hivel=80
+<region> sample=gm_097_C5_v127.wav pitch_keycenter=60 lokey=67 hikey=84 lovel=81 hivel=127
+<region> sample=gm_097_C7_v64.wav pitch_keycenter=59 lokey=85 hikey=102 lovel=0 hivel=80
+<region> sample=gm_097_C7_v127.wav pitch_keycenter=59 lokey=85 hikey=102 lovel=81 hivel=127
+<region> sample=gm_097_C8_v64.wav pitch_keycenter=60 lokey=103 hikey=127 lovel=0 hivel=80
 <region> sample=gm_097_C8_v127.wav pitch_keycenter=60 lokey=103 hikey=127 lovel=81 hivel=127

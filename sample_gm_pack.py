@@ -466,18 +466,47 @@ def main():
                     detected_pitch = note
                 note_pitches[idx] = detected_pitch
 
-            # Persist + map regions
-            for idx, note in enumerate(notes_to_sample):
-                # Calculate key boundaries
-                if idx == 0:
+            # Clamp detection: when a preset physically can't produce the requested
+            # pitch, consecutive requested notes collapse onto the same detected pitch
+            # (e.g. C5/C6/C7/C8 all come out as MIDI 60 on a bass preset). Writing a
+            # fake pitch_keycenter for those would make sfizz transpose them wildly
+            # (the "munchkin" effect). Instead we collapse each run of identical
+            # detected pitches into one representative sample and let its key zone
+            # stretch across the whole clamped range, so every key still sounds in
+            # tune using a real, in-range sample.
+            kept_indices = []
+            idx = 0
+            while idx < len(notes_to_sample):
+                run_end = idx
+                while (run_end + 1 < len(notes_to_sample)
+                       and note_pitches[run_end + 1] == note_pitches[idx]):
+                    run_end += 1
+                if run_end > idx:
+                    rep = (idx + run_end) // 2
+                    kept_indices.append(rep)
+                    start_name = midi_to_note_name(notes_to_sample[idx])
+                    end_name = midi_to_note_name(notes_to_sample[run_end])
+                    rep_name = midi_to_note_name(notes_to_sample[rep])
+                    print(f"  ~ clamp: {start_name}..{end_name} all play MIDI {note_pitches[idx]} -> kept {rep_name}")
+                else:
+                    kept_indices.append(idx)
+                idx = run_end + 1
+
+            # Persist + map regions, recomputing key boundaries so the kept samples
+            # tile the full 0..127 range without gaps left by the collapsed notes.
+            for k, idx in enumerate(kept_indices):
+                note = notes_to_sample[idx]
+                if k == 0:
                     lokey = 0
                 else:
-                    lokey = (notes_to_sample[idx-1] + note) // 2 + 1
-                    
-                if idx == len(notes_to_sample) - 1:
+                    prev_note = notes_to_sample[kept_indices[k - 1]]
+                    lokey = (prev_note + note) // 2 + 1
+
+                if k == len(kept_indices) - 1:
                     hikey = 127
                 else:
-                    hikey = (note + notes_to_sample[idx+1]) // 2
+                    next_note = notes_to_sample[kept_indices[k + 1]]
+                    hikey = (note + next_note) // 2
 
                 actual_pitch = note_pitches[idx]
 
@@ -496,7 +525,7 @@ def main():
                     line_master = f"<region> sample={sample_name} pitch_keycenter={actual_pitch} lokey={lokey} hikey={hikey} lovel={lovel} hivel={hivel}\n"
                     line_sfizz_raw = f"<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/{sample_name} pitch_keycenter={actual_pitch} lokey={lokey} hikey={hikey} lovel={lovel} hivel={hivel}\n"
                     line_sfizz_proc = f"<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/{sample_name} pitch_keycenter={actual_pitch} lokey={lokey} hikey={hikey} lovel={lovel} hivel={hivel}\n"
-                    
+
                     indiv_f.write(line_indiv)
                     master_f.write(line_master)
                     sfizz_sfz_f.write(line_sfizz_raw)
