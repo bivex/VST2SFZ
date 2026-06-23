@@ -7,76 +7,10 @@ import numpy as np
 import soundfile as sf
 import mido
 import dawdreamer as daw
+from pitch_utils import detect_pitch_midi
 
 
-def detect_pitch_midi(audio, sr):
-    """Detect the fundamental pitch of a rendered sample, return as MIDI note.
-
-    Surge XT factory presets often bake in a key transpose (e.g. the "Piano
-    Remains 1" patch plays a requested C4 as C5, +12 semitones). If we set
-    pitch_keycenter to the *requested* note, sfizz assumes the sample is in
-    that key and applies no correction — so the note comes out transposed.
-
-    Detecting the actual pitch and writing THAT as pitch_keycenter makes
-    sfizz transpose the sample to whatever key is played, canceling the
-    preset's built-in offset.
-
-    Uses the lowest-peak method: scans the spectrum from low to high frequency,
-    selecting the first local peak exceeding 10% of the absolute maximum magnitude.
-    This prevents grabbing upper harmonics on instruments with a weak fundamental
-    like strings/violins.
-    """
-    mono = audio.mean(axis=1) if audio.ndim > 1 else audio
-    # Sustain window: skip attack (first 0.1s), take next 0.6s
-    start = int(sr * 0.1)
-    seg = mono[start:start + int(sr * 0.6)]
-    if seg.size == 0 or float(np.max(np.abs(seg))) < 1e-5:
-        return None
-    seg = seg - float(np.mean(seg))  # remove DC
-    seg = seg * np.hanning(len(seg))
-    spec = np.abs(np.fft.rfft(seg))
-    freqs = np.fft.rfftfreq(len(seg), 1.0 / sr)
-    
-    # Only consider frequencies corresponding to MIDI 12..120 (~16Hz..8372Hz).
-    valid_indices = np.where((freqs >= 16) & (freqs <= 8400))[0]
-    if len(valid_indices) == 0:
-        return None
-        
-    # Find the maximum amplitude in the valid range
-    max_mag = float(np.max(spec[valid_indices]))
-    if max_mag < 1e-5:
-        return None
-        
-    threshold = 0.10 * max_mag
-    
-    # Scan from low to high frequency to find the first local peak exceeding threshold
-    best_idx = None
-    for idx in valid_indices:
-        # Check if it is a local peak: higher than neighbors
-        if idx > 0 and idx < len(spec) - 1:
-            if spec[idx] >= spec[idx - 1] and spec[idx] >= spec[idx + 1]:
-                if spec[idx] >= threshold:
-                    best_idx = idx
-                    break
-                    
-    # Fallback to absolute maximum if no local peak found
-    if best_idx is None:
-        best_idx = int(valid_indices[np.argmax(spec[valid_indices])])
-        
-    freq = freqs[best_idx]
-    if freq <= 0:
-        return None
-        
-    # Parabolic interpolation around the peak bin for sub-bin accuracy.
-    if 0 < best_idx < len(freqs) - 1:
-        a0, a1, a2 = spec[best_idx - 1], spec[best_idx], spec[best_idx + 1]
-        denom = (a0 - 2 * a1 + a2)
-        if denom != 0:
-            offset = 0.5 * (a0 - a2) / denom
-            freq = freqs[best_idx] + offset * (freqs[1] - freqs[0])
-            
-    midi = 69 + 12 * np.log2(freq / 440.0)
-    return int(round(midi))
+# detect_pitch_midi is imported from pitch_utils (validated lowest-peak algorithm)
 
 
 # 128 standard GM instrument names (cleaned for filenames)
