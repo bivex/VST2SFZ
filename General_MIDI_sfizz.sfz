@@ -50,7 +50,7 @@ loprog=2 hiprog=2
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_002_C3_v64.wav pitch_keycenter=55 lokey=43 hikey=54 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_002_C3_v127.wav pitch_keycenter=55 lokey=43 hikey=54 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_002_C4_v64.wav pitch_keycenter=66 lokey=55 hikey=66 lovel=0 hivel=80
-<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_002_C4_v127.wav pitch_keycenter=66 lokey=55 hikey=66 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_002_C4_v127.wav pitch_keycenter=67 lokey=55 hikey=66 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_002_C5_v64.wav pitch_keycenter=78 lokey=67 hikey=78 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_002_C5_v127.wav pitch_keycenter=78 lokey=67 hikey=78 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_002_C6_v64.wav pitch_keycenter=89 lokey=79 hikey=90 lovel=0 hivel=80
@@ -619,7 +619,7 @@ loprog=33 hiprog=33
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_033_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_033_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_033_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=80
-<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_033_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=81 hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_033_C3_v127.wav pitch_keycenter=60 lokey=43 hikey=54 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_033_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_033_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_033_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=80

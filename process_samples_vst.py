@@ -260,16 +260,18 @@ GROUP_PRESETS = {
         fresh_high=0.0,
         mb_bypass=False,
         mb_params={
-            0: 1.0,
-            1: 0.0,
-            3: 0.20,
-            6: 0.70,
-            7: 0.40,
-            8: 0.40,  # Band 1 (Low: 20Hz - 120Hz)
-            22: 1.0,
-            23: 0.20,
-            25: 1.0,
-            29: 0.50,  # Band 2 (Mid-High: 120Hz - 20kHz, no compression)
+            # Band 1 (Low: 20Hz - 120Hz) — State must be 0.25..0.5 = Enabled
+            0: 0.5,         # State = Enabled (was 1.0 = Unused)
+            1: 0.0,         # Low Crossover = 30 Hz
+            3: 0.30,        # High Crossover ≈ 120 Hz: log(120/30)/log(1000) ≈ 0.20 -> use 0.30 (~240Hz)
+            6: 0.40,        # Threshold: (db+60)/60 -> 0.40 ≈ -36 dB (catch low-end transients)
+            7: 0.45,        # Range: (r+30)/60 -> -3 dB max gain reduction
+            8: 0.40,        # Ratio: power-law, 0.40 = 2:1
+            22: 0.5,        # Band 2 State = Enabled (was 1.0 = Unused)
+            23: 0.530,      # Band 2 Low Crossover ≈ 1000 Hz: log(1000/30)/log(1000)
+            25: 0.833,      # Band 2 Threshold: (db+60)/60 -> -10 dB
+            29: 0.45,       # Band 2 Range: -3 dB max GR
+            30: 0.40,       # Band 2 Ratio: 2:1 (power-law)
         },
     ),
     5: _preset(
@@ -423,27 +425,27 @@ GROUP_PRESETS = {
         fresh_high=0.15,
         mb_bypass=False,
         mb_params={
-            # Band 1 (Low: 20Hz - 150Hz)
-            0: 1.0,
-            1: 0.0,
-            3: 0.23,
-            6: 0.75,
-            7: 0.45,
-            8: 0.40,
+            # Band 1 (Low: 20Hz - 150Hz) — State must be 0.25..0.5 = Enabled
+            0: 0.5,         # State = Enabled (was 1.0 = Unused)
+            1: 0.0,         # Low Crossover = 30 Hz
+            3: 0.367,       # High Crossover ≈ 150 Hz: log(150/30)/log(1000)
+            6: 0.583,       # Threshold: (db+60)/60 -> -25 dB
+            7: 0.45,        # Range: -3 dB max GR
+            8: 0.40,        # Ratio: 2:1 (power-law)
             # Band 2 (Mid: 150Hz - 3.7kHz)
-            22: 1.0,
-            23: 0.23,
-            25: 0.70,
-            28: 0.75,
-            29: 0.45,
-            30: 0.40,
+            22: 0.5,        # State = Enabled
+            23: 0.367,      # Low Crossover ≈ 150 Hz
+            25: 0.754,      # High Crossover ≈ 3.7 kHz: log(3700/30)/log(1000)
+            28: 0.667,      # Threshold: (db+60)/60 -> -20 dB
+            29: 0.45,       # Range: -3 dB max GR
+            30: 0.40,       # Ratio: 2:1
             # Band 3 (High: 3.7kHz - 20kHz)
-            44: 1.0,
-            45: 0.70,
-            47: 1.0,
-            50: 0.75,
-            51: 0.45,
-            52: 0.40,
+            44: 0.5,        # State = Enabled (idx 44 = Band 3 base)
+            45: 0.754,      # Low Crossover ≈ 3.7 kHz
+            47: 0.833,      # High Crossover ≈ 20 kHz: log(20000/30)/log(1000)
+            50: 0.500,      # Threshold: (db+60)/60 -> -30 dB (gentle on highs)
+            51: 0.45,       # Range: -3 dB max GR
+            52: 0.40,       # Ratio: 2:1
         },
     ),
     12: _preset(
@@ -622,7 +624,7 @@ def apply_preset(
     # Band 1: Low Cut (High Pass Filter)
     pro_q.set_parameter(0, 1.0)  # Used
     pro_q.set_parameter(1, 1.0)  # Enabled
-    pro_q.set_parameter(5, 0.22)  # Shape: Low Cut
+    pro_q.set_parameter(5, 0.20)  # Shape: Low Cut (verified normalized value)
     pro_q.set_parameter(6, 0.1984)  # Slope: 12 dB/oct
     pro_q.set_parameter(2, freq_to_val(eq_settings["hp_freq"]))
     pro_q.set_parameter(3, gain_to_val(0.0))  # No gain for HP Cut
@@ -667,30 +669,35 @@ def apply_preset(
     # FabFilter Pro-R 2 (Reverb)
     rvb_settings = preset["reverb"]
     if rvb_settings is not None:
-        reverb.set_parameter(132, 0.0)  # Bypass OFF
-        dry = rvb_settings.get(2, 0.88)  # rvb_dry (key 2)
-        mix = 1.0 - dry
-        reverb.set_parameter(9, mix)  # Mix (0.0 to 1.0)
+        reverb.set_parameter(132, 0.0)  # Bypass OFF (0.0 = engaged)
+        # Mix (idx 9): linear 0..100%. 1.0 - dry.
+        dry = rvb_settings.get(2, 0.93)  # rvb_dry (key 2)
+        reverb.set_parameter(9, 1.0 - dry)
 
-        # In Pro-R 2, Space (parameter 0) controls room size and decay time.
-        # We map the preset's rvb_decay (key 9) directly to Space.
-        decay_val = rvb_settings.get(9, 0.10)
-        reverb.set_parameter(0, decay_val)  # Space (parameter 0)
+        # Space (idx 0): room size, log 200ms..10s. 0.5=2.5s, 0.7=4.0s (deep hall).
+        reverb.set_parameter(0, 0.70)
 
-        # Keep Decay Rate (parameter 1) at 100% (value 0.50)
-        reverb.set_parameter(1, 0.50)
+        # Decay Rate (idx 1): 25%..400%, 0.50 = 100% (neutral).
+        # Short decay rate -> controlled tail (~200ms) per deep-hall profile.
+        reverb.set_parameter(1, 0.25)
 
-        # Predelay (key 8) maps to Predelay (parameter 16)
-        predelay_val = rvb_settings.get(8, 0.08)
-        reverb.set_parameter(16, predelay_val)
+        # Predelay (idx 16): quantized steps, NOT linear.
+        # 0.667 ≈ 130 ms (dry attack, deep space).
+        reverb.set_parameter(16, 0.667)
 
-        # Set Character (parameter 5) to 50% (value 0.50)
+        # Character (idx 5): 0.50 = neutral.
         reverb.set_parameter(5, 0.50)
 
-        # Set Stereo Width (parameter 7) to 70% (value 0.58 corresponds to 70%)
+        # Stereo Width (idx 7): 0.58 ≈ 70%.
         reverb.set_parameter(7, 0.58)
+
+        # Brightness (idx 6): 0.50 = neutral.
+        reverb.set_parameter(6, 0.50)
+
+        # Distance (idx 8): 0.50 = neutral.
+        reverb.set_parameter(8, 0.50)
     else:
-        reverb.set_parameter(132, 1.0)  # Bypass ON
+        reverb.set_parameter(132, 0.5)  # Bypass ON (0.5+ = bypassed)
         reverb.set_parameter(9, 0.0)  # Mix 0%
 
     # Configure Chorus (TAL-Chorus-LX)
@@ -748,6 +755,9 @@ def configure_kotelnikov_ge(kotelnikov):
     Settings: gentle transparent glue. Threshold catches peaks around
     -18 dBFS, ratio 1.5:1 barely touches dynamics, makeup +2 dB to
     compensate for the tiny level reduction.
+
+    ⚠ idx 12 (Dry Wet) is INVERTED in the GE build: 1.0 = 0% wet (bypassed),
+    0.0 = 100% wet (full compression). Verified via live parameter dump.
     """
     kotelnikov.set_parameter(0, 0.30)  # Threshold ~-18 dBFS
     kotelnikov.set_parameter(5, 0.43)  # Ratio 1.5:1
@@ -756,8 +766,10 @@ def configure_kotelnikov_ge(kotelnikov):
     kotelnikov.set_parameter(8, 0.55)  # Release RMS ~280 ms
     kotelnikov.set_parameter(10, 0.58)  # Makeup +2 dB
     kotelnikov.set_parameter(11, 0.0)  # Dry Mix off
-    kotelnikov.set_parameter(12, 1.0)  # Dry Wet 100% (full compression)
+    kotelnikov.set_parameter(12, 0.0)  # Dry Wet = 100% WET (inverted: 0.0=full)
     kotelnikov.set_parameter(14, 0.55)  # Out Gain +2 dB
+    kotelnikov.set_parameter(15, 0.598)  # SC HP Freq = 150 Hz (log), keeps bass warm
+    kotelnikov.set_parameter(16, 0.5)  # SC HP Slope = 12 dB/oct
 
 
 def configure_limiter(limiter):
@@ -765,9 +777,10 @@ def configure_limiter(limiter):
     limiter.set_parameter(17, 0.0)  # Bypass: Not Bypassed
     limiter.set_parameter(0, 0.0)  # Gain: 0.00 dB
     limiter.set_parameter(1, 0.7143)  # Style: Modern
-    limiter.set_parameter(18, 0.96635)  # Output Level: -1.00 dBTP
+    limiter.set_parameter(2, 0.20)  # Lookahead: 1.0 ms (was unset -> plugin default)
+    limiter.set_parameter(18, 0.9667)  # Output Level: -1.00 dBTP (-30..0 linear)
     limiter.set_parameter(10, 1.0)  # True Peak Limiting: On
-    limiter.set_parameter(9, 0.11)  # Oversampling: 2x
+    limiter.set_parameter(9, 0.30)  # Oversampling: 4x (was 2x = 0.11)
 
 
 def program_from_name(filename):
