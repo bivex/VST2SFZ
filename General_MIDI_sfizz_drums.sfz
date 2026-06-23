@@ -3,6 +3,7 @@
 ampeg_attack=0.001 ampeg_release=0.05
 
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N35_v064.wav lokey=35 hikey=35 lovel=0 hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N35_v064.wav lokey=35 hikey=35 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N35_v127.wav lokey=35 hikey=35 lovel=81 hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N36_v064.wav lokey=36 hikey=36 lovel=0 hivel=80
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N36_v127.wav lokey=36 hikey=36 lovel=81 hivel=127
