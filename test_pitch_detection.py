@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """
-Test suite for `detect_pitch_midi` in sample_gm_pack.py.
+Test suite for `detect_pitch_midi` in pitch_utils.py.
 
-Three layers:
+Four layers:
   1. Synthetic tones (pure sines, harmonics, weak fundamental, octave ambiguity)
   2. Edge cases (silence, noise, sub-bass, very high notes, DC offset)
-  3. Regression on real rendered samples (cross-check against filename + audit)
+  3. Ghost sub-octave artefact regression (the -12 st bug fixed in pitch_utils)
+  4. Regression on real rendered samples (cross-check against filename + audit)
 
 Run:   python test_pitch_detection.py
 """
@@ -17,7 +18,7 @@ import numpy as np
 import soundfile as sf
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from sample_gm_pack import detect_pitch_midi
+from pitch_utils import detect_pitch_midi
 
 NOTE_LETTERS = ["c", "cs", "d", "ds", "e", "f", "fs", "g", "gs", "a", "as", "b"]
 
@@ -207,6 +208,82 @@ class EdgeCaseTests(unittest.TestCase):
         # at the very edge of the window; accept None or 12
         self.assertIn(got, (None, 12), f"sub-bass edge: got {got}")
 
+class GhostSubOctaveArtefactTests(unittest.TestCase):
+    """Regression tests for the -12 semitone bug caused by ghost sub-bass peaks.
+
+    Some Surge XT presets (Honky-Tonk, Muted Guitar, etc.) produce a faint
+    resonance peak one octave below the real note.  The old lowest-peak
+    detector grabbed this ghost and wrote a pitch_keycenter one octave too low,
+    causing sfizz to transpose notes an octave too high.
+
+    The validated detector skips any candidate whose magnitude is less than
+    ARTIFACT_RATIO (10 %) of the magnitude at its 2nd-harmonic position.
+    """
+
+    def _ghost_tone(self, midi, ghost_db=-20, sr=44100):
+        """Real note at `midi` plus a ghost peak one octave below at `ghost_db`.
+
+        ghost_db=-20 → ghost is 10× quieter than real note (right at the
+        ARTIFACT_RATIO boundary); -26 dB → 20× quieter (well into artefact zone).
+        """
+        f_real = 440.0 * 2 ** ((midi - 69) / 12)
+        f_ghost = f_real / 2
+        t = np.arange(int(sr * 1.0)) / sr
+        ghost_amp = 10 ** (ghost_db / 20)
+        sig = np.sin(2 * np.pi * f_real * t)          # real fundamental
+        sig += ghost_amp * np.sin(2 * np.pi * f_ghost * t)  # ghost sub-octave
+        sig *= 0.9 / float(np.max(np.abs(sig)))
+        return sig.astype(np.float32), sr
+
+    def test_ghost_20db_below_is_rejected(self):
+        """Ghost at -25 dB (~18× quieter) must be rejected; real note returned.
+
+        -20 dB is exactly at the ARTIFACT_RATIO=0.10 boundary and can go
+        either way due to Hanning-window spectral leakage.  We test -25 dB
+        (ratio ≈ 0.056) which is unambiguously in the artefact zone.
+        """
+        midi = 48  # C3 = 130.8 Hz; ghost at C2 = 65.4 Hz
+        audio, sr = self._ghost_tone(midi, ghost_db=-25)
+        got = detect_pitch_midi(audio, sr)
+        self.assertEqual(got, midi,
+                         f"ghost -25dB: got {got}, want {midi} (C3); ghost sub-oct must be rejected")
+
+    def test_ghost_26db_below_is_rejected(self):
+        """Ghost at -26 dB (20× quieter) — deep artefact, must be rejected."""
+        midi = 60  # C4
+        audio, sr = self._ghost_tone(midi, ghost_db=-26)
+        got = detect_pitch_midi(audio, sr)
+        self.assertEqual(got, midi,
+                         f"ghost -26dB: got {got}, want {midi} (C4)")
+
+    def test_ghost_mid_range(self):
+        """Ghost test at a mid-range note (G4, 392 Hz) at -25 dB."""
+        midi = 67
+        audio, sr = self._ghost_tone(midi, ghost_db=-25)
+        got = detect_pitch_midi(audio, sr)
+        self.assertEqual(got, midi,
+                         f"ghost mid-range: got {got}, want {midi} (G4)")
+
+    def test_real_weak_fundamental_not_rejected(self):
+        """A real weak fundamental (−14 dB, 5× quieter than 2nd harmonic)
+        must NOT be rejected — it's a genuine fundamental, just soft.
+
+        At -14 dB the ratio is ~0.2, which is above ARTIFACT_RATIO (0.10),
+        so the check should pass and return the fundamental.
+        """
+        midi = 67  # G4
+        f0 = 440.0 * 2 ** ((midi - 69) / 12)
+        t = np.arange(int(44100 * 1.0)) / 44100
+        amp_fundamental = 10 ** (-14 / 20)  # ~0.2 — violin-like weak fundamental
+        sig = amp_fundamental * np.sin(2 * np.pi * f0 * t)       # fundamental
+        sig += 1.0 * np.sin(2 * np.pi * f0 * 2 * t)              # 2nd harmonic (dominant)
+        sig += 0.6 * np.sin(2 * np.pi * f0 * 3 * t)
+        sig *= 0.9 / float(np.max(np.abs(sig)))
+        audio = sig.astype(np.float32)
+        got = detect_pitch_midi(audio, 44100)
+        self.assertEqual(got, midi,
+                         f"real weak fundamental: got {got}, want {midi}")
+
 
 class RealSampleRegressionTests(unittest.TestCase):
     """Cross-check detect_pitch_midi against the actual rendered GM samples.
@@ -222,6 +299,7 @@ class RealSampleRegressionTests(unittest.TestCase):
         cls.has_samples = os.path.isdir(cls.raw_dir) and any(
             f.startswith("gm_") for f in os.listdir(cls.raw_dir)
         )
+
 
     def _check_real(self, fname, expected_midi, tol=1):
         if not self.has_samples:

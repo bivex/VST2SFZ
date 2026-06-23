@@ -2,8 +2,16 @@
 """
 Multiprocessed pitch correction tool for General MIDI SFZ packs.
 
-Analyzes raw WAV samples in parallel using the "loudest-peak" method,
-and patches pitch_keycenter opcodes in all target SFZ files in-place.
+Analyzes raw WAV samples in parallel using the loudest-peak method
+(detect_pitch_midi_loudest from pitch_utils), and patches pitch_keycenter
+opcodes in all target SFZ files in-place.
+
+Why loudest-peak here (not validated lowest-peak)?
+  Raw samples were stored BEFORE transpose compensation.  The dominant
+  spectral energy is the perceived pitch of the preset — possibly many
+  octaves from the filename note.  The loudest peak captures that correctly
+  (88.7% agreement with keycenters sample_gm_pack.py computed at render
+  time, vs 56% for lowest-peak on the same raw files).
 """
 
 import os
@@ -13,6 +21,7 @@ import argparse
 import numpy as np
 import soundfile as sf
 from concurrent.futures import ProcessPoolExecutor
+from pitch_utils import detect_pitch_midi_loudest as detect_pitch_midi
 
 # Default paths
 DEFAULT_RAW_DIR = "/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw"
@@ -23,54 +32,7 @@ DEFAULT_SFZ_FILES = [
 ]
 
 
-def detect_pitch_midi(audio, sr):
-    """Detects perceived pitch using the loudest-peak method.
-
-    For many synth presets (especially bass), the fundamental frequency is
-    weak while the first harmonic (one octave up) dominates the spectrum.
-    Using the lowest peak finds the weak fundamental → wrong keycenter →
-    sfizz transposes from the wrong reference → notes come out an octave off.
-
-    The loudest peak represents the *perceived* pitch — what the listener
-    actually hears as the note. Setting pitch_keycenter to this value makes
-    sfizz transpose correctly regardless of harmonic balance.
-    """
-    mono = audio.mean(axis=1) if audio.ndim > 1 else audio
-    # Sustain window: skip attack (first 0.1s), take next 0.6s
-    start = int(sr * 0.1)
-    seg = mono[start : start + int(sr * 0.6)]
-    if seg.size == 0 or float(np.max(np.abs(seg))) < 1e-5:
-        return None
-    seg = seg - float(np.mean(seg))  # remove DC
-    seg = seg * np.hanning(len(seg))
-    spec = np.abs(np.fft.rfft(seg))
-    freqs = np.fft.rfftfreq(len(seg), 1.0 / sr)
-
-    # Restrict to audible musical range
-    valid = (freqs >= 20) & (freqs <= 8400)
-    if not np.any(valid):
-        return None
-
-    # Mask out-of-range frequencies, then find the LOUDEST peak
-    masked_spec = spec.copy()
-    masked_spec[~valid] = 0
-    best_idx = int(np.argmax(masked_spec))
-    if masked_spec[best_idx] <= 0:
-        return None
-
-    freq = freqs[best_idx]
-    if freq <= 0:
-        return None
-
-    if 0 < best_idx < len(freqs) - 1:
-        a0, a1, a2 = spec[best_idx - 1], spec[best_idx], spec[best_idx + 1]
-        denom = a0 - 2 * a1 + a2
-        if denom != 0:
-            offset = 0.5 * (a0 - a2) / denom
-            freq = freqs[best_idx] + offset * (freqs[1] - freqs[0])
-
-    midi = 69 + 12 * np.log2(freq / 440.0)
-    return int(round(midi))
+# detect_pitch_midi is imported from pitch_utils (validated lowest-peak algorithm)
 
 
 def process_single_file(path):

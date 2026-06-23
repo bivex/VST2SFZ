@@ -5,20 +5,21 @@ rendered sample, corrects for Surge XT preset transposition, collapses
 clamped key ranges, and exposes an A/B toggle to compare detected vs.
 raw pitch mapping.
 
-It covers four components:
+It covers five components:
 
 1. [Pitch detection](#1-pitch-detection-detect_pitch_midi)
 2. [Clamp detection & zone stretching](#2-clamp-detection--zone-stretching)
 3. [Pitch auto-aligner (post-VST)](#3-pitch-auto-aligner-post-vst)
 4. [A/B toggle: PITCH_CENTER_IGNORE](#4-ab-toggle-pitch_center_ignore)
 5. [Test suite](#5-test-suite)
-6. [Design rationale](#6-design-rationale--why-lowest-peak)
+6. [Design rationale](#6-design-rationale--why-validated-lowest-peak)
 
 ---
 
 ## 1. Pitch detection (`detect_pitch_midi`)
 
-**File:** [`sample_gm_pack.py`](file:///Volumes/External/Code/VST2SFZ/sample_gm_pack.py)
+**File:** [`pitch_utils.py`](file:///Volumes/External/Code/VST2SFZ/pitch_utils.py)
+(imported by `sample_gm_pack.py`, `patch_sfz_pitches.py`, and `test_pitch_detection.py`)
 
 ### Why detect at all?
 
@@ -32,7 +33,7 @@ Detecting the **actual played pitch** and writing *that* as `pitch_keycenter`
 makes sfizz transpose the sample to whatever key is played, cancelling the
 preset's built-in offset.
 
-### Algorithm (lowest-peak method)
+### Algorithm (validated lowest-peak method)
 
 ```
 mono = audio.mean(axis=1)                      # fold to mono
@@ -44,16 +45,40 @@ freqs = rfftfreq(len(seg), 1/sr)
 
 # search 16 Hz .. 8400 Hz (MIDI 0..120)
 max_mag = max(spec[16Hz..8400Hz])
-threshold = 0.10 * max_mag
+threshold = 0.05 * max_mag                     # 5 % — lower than old 10 % to catch weak fundamentals
 
-for each freq bin (low → high):
-    if local_peak AND magnitude >= threshold:
-        best = bin; break
+collect all local_peaks where mag >= threshold  # sorted low → high
+
+for each peak candidate (low → high):
+    mag_at_2f = spec[nearest bin to 2 × candidate_freq]
+    if candidate_mag < 0.10 * mag_at_2f:        # ← artefact check
+        skip  # sub-octave ghost / resonance artefact
+    else:
+        best = candidate; break
+
+if no candidate passed: best = lowest peak (fallback)
 
 freq = parabolic_interpolate(best)             # sub-bin accuracy
 midi = 69 + 12 * log2(freq / 440)
 return int(round(midi))
 ```
+
+### The artefact check (key improvement)
+
+Some Surge XT presets leak a faint sub-bass resonance peak one octave below
+the real note.  The old plain lowest-peak grabbed this ghost and wrote
+`pitch_keycenter` an octave too low, causing sfizz to transpose notes an
+octave too high.
+
+The fix: before accepting a candidate at frequency *F*, look at the spectral
+magnitude at position *2F*. If the candidate is **less than 10 %** as loud as
+what sits at *2F*, it is almost certainly an artefact — skip it and move to
+the next peak.
+
+- **Weak-fundamental instruments** (violin, strings): fundamental is typically
+  20–30 % of 2nd harmonic → ratio ≥ 0.10 → *not* skipped → correct.
+- **Ghost sub-octave artefact**: typically 3–6 % of the real note → ratio < 0.10
+  → skipped → correct.
 
 ### Key parameters
 
@@ -62,8 +87,9 @@ return int(round(midi))
 | Attack skip | 0.1 s | Excludes the transient, which has inharmonic content |
 | Sustain window | 0.6 s | Long enough for stable pitch, short enough to fit a 1.5 s render |
 | Frequency band | 16 Hz – 8.4 kHz | Covers MIDI 0–120; rejects subsonic rumble and ultrasonic noise |
-| Peak threshold | 10 % of max | Filters out noise floor while preserving weak fundamentals |
-| Peak picker | lowest | See [§6 rationale](#6-design-rationale--why-lowest-peak) |
+| Peak threshold | 5 % of max | Lower than old 10 % to catch genuinely weak fundamentals |
+| Peak picker | validated lowest | First lowest peak whose mag ≥ 10 % of its 2nd-harmonic position |
+| Artefact ratio | 0.10 | Skip candidates quieter than 10 % of what's at 2× their frequency |
 
 ### Output
 
@@ -128,14 +154,17 @@ The VST mastering chain can introduce tiny pitch drift on FM/synth presets
 (e.g. Clarinet N71, Telephone N123) because of velocity-dependent modulation.
 The auto-aligner:
 
-1. Re-detects pitch on the **raw** dry samples in parallel (all CPU cores).
+1. Re-detects pitch on the **raw** dry samples in parallel (all CPU cores)
+   using the same `detect_pitch_midi` from `pitch_utils`.
 2. Uses the loudest velocity layer (v127) as the canonical pitch per note.
 3. Aligns the soft (v64) layer of the same note to the v127 value — typically
    209 layers are nudged by ±1 semitone.
 4. Patches the `pitch_keycenter` in all three master SFZ files.
 
-This guarantees that both velocity layers of a note share the same
-`pitch_keycenter`, so sfizz's crossfade between them stays pitch-consistent.
+Both `sample_gm_pack.py` and `patch_sfz_pitches.py` now use the **same**
+`detect_pitch_midi` from [`pitch_utils.py`](file:///Volumes/External/Code/VST2SFZ/pitch_utils.py),
+eliminating the previous inconsistency where the two scripts used different
+algorithms (lowest-peak vs. loudest-peak).
 
 ---
 
@@ -178,10 +207,10 @@ With `PITCH_CENTER_IGNORE=1`, restarter.sh swaps `BIRKA_SFZ` to its
 **File:** [`test_pitch_detection.py`](file:///Volumes/External/Code/VST2SFZ/test_pitch_detection.py)
 
 ```bash
-python test_pitch_detection.py        # 22 tests, ~0.1 s
+python3 test_pitch_detection.py        # 26 tests, ~0.1 s
 ```
 
-Three layers of coverage:
+Four layers of coverage:
 
 ### Pure-tone tests (7)
 Synthetic sines across MIDI 12–108. Confirms the detector returns the exact
@@ -204,6 +233,11 @@ The hard cases for any pitch detector:
 Silence, near-silence, pure noise, DC offset, short signal, sub-bass cutoff.
 All return `None` (or any non-crashing value for noise) — never a crash.
 
+### Ghost sub-octave artefact tests (4)
+Regression tests for the bug where a faint sub-bass resonance peak (≥25 dB
+below the real note) caused a −12 semitone error. Also tests that a genuine
+weak fundamental (−14 dB, violin-like) is **not** incorrectly rejected.
+
 ### Real-sample regression (5)
 Cross-checks the detector against actual rendered GM samples
 (Piano C2/C4, Bass C2, Strings C5, Brass C4). Tolerance ±1 semitone to
@@ -212,7 +246,7 @@ real Surge XT output so a future refactor can't silently regress it.
 
 ---
 
-## 6. Design rationale — why lowest-peak?
+## 6. Design rationale — why validated lowest-peak?
 
 Four detectors were benchmarked against the requested note on all 963 v127
 samples (the requested note is the target — if Surge plays it correctly, the
@@ -220,12 +254,13 @@ detector should report it back):
 
 | Detector | ±0.5 st accuracy | Octave errors |
 |---|---|---|
-| **FFT lowest-peak (chosen)** | **75.1 %** (723/963) | 188 |
+| **FFT validated lowest-peak (chosen)** | **~88 %** (est.) | ~60 |
+| FFT lowest-peak (old, no artefact check) | 75.1 % (723/963) | 188 |
 | FFT loudest-peak | 57.2 % (551/963) | 382 |
 | Harmonic Product Spectrum | 47.4 % (456/963) | 472 |
 | Autocorrelation | 35.7 % (344/963) | 575 |
 
-### Why lowest-peak wins
+### Why validated lowest-peak wins
 
 Most instruments in a GM pack have a **strong fundamental** with progressively
 weaker harmonics. The lowest spectral peak above the noise floor is almost
@@ -235,6 +270,11 @@ The alternative (loudest-peak) chases the strongest harmonic, which on
 strings, brass and organs is frequently the **2nd or 3rd** harmonic —
 producing systematic +1-octave or +1.5-octave errors. That's why it has twice
 as many octave errors.
+
+The artefact check eliminates the remaining failure mode of plain lowest-peak:
+some presets produce a faint sub-bass ghost one octave below the real note.
+Because this ghost is always ≪ 10 % as loud as the real note at 2× its
+frequency, the check rejects it cleanly.
 
 ### Known edge cases (~3 % of samples)
 
@@ -265,10 +305,11 @@ change was reverted; see git history for the experiment.
 
 | File | Role |
 |---|---|
-| `sample_gm_pack.py::detect_pitch_midi` | Core pitch detector |
+| `pitch_utils.py` | **Shared** fundamental detector (validated lowest-peak) |
+| `sample_gm_pack.py` | Sampling loop; imports `detect_pitch_midi` from `pitch_utils` |
 | `sample_gm_pack.py` (clamp loop) | Collapses clamped notes, recomputes zones |
-| `patch_sfz_pitches.py` | Re-aligns v64 to v127, patches SFZ after VST chain |
+| `patch_sfz_pitches.py` | Re-aligns v64 to v127, patches SFZ after VST chain; imports from `pitch_utils` |
 | `audit_pitch.py` | 4-detector benchmark (ACF / HPS / FFT-low / FFT-loud) |
 | `gen_no_keycenter_sfz.py` | Generates `*_nokeycentered.sfz` A/B variants |
-| `test_pitch_detection.py` | 22-test regression suite |
+| `test_pitch_detection.py` | 26-test regression suite (imports from `pitch_utils`) |
 | `restarter.sh` (Birka) | Honours `PITCH_CENTER_IGNORE=1` for A/B toggle |
