@@ -1,0 +1,8 @@
+// GM Program 124: telephone_ring
+<control>
+default_path=../General_MIDI_samples_raw/
+
+<group>
+prg_num=124
+<region> sample=gm_124_C4_v64.wav pitch_keycenter=76 lokey=0 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=gm_124_C4_v127.wav pitch_keycenter=76 lokey=0 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
