@@ -1,0 +1,20 @@
+// GM Program 55: orchestra_hit
+<control>
+default_path=../General_MIDI_samples/
+
+<group>
+prg_num=55
+<region> sample=gm_055_C1_v64.wav pitch_keycenter=50 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=gm_055_C1_v127.wav pitch_keycenter=50 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=gm_055_C2_v64.wav pitch_keycenter=38 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=gm_055_C2_v127.wav pitch_keycenter=38 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=gm_055_C3_v64.wav pitch_keycenter=46 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=gm_055_C3_v127.wav pitch_keycenter=46 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=gm_055_C4_v64.wav pitch_keycenter=56 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=gm_055_C4_v127.wav pitch_keycenter=56 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=gm_055_C5_v64.wav pitch_keycenter=69 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=gm_055_C5_v127.wav pitch_keycenter=69 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=gm_055_C6_v64.wav pitch_keycenter=70 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=gm_055_C6_v127.wav pitch_keycenter=70 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=gm_055_C7_v64.wav pitch_keycenter=62 lokey=91 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=gm_055_C7_v127.wav pitch_keycenter=62 lokey=91 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
