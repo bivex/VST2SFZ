@@ -38,11 +38,11 @@ def build_preset_mapping(factory_dir):
     # GM program index -> relative preset path under factory_dir.
     explicit = {
         # 0-7: Pianos
-          0: 'Plucks/Piano Remains 1.fxp',      # Acoustic Grand Piano
+          0: 'Keys/EP 1.fxp',                   # Acoustic Grand Piano (EP-style: strong fundamental + soft harmonics, closest to real piano in Surge factory)
           1: 'Keys/Artificial 2.fxp',           # Bright Acoustic Piano
           2: 'Keys/Artificial 1.fxp',           # Electric Grand Piano
           3: 'Keys/Experiment.fxp',             # Honky-Tonk Piano
-          4: 'Keys/EP 1.fxp',                   # Electric Piano 1
+          4: 'Keys/EP 2.fxp',                   # Electric Piano 1
           5: 'Keys/DX EP.fxp',                  # Electric Piano 2
           6: 'Keys/Digi Harpsi.fxp',            # Harpsichord
           7: 'Keys/Dirt.fxp',                   # Clavinet
