@@ -391,6 +391,16 @@ def midi_to_note_name(midi_num):
 
 
 def postprocess(audio: np.ndarray, sr: int, slot: int = 0) -> np.ndarray:
+    if audio.ndim == 1:
+        audio = np.column_stack((audio, audio))
+    elif audio.ndim == 2:
+        if audio.shape[0] <= 6 and audio.shape[1] > audio.shape[0]:
+            audio = audio.T
+        if audio.shape[1] == 1:
+            audio = np.column_stack((audio, audio))
+        elif audio.shape[1] > 2:
+            audio = audio[:, :2]
+
     group = get_group(slot)
 
     try:
@@ -437,13 +447,9 @@ def normalize_lufs(
             audio = audio * (0.85 / peak)
         return audio
     meter = pyln.Meter(sr)
-    loudness = (
-        meter.integrated_loudness(audio.T).item()
-        if audio.ndim == 2
-        else meter.integrated_loudness(audio).item()
-    )
+    loudness = meter.integrated_loudness(audio).item()
     if not np.isinf(loudness):
-        audio = pyln.normalize.loudness(audio.T, loudness, target_lufs).T
+        audio = pyln.normalize.loudness(audio, loudness, target_lufs)
     peak = float(np.max(np.abs(audio)))
     if peak > 0.95:
         audio = audio * (0.95 / peak)
