@@ -39,11 +39,11 @@ def build_preset_mapping(factory_dir):
     explicit = {
         # 0-7: Pianos
           0: 'Keys/EP 1.fxp',                   # Acoustic Grand Piano (EP-style: strong fundamental + soft harmonics, closest to real piano in Surge factory)
-          1: 'Keys/Artificial 2.fxp',           # Bright Acoustic Piano
-          2: 'Keys/Artificial 1.fxp',           # Electric Grand Piano
-          3: 'Keys/Experiment.fxp',             # Honky-Tonk Piano
+          1: 'Keys/Soft Suitcase.fxp',          # Bright Acoustic Piano (suitcase EP, brighter than EP 1)
+          2: 'Polysynths/Oldie.fxp',            # Electric Grand Piano (vintage poly-synth with piano-like attack)
+          3: 'Plucks/Convex.fxp',               # Honky-Tonk Piano (plucked with detuned harmonics, honky character)
           4: 'Keys/EP 2.fxp',                   # Electric Piano 1
-          5: 'Keys/DX EP.fxp',                  # Electric Piano 2
+          5: 'Plucks/Sinus Verby Pops.fxp',     # Electric Piano 2 (pure sine EP, bright)
           6: 'Keys/Digi Harpsi.fxp',            # Harpsichord
           7: 'Keys/Dirt.fxp',                   # Clavinet
         # 8-15: Chromatic Percussion
@@ -75,12 +75,12 @@ def build_preset_mapping(factory_dir):
          31: 'Plucks/Harmonics 1.fxp',          # Guitar Harmonics
         # 32-39: Basses
          32: 'Basses/Wide Bassline.fxp',        # Acoustic Bass
-         33: 'Basses/Fingered.fxp',             # Electric Bass (finger)
+         33: 'Basses/Sub 2.fxp',              # Electric Bass (finger) (strong fundamental)
          34: 'Basses/Bass 1.fxp',               # Electric Bass (pick)
          35: 'Basses/Bass 2.fxp',               # Fretless Bass
          36: 'Basses/FM Slap.fxp',              # Slap Bass 1
          37: 'Basses/Bass 3.fxp',               # Slap Bass 2
-         38: 'Basses/Lord Sawtooth.fxp',        # Synth Bass 1
+         38: 'Basses/Square Bass.fxp',          # Synth Bass 1 (Fixed: Lord Sawtooth clamped -> Square Bass, full range)
          39: 'Basses/Sub 1.fxp',                # Synth Bass 2 (Fixed: Saw Lo-Fi -> Pure Sub Bass)
         # 40-47: Strings
          40: 'Polysynths/Violini Poly.fxp',     # Violin
@@ -112,7 +112,7 @@ def build_preset_mapping(factory_dir):
         # 64-71: Reed
          64: 'Winds/Tragic Winds.fxp',          # Soprano Sax
          65: 'Winds/Fake Ethno.fxp',            # Alto Sax
-         66: 'Leads/Shanai.fxp',                # Tenor Sax
+         66: 'Winds/Clarinet.fxp',              # Tenor Sax (Fixed: Shanai FM -> Clarinet, brighter reed-like)
          67: 'Winds/Low.fxp',                   # Baritone Sax
          68: 'Leads/Violini Solo.fxp',          # Oboe
          69: 'Winds/Flute 1.fxp',               # English Horn
