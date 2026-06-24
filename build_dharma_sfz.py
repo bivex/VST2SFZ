@@ -162,14 +162,50 @@ def articulation(filename, label):
 GESTURE_ARTICS = {
     "fall", "rise", "run up", "run", "slide", "fx", "ambient fx",
     "crescendo growl", "reverse", "screech", "drift",
+    # multi-note phrases: the parsed key is the phrase's TONALITY, not a single
+    # playable pitch — stretching them chromatically smears the phrase, so they
+    # are key-locked just like loops. (Confirmed by pitch audit: ~46% root match
+    # vs ~82% for true single-note one-shots.)
+    "lick", "strum",
 }
 
+# Phrase keywords (whole-word match anywhere in the filename, not just the
+# articulation slot), e.g. "String Run", "Violin Cascade", "Pentatonic Flow".
+# Whole-word matching avoids substring false positives ("Flicker" != "lick").
+PHRASE_KEYWORDS = (
+    "lick", "run", "cascade", "flow", "rush", "dash", "swift",
+    "pentatonic", "arpeggio", "glissando", "riff",
+)
+_PHRASE_RE = re.compile(
+    r"\b(" + "|".join(PHRASE_KEYWORDS) + r")\b", re.IGNORECASE
+)
 
-def is_gesture(artic, label):
+# Pitch-glide gestures: the parsed key is a start/end point of a glide, not a
+# steady pitch, so they must be key-locked. These appear mid-filename with an
+# empty articulation slot (e.g. "KSHMR Bass Slide (C) - Fall").
+GLIDE_KEYWORDS = (
+    "slide", "glide", "fall", "dive", "swoop", "plunge", "scoop", "bend",
+)
+_GLIDE_RE = re.compile(
+    r"\b(" + "|".join(GLIDE_KEYWORDS) + r")\b", re.IGNORECASE
+)
+
+# Inherently atonal instruments — no stable fundamental, so chromatic stretch
+# is meaningless; play each sample on its own key.
+ATONAL_KEYWORDS = ("whistle",)
+_ATONAL_RE = re.compile(
+    r"\b(" + "|".join(ATONAL_KEYWORDS) + r")\b", re.IGNORECASE
+)
+
+
+def is_gesture(artic, label, filename=""):
     a = artic.lower()
     if a in GESTURE_ARTICS:
         return True
     if "screech" in label.lower():
+        return True
+    fn = os.path.basename(filename).lower()
+    if _PHRASE_RE.search(fn) or _GLIDE_RE.search(fn) or _ATONAL_RE.search(fn):
         return True
     return False
 
@@ -199,7 +235,7 @@ def scan():
                 stats["no_label"] += 1
                 continue
             artic = articulation(f, label)
-            gesture = is_gesture(artic, label)
+            gesture = is_gesture(artic, label, f)
             prog_name = f"{label} {artic}".strip() if artic else label
             patches[prog_name].append((root, f, gesture))
             stats["kept"] += 1

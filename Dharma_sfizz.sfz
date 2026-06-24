@@ -3,18 +3,18 @@
 
 <group>
 loprog=0 hiprog=0 // Bass
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Bass/Bass One Shots/KSHMR Bass Slide (C) - Fall.wav pitch_keycenter=60 lokey=0 hikey=60 lovel=0 hivel=127
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Bass/Bass One Shots/KSHMR Bass Slide (C#) - Glide.wav pitch_keycenter=61 lokey=61 hikey=62 lovel=0 hivel=127
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Bass/Bass One Shots/KSHMR Bass One Shot (E) - Chorus Long.wav pitch_keycenter=64 lokey=63 hikey=65 lovel=0 hivel=127 seq_length=5 seq_position=1
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Bass/Bass One Shots/KSHMR Bass One Shot (E) - Clean Sustain.wav pitch_keycenter=64 lokey=63 hikey=65 lovel=0 hivel=127 seq_length=5 seq_position=2
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Bass/Bass One Shots/KSHMR Bass One Shot (E) - Clean Extended.wav pitch_keycenter=64 lokey=63 hikey=65 lovel=0 hivel=127 seq_length=5 seq_position=3
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Bass/Bass One Shots/KSHMR Bass Slide (E) - Swoop.wav pitch_keycenter=64 lokey=63 hikey=65 lovel=0 hivel=127 seq_length=5 seq_position=4
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Bass/Bass One Shots/KSHMR Bass One Shot (E) - Crunch Sustain.wav pitch_keycenter=64 lokey=63 hikey=65 lovel=0 hivel=127 seq_length=5 seq_position=5
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Bass/Bass One Shots/KSHMR Bass Slide (C) - Fall.wav pitch_keycenter=60 lokey=60 hikey=60 lovel=0 hivel=127
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Bass/Bass One Shots/KSHMR Bass Slide (C#) - Glide.wav pitch_keycenter=61 lokey=61 hikey=61 lovel=0 hivel=127
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Bass/Bass One Shots/KSHMR Bass One Shot (E) - Chorus Long.wav pitch_keycenter=64 lokey=64 hikey=64 lovel=0 hivel=127 seq_length=5 seq_position=1
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Bass/Bass One Shots/KSHMR Bass One Shot (E) - Clean Sustain.wav pitch_keycenter=64 lokey=64 hikey=64 lovel=0 hivel=127 seq_length=5 seq_position=2
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Bass/Bass One Shots/KSHMR Bass One Shot (E) - Clean Extended.wav pitch_keycenter=64 lokey=64 hikey=64 lovel=0 hivel=127 seq_length=5 seq_position=3
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Bass/Bass One Shots/KSHMR Bass Slide (E) - Swoop.wav pitch_keycenter=64 lokey=64 hikey=64 lovel=0 hivel=127 seq_length=5 seq_position=4
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Bass/Bass One Shots/KSHMR Bass One Shot (E) - Crunch Sustain.wav pitch_keycenter=64 lokey=64 hikey=64 lovel=0 hivel=127 seq_length=5 seq_position=5
 <region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Bass/Bass One Shots/KSHMR Bass Slide (F#) - Dive.wav pitch_keycenter=66 lokey=66 hikey=66 lovel=0 hivel=127
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Bass/Bass One Shots/KSHMR Bass Slide (G) - Plunge.wav pitch_keycenter=67 lokey=67 hikey=68 lovel=0 hivel=127
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Bass/Bass One Shots/KSHMR Bass One Shot (A) - Clean Punch.wav pitch_keycenter=69 lokey=69 hikey=70 lovel=0 hivel=127 seq_length=2 seq_position=1
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Bass/Bass One Shots/KSHMR Bass Slide (A) - Drop.wav pitch_keycenter=69 lokey=69 hikey=70 lovel=0 hivel=127 seq_length=2 seq_position=2
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Bass/Bass One Shots/KSHMR Bass One Shot (B) - Crunch Bite.wav pitch_keycenter=71 lokey=71 hikey=127 lovel=0 hivel=127
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Bass/Bass One Shots/KSHMR Bass Slide (G) - Plunge.wav pitch_keycenter=67 lokey=67 hikey=67 lovel=0 hivel=127
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Bass/Bass One Shots/KSHMR Bass One Shot (A) - Clean Punch.wav pitch_keycenter=69 lokey=69 hikey=69 lovel=0 hivel=127 seq_length=2 seq_position=1
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Bass/Bass One Shots/KSHMR Bass Slide (A) - Drop.wav pitch_keycenter=69 lokey=69 hikey=69 lovel=0 hivel=127 seq_length=2 seq_position=2
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Bass/Bass One Shots/KSHMR Bass One Shot (B) - Crunch Bite.wav pitch_keycenter=71 lokey=71 hikey=71 lovel=0 hivel=127
 
 <group>
 loprog=1 hiprog=1 // Didgeridoo FX
@@ -43,29 +43,29 @@ loprog=4 hiprog=4 // Didgeridoo Transition
 
 <group>
 loprog=5 hiprog=5 // Duduk
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk Lick (C) - Midnight.wav pitch_keycenter=60 lokey=0 hikey=61 lovel=0 hivel=127 seq_length=5 seq_position=1
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk One Shot (Cm) - Lonely.wav pitch_keycenter=60 lokey=0 hikey=61 lovel=0 hivel=127 seq_length=5 seq_position=2
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk Lick (C) - Cinder.wav pitch_keycenter=60 lokey=0 hikey=61 lovel=0 hivel=127 seq_length=5 seq_position=3
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk One Shot (C) - Glint.wav pitch_keycenter=60 lokey=0 hikey=61 lovel=0 hivel=127 seq_length=5 seq_position=4
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk Lick (C) - Ashes.wav pitch_keycenter=60 lokey=0 hikey=61 lovel=0 hivel=127 seq_length=5 seq_position=5
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk One Shot (D) - Spirit.wav pitch_keycenter=62 lokey=62 hikey=63 lovel=0 hivel=127 seq_length=6 seq_position=1
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk Lick (Dm) - Expanse.wav pitch_keycenter=62 lokey=62 hikey=63 lovel=0 hivel=127 seq_length=6 seq_position=2
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk One Shot (Dm) - Still.wav pitch_keycenter=62 lokey=62 hikey=63 lovel=0 hivel=127 seq_length=6 seq_position=3
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk Lick (Dm) - Ivory.wav pitch_keycenter=62 lokey=62 hikey=63 lovel=0 hivel=127 seq_length=6 seq_position=4
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk Lick (Dm) - Release.wav pitch_keycenter=62 lokey=62 hikey=63 lovel=0 hivel=127 seq_length=6 seq_position=5
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk Lick (Dm) - Exhale.wav pitch_keycenter=62 lokey=62 hikey=63 lovel=0 hivel=127 seq_length=6 seq_position=6
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk Lick (C) - Midnight.wav pitch_keycenter=60 lokey=60 hikey=60 lovel=0 hivel=127 seq_length=5 seq_position=1
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk One Shot (Cm) - Lonely.wav pitch_keycenter=60 lokey=60 hikey=60 lovel=0 hivel=127 seq_length=5 seq_position=2
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk Lick (C) - Cinder.wav pitch_keycenter=60 lokey=60 hikey=60 lovel=0 hivel=127 seq_length=5 seq_position=3
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk One Shot (C) - Glint.wav pitch_keycenter=60 lokey=60 hikey=60 lovel=0 hivel=127 seq_length=5 seq_position=4
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk Lick (C) - Ashes.wav pitch_keycenter=60 lokey=60 hikey=60 lovel=0 hivel=127 seq_length=5 seq_position=5
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk One Shot (D) - Spirit.wav pitch_keycenter=62 lokey=62 hikey=62 lovel=0 hivel=127 seq_length=6 seq_position=1
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk Lick (Dm) - Expanse.wav pitch_keycenter=62 lokey=62 hikey=62 lovel=0 hivel=127 seq_length=6 seq_position=2
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk One Shot (Dm) - Still.wav pitch_keycenter=62 lokey=62 hikey=62 lovel=0 hivel=127 seq_length=6 seq_position=3
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk Lick (Dm) - Ivory.wav pitch_keycenter=62 lokey=62 hikey=62 lovel=0 hivel=127 seq_length=6 seq_position=4
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk Lick (Dm) - Release.wav pitch_keycenter=62 lokey=62 hikey=62 lovel=0 hivel=127 seq_length=6 seq_position=5
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk Lick (Dm) - Exhale.wav pitch_keycenter=62 lokey=62 hikey=62 lovel=0 hivel=127 seq_length=6 seq_position=6
 <region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk One Shot (Em) - Oracle.wav pitch_keycenter=64 lokey=64 hikey=64 lovel=0 hivel=127
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk Lick (Fm) - Veil.wav pitch_keycenter=65 lokey=65 hikey=66 lovel=0 hivel=127
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk One Shot (G) - Prayer.wav pitch_keycenter=67 lokey=67 hikey=68 lovel=0 hivel=127 seq_length=6 seq_position=1
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk One Shot (Gm) - Vibration.wav pitch_keycenter=67 lokey=67 hikey=68 lovel=0 hivel=127 seq_length=6 seq_position=2
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk One Shot (Gm) - Yearn.wav pitch_keycenter=67 lokey=67 hikey=68 lovel=0 hivel=127 seq_length=6 seq_position=3
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk One Shot (G) - Desolate.wav pitch_keycenter=67 lokey=67 hikey=68 lovel=0 hivel=127 seq_length=6 seq_position=4
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk Lick (Gm) - Drift.wav pitch_keycenter=67 lokey=67 hikey=68 lovel=0 hivel=127 seq_length=6 seq_position=5
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk Lick (Gm) - Dawn.wav pitch_keycenter=67 lokey=67 hikey=68 lovel=0 hivel=127 seq_length=6 seq_position=6
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk One Shot (A) - Divine.wav pitch_keycenter=69 lokey=69 hikey=127 lovel=0 hivel=127 seq_length=4 seq_position=1
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk One Shot (Am) - Wail.wav pitch_keycenter=69 lokey=69 hikey=127 lovel=0 hivel=127 seq_length=4 seq_position=2
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk Lick (Am) - Swirl.wav pitch_keycenter=69 lokey=69 hikey=127 lovel=0 hivel=127 seq_length=4 seq_position=3
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk One Shot (Am) - Cry.wav pitch_keycenter=69 lokey=69 hikey=127 lovel=0 hivel=127 seq_length=4 seq_position=4
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk Lick (Fm) - Veil.wav pitch_keycenter=65 lokey=65 hikey=65 lovel=0 hivel=127
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk One Shot (G) - Prayer.wav pitch_keycenter=67 lokey=67 hikey=67 lovel=0 hivel=127 seq_length=6 seq_position=1
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk One Shot (Gm) - Vibration.wav pitch_keycenter=67 lokey=67 hikey=67 lovel=0 hivel=127 seq_length=6 seq_position=2
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk One Shot (Gm) - Yearn.wav pitch_keycenter=67 lokey=67 hikey=67 lovel=0 hivel=127 seq_length=6 seq_position=3
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk One Shot (G) - Desolate.wav pitch_keycenter=67 lokey=67 hikey=67 lovel=0 hivel=127 seq_length=6 seq_position=4
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk Lick (Gm) - Drift.wav pitch_keycenter=67 lokey=67 hikey=67 lovel=0 hivel=127 seq_length=6 seq_position=5
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk Lick (Gm) - Dawn.wav pitch_keycenter=67 lokey=67 hikey=67 lovel=0 hivel=127 seq_length=6 seq_position=6
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk One Shot (A) - Divine.wav pitch_keycenter=69 lokey=69 hikey=69 lovel=0 hivel=127 seq_length=4 seq_position=1
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk One Shot (Am) - Wail.wav pitch_keycenter=69 lokey=69 hikey=69 lovel=0 hivel=127 seq_length=4 seq_position=2
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk Lick (Am) - Swirl.wav pitch_keycenter=69 lokey=69 hikey=69 lovel=0 hivel=127 seq_length=4 seq_position=3
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Duduk/Duduk One Shots/KSHMR Duduk One Shot (Am) - Cry.wav pitch_keycenter=69 lokey=69 hikey=69 lovel=0 hivel=127 seq_length=4 seq_position=4
 
 <group>
 loprog=6 hiprog=6 // Flute FX
@@ -79,15 +79,15 @@ loprog=6 hiprog=6 // Flute FX
 
 <group>
 loprog=7 hiprog=7 // Flute Lick
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Flute/Flute One Shots/KSHMR Flute - Lick - Airy (D#m).wav pitch_keycenter=63 lokey=0 hikey=64 lovel=0 hivel=127
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Flute/Flute One Shots/KSHMR Flute - Lick - Airy (D#m).wav pitch_keycenter=63 lokey=63 hikey=63 lovel=0 hivel=127
 <region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Flute/Flute One Shots/KSHMR Flute - Lick - Cherry Wide (Fm).wav pitch_keycenter=65 lokey=65 hikey=65 lovel=0 hivel=127 seq_length=5 seq_position=1
 <region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Flute/Flute One Shots/KSHMR Flute - Lick - Blossom (Fm).wav pitch_keycenter=65 lokey=65 hikey=65 lovel=0 hivel=127 seq_length=5 seq_position=2
 <region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Flute/Flute One Shots/KSHMR Flute - Lick - Sunrise (Fm).wav pitch_keycenter=65 lokey=65 hikey=65 lovel=0 hivel=127 seq_length=5 seq_position=3
 <region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Flute/Flute One Shots/KSHMR Flute - Lick - Joyful (Fm).wav pitch_keycenter=65 lokey=65 hikey=65 lovel=0 hivel=127 seq_length=5 seq_position=4
 <region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Flute/Flute One Shots/KSHMR Flute - Lick - Cherry (Fm).wav pitch_keycenter=65 lokey=65 hikey=65 lovel=0 hivel=127 seq_length=5 seq_position=5
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Flute/Flute One Shots/KSHMR Flute - Lick - Believe (F#).wav pitch_keycenter=66 lokey=66 hikey=67 lovel=0 hivel=127
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Flute/Flute One Shots/KSHMR Flute - Lick - Sanctuary (Am).wav pitch_keycenter=69 lokey=68 hikey=127 lovel=0 hivel=127 seq_length=2 seq_position=1
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Flute/Flute One Shots/KSHMR Flute - Lick - Forever (Am).wav pitch_keycenter=69 lokey=68 hikey=127 lovel=0 hivel=127 seq_length=2 seq_position=2
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Flute/Flute One Shots/KSHMR Flute - Lick - Believe (F#).wav pitch_keycenter=66 lokey=66 hikey=66 lovel=0 hivel=127
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Flute/Flute One Shots/KSHMR Flute - Lick - Sanctuary (Am).wav pitch_keycenter=69 lokey=69 hikey=69 lovel=0 hivel=127 seq_length=2 seq_position=1
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Flute/Flute One Shots/KSHMR Flute - Lick - Forever (Am).wav pitch_keycenter=69 lokey=69 hikey=69 lovel=0 hivel=127 seq_length=2 seq_position=2
 
 <group>
 loprog=8 hiprog=8 // Flute Stab
@@ -125,17 +125,17 @@ loprog=10 hiprog=10 // Guitar FX
 
 <group>
 loprog=11 hiprog=11 // Guitar Lick
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Lick - World Flicker (Dm).wav pitch_keycenter=62 lokey=0 hikey=63 lovel=0 hivel=127
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Lick - Lo Tar Showdown (E).wav pitch_keycenter=64 lokey=64 hikey=66 lovel=0 hivel=127 seq_length=4 seq_position=1
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Lick - Lo Tar Coil (Em).wav pitch_keycenter=64 lokey=64 hikey=66 lovel=0 hivel=127 seq_length=4 seq_position=2
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Lick - Lo Tar Recoil (Em).wav pitch_keycenter=64 lokey=64 hikey=66 lovel=0 hivel=127 seq_length=4 seq_position=3
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Lick - World Walk Down (Em).wav pitch_keycenter=64 lokey=64 hikey=66 lovel=0 hivel=127 seq_length=4 seq_position=4
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Lick - Saz Signal (Am).wav pitch_keycenter=69 lokey=67 hikey=127 lovel=0 hivel=127 seq_length=6 seq_position=1
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Lick - Lo Tar Slither (Am).wav pitch_keycenter=69 lokey=67 hikey=127 lovel=0 hivel=127 seq_length=6 seq_position=2
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Lick - Saz Resound (Am).wav pitch_keycenter=69 lokey=67 hikey=127 lovel=0 hivel=127 seq_length=6 seq_position=3
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Lick - Saz Chime (Am).wav pitch_keycenter=69 lokey=67 hikey=127 lovel=0 hivel=127 seq_length=6 seq_position=4
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Lick - Lo Tar Show Up (A).wav pitch_keycenter=69 lokey=67 hikey=127 lovel=0 hivel=127 seq_length=6 seq_position=5
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/Extra Content/KSHMR Guitar - Lick - Saz Resound - Alt (Am).wav pitch_keycenter=69 lokey=67 hikey=127 lovel=0 hivel=127 seq_length=6 seq_position=6
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Lick - World Flicker (Dm).wav pitch_keycenter=62 lokey=62 hikey=62 lovel=0 hivel=127
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Lick - Lo Tar Showdown (E).wav pitch_keycenter=64 lokey=64 hikey=64 lovel=0 hivel=127 seq_length=4 seq_position=1
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Lick - Lo Tar Coil (Em).wav pitch_keycenter=64 lokey=64 hikey=64 lovel=0 hivel=127 seq_length=4 seq_position=2
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Lick - Lo Tar Recoil (Em).wav pitch_keycenter=64 lokey=64 hikey=64 lovel=0 hivel=127 seq_length=4 seq_position=3
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Lick - World Walk Down (Em).wav pitch_keycenter=64 lokey=64 hikey=64 lovel=0 hivel=127 seq_length=4 seq_position=4
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Lick - Saz Signal (Am).wav pitch_keycenter=69 lokey=69 hikey=69 lovel=0 hivel=127 seq_length=6 seq_position=1
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Lick - Lo Tar Slither (Am).wav pitch_keycenter=69 lokey=69 hikey=69 lovel=0 hivel=127 seq_length=6 seq_position=2
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Lick - Saz Resound (Am).wav pitch_keycenter=69 lokey=69 hikey=69 lovel=0 hivel=127 seq_length=6 seq_position=3
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Lick - Saz Chime (Am).wav pitch_keycenter=69 lokey=69 hikey=69 lovel=0 hivel=127 seq_length=6 seq_position=4
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Lick - Lo Tar Show Up (A).wav pitch_keycenter=69 lokey=69 hikey=69 lovel=0 hivel=127 seq_length=6 seq_position=5
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/Extra Content/KSHMR Guitar - Lick - Saz Resound - Alt (Am).wav pitch_keycenter=69 lokey=69 hikey=69 lovel=0 hivel=127 seq_length=6 seq_position=6
 
 <group>
 loprog=12 hiprog=12 // Guitar Pluck
@@ -157,18 +157,18 @@ loprog=12 hiprog=12 // Guitar Pluck
 
 <group>
 loprog=13 hiprog=13 // Guitar Strum
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Strum - Electric Wipeout (Cm).wav pitch_keycenter=60 lokey=0 hikey=61 lovel=0 hivel=127
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Strum - Acoustic Western (D).wav pitch_keycenter=62 lokey=62 hikey=65 lovel=0 hivel=127 seq_length=2 seq_position=1
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Strum - Saz Beginning (Dm).wav pitch_keycenter=62 lokey=62 hikey=65 lovel=0 hivel=127 seq_length=2 seq_position=2
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Strum - World Strum (A).wav pitch_keycenter=69 lokey=66 hikey=127 lovel=0 hivel=127 seq_length=2 seq_position=1
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Strum - Acoustic Borderlands (A).wav pitch_keycenter=69 lokey=66 hikey=127 lovel=0 hivel=127 seq_length=2 seq_position=2
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Strum - Electric Wipeout (Cm).wav pitch_keycenter=60 lokey=60 hikey=60 lovel=0 hivel=127
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Strum - Acoustic Western (D).wav pitch_keycenter=62 lokey=62 hikey=62 lovel=0 hivel=127 seq_length=2 seq_position=1
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Strum - Saz Beginning (Dm).wav pitch_keycenter=62 lokey=62 hikey=62 lovel=0 hivel=127 seq_length=2 seq_position=2
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Strum - World Strum (A).wav pitch_keycenter=69 lokey=69 hikey=69 lovel=0 hivel=127 seq_length=2 seq_position=1
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Strum - Acoustic Borderlands (A).wav pitch_keycenter=69 lokey=69 hikey=69 lovel=0 hivel=127 seq_length=2 seq_position=2
 
 <group>
 loprog=14 hiprog=14 // Guitar Tremolo
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Tremolo - Lo Tar Tremolo Fall (C).wav pitch_keycenter=60 lokey=0 hikey=61 lovel=0 hivel=127 seq_length=2 seq_position=1
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Tremolo - Electric Havoc (C).wav pitch_keycenter=60 lokey=0 hikey=61 lovel=0 hivel=127 seq_length=2 seq_position=2
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Tremolo - World Roller (D).wav pitch_keycenter=62 lokey=62 hikey=65 lovel=0 hivel=127
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Tremolo - Acoustic Spitfire (A).wav pitch_keycenter=69 lokey=66 hikey=127 lovel=0 hivel=127
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Tremolo - Lo Tar Tremolo Fall (C).wav pitch_keycenter=60 lokey=60 hikey=60 lovel=0 hivel=127 seq_length=2 seq_position=1
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Tremolo - Electric Havoc (C).wav pitch_keycenter=60 lokey=60 hikey=60 lovel=0 hivel=127 seq_length=2 seq_position=2
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Tremolo - World Roller (D).wav pitch_keycenter=62 lokey=62 hikey=62 lovel=0 hivel=127
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Guitar/Guitar One Shots/KSHMR Guitar - Tremolo - Acoustic Spitfire (A).wav pitch_keycenter=69 lokey=69 hikey=69 lovel=0 hivel=127
 
 <group>
 loprog=15 hiprog=15 // Orch Brass Stab
@@ -202,10 +202,10 @@ loprog=17 hiprog=17 // Orch Brass Sustain
 
 <group>
 loprog=18 hiprog=18 // Orch Brass Swell
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Brass/Orchestral Brass/Orchestral Brass One Shots/KSHMR Orchestral Brass - Swell - Slide (C).wav pitch_keycenter=60 lokey=0 hikey=60 lovel=0 hivel=127
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Brass/Orchestral Brass/Orchestral Brass One Shots/KSHMR Orchestral Brass - Swell - Quick Rise (C#).wav pitch_keycenter=61 lokey=61 hikey=63 lovel=0 hivel=127
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Brass/Orchestral Brass/Orchestral Brass One Shots/KSHMR Orchestral Brass - Swell - Glide (F).wav pitch_keycenter=65 lokey=64 hikey=68 lovel=0 hivel=127
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Brass/Orchestral Brass/Orchestral Brass One Shots/KSHMR Orchestral Brass - Swell - Ascend (B).wav pitch_keycenter=71 lokey=69 hikey=127 lovel=0 hivel=127
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Brass/Orchestral Brass/Orchestral Brass One Shots/KSHMR Orchestral Brass - Swell - Slide (C).wav pitch_keycenter=60 lokey=60 hikey=60 lovel=0 hivel=127
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Brass/Orchestral Brass/Orchestral Brass One Shots/KSHMR Orchestral Brass - Swell - Quick Rise (C#).wav pitch_keycenter=61 lokey=61 hikey=61 lovel=0 hivel=127
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Brass/Orchestral Brass/Orchestral Brass One Shots/KSHMR Orchestral Brass - Swell - Glide (F).wav pitch_keycenter=65 lokey=65 hikey=65 lovel=0 hivel=127
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Brass/Orchestral Brass/Orchestral Brass One Shots/KSHMR Orchestral Brass - Swell - Ascend (B).wav pitch_keycenter=71 lokey=71 hikey=71 lovel=0 hivel=127
 
 <group>
 loprog=19 hiprog=19 // Orch Brass Tonal FX
@@ -220,22 +220,22 @@ loprog=20 hiprog=20 // Sax FX
 
 <group>
 loprog=21 hiprog=21 // Sax Lick
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Sax/Sax One Shots/KSHMR Sax - Lick - Blazing (Cm).wav pitch_keycenter=60 lokey=0 hikey=61 lovel=0 hivel=127 seq_length=2 seq_position=1
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Sax/Sax One Shots/KSHMR Sax - Lick - Cobalt (C).wav pitch_keycenter=60 lokey=0 hikey=61 lovel=0 hivel=127 seq_length=2 seq_position=2
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Sax/Sax One Shots/KSHMR Sax - Lick - Slide (Dm).wav pitch_keycenter=62 lokey=62 hikey=63 lovel=0 hivel=127
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Sax/Sax One Shots/KSHMR Sax - Lick - Silky (Em).wav pitch_keycenter=64 lokey=64 hikey=65 lovel=0 hivel=127 seq_length=2 seq_position=1
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Sax/Sax One Shots/KSHMR Sax - Lick - Smooth (Em).wav pitch_keycenter=64 lokey=64 hikey=65 lovel=0 hivel=127 seq_length=2 seq_position=2
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Sax/Sax One Shots/KSHMR Sax - Lick - Blazing (Cm).wav pitch_keycenter=60 lokey=60 hikey=60 lovel=0 hivel=127 seq_length=2 seq_position=1
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Sax/Sax One Shots/KSHMR Sax - Lick - Cobalt (C).wav pitch_keycenter=60 lokey=60 hikey=60 lovel=0 hivel=127 seq_length=2 seq_position=2
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Sax/Sax One Shots/KSHMR Sax - Lick - Slide (Dm).wav pitch_keycenter=62 lokey=62 hikey=62 lovel=0 hivel=127
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Sax/Sax One Shots/KSHMR Sax - Lick - Silky (Em).wav pitch_keycenter=64 lokey=64 hikey=64 lovel=0 hivel=127 seq_length=2 seq_position=1
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Sax/Sax One Shots/KSHMR Sax - Lick - Smooth (Em).wav pitch_keycenter=64 lokey=64 hikey=64 lovel=0 hivel=127 seq_length=2 seq_position=2
 <region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Sax/Sax One Shots/KSHMR Sax - Lick - Velvet (F#m).wav pitch_keycenter=66 lokey=66 hikey=66 lovel=0 hivel=127
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Sax/Sax One Shots/KSHMR Sax - Lick - Topaz (Gm).wav pitch_keycenter=67 lokey=67 hikey=68 lovel=0 hivel=127 seq_length=2 seq_position=1
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Sax/Sax One Shots/KSHMR Sax - Lick - Garnet (Gm).wav pitch_keycenter=67 lokey=67 hikey=68 lovel=0 hivel=127 seq_length=2 seq_position=2
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Sax/Sax One Shots/KSHMR Sax - Lick - Topaz (Gm).wav pitch_keycenter=67 lokey=67 hikey=67 lovel=0 hivel=127 seq_length=2 seq_position=1
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Sax/Sax One Shots/KSHMR Sax - Lick - Garnet (Gm).wav pitch_keycenter=67 lokey=67 hikey=67 lovel=0 hivel=127 seq_length=2 seq_position=2
 <region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Sax/Sax One Shots/KSHMR Sax - Lick - Bourbon (Am).wav pitch_keycenter=69 lokey=69 hikey=69 lovel=0 hivel=127
 <region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Sax/Sax One Shots/KSHMR Sax - Lick - Cool (A#m).wav pitch_keycenter=70 lokey=70 hikey=70 lovel=0 hivel=127
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Sax/Sax One Shots/KSHMR Sax - Lick - Sultry (Bm).wav pitch_keycenter=71 lokey=71 hikey=127 lovel=0 hivel=127
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Sax/Sax One Shots/KSHMR Sax - Lick - Sultry (Bm).wav pitch_keycenter=71 lokey=71 hikey=71 lovel=0 hivel=127
 
 <group>
 loprog=22 hiprog=22 // Sax Stab
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Sax/Sax One Shots/KSHMR Sax - Stab - Glide (Dm).wav pitch_keycenter=62 lokey=0 hikey=63 lovel=0 hivel=127
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Sax/Sax One Shots/KSHMR Sax - Stab - Honk (E).wav pitch_keycenter=64 lokey=64 hikey=127 lovel=0 hivel=127
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Sax/Sax One Shots/KSHMR Sax - Stab - Glide (Dm).wav pitch_keycenter=62 lokey=62 hikey=62 lovel=0 hivel=127
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Sax/Sax One Shots/KSHMR Sax - Stab - Honk (E).wav pitch_keycenter=64 lokey=64 hikey=64 lovel=0 hivel=127
 
 <group>
 loprog=23 hiprog=23 // Sax Sustain
@@ -261,12 +261,12 @@ loprog=24 hiprog=24 // Shehnai
 
 <group>
 loprog=25 hiprog=25 // Strings
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/Runs/KSHMR String Run (Dm) - Violin Rush.wav pitch_keycenter=62 lokey=0 hikey=63 lovel=0 hivel=127
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/Runs/KSHMR String Run (Dm) - Violin Rush.wav pitch_keycenter=62 lokey=62 hikey=62 lovel=0 hivel=127
 <region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/Runs/KSHMR String Run (Em) - Violin Pentatonic Flow.wav pitch_keycenter=64 lokey=64 hikey=64 lovel=0 hivel=127
 <region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/Runs/KSHMR String Run (F) - Violin Run And Hold.wav pitch_keycenter=65 lokey=65 hikey=65 lovel=0 hivel=127
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/Runs/KSHMR String Run (F#m) - Violin Dash.wav pitch_keycenter=66 lokey=66 hikey=67 lovel=0 hivel=127
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/Runs/KSHMR String Run (Am) - Violin Cascade.wav pitch_keycenter=69 lokey=68 hikey=127 lovel=0 hivel=127 seq_length=2 seq_position=1
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/Runs/KSHMR String Run (Am) - Violin Swift.wav pitch_keycenter=69 lokey=68 hikey=127 lovel=0 hivel=127 seq_length=2 seq_position=2
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/Runs/KSHMR String Run (F#m) - Violin Dash.wav pitch_keycenter=66 lokey=66 hikey=66 lovel=0 hivel=127
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/Runs/KSHMR String Run (Am) - Violin Cascade.wav pitch_keycenter=69 lokey=69 hikey=69 lovel=0 hivel=127 seq_length=2 seq_position=1
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/Runs/KSHMR String Run (Am) - Violin Swift.wav pitch_keycenter=69 lokey=69 hikey=69 lovel=0 hivel=127 seq_length=2 seq_position=2
 
 <group>
 loprog=26 hiprog=26 // Strings FX
@@ -289,24 +289,24 @@ loprog=27 hiprog=27 // Strings Fall
 
 <group>
 loprog=28 hiprog=28 // Strings Lick
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/One Shots/KSHMR String - Lick - Cello Tremor (C).wav pitch_keycenter=60 lokey=0 hikey=61 lovel=0 hivel=127
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/One Shots/KSHMR String - Lick - Cello Tremor (C).wav pitch_keycenter=60 lokey=60 hikey=60 lovel=0 hivel=127
 <region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/One Shots/KSHMR String - Lick - Lyra Flutter (Dm).wav pitch_keycenter=62 lokey=62 hikey=62 lovel=0 hivel=127 seq_length=2 seq_position=1
 <region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/One Shots/KSHMR String - Lick - Lyra Playful (Dm).wav pitch_keycenter=62 lokey=62 hikey=62 lovel=0 hivel=127 seq_length=2 seq_position=2
 <region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/One Shots/KSHMR String - Lick - Upright Bass Spooky (D#).wav pitch_keycenter=63 lokey=63 hikey=63 lovel=0 hivel=127
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/One Shots/KSHMR String - Lick - Lyra Resolve (Em).wav pitch_keycenter=64 lokey=64 hikey=66 lovel=0 hivel=127 seq_length=7 seq_position=1
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/One Shots/KSHMR String - Lick - Upright Bass Wallow (Em).wav pitch_keycenter=64 lokey=64 hikey=66 lovel=0 hivel=127 seq_length=7 seq_position=2
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/One Shots/KSHMR String - Lick - Violin Disco - Elevate (Em).wav pitch_keycenter=64 lokey=64 hikey=66 lovel=0 hivel=127 seq_length=7 seq_position=3
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/One Shots/KSHMR String - Lick - Violin Dual (Em).wav pitch_keycenter=64 lokey=64 hikey=66 lovel=0 hivel=127 seq_length=7 seq_position=4
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/One Shots/KSHMR String - Lick - Upright Bass Short Roll (E).wav pitch_keycenter=64 lokey=64 hikey=66 lovel=0 hivel=127 seq_length=7 seq_position=5
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/One Shots/Extra Content/KSHMR String - Lick - Upright Bass Short Roll (E) - Mono.wav pitch_keycenter=64 lokey=64 hikey=66 lovel=0 hivel=127 seq_length=7 seq_position=6
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/One Shots/Extra Content/KSHMR String - Lick - Lyra Familiar (Em).wav pitch_keycenter=64 lokey=64 hikey=66 lovel=0 hivel=127 seq_length=7 seq_position=7
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/One Shots/KSHMR String - Lick - Violin Flourish (Am).wav pitch_keycenter=69 lokey=67 hikey=127 lovel=0 hivel=127 seq_length=7 seq_position=1
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/One Shots/KSHMR String - Lick - Lyra Calling (Am).wav pitch_keycenter=69 lokey=67 hikey=127 lovel=0 hivel=127 seq_length=7 seq_position=2
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/One Shots/KSHMR String - Lick - Violin Disco - Strut (Am).wav pitch_keycenter=69 lokey=67 hikey=127 lovel=0 hivel=127 seq_length=7 seq_position=3
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/One Shots/KSHMR String - Lick - Violin Disco - Celebrate (Am).wav pitch_keycenter=69 lokey=67 hikey=127 lovel=0 hivel=127 seq_length=7 seq_position=4
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/One Shots/KSHMR String - Lick - Lyra Gilded (Am).wav pitch_keycenter=69 lokey=67 hikey=127 lovel=0 hivel=127 seq_length=7 seq_position=5
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/One Shots/KSHMR String - Lick - Violin Disco - Funk (Am).wav pitch_keycenter=69 lokey=67 hikey=127 lovel=0 hivel=127 seq_length=7 seq_position=6
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/One Shots/Extra Content/KSHMR String - Lick - Violin Disco - Strut Alt (Am).wav pitch_keycenter=69 lokey=67 hikey=127 lovel=0 hivel=127 seq_length=7 seq_position=7
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/One Shots/KSHMR String - Lick - Lyra Resolve (Em).wav pitch_keycenter=64 lokey=64 hikey=64 lovel=0 hivel=127 seq_length=7 seq_position=1
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/One Shots/KSHMR String - Lick - Upright Bass Wallow (Em).wav pitch_keycenter=64 lokey=64 hikey=64 lovel=0 hivel=127 seq_length=7 seq_position=2
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/One Shots/KSHMR String - Lick - Violin Disco - Elevate (Em).wav pitch_keycenter=64 lokey=64 hikey=64 lovel=0 hivel=127 seq_length=7 seq_position=3
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/One Shots/KSHMR String - Lick - Violin Dual (Em).wav pitch_keycenter=64 lokey=64 hikey=64 lovel=0 hivel=127 seq_length=7 seq_position=4
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/One Shots/KSHMR String - Lick - Upright Bass Short Roll (E).wav pitch_keycenter=64 lokey=64 hikey=64 lovel=0 hivel=127 seq_length=7 seq_position=5
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/One Shots/Extra Content/KSHMR String - Lick - Upright Bass Short Roll (E) - Mono.wav pitch_keycenter=64 lokey=64 hikey=64 lovel=0 hivel=127 seq_length=7 seq_position=6
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/One Shots/Extra Content/KSHMR String - Lick - Lyra Familiar (Em).wav pitch_keycenter=64 lokey=64 hikey=64 lovel=0 hivel=127 seq_length=7 seq_position=7
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/One Shots/KSHMR String - Lick - Violin Flourish (Am).wav pitch_keycenter=69 lokey=69 hikey=69 lovel=0 hivel=127 seq_length=7 seq_position=1
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/One Shots/KSHMR String - Lick - Lyra Calling (Am).wav pitch_keycenter=69 lokey=69 hikey=69 lovel=0 hivel=127 seq_length=7 seq_position=2
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/One Shots/KSHMR String - Lick - Violin Disco - Strut (Am).wav pitch_keycenter=69 lokey=69 hikey=69 lovel=0 hivel=127 seq_length=7 seq_position=3
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/One Shots/KSHMR String - Lick - Violin Disco - Celebrate (Am).wav pitch_keycenter=69 lokey=69 hikey=69 lovel=0 hivel=127 seq_length=7 seq_position=4
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/One Shots/KSHMR String - Lick - Lyra Gilded (Am).wav pitch_keycenter=69 lokey=69 hikey=69 lovel=0 hivel=127 seq_length=7 seq_position=5
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/One Shots/KSHMR String - Lick - Violin Disco - Funk (Am).wav pitch_keycenter=69 lokey=69 hikey=69 lovel=0 hivel=127 seq_length=7 seq_position=6
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Strings/One Shots/Extra Content/KSHMR String - Lick - Violin Disco - Strut Alt (Am).wav pitch_keycenter=69 lokey=69 hikey=69 lovel=0 hivel=127 seq_length=7 seq_position=7
 
 <group>
 loprog=29 hiprog=29 // Strings Pizz
@@ -406,7 +406,7 @@ loprog=36 hiprog=36 // Synth Bass Scream
 
 <group>
 loprog=37 hiprog=37 // Synth Bass Whomp
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Synths/BASS - One Shots/Bass Shots - Whomp/KSHMR Bass Whomp (C#) - Grave.wav pitch_keycenter=61 lokey=0 hikey=61 lovel=0 hivel=127
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Synths/BASS - One Shots/Bass Shots - Whomp/KSHMR Bass Whomp (C#) - Grave.wav pitch_keycenter=61 lokey=61 hikey=61 lovel=0 hivel=127
 <region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Synths/BASS - One Shots/Bass Shots - Whomp/KSHMR Bass Whomp (D) - Plunge.wav pitch_keycenter=62 lokey=62 hikey=62 lovel=0 hivel=127
 <region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Synths/BASS - One Shots/Bass Shots - Whomp/KSHMR Bass Whomp (D#) - Gutter.wav pitch_keycenter=63 lokey=63 hikey=63 lovel=0 hivel=127 seq_length=4 seq_position=1
 <region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Synths/BASS - One Shots/Bass Shots - Whomp/KSHMR Bass Whomp (D#) - Shade.wav pitch_keycenter=63 lokey=63 hikey=63 lovel=0 hivel=127 seq_length=4 seq_position=2
@@ -420,12 +420,12 @@ loprog=37 hiprog=37 // Synth Bass Whomp
 <region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Synths/BASS - One Shots/Bass Shots - Whomp/KSHMR Bass Whomp (E) - Crawl.wav pitch_keycenter=64 lokey=64 hikey=64 lovel=0 hivel=127 seq_length=8 seq_position=6
 <region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Synths/BASS - One Shots/Bass Shots - Whomp/KSHMR Bass Whomp (E) - Hollow.wav pitch_keycenter=64 lokey=64 hikey=64 lovel=0 hivel=127 seq_length=8 seq_position=7
 <region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Synths/BASS - One Shots/Bass Shots - Whomp/KSHMR Bass Whomp (E) - Stagger.wav pitch_keycenter=64 lokey=64 hikey=64 lovel=0 hivel=127 seq_length=8 seq_position=8
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Synths/BASS - One Shots/Bass Shots - Whomp/KSHMR Bass Whomp (Fm) - Midnight.wav pitch_keycenter=65 lokey=65 hikey=66 lovel=0 hivel=127 seq_length=4 seq_position=1
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Synths/BASS - One Shots/Bass Shots - Whomp/KSHMR Bass Whomp (Fm) - Eclipse.wav pitch_keycenter=65 lokey=65 hikey=66 lovel=0 hivel=127 seq_length=4 seq_position=2
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Synths/BASS - One Shots/Bass Shots - Whomp/KSHMR Bass Whomp (F) - Degrade.wav pitch_keycenter=65 lokey=65 hikey=66 lovel=0 hivel=127 seq_length=4 seq_position=3
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Synths/BASS - One Shots/Bass Shots - Whomp/KSHMR Bass Whomp (F) - Blackout.wav pitch_keycenter=65 lokey=65 hikey=66 lovel=0 hivel=127 seq_length=4 seq_position=4
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Synths/BASS - One Shots/Bass Shots - Whomp/KSHMR Bass Whomp (G) - Onyx.wav pitch_keycenter=67 lokey=67 hikey=127 lovel=0 hivel=127 seq_length=2 seq_position=1
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Synths/BASS - One Shots/Bass Shots - Whomp/KSHMR Bass Whomp (G) - Pulse.wav pitch_keycenter=67 lokey=67 hikey=127 lovel=0 hivel=127 seq_length=2 seq_position=2
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Synths/BASS - One Shots/Bass Shots - Whomp/KSHMR Bass Whomp (Fm) - Midnight.wav pitch_keycenter=65 lokey=65 hikey=65 lovel=0 hivel=127 seq_length=4 seq_position=1
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Synths/BASS - One Shots/Bass Shots - Whomp/KSHMR Bass Whomp (Fm) - Eclipse.wav pitch_keycenter=65 lokey=65 hikey=65 lovel=0 hivel=127 seq_length=4 seq_position=2
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Synths/BASS - One Shots/Bass Shots - Whomp/KSHMR Bass Whomp (F) - Degrade.wav pitch_keycenter=65 lokey=65 hikey=65 lovel=0 hivel=127 seq_length=4 seq_position=3
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Synths/BASS - One Shots/Bass Shots - Whomp/KSHMR Bass Whomp (F) - Blackout.wav pitch_keycenter=65 lokey=65 hikey=65 lovel=0 hivel=127 seq_length=4 seq_position=4
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Synths/BASS - One Shots/Bass Shots - Whomp/KSHMR Bass Whomp (G) - Onyx.wav pitch_keycenter=67 lokey=67 hikey=67 lovel=0 hivel=127 seq_length=2 seq_position=1
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Synths/BASS - One Shots/Bass Shots - Whomp/KSHMR Bass Whomp (G) - Pulse.wav pitch_keycenter=67 lokey=67 hikey=67 lovel=0 hivel=127 seq_length=2 seq_position=2
 
 <group>
 loprog=38 hiprog=38 // Synth Energizer
@@ -612,13 +612,13 @@ loprog=54 hiprog=54 // Trumpet Sustain
 
 <group>
 loprog=55 hiprog=55 // Winds
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Human Whistles/One Shots/KSHMR Whistle One Shot (C) - Celebrate.wav pitch_keycenter=60 lokey=0 hikey=60 lovel=0 hivel=127 seq_length=7 seq_position=1
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Human Whistles/One Shots/KSHMR Whistle One Shot (C) - Moment.wav pitch_keycenter=60 lokey=0 hikey=60 lovel=0 hivel=127 seq_length=7 seq_position=2
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Human Whistles/One Shots/KSHMR Whistle One Shot (C) - Curious.wav pitch_keycenter=60 lokey=0 hikey=60 lovel=0 hivel=127 seq_length=7 seq_position=3
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Human Whistles/One Shots/KSHMR Whistle One Shot (C) - Descent.wav pitch_keycenter=60 lokey=0 hikey=60 lovel=0 hivel=127 seq_length=7 seq_position=4
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Human Whistles/One Shots/KSHMR Whistle One Shot (C) - Referee.wav pitch_keycenter=60 lokey=0 hikey=60 lovel=0 hivel=127 seq_length=7 seq_position=5
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Human Whistles/One Shots/KSHMR Whistle One Shot (C) - Referee Long.wav pitch_keycenter=60 lokey=0 hikey=60 lovel=0 hivel=127 seq_length=7 seq_position=6
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Human Whistles/One Shots/KSHMR Whistle One Shot (C) - Solo.wav pitch_keycenter=60 lokey=0 hikey=60 lovel=0 hivel=127 seq_length=7 seq_position=7
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Human Whistles/One Shots/KSHMR Whistle One Shot (C#) - Bright.wav pitch_keycenter=61 lokey=61 hikey=62 lovel=0 hivel=127
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Human Whistles/One Shots/KSHMR Whistle One Shot (C) - Celebrate.wav pitch_keycenter=60 lokey=60 hikey=60 lovel=0 hivel=127 seq_length=7 seq_position=1
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Human Whistles/One Shots/KSHMR Whistle One Shot (C) - Moment.wav pitch_keycenter=60 lokey=60 hikey=60 lovel=0 hivel=127 seq_length=7 seq_position=2
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Human Whistles/One Shots/KSHMR Whistle One Shot (C) - Curious.wav pitch_keycenter=60 lokey=60 hikey=60 lovel=0 hivel=127 seq_length=7 seq_position=3
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Human Whistles/One Shots/KSHMR Whistle One Shot (C) - Descent.wav pitch_keycenter=60 lokey=60 hikey=60 lovel=0 hivel=127 seq_length=7 seq_position=4
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Human Whistles/One Shots/KSHMR Whistle One Shot (C) - Referee.wav pitch_keycenter=60 lokey=60 hikey=60 lovel=0 hivel=127 seq_length=7 seq_position=5
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Human Whistles/One Shots/KSHMR Whistle One Shot (C) - Referee Long.wav pitch_keycenter=60 lokey=60 hikey=60 lovel=0 hivel=127 seq_length=7 seq_position=6
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Human Whistles/One Shots/KSHMR Whistle One Shot (C) - Solo.wav pitch_keycenter=60 lokey=60 hikey=60 lovel=0 hivel=127 seq_length=7 seq_position=7
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Human Whistles/One Shots/KSHMR Whistle One Shot (C#) - Bright.wav pitch_keycenter=61 lokey=61 hikey=61 lovel=0 hivel=127
 <region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Human Whistles/One Shots/KSHMR Whistle One Shot (D#) - Hand Ocarina.wav pitch_keycenter=63 lokey=63 hikey=63 lovel=0 hivel=127
-<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Human Whistles/One Shots/KSHMR Whistle One Shot (E) - Train.wav pitch_keycenter=64 lokey=64 hikey=127 lovel=0 hivel=127
+<region> sample=/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition/Instruments/Winds/Human Whistles/One Shots/KSHMR Whistle One Shot (E) - Train.wav pitch_keycenter=64 lokey=64 hikey=64 lovel=0 hivel=127

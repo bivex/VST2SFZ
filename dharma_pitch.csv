@@ -1,0 +1,455 @@
+program,file,root,detected,dist_st,detector_spread,kind
+Bass,KSHMR Bass One Shot (A) - Clean Punch.wav,A,A,0,0,
+Bass,KSHMR Bass One Shot (B) - Crunch Bite.wav,B,B,0,0,
+Bass,KSHMR Bass One Shot (E) - Chorus Long.wav,E,E,0,0,
+Bass,KSHMR Bass One Shot (E) - Clean Extended.wav,E,E,0,1,
+Bass,KSHMR Bass One Shot (E) - Clean Sustain.wav,E,E,0,2,
+Bass,KSHMR Bass One Shot (E) - Crunch Sustain.wav,E,E,0,1,
+Bass,KSHMR Bass Slide (A) - Drop.wav,A,G#,1,3,gesture
+Bass,KSHMR Bass Slide (C#) - Glide.wav,C#,C,1,1,gesture
+Bass,KSHMR Bass Slide (C) - Fall.wav,C,G#,4,4,gesture
+Bass,KSHMR Bass Slide (E) - Swoop.wav,E,D,2,6,gesture
+Bass,KSHMR Bass Slide (F#) - Dive.wav,F#,D,4,3,gesture
+Bass,KSHMR Bass Slide (G) - Plunge.wav,G,F,2,1,gesture
+Didgeridoo FX,KSHMR Didgeridoo - FX - Voices (D#).wav,D#,G,4,5,gesture
+Didgeridoo FX,KSHMR Didgeridoo - FX - Whispers (D#).wav,D#,F#,3,3,gesture
+Didgeridoo Stab,KSHMR Didgeridoo - Stab - Bump (A#).wav,A#,A,1,3,
+Didgeridoo Stab,KSHMR Didgeridoo - Stab - Buzz (D#).wav,D#,D#,0,2,
+Didgeridoo Stab,KSHMR Didgeridoo - Stab - Pinpoint (D).wav,D,D,0,1,
+Didgeridoo Stab,KSHMR Didgeridoo - Stab - Pulse (D#).wav,D#,D#,0,0,
+Didgeridoo Stab,KSHMR Didgeridoo - Stab - Resonant (F#).wav,F#,F#,0,4,
+Didgeridoo Sustain,KSHMR Didgeridoo - Sustain - Horn (G).wav,G,G,0,0,
+Didgeridoo Sustain,KSHMR Didgeridoo - Sustain - Hum (D#).wav,D#,D#,0,0,
+Didgeridoo Sustain,KSHMR Didgeridoo - Sustain - Rumble (D).wav,D,C#,1,0,
+Didgeridoo Transition,KSHMR Didgeridoo - Transition - Build (D).wav,D,D,0,2,
+Didgeridoo Transition,KSHMR Didgeridoo - Transition - Flutter (D).wav,D,D,0,0,
+Didgeridoo Transition,KSHMR Didgeridoo - Transition - Swell (D).wav,D,D,0,1,
+Duduk,KSHMR Duduk Lick (Am) - Swirl.wav,A,A,0,6,gesture
+Duduk,KSHMR Duduk Lick (C) - Ashes.wav,C,F,5,0,gesture
+Duduk,KSHMR Duduk Lick (C) - Cinder.wav,C,C,0,0,gesture
+Duduk,KSHMR Duduk Lick (C) - Midnight.wav,C,F,5,2,gesture
+Duduk,KSHMR Duduk Lick (Dm) - Exhale.wav,D,F,3,1,gesture
+Duduk,KSHMR Duduk Lick (Dm) - Expanse.wav,D,D,0,1,gesture
+Duduk,KSHMR Duduk Lick (Dm) - Ivory.wav,D,F,3,3,gesture
+Duduk,KSHMR Duduk Lick (Dm) - Release.wav,D,A#,4,0,gesture
+Duduk,KSHMR Duduk Lick (Fm) - Veil.wav,F,G,2,0,gesture
+Duduk,KSHMR Duduk Lick (Gm) - Dawn.wav,G,D,5,4,gesture
+Duduk,KSHMR Duduk Lick (Gm) - Drift.wav,G,C,5,2,gesture
+Duduk,KSHMR Duduk One Shot (A) - Divine.wav,A,D,5,1,
+Duduk,KSHMR Duduk One Shot (Am) - Cry.wav,A,E,5,5,
+Duduk,KSHMR Duduk One Shot (Am) - Wail.wav,A,G#,1,4,
+Duduk,KSHMR Duduk One Shot (C) - Glint.wav,C,G,5,0,
+Duduk,KSHMR Duduk One Shot (Cm) - Lonely.wav,C,C,0,3,
+Duduk,KSHMR Duduk One Shot (D) - Spirit.wav,D,D,0,0,
+Duduk,KSHMR Duduk One Shot (Dm) - Still.wav,D,A,5,0,
+Duduk,KSHMR Duduk One Shot (Em) - Oracle.wav,E,E,0,1,
+Duduk,KSHMR Duduk One Shot (G) - Desolate.wav,G,G,0,0,
+Duduk,KSHMR Duduk One Shot (G) - Prayer.wav,G,G,0,2,
+Duduk,KSHMR Duduk One Shot (Gm) - Vibration.wav,G,G,0,1,
+Duduk,KSHMR Duduk One Shot (Gm) - Yearn.wav,G,F,2,0,
+Flute FX,KSHMR Flute - FX - Bird (Dm).wav,D,D,0,2,gesture
+Flute FX,KSHMR Flute - FX - Chirp (B).wav,B,B,0,0,gesture
+Flute FX,KSHMR Flute - FX - Pipe (E).wav,E,A,5,4,gesture
+Flute FX,KSHMR Flute - FX - Shout (Am).wav,A,A#,1,5,gesture
+Flute FX,KSHMR Flute - FX - Stutter (D).wav,D,D,0,5,gesture
+Flute FX,KSHMR Flute - FX - Summon (G#).wav,G#,G#,0,0,gesture
+Flute FX,KSHMR Flute - FX - Trill (G#).wav,G#,G,1,2,gesture
+Flute Lick,KSHMR Flute - Lick - Airy (D#m).wav,D#,D#,0,1,gesture
+Flute Lick,KSHMR Flute - Lick - Believe (F#).wav,F#,F#,0,0,gesture
+Flute Lick,KSHMR Flute - Lick - Blossom (Fm).wav,F,F,0,0,gesture
+Flute Lick,KSHMR Flute - Lick - Cherry (Fm).wav,F,F,0,1,gesture
+Flute Lick,KSHMR Flute - Lick - Cherry Wide (Fm).wav,F,F,0,0,gesture
+Flute Lick,KSHMR Flute - Lick - Forever (Am).wav,A,E,5,4,gesture
+Flute Lick,KSHMR Flute - Lick - Joyful (Fm).wav,F,F,0,1,gesture
+Flute Lick,KSHMR Flute - Lick - Sanctuary (Am).wav,A,C,3,1,gesture
+Flute Lick,KSHMR Flute - Lick - Sunrise (Fm).wav,F,F,0,4,gesture
+Flute Stab,KSHMR Flute - Stab - Simple (G).wav,G,G,0,0,
+Flute Stab,KSHMR Flute - Stab - Soft (A).wav,A,C,3,2,
+Flute Stab,KSHMR Flute - Stab - Staccato (D).wav,D,F,3,0,
+Flute Stab,KSHMR Flute - Stab - Upfront (A#m).wav,A#,A#,0,0,
+Flute Sustain,KSHMR Flute - Sustain - Bell (F).wav,F,F,0,0,
+Flute Sustain,KSHMR Flute - Sustain - Bright (D).wav,D,D,0,0,
+Flute Sustain,KSHMR Flute - Sustain - Call (D).wav,D,D,0,2,
+Flute Sustain,KSHMR Flute - Sustain - Chime (F#m).wav,F#,F#,0,0,
+Flute Sustain,KSHMR Flute - Sustain - Overture (D).wav,D,D,0,0,
+Flute Sustain,KSHMR Flute - Sustain - Ring (F#).wav,F#,F#,0,0,
+Flute Sustain,KSHMR Flute - Sustain - Solid (F).wav,F,F,0,0,
+Flute Sustain,KSHMR Flute - Sustain - Subtle (D).wav,D,D,0,6,
+Flute Sustain,KSHMR Flute - Sustain - Tweet (C).wav,C,C,0,0,
+Flute Sustain,KSHMR Flute - Sustain - Unveil (A).wav,A,A,0,0,
+Guitar FX,KSHMR Guitar - FX - Electric Ender (C).wav,C,D,2,3,gesture
+Guitar FX,KSHMR Guitar - FX - Electric Glow (Cm).wav,C,D,2,2,gesture
+Guitar FX,KSHMR Guitar - FX - Electric Harmonic (A).wav,A,A,0,1,gesture
+Guitar FX,KSHMR Guitar - FX - Electric Haze (Cm).wav,C,C,0,2,gesture
+Guitar FX,KSHMR Guitar - FX - Electric Resurrect (Em).wav,E,G#,4,4,gesture
+Guitar FX,KSHMR Guitar - FX - Electric Shimmer (Cm).wav,C,E,4,1,gesture
+Guitar FX,KSHMR Guitar - FX - Electric Slide Down (C).wav,C,C#,1,3,gesture
+Guitar FX,KSHMR Guitar - FX - Electric Slump (Em).wav,E,C#,3,2,gesture
+Guitar FX,KSHMR Guitar - FX - Electric Sparkle (Cm).wav,C,D#,3,4,gesture
+Guitar FX,KSHMR Guitar - FX - Sitar Glissando (D).wav,D,A,5,6,gesture
+Guitar FX,KSHMR Guitar - FX - Sitar Glissando Effected (D#).wav,D#,F,2,4,gesture
+Guitar Lick,KSHMR Guitar - Lick - Lo Tar Coil (Em).wav,E,G,3,0,gesture
+Guitar Lick,KSHMR Guitar - Lick - Lo Tar Recoil (Em).wav,E,G,3,0,gesture
+Guitar Lick,KSHMR Guitar - Lick - Lo Tar Show Up (A).wav,A,A,0,6,gesture
+Guitar Lick,KSHMR Guitar - Lick - Lo Tar Showdown (E).wav,E,E,0,4,gesture
+Guitar Lick,KSHMR Guitar - Lick - Lo Tar Slither (Am).wav,A,E,5,1,gesture
+Guitar Lick,KSHMR Guitar - Lick - Saz Chime (Am).wav,A,A#,1,2,gesture
+Guitar Lick,KSHMR Guitar - Lick - Saz Resound (Am).wav,A,A,0,1,gesture
+Guitar Lick,KSHMR Guitar - Lick - Saz Resound - Alt (Am).wav,A,A#,1,2,gesture
+Guitar Lick,KSHMR Guitar - Lick - Saz Signal (Am).wav,A,A#,1,1,gesture
+Guitar Lick,KSHMR Guitar - Lick - World Flicker (Dm).wav,D,E,2,2,gesture
+Guitar Lick,KSHMR Guitar - Lick - World Walk Down (Em).wav,E,G#,4,4,gesture
+Guitar Pluck,KSHMR Guitar - Pluck - Acoustic Chime (G#).wav,G#,G#,0,0,
+Guitar Pluck,KSHMR Guitar - Pluck - Banjo Cathedral (D).wav,D,D,0,4,
+Guitar Pluck,KSHMR Guitar - Pluck - Banjo Cavern (E).wav,E,E,0,0,
+Guitar Pluck,KSHMR Guitar - Pluck - Banjo Pop (A).wav,A,A,0,5,
+Guitar Pluck,KSHMR Guitar - Pluck - Banjo Twang (D).wav,D,D,0,3,
+Guitar Pluck,KSHMR Guitar - Pluck - Electric Ring (A).wav,A,A,0,1,
+Guitar Pluck,KSHMR Guitar - Pluck - Electric Splat (A).wav,A,A,0,4,
+Guitar Pluck,KSHMR Guitar - Pluck - Lo Tar Hesitant (C).wav,C,C,0,0,
+Guitar Pluck,KSHMR Guitar - Pluck - Lo Tar Pullback (A).wav,A,G,2,0,
+Guitar Pluck,KSHMR Guitar - Pluck - Lo Tar Showoff (E).wav,E,E,0,2,
+Guitar Pluck,KSHMR Guitar - Pluck - Lo Tar Stroke (E).wav,E,E,0,4,
+Guitar Pluck,KSHMR Guitar - Pluck - Sitar Fifths (D).wav,D,D,0,0,
+Guitar Pluck,KSHMR Guitar - Pluck - Sitar Hammer (D).wav,D,D,0,5,
+Guitar Pluck,KSHMR Guitar - Pluck - Sitar Strike (G).wav,G,G,0,1,
+Guitar Pluck,KSHMR Guitar - Pluck - Sitar Twang (D).wav,D,D,0,0,
+Guitar Strum,KSHMR Guitar - Strum - Acoustic Borderlands (A).wav,A,G,2,5,gesture
+Guitar Strum,KSHMR Guitar - Strum - Acoustic Western (D).wav,D,G,5,1,gesture
+Guitar Strum,KSHMR Guitar - Strum - Electric Wipeout (Cm).wav,C,C#,1,5,gesture
+Guitar Strum,KSHMR Guitar - Strum - Saz Beginning (Dm).wav,D,G,5,5,gesture
+Guitar Strum,KSHMR Guitar - Strum - World Strum (A).wav,A,A,0,0,gesture
+Guitar Tremolo,KSHMR Guitar - Tremolo - Acoustic Spitfire (A).wav,A,A,0,2,
+Guitar Tremolo,KSHMR Guitar - Tremolo - Electric Havoc (C).wav,C,B,1,4,
+Guitar Tremolo,KSHMR Guitar - Tremolo - Lo Tar Tremolo Fall (C).wav,C,C,0,2,gesture
+Guitar Tremolo,KSHMR Guitar - Tremolo - World Roller (D).wav,D,A#,4,4,
+Orch Brass Stab,KSHMR Orchestral Brass - Stab - Blast (E).wav,E,G#,4,4,
+Orch Brass Stab,KSHMR Orchestral Brass - Stab - Boom (F).wav,F,F,0,0,
+Orch Brass Stab,KSHMR Orchestral Brass - Stab - Ending (G#m).wav,G#,G#,0,1,
+Orch Brass Stab,KSHMR Orchestral Brass - Stab - Fallen Angel (E).wav,E,E,0,0,
+Orch Brass Stab,KSHMR Orchestral Brass - Stab - Impact (C).wav,C,C,0,4,
+Orch Brass Stab,KSHMR Orchestral Brass - Stab - Lift (Am).wav,A,G#,1,5,
+Orch Brass Stab,KSHMR Orchestral Brass - Stab - Mammoth (C).wav,C,C,0,0,
+Orch Brass Stab,KSHMR Orchestral Brass - Stab - Punch (A#).wav,A#,A#,0,3,
+Orch Brass Stab,KSHMR Orchestral Brass - Stab - Strike (D).wav,D,C#,1,3,
+Orch Brass Stab,KSHMR Orchestral Brass - Stab - Thunder (G).wav,G,G,0,0,
+Orch Brass Stab Braam,KSHMR Orchestral Brass - Stab Braam - Apollo (Bm).wav,B,B,0,0,
+Orch Brass Sustain,KSHMR Orchestral Brass - Sustain - Alarm (F#).wav,F#,F,1,4,
+Orch Brass Sustain,KSHMR Orchestral Brass - Sustain - Beneath (G).wav,G,F#,1,4,
+Orch Brass Sustain,KSHMR Orchestral Brass - Sustain - Death Is Here (C).wav,C,C,0,0,
+Orch Brass Sustain,KSHMR Orchestral Brass - Sustain - Epic (C).wav,C,C,0,2,
+Orch Brass Sustain,KSHMR Orchestral Brass - Sustain - Royal (G#).wav,G#,G#,0,2,
+Orch Brass Sustain,KSHMR Orchestral Brass - Sustain - Sinister (F#).wav,F#,F#,0,4,
+Orch Brass Sustain,KSHMR Orchestral Brass - Sustain - Summon (D).wav,D,C#,1,4,
+Orch Brass Sustain,KSHMR Orchestral Brass - Sustain - Warriors (C).wav,C,C,0,0,
+Orch Brass Sustain,KSHMR Orchestral Brass - Sustain - Whining (G).wav,G,A#,3,1,
+Orch Brass Sustain,KSHMR Orchestral Brass - Sustain - Wild Call (D#).wav,D#,D#,0,1,
+Orch Brass Swell,KSHMR Orchestral Brass - Swell - Ascend (B).wav,B,B,0,3,
+Orch Brass Swell,KSHMR Orchestral Brass - Swell - Glide (F).wav,F,F,0,0,gesture
+Orch Brass Swell,KSHMR Orchestral Brass - Swell - Quick Rise (C#).wav,C#,C#,0,6,
+Orch Brass Swell,KSHMR Orchestral Brass - Swell - Slide (C).wav,C,C,0,0,gesture
+Orch Brass Tonal FX,KSHMR Orchestral Brass - Tonal FX - Cacophony (D).wav,D,D,0,3,
+Orch Brass Tonal FX,KSHMR Orchestral Brass - Tonal FX - Chaos (C).wav,C,C,0,3,
+Orch Brass Tonal FX,KSHMR Orchestral Brass - Tonal FX - Depths (F#).wav,F#,F,1,1,
+Orch Brass Tonal FX,KSHMR Orchestral Brass - Tonal FX - Scary (F).wav,F,D#,2,3,
+Sax FX,KSHMR Sax - FX - Screech (F#).wav,F#,F#,0,0,gesture
+Sax Lick,KSHMR Sax - Lick - Blazing (Cm).wav,C,G,5,2,gesture
+Sax Lick,KSHMR Sax - Lick - Bourbon (Am).wav,A,A,0,2,gesture
+Sax Lick,KSHMR Sax - Lick - Cobalt (C).wav,C,D,2,2,gesture
+Sax Lick,KSHMR Sax - Lick - Cool (A#m).wav,A#,E,6,0,gesture
+Sax Lick,KSHMR Sax - Lick - Garnet (Gm).wav,G,C,5,2,gesture
+Sax Lick,KSHMR Sax - Lick - Silky (Em).wav,E,E,0,2,gesture
+Sax Lick,KSHMR Sax - Lick - Slide (Dm).wav,D,D,0,2,gesture
+Sax Lick,KSHMR Sax - Lick - Smooth (Em).wav,E,E,0,5,gesture
+Sax Lick,KSHMR Sax - Lick - Sultry (Bm).wav,B,C#,2,2,gesture
+Sax Lick,KSHMR Sax - Lick - Topaz (Gm).wav,G,A,2,2,gesture
+Sax Lick,KSHMR Sax - Lick - Velvet (F#m).wav,F#,G#,2,2,gesture
+Sax Stab,KSHMR Sax - Stab - Glide (Dm).wav,D,D,0,0,gesture
+Sax Stab,KSHMR Sax - Stab - Honk (E).wav,E,E,0,0,
+Sax Sustain,KSHMR Sax - Sustain - Blare (F).wav,F,F,0,0,
+Sax Sustain,KSHMR Sax - Sustain - Cloak (A).wav,A,A,0,0,
+Sax Sustain,KSHMR Sax - Sustain - Horn (C).wav,C,C,0,0,
+Sax Sustain,KSHMR Sax - Sustain - Sable (C#).wav,C#,C#,0,0,
+Sax Sustain,KSHMR Sax - Sustain - Wail (G#).wav,G#,G#,0,0,
+Shehnai,KSHMR Shehnai One Shot (D) - Beacon.wav,D,F,3,3,
+Shehnai,KSHMR Shehnai One Shot (D) - Call.wav,D,A#,4,0,
+Shehnai,KSHMR Shehnai One Shot (D) - Howl.wav,D,D,0,0,
+Shehnai,KSHMR Shehnai One Shot (D) - Sahara.wav,D,F#,4,5,
+Shehnai,KSHMR Shehnai One Shot (D) - Tower.wav,D,D,0,1,
+Shehnai,KSHMR Shehnai One Shot (D) - Wail.wav,D,F,3,3,
+Shehnai,KSHMR Shehnai One Shot (D) - Zephyr.wav,D,G,5,3,
+Shehnai,KSHMR Shehnai One Shot (Gm) - Announce.wav,G,F#,1,4,
+Shehnai,KSHMR Shehnai One Shot (Gm) - Fanfare.wav,G,F#,1,4,
+Shehnai,KSHMR Shehnai One Shot (Gm) - Majestic.wav,G,F#,1,4,
+Shehnai,KSHMR Shehnai One Shot (Gm) - Royal.wav,G,G,0,4,
+Strings,KSHMR String Run (Am) - Violin Cascade.wav,A,G#,1,4,gesture
+Strings,KSHMR String Run (Am) - Violin Swift.wav,A,B,2,1,gesture
+Strings,KSHMR String Run (Dm) - Violin Rush.wav,D,A#,4,4,gesture
+Strings,KSHMR String Run (Em) - Violin Pentatonic Flow.wav,E,A,5,5,gesture
+Strings,KSHMR String Run (F#m) - Violin Dash.wav,F#,A,3,3,gesture
+Strings,KSHMR String Run (F) - Violin Run And Hold.wav,F,G#,3,3,gesture
+Strings FX,KSHMR String - FX - Lyra Distant (Am).wav,A,G#,1,1,gesture
+Strings FX,KSHMR String - FX - Lyra Echoes (G#m).wav,G#,A#,2,1,gesture
+Strings FX,KSHMR String - FX - Lyra Passing (Am).wav,A,E,5,2,gesture
+Strings FX,KSHMR String - FX - Lyra Shimmer (A#).wav,A#,A#,0,0,gesture
+Strings FX,KSHMR String - FX - Upright Bass Chilling (E) - Dry.wav,E,E,0,0,gesture
+Strings FX,KSHMR String - FX - Upright Bass Chilling (E).wav,E,E,0,0,gesture
+Strings FX,KSHMR String - FX - Viola Slip (A).wav,A,A,0,0,gesture
+Strings FX,KSHMR String - FX - Viola Unsettled (E).wav,E,D,2,3,gesture
+Strings FX,KSHMR String - FX - Violin Closer (D).wav,D,D,0,0,gesture
+Strings FX,KSHMR String - FX - Violin Dread (G#).wav,G#,G#,0,4,gesture
+Strings FX,KSHMR String - FX - Violin Screech (C#).wav,C#,E,3,3,gesture
+Strings Fall,KSHMR String - Fall - Violin Dive (D).wav,D,C#,1,1,gesture
+Strings Fall,KSHMR String - Fall - Violin Swoop (B).wav,B,A#,1,0,gesture
+Strings Lick,KSHMR String - Lick - Cello Tremor (C).wav,C,C,0,4,gesture
+Strings Lick,KSHMR String - Lick - Lyra Calling (Am).wav,A,G#,1,2,gesture
+Strings Lick,KSHMR String - Lick - Lyra Familiar (Em).wav,E,B,5,3,gesture
+Strings Lick,KSHMR String - Lick - Lyra Flutter (Dm).wav,D,A,5,3,gesture
+Strings Lick,KSHMR String - Lick - Lyra Gilded (Am).wav,A,G,2,1,gesture
+Strings Lick,KSHMR String - Lick - Lyra Playful (Dm).wav,D,A#,4,4,gesture
+Strings Lick,KSHMR String - Lick - Lyra Resolve (Em).wav,E,G,3,4,gesture
+Strings Lick,KSHMR String - Lick - Upright Bass Short Roll (E) - Mono.wav,E,E,0,3,gesture
+Strings Lick,KSHMR String - Lick - Upright Bass Short Roll (E).wav,E,E,0,2,gesture
+Strings Lick,KSHMR String - Lick - Upright Bass Spooky (D#).wav,D#,D,1,5,gesture
+Strings Lick,KSHMR String - Lick - Upright Bass Wallow (Em).wav,E,B,5,1,gesture
+Strings Lick,KSHMR String - Lick - Violin Disco - Celebrate (Am).wav,A,A,0,1,gesture
+Strings Lick,KSHMR String - Lick - Violin Disco - Elevate (Em).wav,E,E,0,4,gesture
+Strings Lick,KSHMR String - Lick - Violin Disco - Funk (Am).wav,A,G#,1,4,gesture
+Strings Lick,KSHMR String - Lick - Violin Disco - Strut (Am).wav,A,E,5,4,gesture
+Strings Lick,KSHMR String - Lick - Violin Disco - Strut Alt (Am).wav,A,G,2,3,gesture
+Strings Lick,KSHMR String - Lick - Violin Dual (Em).wav,E,E,0,0,gesture
+Strings Lick,KSHMR String - Lick - Violin Flourish (Am).wav,A,C,3,1,gesture
+Strings Pizz,KSHMR String - Pizz - Cello Fifth (G).wav,G,G,0,0,
+Strings Pizz,KSHMR String - Pizz - Cello Pluck (A).wav,A,A,0,0,
+Strings Pizz,KSHMR String - Pizz - Cello Pop (D).wav,D,C#,1,0,
+Strings Pizz,KSHMR String - Pizz - Cello Snap (E).wav,E,E,0,0,
+Strings Pizz,KSHMR String - Pizz - Cello Twang (G).wav,G,G,0,0,
+Strings Pizz,KSHMR String - Pizz - Upright Bass Clean (E).wav,E,E,0,3,
+Strings Pizz,KSHMR String - Pizz - Violin Faded (G#).wav,G#,G#,0,0,
+Strings Slide,KSHMR String - Slide - Cello Dive High (Cm).wav,C,D,2,3,gesture
+Strings Slide,KSHMR String - Slide - Cello Dive Low (Cm).wav,C,D,2,0,gesture
+Strings Slide,KSHMR String - Slide - Cello Mindful (G).wav,G,F,2,0,gesture
+Strings Slide,KSHMR String - Slide - Cello Ponder (Cm).wav,C,A#,2,0,gesture
+Strings Slide,KSHMR String - Slide - Cello Wandering (D).wav,D,C,2,0,gesture
+Strings Slide,KSHMR String - Slide - Violin Sinking (D).wav,D,F#,4,0,gesture
+Strings Stab,KSHMR String - Stab - Cello Bark (C).wav,C,C,0,5,
+Strings Stab,KSHMR String - Stab - Cello Enemies (D).wav,D,D,0,2,
+Strings Stab,KSHMR String - Stab - Cello Sturdy (C).wav,C,C,0,0,
+Strings Stab,KSHMR String - Stab - Ensemble Power (C).wav,C,C,0,0,
+Strings Stab,KSHMR String - Stab - Ensemble Strike (F#).wav,F#,F#,0,3,
+Strings Stab,KSHMR String - Stab - Violin Staccato Bright (G#).wav,G#,G#,0,0,
+Strings Stab,KSHMR String - Stab - Violin Staccato Short (C).wav,C,C,0,1,
+Strings Sustain,KSHMR String - Sustain - Cello Long Hold (C).wav,C,C,0,5,
+Strings Sustain,KSHMR String - Sustain - Cello Long Swell (E).wav,E,E,0,0,
+Strings Sustain,KSHMR String - Sustain - Upright Bass Demons (Dm).wav,D,C#,1,3,
+Strings Sustain,KSHMR String - Sustain - Upright Bass Descend (D).wav,D,D,0,6,
+Strings Sustain,KSHMR String - Sustain - Violin Melo Swell (F#m).wav,F#,A,3,4,
+Strings Tremolo,KSHMR String - Tremolo - Cello Shake (Cm).wav,C,C,0,6,
+Strings Tremolo,KSHMR String - Tremolo - Violin Suspense (A).wav,A,A,0,0,
+Synth Bass Hit,KSHMR Bass Hit (C#) - Grind.wav,C#,C#,0,4,
+Synth Bass Hit,KSHMR Bass Hit (D) - Noisy Straight.wav,D,E,2,1,
+Synth Bass Hit,KSHMR Bass Hit (D) - Noisy Wow.wav,D,C,2,3,
+Synth Bass Hit,KSHMR Bass Hit (D) - Pusher.wav,D,D,0,0,
+Synth Bass Hit,KSHMR Bass Hit (E) - Chokehold.wav,E,F,1,0,
+Synth Bass Hit,KSHMR Bass Hit (E) - Claw.wav,E,E,0,1,
+Synth Bass Hit,KSHMR Bass Hit (E) - Core.wav,E,A,5,3,
+Synth Bass Hit,KSHMR Bass Hit (E) - Drag.wav,E,E,0,0,
+Synth Bass Hit,KSHMR Bass Hit (E) - Feedback.wav,E,D,2,5,
+Synth Bass Hit,KSHMR Bass Hit (F) - Flux.wav,F,F,0,2,
+Synth Bass Hit,KSHMR Bass Hit (F) - Gravity.wav,F,F#,1,0,
+Synth Bass Hit,KSHMR Bass Hit (F) - Grime Bigger.wav,F,F,0,0,
+Synth Bass Hit,KSHMR Bass Hit (F) - Grime.wav,F,F#,1,4,
+Synth Bass Hit,KSHMR Bass Hit (G) - Bedrock.wav,G,G,0,0,
+Synth Bass Pluck,KSHMR Bass Pluck (A) - Bounce.wav,A,G#,1,6,
+Synth Bass Pluck,KSHMR Bass Pluck (A) - Punch.wav,A,A,0,0,
+Synth Bass Pluck,KSHMR Bass Pluck (C) - Block.wav,C,C,0,0,
+Synth Bass Pluck,KSHMR Bass Pluck (C) - Brick.wav,C,C,0,0,
+Synth Bass Pluck,KSHMR Bass Pluck (C) - Crushed.wav,C,C,0,0,
+Synth Bass Pluck,KSHMR Bass Pluck (C) - Phase.wav,C,B,1,5,
+Synth Bass Pluck,KSHMR Bass Pluck (C) - Psy Seven.wav,C,C,0,2,
+Synth Bass Pluck,KSHMR Bass Pluck (C) - Psy Time.wav,C,C#,1,1,
+Synth Bass Pluck,KSHMR Bass Pluck (D#) - Anvil.wav,D#,C,3,4,
+Synth Bass Pluck,KSHMR Bass Pluck (D#) - Circuit.wav,D#,D#,0,0,
+Synth Bass Pluck,KSHMR Bass Pluck (D#) - Clutch.wav,D#,D#,0,4,
+Synth Bass Pluck,KSHMR Bass Pluck (D#) - Density.wav,D#,D#,0,0,
+Synth Bass Pluck,KSHMR Bass Pluck (D#) - Kinetic.wav,D#,D,1,0,
+Synth Bass Pluck,KSHMR Bass Pluck (D#) - Motor.wav,D#,D#,0,0,
+Synth Bass Pluck,KSHMR Bass Pluck (D) - Lock.wav,D,C#,1,0,
+Synth Bass Pluck,KSHMR Bass Pluck (E) - Grip.wav,E,E,0,0,
+Synth Bass Pluck,KSHMR Bass Pluck (E) - Shock.wav,E,D#,1,4,
+Synth Bass Pluck,KSHMR Bass Pluck (F#) - Alloy.wav,F#,F#,0,0,
+Synth Bass Pluck,KSHMR Bass Pluck (F#) - Matrix.wav,F#,F#,0,0,
+Synth Bass Pluck,KSHMR Bass Pluck (F#) - Piston.wav,F#,F,1,0,
+Synth Bass Scream,KSHMR Bass Scream (D) - Riot.wav,D,D,0,0,
+Synth Bass Scream,KSHMR Bass Scream (D) - Sludge.wav,D,E,2,0,
+Synth Bass Scream,KSHMR Bass Scream (D) - Uprising.wav,D,D,0,2,
+Synth Bass Scream,KSHMR Bass Scream (D) - Wrecker.wav,D,D,0,5,
+Synth Bass Scream,KSHMR Bass Scream (Dm) - Stank.wav,D,D,0,1,
+Synth Bass Scream,KSHMR Bass Scream (E) - Filth.wav,E,E,0,5,
+Synth Bass Scream,KSHMR Bass Scream (E) - Ripper.wav,E,E,0,5,
+Synth Bass Scream,KSHMR Bass Scream (F) - Burnt.wav,F,F#,1,4,
+Synth Bass Scream,KSHMR Bass Scream (Fm) - Amped.wav,F,F,0,5,
+Synth Bass Scream,KSHMR Bass Scream (G) - Voltage.wav,G,G,0,3,
+Synth Bass Scream,KSHMR Bass Scream (G) - Wallop.wav,G,G,0,3,
+Synth Bass Whomp,KSHMR Bass Whomp (C#) - Grave.wav,C#,C#,0,0,
+Synth Bass Whomp,KSHMR Bass Whomp (D#) - Burden.wav,D#,D#,0,0,
+Synth Bass Whomp,KSHMR Bass Whomp (D#) - Gutter.wav,D#,D#,0,0,
+Synth Bass Whomp,KSHMR Bass Whomp (D#) - Shade.wav,D#,D#,0,0,
+Synth Bass Whomp,KSHMR Bass Whomp (D#) - Sink.wav,D#,C,3,5,
+Synth Bass Whomp,KSHMR Bass Whomp (D) - Plunge.wav,D,D,0,0,gesture
+Synth Bass Whomp,KSHMR Bass Whomp (E) - Crawl.wav,E,E,0,4,
+Synth Bass Whomp,KSHMR Bass Whomp (E) - Crypt.wav,E,D#,1,1,
+Synth Bass Whomp,KSHMR Bass Whomp (E) - Grime.wav,E,E,0,0,
+Synth Bass Whomp,KSHMR Bass Whomp (E) - Hollow.wav,E,E,0,0,
+Synth Bass Whomp,KSHMR Bass Whomp (E) - Lurch.wav,E,E,0,2,
+Synth Bass Whomp,KSHMR Bass Whomp (E) - Murk.wav,E,B,5,1,
+Synth Bass Whomp,KSHMR Bass Whomp (E) - Scowl.wav,E,E,0,3,
+Synth Bass Whomp,KSHMR Bass Whomp (E) - Stagger.wav,E,E,0,0,
+Synth Bass Whomp,KSHMR Bass Whomp (F) - Blackout.wav,F,F,0,0,
+Synth Bass Whomp,KSHMR Bass Whomp (F) - Degrade.wav,F,F,0,2,
+Synth Bass Whomp,KSHMR Bass Whomp (Fm) - Eclipse.wav,F,D,3,3,
+Synth Bass Whomp,KSHMR Bass Whomp (Fm) - Midnight.wav,F,G,2,0,
+Synth Bass Whomp,KSHMR Bass Whomp (G) - Onyx.wav,G,G,0,0,
+Synth Bass Whomp,KSHMR Bass Whomp (G) - Pulse.wav,G,D#,4,4,
+Synth Energizer,KSHMR Energizer - Angel Dust (G).wav,G,F#,1,5,
+Synth Energizer,KSHMR Energizer - Blast (G#).wav,G#,A#,2,1,
+Synth Energizer,KSHMR Energizer - Code Red (E).wav,E,B,5,4,
+Synth Energizer,KSHMR Energizer - Corrosion (G).wav,G,G,0,0,
+Synth Energizer,KSHMR Energizer - Deep Rising (F).wav,F,E,1,1,
+Synth Energizer,KSHMR Energizer - Glitchin (F).wav,F,F,0,1,
+Synth Energizer,KSHMR Energizer - Golazo (A).wav,A,A,0,3,
+Synth Energizer,KSHMR Energizer - Hoover Grime (C).wav,C,D,2,1,
+Synth Energizer,KSHMR Energizer - Hoover Screech (G).wav,G,G#,1,2,
+Synth Energizer,KSHMR Energizer - Hoover Warp (E).wav,E,E,0,1,
+Synth Energizer,KSHMR Energizer - Insanity (D).wav,D,F#,4,0,
+Synth Energizer,KSHMR Energizer - Kombat Alarm (Fm).wav,F,A#,5,1,
+Synth Energizer,KSHMR Energizer - Lochness (G#).wav,G#,G#,0,0,
+Synth Energizer,KSHMR Energizer - Rave Nation (G#).wav,G#,G#,0,1,
+Synth Energizer,KSHMR Energizer - Roar (G).wav,G,F,2,1,
+Synth Energizer,KSHMR Energizer - Say Whaatt (G).wav,G,F,2,4,
+Synth Energizer,KSHMR Energizer - Scream (D).wav,D,D#,1,0,
+Synth Energizer,KSHMR Energizer - Throttle (D).wav,D,F#,4,2,
+Synth Energizer,KSHMR Energizer - Wiggler (F).wav,F,F,0,5,
+Synth Energizer,KSHMR Energizer - Wowza (D).wav,D,G#,6,5,
+Synth Energizer Angel Dust,KSHMR Energizer - Angel Dust (G) - Alt A.wav,G,F#,1,5,
+Synth Energizer Angel Dust,KSHMR Energizer - Angel Dust (G) - Alt B.wav,G,F#,1,6,
+Synth Pluck,KSHMR Pluck - Azure (C).wav,C,C,0,1,
+Synth Pluck,KSHMR Pluck - Belle (C).wav,C,C,0,0,
+Synth Pluck,KSHMR Pluck - Crimson (D).wav,D,D,0,0,
+Synth Pluck,KSHMR Pluck - Elysian (C).wav,C,B,1,1,
+Synth Pluck,KSHMR Pluck - Fuchsia (C).wav,C,C,0,0,
+Synth Pluck,KSHMR Pluck - Jab (C).wav,C,C,0,0,
+Synth Pluck,KSHMR Pluck - Jot (C).wav,C,C,0,0,
+Synth Pluck,KSHMR Pluck - Lilac (C).wav,C,C,0,1,
+Synth Pluck,KSHMR Pluck - Magenta (C).wav,C,C,0,5,
+Synth Pluck,KSHMR Pluck - Mauve (C).wav,C,C,0,0,
+Synth Pluck,KSHMR Pluck - Phonk Me (C).wav,C,C,0,5,
+Synth Pluck,KSHMR Pluck - Pinch (C).wav,C,C,0,0,
+Synth Pluck,KSHMR Pluck - Poke (C).wav,C,C,0,0,
+Synth Pluck,KSHMR Pluck - Quasar (C).wav,C,C,0,0,
+Synth Pluck,KSHMR Pluck - Sapphire (C).wav,C,C,0,0,
+Synth Pluck,KSHMR Pluck - Sienna (C).wav,C,C#,1,3,
+Synth Pluck,KSHMR Pluck - Tweak (C).wav,C,C,0,0,
+Synth Screech,KSHMR Screech (A#) - Crushed.wav,A#,G,3,4,gesture
+Synth Screech,KSHMR Screech (A#) - Quick.wav,A#,A,1,1,gesture
+Synth Screech,KSHMR Screech (A) - Fury.wav,A,A,0,3,gesture
+Synth Screech,KSHMR Screech (C) - Havoc.wav,C,C,0,1,gesture
+Synth Screech,KSHMR Screech (D) - Call.wav,D,C,2,4,gesture
+Synth Screech,KSHMR Screech (D) - Mayhem.wav,D,D#,1,3,gesture
+Synth Screech,KSHMR Screech (E) - Flag.wav,E,E,0,1,gesture
+Synth Screech,KSHMR Screech (E) - Signal.wav,E,D#,1,2,gesture
+Synth Screech,KSHMR Screech (F#) - Swell.wav,F#,C,6,5,gesture
+Synth Screech,KSHMR Screech (F) - Blitz.wav,F,F,0,1,gesture
+Synth Screech,KSHMR Screech (G#) - Spark.wav,G#,E,4,3,gesture
+Synth Screech,KSHMR Screech (G) - Blaze.wav,G,C#,6,2,gesture
+Synth Screech,KSHMR Screech (G) - Burst.wav,G,G#,1,3,gesture
+Synth Screech,KSHMR Screech (G) - Catalyst.wav,G,F#,1,2,gesture
+Synth Screech,KSHMR Screech (G) - Multi.wav,G,F,2,3,gesture
+Synth Screech,KSHMR Screech (G) - Talking.wav,G,A,2,5,gesture
+Synth Stab,KSHMR Orchestral Brass Stab (C) - Orchestral Power.wav,C,C,0,1,
+Synth Stab Brass,KSHMR Stab - Brass (C) - Fanfare.wav,C,C,0,0,
+Synth Stab Brass,KSHMR Stab - Brass (D) - Elephant.wav,D,D,0,3,
+Synth Stab Brass,KSHMR Stab - Brass (D) - Overkill.wav,D,D,0,0,
+Synth Stab Brass,KSHMR Stab - Brass (E) - Colossus.wav,E,D,2,4,
+Synth Stab Brass,KSHMR Stab - Brass (F#) - Oracle.wav,F#,F#,0,0,
+Synth Stab Brass,KSHMR Stab - Brass (F) - Bram Like.wav,F,F,0,1,
+Synth Stab Brass,KSHMR Stab - Brass (F) - Crusader.wav,F,F,0,1,
+Synth Stab Brass,KSHMR Stab - Brass (F) - Hallowed.wav,F,E,1,1,
+Synth Stab Choir,KSHMR Stab - Choir (C#) - Voices.wav,C#,F#,5,4,
+Synth Stab Choir,KSHMR Stab - Choir (C) - Killa.wav,C,F,5,4,
+Synth Stab Choir,KSHMR Stab - Choir (D) - Blood Choir.wav,D,D,0,3,
+Synth Stab Choir,KSHMR Stab - Choir (Fm) - Divinity.wav,F,F,0,2,
+Synth Stab Orchestral,KSHMR Stab - Orchestral (B) - Dusty.wav,B,B,0,0,
+Synth Stab Orchestral,KSHMR Stab - Orchestral (C) - Triumph.wav,C,C#,1,3,
+Synth Stab Orchestral,KSHMR Stab - Orchestral (Cm) - Sovereign.wav,C,C,0,3,
+Synth Stab Orchestral,KSHMR Stab - Orchestral (D) - Vintage.wav,D,D,0,0,
+Synth Stab Orchestral,KSHMR Stab - Orchestral (E) - Regal.wav,E,E,0,0,
+Synth Stab Rave,KSHMR Stab - Rave (A#) - Aggressor.wav,A#,A#,0,0,
+Synth Stab Rave,KSHMR Stab - Rave (A) - Batter.wav,A,E,5,3,
+Synth Stab Rave,KSHMR Stab - Rave (A) - Grungy.wav,A,A,0,4,
+Synth Stab Rave,KSHMR Stab - Rave (B) - Emerald.wav,B,B,0,5,
+Synth Stab Rave,KSHMR Stab - Rave (C) - Burst.wav,C,D#,3,3,
+Synth Stab Rave,KSHMR Stab - Rave (C) - Nudge.wav,C,F#,6,1,
+Synth Stab Rave,KSHMR Stab - Rave (C) - Venom.wav,C,A#,2,3,
+Synth Stab Rave,KSHMR Stab - Rave (Cm) - Pretty.wav,C,D#,3,3,
+Synth Stab Rave,KSHMR Stab - Rave (D) - Reduce.wav,D,A#,4,2,
+Synth Stab Rave,KSHMR Stab - Rave (E) - Quick Shot.wav,E,E,0,1,
+Synth Stab Rave,KSHMR Stab - Rave (F) - Lunar.wav,F,F,0,5,
+Synth Stab Rave,KSHMR Stab - Rave (F) - Squawk.wav,F,B,6,2,
+Synth Stab Rave,KSHMR Stab - Rave (Fm) - Flicker.wav,F,C,5,4,
+Synth Stab Rave,KSHMR Stab - Rave (G#) - Thriller.wav,G#,G,1,5,
+Synth Stab Rave,KSHMR Stab - Rave (G) - Bali.wav,G,G,0,4,
+Synth Stab Rave,KSHMR Stab - Rave (G) - Deep Monster.wav,G,D,5,4,
+Synth Stab Rave,KSHMR Stab - Rave (G) - Slash.wav,G,A#,3,2,
+Synth Stab Synth,KSHMR Stab - Synth (A) - Ripper.wav,A,A#,1,3,
+Synth Stab Synth,KSHMR Stab - Synth (D#) - Charge.wav,D#,D#,0,6,
+Synth Stab Synth,KSHMR Stab - Synth (D) - Deep.wav,D,D,0,4,
+Synth Stab Synth,KSHMR Stab - Synth (D) - Voltage.wav,D,D,0,0,
+Synth Stab Synth,KSHMR Stab - Synth (E) - Blade.wav,E,E,0,5,
+Synth Stab Synth,KSHMR Stab - Synth (E) - Rave.wav,E,E,0,5,
+Synth Stab Synth,KSHMR Stab - Synth (E) - Solid.wav,E,G#,4,4,
+Synth Stab Synth,KSHMR Stab - Synth (E) - Super.wav,E,E,0,0,
+Synth Stab Synth,KSHMR Stab - Synth (E) - Vanguard.wav,E,E,0,0,
+Synth Stab Synth,KSHMR Stab - Synth (F#) - Sabotage.wav,F#,F#,0,5,
+Synth Stab Synth,KSHMR Stab - Synth (F#) - Singularity.wav,F#,F#,0,0,
+Synth Stab Synth,KSHMR Stab - Synth (F#) - Snarepoint.wav,F#,F#,0,1,
+Synth Stab Synth,KSHMR Stab - Synth (F#) - Thunder.wav,F#,C#,5,4,
+Synth Stab Synth,KSHMR Stab - Synth (F#) - Warehouse.wav,F#,F#,0,6,
+Synth Stab Synth,KSHMR Stab - Synth (F) - Afterburn.wav,F,F,0,1,
+Synth Stab Synth,KSHMR Stab - Synth (F) - Aggro.wav,F,A#,5,5,
+Synth Stab Synth,KSHMR Stab - Synth (F) - Big Room.wav,F,F,0,1,
+Synth Stab Synth,KSHMR Stab - Synth (F) - Dominion.wav,F,F,0,6,
+Synth Stab Synth,KSHMR Stab - Synth (F) - Grimace.wav,F,F,0,4,
+Synth Stab Synth,KSHMR Stab - Synth (F) - Outlaw.wav,F,F,0,0,
+Synth Stab Synth,KSHMR Stab - Synth (F) - Requiem.wav,F,F,0,1,
+Synth Stab Synth,KSHMR Stab - Synth (G) - Breakout.wav,G,F#,1,4,
+Trumpet Ambient FX,KSHMR Trumpet - Ambient FX - Drift (Am).wav,A,A#,1,0,gesture
+Trumpet Ambient FX,KSHMR Trumpet - Ambient FX - Ghost (D).wav,D,A,5,5,gesture
+Trumpet Ambient FX,KSHMR Trumpet - Ambient FX - Haze (A).wav,A,A,0,0,gesture
+Trumpet Ambient FX,KSHMR Trumpet - Ambient FX - Mist (Am).wav,A,C,3,3,gesture
+Trumpet Ambient FX,KSHMR Trumpet - Ambient FX - Snarl (A).wav,A,A,0,0,gesture
+Trumpet Crescendo Growl,KSHMR Trumpet - Crescendo Growl - Beast (B).wav,B,B,0,0,gesture
+Trumpet Crescendo Growl,KSHMR Trumpet - Crescendo Growl - Dive (A).wav,A,A,0,0,gesture
+Trumpet Crescendo Growl,KSHMR Trumpet - Crescendo Growl - Drop (D).wav,D,D,0,1,gesture
+Trumpet Crescendo Growl,KSHMR Trumpet - Crescendo Growl - Plunge (C).wav,C,C,0,0,gesture
+Trumpet Crescendo Growl,KSHMR Trumpet - Crescendo Growl - Roar (A#).wav,A#,A#,0,0,gesture
+Trumpet Fall,KSHMR Trumpet - Fall - Swoop (B).wav,B,F#,5,5,gesture
+Trumpet Rip,KSHMR Trumpet - Rip - Tear (C).wav,C,C,0,0,
+Trumpet Run Up,KSHMR Trumpet - Run Up - Zippy (A#m).wav,A#,A#,0,4,gesture
+Trumpet Staccato,KSHMR Trumpet - Staccato - Jab (B).wav,B,B,0,1,
+Trumpet Staccato,KSHMR Trumpet - Staccato - Pop (C).wav,C,C,0,0,
+Trumpet Staccato,KSHMR Trumpet - Staccato - Punch (A).wav,A,A,0,0,
+Trumpet Staccato,KSHMR Trumpet - Staccato - Snap (D).wav,D,D,0,0,
+Trumpet Sustain,KSHMR Trumpet - Sustain - Glory (G).wav,G,G,0,0,
+Trumpet Sustain,KSHMR Trumpet - Sustain - Hold (C).wav,C,C,0,0,
+Trumpet Sustain,KSHMR Trumpet - Sustain - Shine (E).wav,E,E,0,0,
+Winds,KSHMR Whistle One Shot (C#) - Bright.wav,C#,D,1,1,gesture
+Winds,KSHMR Whistle One Shot (C) - Celebrate.wav,C,D#,3,5,gesture
+Winds,KSHMR Whistle One Shot (C) - Curious.wav,C,A,3,3,gesture
+Winds,KSHMR Whistle One Shot (C) - Descent.wav,C,D,2,5,gesture
+Winds,KSHMR Whistle One Shot (C) - Moment.wav,C,E,4,3,gesture
+Winds,KSHMR Whistle One Shot (C) - Referee Long.wav,C,F,5,5,gesture
+Winds,KSHMR Whistle One Shot (C) - Referee.wav,C,D#,3,5,gesture
+Winds,KSHMR Whistle One Shot (C) - Solo.wav,C,A#,2,5,gesture
+Winds,KSHMR Whistle One Shot (D#) - Hand Ocarina.wav,D#,D,1,1,gesture
+Winds,KSHMR Whistle One Shot (E) - Train.wav,E,F#,2,3,gesture
