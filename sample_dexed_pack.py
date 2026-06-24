@@ -390,6 +390,25 @@ def midi_to_note_name(midi_num):
     return f"{notes[midi_num % 12]}{octave}"
 
 
+def trim_and_fade(
+    audio: np.ndarray,
+    sr: int,
+    silence_thresh: float = 0.0005,
+    fade_out_ms: float = 30.0,
+) -> np.ndarray:
+    envelope = np.max(np.abs(audio), axis=1)
+    nonsilent = np.where(envelope > silence_thresh)[0]
+    if len(nonsilent) == 0:
+        return audio
+    start = max(0, nonsilent[0] - int(0.002 * sr))
+    audio = audio[start:]
+    fade_samples = int(fade_out_ms / 1000 * sr)
+    fade_samples = min(fade_samples, len(audio))
+    fade_curve = np.linspace(1.0, 0.0, fade_samples) ** 2
+    audio[-fade_samples:] *= fade_curve[:, np.newaxis]
+    return audio
+
+
 def postprocess(audio: np.ndarray, sr: int, slot: int = 0) -> np.ndarray:
     if audio.ndim == 1:
         audio = np.column_stack((audio, audio))
@@ -408,47 +427,83 @@ def postprocess(audio: np.ndarray, sr: int, slot: int = 0) -> np.ndarray:
             Pedalboard,
             HighShelfFilter,
             LowShelfFilter,
+            PeakFilter,
             Compressor,
         )
 
         if group == "bass":
             fx = [
                 LowShelfFilter(cutoff_frequency_hz=60, gain_db=2.0),
+                PeakFilter(cutoff_frequency_hz=3200, gain_db=-2.5, q=1.4),
                 HighShelfFilter(cutoff_frequency_hz=6000, gain_db=-3.0),
             ]
+            comp = Compressor(
+                threshold_db=-12.0, ratio=2.5, attack_ms=8.0, release_ms=120.0
+            )
         elif group == "brass":
-            fx = [HighShelfFilter(cutoff_frequency_hz=5000, gain_db=2.5)]
+            fx = [
+                PeakFilter(cutoff_frequency_hz=3200, gain_db=-2.5, q=1.4),
+                HighShelfFilter(cutoff_frequency_hz=5000, gain_db=2.5),
+            ]
+            comp = Compressor(
+                threshold_db=-12.0, ratio=2.5, attack_ms=8.0, release_ms=120.0
+            )
         elif group == "strings":
             fx = [
+                PeakFilter(cutoff_frequency_hz=3200, gain_db=-2.5, q=1.4),
                 HighShelfFilter(cutoff_frequency_hz=7000, gain_db=1.0),
                 LowShelfFilter(cutoff_frequency_hz=100, gain_db=-2.0),
             ]
+            comp = Compressor(
+                threshold_db=-14.0, ratio=2.0, attack_ms=40.0, release_ms=300.0
+            )
+        elif group == "pad":
+            fx = [
+                PeakFilter(cutoff_frequency_hz=3200, gain_db=-2.5, q=1.4),
+                HighShelfFilter(cutoff_frequency_hz=8000, gain_db=1.5),
+            ]
+            comp = Compressor(
+                threshold_db=-14.0, ratio=2.0, attack_ms=40.0, release_ms=300.0
+            )
+        elif group in ("piano", "chromatic", "guitar"):
+            fx = [
+                PeakFilter(cutoff_frequency_hz=3200, gain_db=-2.5, q=1.4),
+                HighShelfFilter(cutoff_frequency_hz=8000, gain_db=1.5),
+            ]
+            comp = Compressor(
+                threshold_db=-10.0, ratio=3.0, attack_ms=4.0, release_ms=80.0
+            )
         else:
-            fx = [HighShelfFilter(cutoff_frequency_hz=8000, gain_db=1.5)]
+            fx = [
+                PeakFilter(cutoff_frequency_hz=3200, gain_db=-2.5, q=1.4),
+                HighShelfFilter(cutoff_frequency_hz=8000, gain_db=1.5),
+            ]
+            comp = Compressor(
+                threshold_db=-12.0, ratio=2.5, attack_ms=8.0, release_ms=120.0
+            )
 
-        fx.append(
-            Compressor(threshold_db=-12.0, ratio=2.5, attack_ms=8.0, release_ms=120.0)
-        )
+        fx.append(comp)
         board = Pedalboard(fx)
         processed = board(audio.T, sr).T
     except Exception as e:
         print(f"  [postprocess skipped: {e}]")
         processed = audio
 
+    processed = trim_and_fade(processed, sr)
     return normalize_lufs(processed, sr)
 
 
 def normalize_lufs(
     audio: np.ndarray, sr: int, target_lufs: float = TARGET_LUFS
 ) -> np.ndarray:
-    if not HAS_PYLOUDNORM:
+    if not HAS_PYLOUDNORM or len(audio) / sr <= 0.5:
         peak = float(np.max(np.abs(audio)))
         if peak > 1e-6:
             audio = audio * (0.85 / peak)
         return audio
     meter = pyln.Meter(sr)
     loudness = meter.integrated_loudness(audio).item()
-    if not np.isinf(loudness):
+    if not np.isinf(loudness) and not np.isnan(loudness):
         audio = pyln.normalize.loudness(audio, loudness, target_lufs)
     peak = float(np.max(np.abs(audio)))
     if peak > 0.95:
@@ -541,19 +596,6 @@ def main():
                     audio = audio.T
                 rendered[(n_idx, v_idx)] = audio
 
-        # Silent fallback: borrow nearest audible note
-        for v_idx in range(len(VELOCITIES)):
-            silent = [
-                i
-                for i in range(len(NOTES_TO_SAMPLE))
-                if float(np.max(np.abs(rendered[(i, v_idx)]))) < 0.001
-            ]
-            audible = [i for i in range(len(NOTES_TO_SAMPLE)) if i not in silent]
-            if silent and audible:
-                for sidx in silent:
-                    donor = min(audible, key=lambda j: abs(j - sidx))
-                    rendered[(sidx, v_idx)] = rendered[(donor, v_idx)]
-
         # Post-process all rendered buffers
         for key in list(rendered.keys()):
             rendered[key] = postprocess(rendered[key], SAMPLE_RATE, slot=slot)
@@ -585,6 +627,17 @@ def main():
             else:
                 kept.append(i)
             i = run_end + 1
+
+        dropped = set()
+        for v_idx in range(len(VELOCITIES)):
+            for i in range(len(NOTES_TO_SAMPLE)):
+                if float(np.max(np.abs(rendered[(i, v_idx)]))) < 0.001:
+                    dropped.add(i)
+                    print(
+                        f"  ~ drop silent note {midi_to_note_name(NOTES_TO_SAMPLE[i])}"
+                    )
+
+        kept = [i for i in kept if i not in dropped]
 
         # Write individual SFZ
         indiv_path = os.path.join(instruments_dir, f"gm_{slot:03d}_{inst_name}.sfz")

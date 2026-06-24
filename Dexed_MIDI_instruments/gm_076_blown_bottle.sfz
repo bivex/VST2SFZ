@@ -4,8 +4,10 @@ default_path=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/
 
 <group>
 prg_num=76
-<region> sample=gm_076_C2_v64.wav pitch_keycenter=21 lokey=0 hikey=48 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=gm_076_C2_v127.wav pitch_keycenter=21 lokey=0 hikey=48 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=gm_076_C1_v64.wav pitch_keycenter=20 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=gm_076_C1_v127.wav pitch_keycenter=20 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=gm_076_C2_v64.wav pitch_keycenter=21 lokey=31 hikey=48 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=gm_076_C2_v127.wav pitch_keycenter=21 lokey=31 hikey=48 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=gm_076_C4_v64.wav pitch_keycenter=33 lokey=49 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=gm_076_C4_v127.wav pitch_keycenter=33 lokey=49 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=gm_076_C5_v64.wav pitch_keycenter=39 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
