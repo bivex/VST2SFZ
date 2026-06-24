@@ -410,6 +410,13 @@ def trim_and_fade(
 
 
 def postprocess(audio: np.ndarray, sr: int, slot: int = 0) -> np.ndarray:
+    """Shape one rendered buffer: subsonic HPF + per-group EQ/comp + trim/fade.
+
+    Loudness normalisation is intentionally NOT done here. Normalising each
+    buffer independently to the same LUFS target flattens the velocity layers
+    (v64 and v127 collapse to identical loudness, killing dynamics). Normalise
+    the whole instrument as a set instead (see normalize_instrument_set).
+    """
     if audio.ndim == 1:
         audio = np.column_stack((audio, audio))
     elif audio.ndim == 2:
@@ -425,14 +432,26 @@ def postprocess(audio: np.ndarray, sr: int, slot: int = 0) -> np.ndarray:
     try:
         from pedalboard import (  # type: ignore
             Pedalboard,
+            HighpassFilter,
             HighShelfFilter,
             LowShelfFilter,
             PeakFilter,
             Compressor,
         )
 
+        # Subsonic high-pass FIRST. FM synthesis produces sub-fundamental
+        # garbage (measured: 58% of C1's energy sat on the 16 Hz subharmonic,
+        # half the 32.7 Hz fundamental). It is inaudible but eats headroom and
+        # corrupts the LUFS measurement. A 30 Hz HPF cascaded twice (~24 dB/oct)
+        # removes it while leaving the lowest real fundamental (C1 = 32.7 Hz)
+        # intact. Bass group uses a slightly lower 26 Hz corner to fully
+        # preserve low-string/bass fundamentals.
+        hp_hz = 26.0 if group == "bass" else 30.0
+        fx = [HighpassFilter(cutoff_frequency_hz=hp_hz),
+              HighpassFilter(cutoff_frequency_hz=hp_hz)]
+
         if group == "bass":
-            fx = [
+            fx += [
                 LowShelfFilter(cutoff_frequency_hz=60, gain_db=2.0),
                 PeakFilter(cutoff_frequency_hz=3200, gain_db=-2.5, q=1.4),
                 HighShelfFilter(cutoff_frequency_hz=6000, gain_db=-3.0),
@@ -441,7 +460,7 @@ def postprocess(audio: np.ndarray, sr: int, slot: int = 0) -> np.ndarray:
                 threshold_db=-12.0, ratio=2.5, attack_ms=8.0, release_ms=120.0
             )
         elif group == "brass":
-            fx = [
+            fx += [
                 PeakFilter(cutoff_frequency_hz=3200, gain_db=-2.5, q=1.4),
                 HighShelfFilter(cutoff_frequency_hz=5000, gain_db=2.5),
             ]
@@ -449,7 +468,7 @@ def postprocess(audio: np.ndarray, sr: int, slot: int = 0) -> np.ndarray:
                 threshold_db=-12.0, ratio=2.5, attack_ms=8.0, release_ms=120.0
             )
         elif group == "strings":
-            fx = [
+            fx += [
                 PeakFilter(cutoff_frequency_hz=3200, gain_db=-2.5, q=1.4),
                 HighShelfFilter(cutoff_frequency_hz=7000, gain_db=1.0),
                 LowShelfFilter(cutoff_frequency_hz=100, gain_db=-2.0),
@@ -458,7 +477,7 @@ def postprocess(audio: np.ndarray, sr: int, slot: int = 0) -> np.ndarray:
                 threshold_db=-14.0, ratio=2.0, attack_ms=40.0, release_ms=300.0
             )
         elif group == "pad":
-            fx = [
+            fx += [
                 PeakFilter(cutoff_frequency_hz=3200, gain_db=-2.5, q=1.4),
                 HighShelfFilter(cutoff_frequency_hz=8000, gain_db=1.5),
             ]
@@ -466,7 +485,7 @@ def postprocess(audio: np.ndarray, sr: int, slot: int = 0) -> np.ndarray:
                 threshold_db=-14.0, ratio=2.0, attack_ms=40.0, release_ms=300.0
             )
         elif group in ("piano", "chromatic", "guitar"):
-            fx = [
+            fx += [
                 PeakFilter(cutoff_frequency_hz=3200, gain_db=-2.5, q=1.4),
                 HighShelfFilter(cutoff_frequency_hz=8000, gain_db=1.5),
             ]
@@ -474,7 +493,7 @@ def postprocess(audio: np.ndarray, sr: int, slot: int = 0) -> np.ndarray:
                 threshold_db=-10.0, ratio=3.0, attack_ms=4.0, release_ms=80.0
             )
         else:
-            fx = [
+            fx += [
                 PeakFilter(cutoff_frequency_hz=3200, gain_db=-2.5, q=1.4),
                 HighShelfFilter(cutoff_frequency_hz=8000, gain_db=1.5),
             ]
@@ -489,13 +508,68 @@ def postprocess(audio: np.ndarray, sr: int, slot: int = 0) -> np.ndarray:
         print(f"  [postprocess skipped: {e}]")
         processed = audio
 
-    processed = trim_and_fade(processed, sr)
-    return normalize_lufs(processed, sr)
+    return trim_and_fade(processed, sr)
+
+
+def normalize_instrument_set(
+    rendered: dict, sr: int, target_lufs: float = TARGET_LUFS, peak_ceiling: float = 0.89
+) -> None:
+    """Loudness-normalise a whole instrument's buffers with ONE shared gain.
+
+    rendered: {(note_idx, vel_idx): np.ndarray}. A single gain (measured on the
+    loudest velocity layer, v_idx==1) is applied to every buffer. This anchors
+    each instrument to the target loudness for cross-instrument balance WHILE
+    preserving the natural velocity dynamics (v64 stays quieter than v127) and
+    key-tracking balance baked in by the synth. A final shared peak guard keeps
+    true levels under the ceiling without re-touching relative balance.
+
+    Mutates rendered in place.
+    """
+    keys = list(rendered.keys())
+    if not keys:
+        return
+
+    # Reference loudness: concatenate the loud (v127) layer across all notes so
+    # the measurement represents the instrument's playing level, not one note.
+    ref_buffers = [rendered[k] for k in keys if k[1] == 1]
+    if not ref_buffers:
+        ref_buffers = [rendered[k] for k in keys]
+    ref = np.concatenate(ref_buffers, axis=0)
+
+    gain = 1.0
+    if HAS_PYLOUDNORM and len(ref) / sr > 0.5:
+        meter = pyln.Meter(sr)
+        loudness = meter.integrated_loudness(ref).item()
+        if not np.isinf(loudness) and not np.isnan(loudness):
+            gain = 10.0 ** ((target_lufs - loudness) / 20.0)
+    else:
+        # Fallback: peak-anchor the reference layer.
+        peak = float(np.max(np.abs(ref))) if ref.size else 0.0
+        if peak > 1e-6:
+            gain = 0.85 / peak
+
+    # Apply the shared gain, then find the global post-gain peak and pull the
+    # WHOLE set down uniformly if it would exceed the ceiling (preserves the
+    # inter-layer and inter-note balance exactly).
+    global_peak = 0.0
+    for k in keys:
+        rendered[k] = rendered[k] * gain
+        p = float(np.max(np.abs(rendered[k]))) if rendered[k].size else 0.0
+        global_peak = max(global_peak, p)
+    if global_peak > peak_ceiling:
+        trim = peak_ceiling / global_peak
+        for k in keys:
+            rendered[k] = rendered[k] * trim
 
 
 def normalize_lufs(
     audio: np.ndarray, sr: int, target_lufs: float = TARGET_LUFS
 ) -> np.ndarray:
+    """Single-buffer LUFS normaliser (kept for callers that need it).
+
+    NOTE: do NOT use this to normalise velocity layers independently — it
+    flattens velocity dynamics. Use normalize_instrument_set for sample packs.
+    """
     if not HAS_PYLOUDNORM or len(audio) / sr <= 0.5:
         peak = float(np.max(np.abs(audio)))
         if peak > 1e-6:
@@ -596,9 +670,14 @@ def main():
                     audio = audio.T
                 rendered[(n_idx, v_idx)] = audio
 
-        # Post-process all rendered buffers
+        # Post-process all rendered buffers (subsonic HPF + EQ/comp + trim/fade)
         for key in list(rendered.keys()):
             rendered[key] = postprocess(rendered[key], SAMPLE_RATE, slot=slot)
+
+        # Loudness-normalise the instrument as a SET: one shared gain anchored
+        # on the loud (v127) layer. Preserves velocity dynamics (v64 < v127)
+        # and key balance while aligning instruments to the target loudness.
+        normalize_instrument_set(rendered, SAMPLE_RATE)
 
         # Pitch detection on v127 layer
         note_pitches = {}
