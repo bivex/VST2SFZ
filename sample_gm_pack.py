@@ -63,7 +63,7 @@ def build_preset_mapping(factory_dir):
          20: 'Keys/House Organ.fxp',            # Reed Organ
          21: 'Keys/Circus 1.fxp',               # Accordion
          22: 'Keys/Circus 2.fxp',               # Harmonica
-         23: 'Keys/Circus 1.fxp',               # Tango Accordion (Fixed: Rhodes EP -> Accordion)
+         23: 'Leads/Butter.fxp',               # Tango Accordion (Fixed: Circus 1 dup with prog 21 -> Butter sustained lead)
         # 24-31: Guitars
          24: 'Plucks/Guitar.fxp',               # Acoustic Guitar Nylon
          25: 'Plucks/Magical Guitar.fxp',       # Acoustic Guitar Steel
@@ -112,7 +112,7 @@ def build_preset_mapping(factory_dir):
         # 64-71: Reed
          64: 'Winds/Tragic Winds.fxp',          # Soprano Sax
          65: 'Winds/Fake Ethno.fxp',            # Alto Sax
-         66: 'Winds/Clarinet.fxp',              # Tenor Sax (Fixed: Shanai FM -> Clarinet, brighter reed-like)
+         66: 'MPE/Baritonosaurus Saxus.fxp',     # Tenor Sax (Fixed: Shanai FM -> Baritonosaurus, real sax-like)
          67: 'Winds/Low.fxp',                   # Baritone Sax
          68: 'Leads/Violini Solo.fxp',          # Oboe
          69: 'Winds/Flute 1.fxp',               # English Horn
@@ -120,11 +120,11 @@ def build_preset_mapping(factory_dir):
          71: 'Winds/Clarinet.fxp',              # Clarinet
         # 72-79: Pipe
          72: 'Winds/Dreamy Flute.fxp',          # Piccolo
-         73: 'Winds/Cyber Flute.fxp',           # Flute
-         74: 'Leads/Sine Lead.fxp',             # Recorder
+         73: 'Winds/Cyber Flute.fxp',          # Flute (was Tragic Winds dup with prog 64)
+         74: 'Plucks/Soft Space Oboe Pops.fxp', # Recorder (Fixed: Flute 2 dup -> Soft Space Oboe, breathy sustained)
          75: 'Leads/Talky 1 MW.fxp',            # Pan Flute
          76: 'Pads/Formants MW.fxp',            # Blown Bottle
-         77: 'Leads/Talky 2 MW.fxp',            # Shakuhachi
+         77: 'Leads/Smoothness World Cup.fxp',  # Shakuhachi (Fixed: Talky 2 -> Smoothness, pure sustained flute tone)
          78: 'Leads/Vocal Lead.fxp',            # Whistle
          79: 'Leads/Formant Pulse.fxp',         # Ocarina
         # 80-87: Synth Lead
