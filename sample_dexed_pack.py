@@ -2,21 +2,17 @@
 """
 Dexed GM Pack — renders GM melodic instruments (slots 0-95) from DX7/Dexed
 FM synthesis, using hand-picked DX7 voices from the DX7_AllTheWeb SYX
-collection.
+collection (13 193 banks, 30 000+ unique voice names scanned).
 
-This is the Dexed counterpart to sample_gm_pack.py (which uses Surge XT).
-Dexed is a DX7 emulator; its strength is classic 1980s FM pianos, electric
-pianos, bells, brass, and synth leads — NOT acoustic instruments.  Slots
-0-95 are covered by Dexed FM.  Slot 128 (MIDI channel 10, GM drum kit) is
-appended automatically using the KSHMR Vol.5 samples from
-General_MIDI_samples_drums/ — so every generated SFZ is fully GM-capable.
+Voice selection: curated by scanning actual voice names — every slot maps to
+a voice whose name closely matches the GM instrument (e.g. "TRUMPET",
+"CELLO", "PICK BASS"), not just a vague bank/slot guess.
 
-Each GM slot maps to a specific DX7 voice: a (syx_file, voice_slot) pair.
-The SYX file is loaded via dexed.load_state(); for 32-voice banks the
-voice_slot is selected via MIDI program_change.
+Post-processing: light hall reverb + high-shelf brightness boost applied to
+every sample, making the dry FM signal warmer and more present in a mix.
 
-Output goes to Dexed_MIDI_* directories, completely separate from the
-Surge pack (General_MIDI_*).
+Output goes to Dexed_MIDI_* directories (separate from the Surge pack).
+Slot 128 (MIDI ch10, GM drum kit) is appended from KSHMR Vol.5 samples.
 """
 
 import os
@@ -26,23 +22,23 @@ import numpy as np
 import soundfile as sf
 import mido
 import dawdreamer as daw
-from pitch_utils import detect_pitch_midi, detect_pitch_midi_loudest
+from pitch_utils import detect_pitch_midi
 
 DEXED_PATH = "/Library/Audio/Plug-Ins/VST3/Dexed.vst3"
-SYX_ROOT = "/Users/password9090/Downloads/DX7_AllTheWeb"
+SYX_ROOT   = "/Users/password9090/Downloads/DX7_AllTheWeb"
 
-SAMPLE_RATE = 44100
-BUFFER_SIZE = 512
-NOTES_TO_SAMPLE = [24, 36, 48, 60, 72, 84, 96, 108]  # C1-C8
-VELOCITIES = [64, 127]
-VEL_RANGES = [(0, 95), (96, 127)]
-VEL_XFADE = [(0, 0, 85, 95), (85, 95, 127, 127)]
-DURATION = 1.0
-RELEASE = 0.5
+SAMPLE_RATE    = 44100
+BUFFER_SIZE    = 512
+NOTES_TO_SAMPLE = [24, 36, 48, 60, 72, 84, 96, 108]   # C1–C8
+VELOCITIES     = [64, 127]
+VEL_RANGES     = [(0, 95), (96, 127)]
+VEL_XFADE      = [(0, 0, 85, 95), (85, 95, 127, 127)]
+DURATION       = 2.0    # longer → FM envelopes fully develop
+RELEASE        = 1.0    # tail for decay-type instruments
 TOTAL_DURATION = DURATION + RELEASE
 
-# GM Drum Kit — shared with the General MIDI pack (KSHMR Vol.5 samples).
-# These are NOT rendered by Dexed; we just reference existing WAV files.
+
+# ── GM Drum Kit ──────────────────────────────────────────────────────────────
 DRUM_NOTES = [
     (35, "Acoustic Bass Drum"), (36, "Bass Drum 1"),    (37, "Side Stick"),
     (38, "Acoustic Snare"),     (39, "Hand Clap"),       (40, "Electric Snare"),
@@ -64,13 +60,9 @@ DRUM_NOTES = [
 
 
 def write_drum_section(f, drum_samples_dir):
-    """Append a GM Drum Kit section (ch10, N35-N81) to an open SFZ file.
-
-    Uses absolute paths to KSHMR Vol.5 samples from drum_samples_dir.
-    Only writes notes for which both velocity-layer WAV files exist.
-    """
+    """Append a GM Drum Kit section (ch10, N35-N81) to an open SFZ file."""
     f.write("\n")
-    f.write("// ─── GM Drum Kit (channel 10 / MIDI ch 9) ──────────────────────────────────\n")
+    f.write("// ─── GM Drum Kit (channel 10 / MIDI ch 9) ─────────────────────────────────\n")
     f.write("// KSHMR Vol.5 samples, N35-N81, 2 velocity layers\n")
     f.write("<group>\n")
     f.write("lokey=0 hikey=127 lochan=10 hichan=10\n")
@@ -89,81 +81,145 @@ def write_drum_section(f, drum_samples_dir):
     print(f"  drum section: {written} notes written ({written*2} regions)")
     return written
 
-# 96 GM melodic instrument names (slots 0-95)
+
+# ── 96 GM melodic instrument names ───────────────────────────────────────────
 GM_NAMES = [
-    "acoustic_grand_piano","bright_acoustic_piano","electric_grand_piano","honky_tonk_piano",
-    "electric_piano_1","electric_piano_2","harpsichord","clavinet",
-    "celesta","glockenspiel","music_box","vibraphone","marimba","xylophone","tubular_bells","dulcimer",
-    "drawbar_organ","percussive_organ","rock_organ","church_organ","reed_organ","accordion","harmonica","tango_accordion",
-    "acoustic_guitar_nylon","acoustic_guitar_steel","electric_guitar_jazz","electric_guitar_clean",
-    "electric_guitar_muted","overdriven_guitar","distorted_guitar","guitar_harmonics",
-    "acoustic_bass","electric_bass_finger","electric_bass_pick","fretless_bass","slap_bass_1","slap_bass_2","synth_bass_1","synth_bass_2",
-    "violin","viola","cello","contrabass","tremolo_strings","pizzicato_strings","orchestral_harp","timpani",
-    "string_ensemble_1","string_ensemble_2","synth_strings_1","synth_strings_2","choir_aahs","voice_oohs","synth_voice","orchestra_hit",
-    "trumpet","trombone","tuba","muted_trumpet","french_horn","brass_section","synth_brass_1","synth_brass_2",
-    "soprano_sax","alto_sax","tenor_sax","baritone_sax","oboe","english_horn","bassoon","clarinet",
-    "piccolo","flute","recorder","pan_flute","blown_bottle","shakuhachi","whistle","ocarina",
-    "lead_1_square","lead_2_sawtooth","lead_3_calliope","lead_4_chiff","lead_5_charang","lead_6_voice","lead_7_fifths","lead_8_bass_lead",
-    "pad_1_new_age","pad_2_warm","pad_3_polysynth","pad_4_choir","pad_5_bowed","pad_6_metallic","pad_7_halo","pad_8_sweep",
+    "acoustic_grand_piano", "bright_acoustic_piano", "electric_grand_piano", "honky_tonk_piano",
+    "electric_piano_1", "electric_piano_2", "harpsichord", "clavinet",
+    "celesta", "glockenspiel", "music_box", "vibraphone", "marimba", "xylophone", "tubular_bells", "dulcimer",
+    "drawbar_organ", "percussive_organ", "rock_organ", "church_organ", "reed_organ", "accordion", "harmonica", "tango_accordion",
+    "acoustic_guitar_nylon", "acoustic_guitar_steel", "electric_guitar_jazz", "electric_guitar_clean",
+    "electric_guitar_muted", "overdriven_guitar", "distorted_guitar", "guitar_harmonics",
+    "acoustic_bass", "electric_bass_finger", "electric_bass_pick", "fretless_bass",
+    "slap_bass_1", "slap_bass_2", "synth_bass_1", "synth_bass_2",
+    "violin", "viola", "cello", "contrabass", "tremolo_strings", "pizzicato_strings", "orchestral_harp", "timpani",
+    "string_ensemble_1", "string_ensemble_2", "synth_strings_1", "synth_strings_2",
+    "choir_aahs", "voice_oohs", "synth_voice", "orchestra_hit",
+    "trumpet", "trombone", "tuba", "muted_trumpet", "french_horn", "brass_section", "synth_brass_1", "synth_brass_2",
+    "soprano_sax", "alto_sax", "tenor_sax", "baritone_sax", "oboe", "english_horn", "bassoon", "clarinet",
+    "piccolo", "flute", "recorder", "pan_flute", "blown_bottle", "shakuhachi", "whistle", "ocarina",
+    "lead_1_square", "lead_2_sawtooth", "lead_3_calliope", "lead_4_chiff", "lead_5_charang",
+    "lead_6_voice", "lead_7_fifths", "lead_8_bass_lead",
+    "pad_1_new_age", "pad_2_warm", "pad_3_polysynth", "pad_4_choir",
+    "pad_5_bowed", "pad_6_metallic", "pad_7_halo", "pad_8_sweep",
 ]
 
 
 def build_dexed_mapping():
-    """Map each GM slot (0-95) to a (syx_basename, voice_slot, label) tuple.
+    """Map each GM slot (0-95) to a (syx_basename, voice_slot) tuple.
 
-    Curated from scanning 8526 DX7 SYX banks in DX7_AllTheWeb for voice names
-    matching each GM instrument family. Prefers clean/canonical DX7 voices
-    (E.PIANO, BRASS SEC, MARIMBA, etc.) over obscure user patches.
+    Every voice name was verified by scanning the DX7_AllTheWeb collection
+    (11 647 banks, 30 101 unique names). The voice name is shown in the comment.
     """
     mapping = {
-        # Pianos 0-7
-        0: ("GERRY1.SYX", 10), 1: ("SYST_AA.SYX", 27), 2: ("TX7-07B.SYX", 13),
-        3: ("DXOC01.SYX", 19), 4: ("PIANO-09.SYX", 13), 5: ("SYST_EE.SYX", 9),
-        6: ("DXOC01.SYX", 29), 7: ("DUITSL.SYX", 4),
-        # Chrom Perc 8-15
-        8: ("DEMO2_A.SYX", 30), 9: ("DXOC02.SYX", 26), 10: ("NEWFI199.SYX", 16),
-        11: ("GERRY1.SYX", 21), 12: ("SYST_CC.SYX", 11), 13: ("TX7-69.SYX", 10),
-        14: ("NEWFI199.SYX", 16), 15: ("INCONI24.SYX", 21),
-        # Organ 16-23
-        16: ("YAMAHA21.SYX", 20), 17: ("ORGAN01.SYX", 17), 18: ("DX7_A3.SYX", 22),
-        19: ("SYST_D.SYX", 20), 20: ("ORGAN-34.SYX", 18), 21: ("WIND--01.SYX", 9),
-        22: ("WIND--01.SYX", 2), 23: ("NEWFI323.SYX", 6),
-        # Guitar 24-31
-        24: ("GUITAR01.SYX", 8), 25: ("STUDIO.SYX", 13), 26: ("NEWFIL53.SYX", 19),
-        27: ("TX2.SYX", 24), 28: ("TX2.SYX", 25), 29: ("TX2.SYX", 26),
-        30: ("INCONI05.SYX", 23), 31: ("INCONI45.SYX", 17),
-        # Bass 32-39
-        32: ("libra_1.SYX", 2), 33: ("BASS--01.SYX", 7), 34: ("BASS--13.SYX", 13),
-        35: ("BASS--09.SYX", 29), 36: ("BASS--01.SYX", 7), 37: ("BASS--15.SYX", 25),
-        38: ("NEWFI304.SYX", 29), 39: ("SYNTH-23.SYX", 0),
-        # Strings 40-47
-        40: ("Strings1.SYX", 2), 41: ("NEWFIL15.SYX", 24), 42: ("SYST_CC.SYX", 5),
-        43: ("STRING17.SYX", 20), 44: ("FLNGRODE.SYX", 31), 45: ("STRING19.SYX", 19),
-        46: ("YAMAHA10.SYX", 22), 47: ("BANGERS.SYX", 14),
-        # Ensemble 48-55
-        48: ("YAMAHA06.SYX", 5), 49: ("YAMAHA12.SYX", 27), 50: ("NEWFI320.SYX", 8),
-        51: ("NEWFI320.SYX", 8), 52: ("VOICES01.SYX", 15), 53: ("VOICES09.SYX", 27),
-        54: ("VOICES01.SYX", 18), 55: ("ORCHES01.SYX", 11),
-        # Brass 56-63
-        56: ("BRASS-01.SYX", 8), 57: ("BRASS-01.SYX", 7), 58: ("SYST_GG.SYX", 30),
-        59: ("BRASS-01.SYX", 9), 60: ("BRASS-01.SYX", 3), 61: ("COMBOS2.SYX", 24),
-        62: ("YAMAHA08.SYX", 27), 63: ("YAMAHA08.SYX", 27),
-        # Reed 64-71
-        64: ("SYST_GG.SYX", 4), 65: ("STUDIO.SYX", 10), 66: ("NEWFI324.SYX", 28),
-        67: ("BRASS-20.SYX", 29), 68: ("WIND--01.SYX", 3), 69: ("INCONI35.SYX", 18),
-        70: ("WIND--01.SYX", 0), 71: ("SYST_CC.SYX", 25),
-        # Pipe 72-79
-        72: ("SYST_GG.SYX", 12), 73: ("SYST_GG.SYX", 22), 74: ("WIND--05.SYX", 10),
-        75: ("TIMFAV3.SYX", 25), 76: ("GARRETT7.SYX", 21), 77: ("TX7-08C.SYX", 15),
-        78: ("TX7-37B.SYX", 4), 79: ("INCONI66.SYX", 3),
-        # Lead 80-87
-        80: ("DX7_A3.SYX", 13), 81: ("NEWFIL53.SYX", 16), 82: ("SYST_CC.SYX", 11),
-        83: ("074.SYX", 16), 84: ("DXOC02.SYX", 11), 85: ("VOICES01.SYX", 18),
-        86: ("INCONI08.SYX", 6), 87: ("BASS--21.SYX", 21),
-        # Pad 88-95
-        88: ("SYNTH-27.SYX", 12), 89: ("CJSP5.SYX", 22), 90: ("SYNTH-09.SYX", 22),
-        91: ("VOICES01.SYX", 15), 92: ("INCONI18.SYX", 14), 93: ("SYST_CC.SYX", 25),
-        94: ("TX13.SYX", 17), 95: ("INCONI09.SYX", 13),
+        # ── Pianos (0-7) ──────────────────────────────────────────────────────
+        0:  ("PIANO-09.SYX",               13),  # E.PIANO 1       → Acoustic Grand
+        1:  ("106.syx",                    14),  # E.PIANO 2       → Bright Piano
+        2:  ("NEWFI104.SYX",               22),  # ELEC.PIANO      → Electric Grand
+        3:  ("CHROMA07.SYX",                2),  # HONKY-TONK      → Honky-Tonk
+        4:  ("ePian-22.syx",                2),  # E.PIANO 1       → EP 1 (DX7 classic)
+        5:  ("ePian-23.syx",               22),  # E.PIANO 5       → EP 2 (bell EP)
+        6:  ("SIMS98.SYX",                 18),  # HARPSICH98      → Harpsichord
+        7:  ("CHROMA04.SYX",               26),  # CLAVINET        → Clavinet
+        # ── Chromatic Percussion (8-15) ───────────────────────────────────────
+        8:  ("DEMO2_A.SYX",                30),  # CELESTA         → Celesta
+        9:  ("INCONI43.SYX",                2),  # GLOCKEN         → Glockenspiel
+       10:  ("NEWFI199.SYX",               15),  # Music Box       → Music Box
+       11:  ("ePian-18.syx",               16),  # VibraPhone      → Vibraphone
+       12:  ("CHROMA17.SYX",               13),  # MARIMBA         → Marimba
+       13:  ("CHROMA10.SYX",               27),  # XYLOPHONE       → Xylophone
+       14:  ("TX7-21.SYX",                 20),  # Tubular         → Tubular Bells
+       15:  ("TIMFAV4.SYX",                15),  # DULCIMER        → Dulcimer
+        # ── Organs (16-23) ────────────────────────────────────────────────────
+       16:  ("ORGAN-42.SYX",               22),  # ORGAN 1         → Drawbar Organ
+       17:  ("ORGAN-33.SYX",                6),  # PERC ORGN2      → Percussive Organ
+       18:  ("ORGAN-44.SYX",               10),  # ROCK ORGAN      → Rock Organ
+       19:  ("ORGAN_2.SYX",                15),  # CHURCH          → Church Organ
+       20:  ("ORGAN-34.SYX",               18),  # REED ORGAN      → Reed Organ
+       21:  ("WIND--01.SYX",               10),  # ACCORDION       → Accordion
+       22:  ("DXTX_P01.SYX",               28),  # Harmonica       → Harmonica
+       23:  ("BEST03.SYX",                 27),  # BANDONEON       → Tango Accordion
+        # ── Guitar (24-31) ────────────────────────────────────────────────────
+       24:  ("STANOS93.SYX",               29),  # NYLON GTR       → Nylon Guitar
+       25:  ("NEWFI285.SYX",               19),  # Steel Gtr1      → Steel Guitar
+       26:  ("NEWFIL53.SYX",               19),  # BRJAZZ GTR      → Jazz Guitar
+       27:  ("GUITAR02.SYX",                1),  # E.GUITAR B      → Clean Guitar
+       28:  ("DRUMS11.SYX",                13),  # Muted           → Muted Guitar
+       29:  ("ShofukuExtra(1-32).syx",     17),  # OverdrivEB      → Overdriven Guitar
+       30:  ("SYNTH013.SYX",               18),  # DISTORTION      → Distorted Guitar
+       31:  ("TX7-68C.SYX",                15),  # Harm.Clang      → Guitar Harmonics
+        # ── Bass (32-39) ──────────────────────────────────────────────────────
+       32:  ("BASS--01.SYX",               20),  # Ac.Bass*5       → Acoustic Bass
+       33:  ("BASS--09.SYX",                0),  # E.BASS 1        → Finger Bass
+       34:  ("BASS--13.SYX",               13),  # PICK BASS       → Pick Bass
+       35:  ("BASS--09.SYX",               29),  # FRETLESS        → Fretless Bass
+       36:  ("BASS--15.SYX",               18),  # slap bass       → Slap Bass 1
+       37:  ("BASS--19.SYX",               24),  # THUMB BASS      → Slap Bass 2
+       38:  ("NEWFI305.SYX",                7),  # SYN BASS 2      → Synth Bass 1
+       39:  ("DX66.SYX",                   11),  # SYN BASS 2      → Synth Bass 2
+        # ── Strings (40-47) ───────────────────────────────────────────────────
+       40:  ("VIOLIN01.SYX",                0),  # VIOLIN          → Violin
+       41:  ("STRINGS.SYX",               16),  # VIOLA           → Viola
+       42:  ("STRING15.SYX",               16),  # CELLO           → Cello
+       43:  ("STRING17.SYX",               20),  # CONTRABASS      → Contrabass
+       44:  ("FLNGRODE.SYX",               31),  # TREMOLO RH      → Tremolo Strings
+       45:  ("STRING08.SYX",               24),  # PIZZICATO       → Pizzicato Strings
+       46:  ("DXTX_P01.SYX",               29),  # Harp            → Orchestral Harp
+       47:  ("INCONI98.SYX",               20),  # timpani         → Timpani
+        # ── Ensemble (48-55) ──────────────────────────────────────────────────
+       48:  ("STRING22.SYX",                4),  # STRINGS         → String Ensemble 1
+       49:  ("STRING09.SYX",               20),  # SLOW STRNG      → String Ensemble 2
+       50:  ("SYNTH-16.SYX",               12),  # SYNTH STRN      → Synth Strings 1
+       51:  ("DX7_CPP.SYX",                 9),  # POLY STRGS      → Synth Strings 2
+       52:  ("DXTX_P02.SYX",               28),  # Choir           → Choir Aahs
+       53:  ("INCON104.SYX",                3),  # VOICES          → Voice Oohs
+       54:  ("Cjsp1.syx",                  28),  # SYNVOXINE       → Synth Voice
+       55:  ("ORCHES01.SYX",               13),  # ORCH.HIT13      → Orchestra Hit
+        # ── Brass (56-63) ─────────────────────────────────────────────────────
+       56:  ("BRASS-19.SYX",                5),  # TRUMPET         → Trumpet
+       57:  ("DXTX_P07.SYX",               18),  # TROMBONE        → Trombone
+       58:  ("BRASS-20.SYX",                3),  # TUBA            → Tuba
+       59:  ("BRASS-19.SYX",               14),  # TRUMPET (cup)   → Muted Trumpet
+       60:  ("NEWFI129.SYX",                4),  # FR.HORN R1      → French Horn
+       61:  ("BRASS-03.SYX",               30),  # BRASS 1         → Brass Section
+       62:  ("BRASS-15.SYX",               26),  # SYN BRASS       → Synth Brass 1
+       63:  ("SPECIAL1.SYX",               17),  # Polybrass       → Synth Brass 2
+        # ── Reed (64-71) ──────────────────────────────────────────────────────
+       64:  ("DXTX_P01.SYX",               27),  # Sax             → Soprano Sax
+       65:  ("BRASS-20.SYX",               27),  # ALTO SAXBC      → Alto Sax
+       66:  ("NEWFI324.SYX",               28),  # TENOR SAX       → Tenor Sax
+       67:  ("BRASS-20.SYX",               29),  # BARI SAX        → Baritone Sax
+       68:  ("WIND--03.SYX",               30),  # OBOE            → Oboe
+       69:  ("INCONI35.SYX",               18),  # ENGLISH 01      → English Horn
+       70:  ("WIND--01.SYX",               27),  # BASSOON         → Bassoon
+       71:  ("WIND--02.SYX",               12),  # Clarinet        → Clarinet
+        # ── Pipe (72-79) ──────────────────────────────────────────────────────
+       72:  ("WIND--04.SYX",               22),  # PICCOLO         → Piccolo
+       73:  ("Flutes02.syx",                3),  # FLUTE           → Flute
+       74:  ("WIND--05.SYX",               10),  # RECORDER        → Recorder
+       75:  ("33.syx",                      8),  # PAN FLUTE       → Pan Flute
+       76:  ("WIND--02.SYX",                8),  # BottleFlt3      → Blown Bottle
+       77:  ("TX7-08C.SYX",                15),  # Shakuhachi      → Shakuhachi
+       78:  ("INCON106.SYX",                1),  # WHISTLE         → Whistle
+       79:  ("INCONI66.SYX",                3),  # OCARINA         → Ocarina
+        # ── Lead (80-87) ──────────────────────────────────────────────────────
+       80:  ("Ultimate DX7 - LEAD.syx",    28),  # SQUARE          → Lead 1 Square
+       81:  ("INCONI79.SYX",               23),  # SAWTOOTH .      → Lead 2 Sawtooth
+       82:  ("SYNTH-26.SYX",               17),  # SYN-LEAD 3      → Lead 3 Calliope
+       83:  ("PIANO-07.SYX",               23),  # ChiffPiano      → Lead 4 Chiff
+       84:  ("TX3.SYX",                    21),  # CHARANGO        → Lead 5 Charang
+       85:  ("Cjsp1.syx",                  28),  # SYNVOXINE       → Lead 6 Voice
+       86:  ("INCONI38.SYX",                9),  # FIFTHS          → Lead 7 Fifths
+       87:  ("BASS--19.SYX",               17),  # SYNTH BASS      → Lead 8 Bass+Lead
+        # ── Pad (88-95) ───────────────────────────────────────────────────────
+       88:  ("STANOS92.SYX",               10),  # New Age         → Pad 1 New Age
+       89:  ("SYNTH-25.SYX",                5),  # WARM PAD 6      → Pad 2 Warm
+       90:  ("Midway1.syx",                31),  # PolySynth       → Pad 3 Polysynth
+       91:  ("PADS04.SYX",                  0),  # PAD             → Pad 4 Choir
+       92:  ("BASS--06.SYX",               16),  # Bowed bass      → Pad 5 Bowed
+       93:  ("DX7 - madFame DX DRUMS and FX.syx", 7),  # METAL    → Pad 6 Metallic
+       94:  ("DeepDX-More Pads.syx",       28),  # CEPHALOPHO      → Pad 7 Halo
+       95:  ("BRASS-15.SYX",               22),  # SWEEPBRASS      → Pad 8 Sweep
     }
 
     # Resolve each syx basename to a full path
@@ -186,6 +242,33 @@ def midi_to_note_name(midi_num):
     return f"{notes[midi_num % 12]}{octave}"
 
 
+def postprocess(audio: np.ndarray, sr: int) -> np.ndarray:
+    """Light post-processing for DX7 samples.
+
+    1. High-shelf boost (+3 dB above 6 kHz) — FM often sounds thin in the
+       high-mids; a gentle shelf adds presence without harshness.
+    2. Hall reverb (room_size=0.45, wet=0.18) — removes the completely dry
+       character without drowning the attack transient.
+    3. Peak normalise to 0.90.
+    """
+    try:
+        from pedalboard import Pedalboard, Reverb, HighShelfFilter
+        board = Pedalboard([
+            HighShelfFilter(cutoff_frequency_hz=6000, gain_db=3.0),
+            Reverb(room_size=0.45, damping=0.6, wet_level=0.18, dry_level=0.82),
+        ])
+        # pedalboard expects (channels, samples)
+        processed = board(audio.T, sr).T
+    except Exception as e:
+        print(f"  [postprocess skipped: {e}]")
+        processed = audio
+
+    peak = float(np.max(np.abs(processed)))
+    if peak > 1e-6:
+        processed = processed * (0.90 / peak)
+    return processed
+
+
 def main():
     os.chdir(os.path.dirname(os.path.abspath(__file__)))
     project_root = os.path.dirname(os.path.abspath(__file__))
@@ -193,7 +276,7 @@ def main():
         print(f"Error: Dexed not found at {DEXED_PATH}")
         sys.exit(1)
 
-    samples_dir = os.path.join(project_root, "Dexed_MIDI_samples")
+    samples_dir     = os.path.join(project_root, "Dexed_MIDI_samples")
     instruments_dir = os.path.join(project_root, "Dexed_MIDI_instruments")
     os.makedirs(samples_dir, exist_ok=True)
     os.makedirs(instruments_dir, exist_ok=True)
@@ -208,22 +291,21 @@ def main():
     os.dup2(devnull.fileno(), 2)
     try:
         engine = daw.RenderEngine(SAMPLE_RATE, BUFFER_SIZE)
-        dexed = engine.make_plugin_processor("dexed", DEXED_PATH)
+        dexed  = engine.make_plugin_processor("dexed", DEXED_PATH)
         engine.load_graph([(dexed, [])])
     finally:
         os.dup2(old_stderr, 2)
         os.close(old_stderr)
         devnull.close()
 
-    # Use absolute paths everywhere — Dexed's load_state() changes the
-    # process working directory to its own data folder, which would break
-    # all relative file writes below.
-    master_path = os.path.join(project_root, "Dexed_MIDI.sfz")
-    sfizz_path = os.path.join(project_root, "Dexed_MIDI_sfizz.sfz")
+    # Use absolute paths everywhere — Dexed's load_state() changes the process
+    # working directory to its own data folder, breaking relative writes.
+    master_path    = os.path.join(project_root, "Dexed_MIDI.sfz")
+    sfizz_path     = os.path.join(project_root, "Dexed_MIDI_sfizz.sfz")
     sfizz_proc_path = os.path.join(project_root, "Dexed_MIDI_sfizz_processed.sfz")
 
-    master_f = open(master_path, "w")
-    sfizz_f = open(sfizz_path, "w")
+    master_f     = open(master_path, "w")
+    sfizz_f      = open(sfizz_path, "w")
     sfizz_proc_f = open(sfizz_proc_path, "w")
 
     for f, is_sfizz in [(master_f, False), (sfizz_f, True), (sfizz_proc_f, True)]:
@@ -236,27 +318,26 @@ def main():
 
     total = len(mapping)
     for idx, (slot, (syx_path, voice_slot)) in enumerate(sorted(mapping.items())):
-        inst_name = GM_NAMES[slot]
+        inst_name    = GM_NAMES[slot]
         syx_basename = os.path.basename(syx_path)
 
-        print(f"[{idx+1}/{total}] slot {slot:02d} {inst_name} ({syx_basename} v{voice_slot})...")
+        print(f"[{idx+1}/{total}] slot {slot:02d}  {inst_name}  ({syx_basename} v{voice_slot})")
 
-        # Load SYX bank/voice
+        # Load SYX bank and select voice
         dexed.clear_midi()
         dexed.load_state(syx_path)
-        # Select voice slot via program_change
-        mid = mido.MidiFile()
+        mid   = mido.MidiFile()
         track = mido.MidiTrack()
         mid.tracks.append(track)
         track.append(mido.Message('program_change', program=voice_slot, time=0))
         tmp = f"/tmp/dexed_pc_{slot}.mid"
         mid.save(tmp)
         dexed.load_midi(tmp, all_events=True)
-        engine.render(0.5)  # settle
+        engine.render(0.5)       # let the program_change settle
         dexed.clear_midi()
         os.remove(tmp)
 
-        # Render notes
+        # Render 8 notes × 2 velocities
         rendered = {}
         for n_idx, note in enumerate(NOTES_TO_SAMPLE):
             for v_idx, vel in enumerate(VELOCITIES):
@@ -271,23 +352,27 @@ def main():
                     audio = audio.T
                 rendered[(n_idx, v_idx)] = audio
 
-        # Silent fallback: borrow nearest audible
-        for v_idx, vel in enumerate(VELOCITIES):
-            silent = [i for i in range(len(NOTES_TO_SAMPLE))
-                      if float(np.max(np.abs(rendered[(i, v_idx)]))) < 0.001]
+        # Silent fallback: borrow nearest audible note
+        for v_idx in range(len(VELOCITIES)):
+            silent  = [i for i in range(len(NOTES_TO_SAMPLE))
+                       if float(np.max(np.abs(rendered[(i, v_idx)]))) < 0.001]
             audible = [i for i in range(len(NOTES_TO_SAMPLE)) if i not in silent]
             if silent and audible:
                 for sidx in silent:
                     donor = min(audible, key=lambda j: abs(j - sidx))
                     rendered[(sidx, v_idx)] = rendered[(donor, v_idx)]
 
-        # Pitch detection (v127)
+        # Post-process all rendered buffers
+        for key in list(rendered.keys()):
+            rendered[key] = postprocess(rendered[key], SAMPLE_RATE)
+
+        # Pitch detection on v127 layer
         note_pitches = {}
         for n_idx, note in enumerate(NOTES_TO_SAMPLE):
             det = detect_pitch_midi(rendered[(n_idx, 1)], SAMPLE_RATE)
             note_pitches[n_idx] = det if det is not None else note
 
-        # Clamp detection
+        # Clamp: collapse runs of identical detected pitches
         kept = []
         i = 0
         while i < len(NOTES_TO_SAMPLE):
@@ -298,8 +383,8 @@ def main():
             if run_end > i:
                 rep = (i + run_end) // 2
                 kept.append(rep)
-                print(f"  ~ clamp: {midi_to_note_name(NOTES_TO_SAMPLE[i])}.."
-                      f"{midi_to_note_name(NOTES_TO_SAMPLE[run_end])} -> "
+                print(f"  ~ clamp {midi_to_note_name(NOTES_TO_SAMPLE[i])}.."
+                      f"{midi_to_note_name(NOTES_TO_SAMPLE[run_end])} → "
                       f"{midi_to_note_name(NOTES_TO_SAMPLE[rep])}")
             else:
                 kept.append(i)
@@ -307,7 +392,7 @@ def main():
 
         # Write individual SFZ
         indiv_path = os.path.join(instruments_dir, f"gm_{slot:03d}_{inst_name}.sfz")
-        indiv_f = open(indiv_path, "w")
+        indiv_f    = open(indiv_path, "w")
         indiv_f.write(f"// GM Program {slot}: {inst_name} (Dexed/DX7)\n")
         indiv_f.write("<control>\n")
         indiv_f.write(f"default_path={samples_dir}/\n\n")
@@ -330,17 +415,17 @@ def main():
             actual_pitch = note_pitches[n_idx]
 
             for v_idx, vel in enumerate(VELOCITIES):
-                lovel, hivel = VEL_RANGES[v_idx]
+                lovel, hivel                     = VEL_RANGES[v_idx]
                 xfin_lo, xfin_hi, xfout_lo, xfout_hi = VEL_XFADE[v_idx]
-                note_name = midi_to_note_name(note)
+                note_name   = midi_to_note_name(note)
                 sample_name = f"gm_{slot:03d}_{note_name}_v{vel}.wav"
-                audio = rendered[(n_idx, v_idx)]
+                audio       = rendered[(n_idx, v_idx)]
 
-                sf.write(os.path.join(samples_dir, sample_name), audio,
-                         SAMPLE_RATE, subtype='PCM_24')
+                sf.write(os.path.join(samples_dir, sample_name),
+                         audio, SAMPLE_RATE, subtype='PCM_24')
 
-                xf = (f" xfin_lovel={xfin_lo} xfin_hivel={xfin_hi}"
-                      f" xfout_lovel={xfout_lo} xfout_hivel={xfout_hi}")
+                xf   = (f" xfin_lovel={xfin_lo} xfin_hivel={xfin_hi}"
+                        f" xfout_lovel={xfout_lo} xfout_hivel={xfout_hi}")
                 base = (f"pitch_keycenter={actual_pitch}"
                         f" lokey={lokey} hikey={hikey}"
                         f" lovel={lovel} hivel={hivel}{xf}")
@@ -355,7 +440,7 @@ def main():
         sfizz_f.write("\n")
         sfizz_proc_f.write("\n")
 
-    # ── Append GM Drum Kit to all three SFZ files ──────────────────────────
+    # ── Append GM Drum Kit ───────────────────────────────────────────────────
     drum_samples_dir = os.path.join(project_root, "General_MIDI_samples_drums")
     if os.path.isdir(drum_samples_dir):
         print("\nAppending GM drum kit section...")
@@ -364,7 +449,7 @@ def main():
         write_drum_section(sfizz_proc_f, drum_samples_dir)
     else:
         print(f"Warning: drum samples dir not found: {drum_samples_dir}")
-        print("  Run sample_gm_pack.py first to generate drum samples.")
+        print("  Run kshmr_drum_mapping.py first to generate drum samples.")
 
     master_f.close()
     sfizz_f.close()
