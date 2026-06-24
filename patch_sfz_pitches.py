@@ -2,16 +2,25 @@
 """
 Multiprocessed pitch correction tool for General MIDI SFZ packs.
 
-Analyzes raw WAV samples in parallel using the loudest-peak method
-(detect_pitch_midi_loudest from pitch_utils), and patches pitch_keycenter
-opcodes in all target SFZ files in-place.
+Analyzes raw WAV samples in parallel using the SAME pitch detector that
+sample_gm_pack.py uses at render time (detect_pitch_midi — the validated
+lowest-peak algorithm), and patches pitch_keycenter opcodes in all target
+SFZ files in-place.
 
-Why loudest-peak here (not validated lowest-peak)?
-  Raw samples were stored BEFORE transpose compensation.  The dominant
-  spectral energy is the perceived pitch of the preset — possibly many
-  octaves from the filename note.  The loudest peak captures that correctly
-  (88.7% agreement with keycenters sample_gm_pack.py computed at render
-  time, vs 56% for lowest-peak on the same raw files).
+Why lowest-peak (NOT loudest-peak) here?
+  sample_gm_pack.py writes pitch_keycenter from detect_pitch_midi (lowest)
+  at render time. For SFZ correctness, the value this tool patches MUST
+  match what sample_gm_pack produced, otherwise the two scripts overwrite
+  each other and pitch_keycenter appears to "fluctuate" between runs
+  depending on which one ran last.
+
+  The lowest-peak detector was benchmarked as the most accurate of the four
+  candidate methods (lowest 75.1% vs loudest 57.2% vs HPS 47.4% vs ACF 35.7%
+  on 963 real samples) — see samples_pitch.md §6 for the full comparison.
+
+  The v64→v127 alignment logic below is still valuable: it keeps both
+  velocity layers of a note on the same pitch_keycenter so sfizz's
+  crossfade stays pitch-consistent.
 """
 
 import os
@@ -21,7 +30,7 @@ import argparse
 import numpy as np
 import soundfile as sf
 from concurrent.futures import ProcessPoolExecutor
-from pitch_utils import detect_pitch_midi_loudest as detect_pitch_midi
+from pitch_utils import detect_pitch_midi
 
 # Default paths
 DEFAULT_RAW_DIR = "/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw"
@@ -32,7 +41,8 @@ DEFAULT_SFZ_FILES = [
 ]
 
 
-# detect_pitch_midi is imported from pitch_utils (validated lowest-peak algorithm)
+# detect_pitch_midi is imported from pitch_utils (validated lowest-peak algorithm,
+# matching sample_gm_pack.py — see module docstring for why this matters).
 
 
 def process_single_file(path):
