@@ -116,14 +116,14 @@ def build_dexed_mapping():
         0:  ("PIANO-09.SYX",               13),  # E.PIANO 1       → Acoustic Grand
         1:  ("106.syx",                    14),  # E.PIANO 2       → Bright Piano
         2:  ("NEWFI104.SYX",               22),  # ELEC.PIANO      → Electric Grand
-        3:  ("CHROMA07.SYX",                2),  # HONKY-TONK      → Honky-Tonk
+        3:  ("PIANO-10.SYX",                17),  # HONKY-TONK      → Honky-Tonk
         4:  ("ePian-22.syx",                2),  # E.PIANO 1       → EP 1 (DX7 classic)
         5:  ("ePian-23.syx",               22),  # E.PIANO 5       → EP 2 (bell EP)
         6:  ("SIMS98.SYX",                 18),  # HARPSICH98      → Harpsichord
-        7:  ("CHROMA04.SYX",               26),  # CLAVINET        → Clavinet
+        7:  ("CLAV08.SYX",               0),  # CLAVINET        → Clavinet
         # ── Chromatic Percussion (8-15) ───────────────────────────────────────
         8:  ("DEMO2_A.SYX",                30),  # CELESTA         → Celesta
-        9:  ("INCONI43.SYX",                2),  # GLOCKEN         → Glockenspiel
+        9:  ("PERCDANZ.SYX",                22),  # GLOCKEN         → Glockenspiel
        10:  ("NEWFI199.SYX",               15),  # Music Box       → Music Box
        11:  ("ePian-18.syx",               16),  # VibraPhone      → Vibraphone
        12:  ("CHROMA17.SYX",               13),  # MARIMBA         → Marimba
@@ -161,13 +161,13 @@ def build_dexed_mapping():
        40:  ("VIOLIN01.SYX",                0),  # VIOLIN          → Violin
        41:  ("STRINGS.SYX",               16),  # VIOLA           → Viola
        42:  ("STRING15.SYX",               16),  # CELLO           → Cello
-       43:  ("STRING17.SYX",               20),  # CONTRABASS      → Contrabass
+       43:  ("DX7_A6.SYX",               9),  # CONTRABASS      → Contrabass
        44:  ("FLNGRODE.SYX",               31),  # TREMOLO RH      → Tremolo Strings
        45:  ("STRING08.SYX",               24),  # PIZZICATO       → Pizzicato Strings
        46:  ("DXTX_P01.SYX",               29),  # Harp            → Orchestral Harp
        47:  ("INCONI98.SYX",               20),  # timpani         → Timpani
         # ── Ensemble (48-55) ──────────────────────────────────────────────────
-       48:  ("STRING22.SYX",                4),  # STRINGS         → String Ensemble 1
+       48:  ("STRING05.SYX",                5),  # STRINGS         → String Ensemble 1
        49:  ("STRING09.SYX",               20),  # SLOW STRNG      → String Ensemble 2
        50:  ("SYNTH-16.SYX",               12),  # SYNTH STRN      → Synth Strings 1
        51:  ("DX7_CPP.SYX",                 9),  # POLY STRGS      → Synth Strings 2
@@ -176,14 +176,14 @@ def build_dexed_mapping():
        54:  ("Cjsp1.syx",                  28),  # SYNVOXINE       → Synth Voice
        55:  ("ORCHES01.SYX",               13),  # ORCH.HIT13      → Orchestra Hit
         # ── Brass (56-63) ─────────────────────────────────────────────────────
-       56:  ("BRASS-19.SYX",                5),  # TRUMPET         → Trumpet
+       56:  ("BRASS-02.SYX",                23),  # TRUMPET         → Trumpet
        57:  ("DXTX_P07.SYX",               18),  # TROMBONE        → Trombone
        58:  ("BRASS-20.SYX",                3),  # TUBA            → Tuba
        59:  ("BRASS-19.SYX",               14),  # TRUMPET (cup)   → Muted Trumpet
-       60:  ("NEWFI129.SYX",                4),  # FR.HORN R1      → French Horn
+       60:  ("BRASS-09.SYX",                9),  # FR.HORN R1      → French Horn
        61:  ("BRASS-03.SYX",               30),  # BRASS 1         → Brass Section
-       62:  ("BRASS-15.SYX",               26),  # SYN BRASS       → Synth Brass 1
-       63:  ("SPECIAL1.SYX",               17),  # Polybrass       → Synth Brass 2
+       62:  ("SYNTH-22.SYX",               4),  # SYN BRASS       → Synth Brass 1
+       63:  ("BRASS-10.SYX",               15),  # Polybrass       → Synth Brass 2
         # ── Reed (64-71) ──────────────────────────────────────────────────────
        64:  ("DXTX_P01.SYX",               27),  # Sax             → Soprano Sax
        65:  ("BRASS-20.SYX",               27),  # ALTO SAXBC      → Alto Sax
@@ -198,14 +198,14 @@ def build_dexed_mapping():
        73:  ("Flutes02.syx",                3),  # FLUTE           → Flute
        74:  ("WIND--05.SYX",               10),  # RECORDER        → Recorder
        75:  ("33.syx",                      8),  # PAN FLUTE       → Pan Flute
-       76:  ("WIND--02.SYX",                8),  # BottleFlt3      → Blown Bottle
+       76:  ("INCONI60.SYX",                21),  # BottleFlt3      → Blown Bottle
        77:  ("TX7-08C.SYX",                15),  # Shakuhachi      → Shakuhachi
        78:  ("INCON106.SYX",                1),  # WHISTLE         → Whistle
        79:  ("INCONI66.SYX",                3),  # OCARINA         → Ocarina
         # ── Lead (80-87) ──────────────────────────────────────────────────────
        80:  ("Ultimate DX7 - LEAD.syx",    28),  # SQUARE          → Lead 1 Square
        81:  ("INCONI79.SYX",               23),  # SAWTOOTH .      → Lead 2 Sawtooth
-       82:  ("SYNTH-26.SYX",               17),  # SYN-LEAD 3      → Lead 3 Calliope
+       82:  ("17.syx",               24),  # SYN-LEAD 3      → Lead 3 Calliope
        83:  ("PIANO-07.SYX",               23),  # ChiffPiano      → Lead 4 Chiff
        84:  ("TX3.SYX",                    21),  # CHARANGO        → Lead 5 Charang
        85:  ("Cjsp1.syx",                  28),  # SYNVOXINE       → Lead 6 Voice
