@@ -2309,3 +2309,150 @@ loprog=127 hiprog=127
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_127_C8_v64.wav pitch_keycenter=95 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/gm_127_C8_v127.wav pitch_keycenter=95 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 
+// ─── GM Drum Kit (channel 10 / MIDI ch 9) ─────────────────────────────────
+// KSHMR Vol.5 samples, N35-N81, 2 velocity layers
+<group>
+lokey=0 hikey=127 lochan=10 hichan=10
+ampeg_attack=0.001 ampeg_release=0.05
+
+// 35 — Acoustic Bass Drum
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N35_v064.wav  lokey=35 hikey=35 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N35_v127.wav lokey=35 hikey=35 lovel=81  hivel=127
+// 36 — Bass Drum 1
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N36_v064.wav  lokey=36 hikey=36 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N36_v127.wav lokey=36 hikey=36 lovel=81  hivel=127
+// 37 — Side Stick
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N37_v064.wav  lokey=37 hikey=37 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N37_v127.wav lokey=37 hikey=37 lovel=81  hivel=127
+// 38 — Acoustic Snare
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N38_v064.wav  lokey=38 hikey=38 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N38_v127.wav lokey=38 hikey=38 lovel=81  hivel=127
+// 39 — Hand Clap
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N39_v064.wav  lokey=39 hikey=39 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N39_v127.wav lokey=39 hikey=39 lovel=81  hivel=127
+// 40 — Electric Snare
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N40_v064.wav  lokey=40 hikey=40 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N40_v127.wav lokey=40 hikey=40 lovel=81  hivel=127
+// 41 — Low Floor Tom
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N41_v064.wav  lokey=41 hikey=41 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N41_v127.wav lokey=41 hikey=41 lovel=81  hivel=127
+// 42 — Closed Hi-Hat
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N42_v064.wav  lokey=42 hikey=42 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N42_v127.wav lokey=42 hikey=42 lovel=81  hivel=127
+// 43 — High Floor Tom
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N43_v064.wav  lokey=43 hikey=43 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N43_v127.wav lokey=43 hikey=43 lovel=81  hivel=127
+// 44 — Pedal Hi-Hat
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N44_v064.wav  lokey=44 hikey=44 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N44_v127.wav lokey=44 hikey=44 lovel=81  hivel=127
+// 45 — Low Tom
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N45_v064.wav  lokey=45 hikey=45 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N45_v127.wav lokey=45 hikey=45 lovel=81  hivel=127
+// 46 — Open Hi-Hat
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N46_v064.wav  lokey=46 hikey=46 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N46_v127.wav lokey=46 hikey=46 lovel=81  hivel=127
+// 47 — Low-Mid Tom
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N47_v064.wav  lokey=47 hikey=47 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N47_v127.wav lokey=47 hikey=47 lovel=81  hivel=127
+// 48 — Hi-Mid Tom
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N48_v064.wav  lokey=48 hikey=48 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N48_v127.wav lokey=48 hikey=48 lovel=81  hivel=127
+// 49 — Crash Cymbal 1
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N49_v064.wav  lokey=49 hikey=49 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N49_v127.wav lokey=49 hikey=49 lovel=81  hivel=127
+// 50 — High Tom
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N50_v064.wav  lokey=50 hikey=50 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N50_v127.wav lokey=50 hikey=50 lovel=81  hivel=127
+// 51 — Ride Cymbal 1
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N51_v064.wav  lokey=51 hikey=51 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N51_v127.wav lokey=51 hikey=51 lovel=81  hivel=127
+// 52 — Chinese Cymbal
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N52_v064.wav  lokey=52 hikey=52 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N52_v127.wav lokey=52 hikey=52 lovel=81  hivel=127
+// 53 — Ride Bell
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N53_v064.wav  lokey=53 hikey=53 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N53_v127.wav lokey=53 hikey=53 lovel=81  hivel=127
+// 54 — Tambourine
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N54_v064.wav  lokey=54 hikey=54 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N54_v127.wav lokey=54 hikey=54 lovel=81  hivel=127
+// 55 — Splash Cymbal
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N55_v064.wav  lokey=55 hikey=55 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N55_v127.wav lokey=55 hikey=55 lovel=81  hivel=127
+// 56 — Cowbell
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N56_v064.wav  lokey=56 hikey=56 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N56_v127.wav lokey=56 hikey=56 lovel=81  hivel=127
+// 57 — Crash Cymbal 2
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N57_v064.wav  lokey=57 hikey=57 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N57_v127.wav lokey=57 hikey=57 lovel=81  hivel=127
+// 58 — Vibraslap
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N58_v064.wav  lokey=58 hikey=58 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N58_v127.wav lokey=58 hikey=58 lovel=81  hivel=127
+// 59 — Ride Cymbal 2
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N59_v064.wav  lokey=59 hikey=59 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N59_v127.wav lokey=59 hikey=59 lovel=81  hivel=127
+// 60 — Hi Bongo
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N60_v064.wav  lokey=60 hikey=60 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N60_v127.wav lokey=60 hikey=60 lovel=81  hivel=127
+// 61 — Low Bongo
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N61_v064.wav  lokey=61 hikey=61 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N61_v127.wav lokey=61 hikey=61 lovel=81  hivel=127
+// 62 — Mute Hi Conga
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N62_v064.wav  lokey=62 hikey=62 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N62_v127.wav lokey=62 hikey=62 lovel=81  hivel=127
+// 63 — Open Hi Conga
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N63_v064.wav  lokey=63 hikey=63 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N63_v127.wav lokey=63 hikey=63 lovel=81  hivel=127
+// 64 — Low Conga
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N64_v064.wav  lokey=64 hikey=64 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N64_v127.wav lokey=64 hikey=64 lovel=81  hivel=127
+// 65 — High Timbale
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N65_v064.wav  lokey=65 hikey=65 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N65_v127.wav lokey=65 hikey=65 lovel=81  hivel=127
+// 66 — Low Timbale
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N66_v064.wav  lokey=66 hikey=66 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N66_v127.wav lokey=66 hikey=66 lovel=81  hivel=127
+// 67 — High Agogo
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N67_v064.wav  lokey=67 hikey=67 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N67_v127.wav lokey=67 hikey=67 lovel=81  hivel=127
+// 68 — Low Agogo
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N68_v064.wav  lokey=68 hikey=68 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N68_v127.wav lokey=68 hikey=68 lovel=81  hivel=127
+// 69 — Cabasa
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N69_v064.wav  lokey=69 hikey=69 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N69_v127.wav lokey=69 hikey=69 lovel=81  hivel=127
+// 70 — Maracas
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N70_v064.wav  lokey=70 hikey=70 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N70_v127.wav lokey=70 hikey=70 lovel=81  hivel=127
+// 71 — Short Whistle
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N71_v064.wav  lokey=71 hikey=71 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N71_v127.wav lokey=71 hikey=71 lovel=81  hivel=127
+// 72 — Long Whistle
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N72_v064.wav  lokey=72 hikey=72 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N72_v127.wav lokey=72 hikey=72 lovel=81  hivel=127
+// 73 — Short Guiro
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N73_v064.wav  lokey=73 hikey=73 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N73_v127.wav lokey=73 hikey=73 lovel=81  hivel=127
+// 74 — Long Guiro
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N74_v064.wav  lokey=74 hikey=74 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N74_v127.wav lokey=74 hikey=74 lovel=81  hivel=127
+// 75 — Claves
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N75_v064.wav  lokey=75 hikey=75 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N75_v127.wav lokey=75 hikey=75 lovel=81  hivel=127
+// 76 — Hi Wood Block
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N76_v064.wav  lokey=76 hikey=76 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N76_v127.wav lokey=76 hikey=76 lovel=81  hivel=127
+// 77 — Low Wood Block
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N77_v064.wav  lokey=77 hikey=77 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N77_v127.wav lokey=77 hikey=77 lovel=81  hivel=127
+// 78 — Mute Cuica
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N78_v064.wav  lokey=78 hikey=78 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N78_v127.wav lokey=78 hikey=78 lovel=81  hivel=127
+// 79 — Open Cuica
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N79_v064.wav  lokey=79 hikey=79 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N79_v127.wav lokey=79 hikey=79 lovel=81  hivel=127
+// 80 — Mute Triangle
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N80_v064.wav  lokey=80 hikey=80 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N80_v127.wav lokey=80 hikey=80 lovel=81  hivel=127
+// 81 — Open Triangle
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N81_v064.wav  lokey=81 hikey=81 lovel=0   hivel=80
+<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums/gm_drum_N81_v127.wav lokey=81 hikey=81 lovel=81  hivel=127

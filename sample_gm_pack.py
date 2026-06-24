@@ -13,6 +13,57 @@ from pitch_utils import detect_pitch_midi, detect_pitch_midi_loudest
 # detect_pitch_midi is imported from pitch_utils (validated lowest-peak algorithm)
 
 
+# ─── GM Drum Kit ─────────────────────────────────────────────────────────────
+# KSHMR Vol.5 samples shared between General MIDI and Dexed packs.
+# NOT rendered by Surge XT; we reference existing WAV files from
+# General_MIDI_samples_drums/ (produced by kshmr_drum_mapping.py).
+DRUM_NOTES = [
+    (35, "Acoustic Bass Drum"), (36, "Bass Drum 1"),    (37, "Side Stick"),
+    (38, "Acoustic Snare"),     (39, "Hand Clap"),       (40, "Electric Snare"),
+    (41, "Low Floor Tom"),      (42, "Closed Hi-Hat"),   (43, "High Floor Tom"),
+    (44, "Pedal Hi-Hat"),       (45, "Low Tom"),         (46, "Open Hi-Hat"),
+    (47, "Low-Mid Tom"),        (48, "Hi-Mid Tom"),      (49, "Crash Cymbal 1"),
+    (50, "High Tom"),           (51, "Ride Cymbal 1"),   (52, "Chinese Cymbal"),
+    (53, "Ride Bell"),          (54, "Tambourine"),      (55, "Splash Cymbal"),
+    (56, "Cowbell"),            (57, "Crash Cymbal 2"),  (58, "Vibraslap"),
+    (59, "Ride Cymbal 2"),      (60, "Hi Bongo"),        (61, "Low Bongo"),
+    (62, "Mute Hi Conga"),      (63, "Open Hi Conga"),   (64, "Low Conga"),
+    (65, "High Timbale"),       (66, "Low Timbale"),     (67, "High Agogo"),
+    (68, "Low Agogo"),          (69, "Cabasa"),          (70, "Maracas"),
+    (71, "Short Whistle"),      (72, "Long Whistle"),    (73, "Short Guiro"),
+    (74, "Long Guiro"),         (75, "Claves"),          (76, "Hi Wood Block"),
+    (77, "Low Wood Block"),     (78, "Mute Cuica"),      (79, "Open Cuica"),
+    (80, "Mute Triangle"),      (81, "Open Triangle"),
+]
+
+
+def write_drum_section(f, drum_samples_dir):
+    """Append a GM Drum Kit section (ch10, N35-N81) to an open SFZ file.
+
+    Uses absolute paths to KSHMR Vol.5 samples from drum_samples_dir.
+    Only writes notes for which both velocity-layer WAV files exist.
+    """
+    f.write("\n")
+    f.write("// ─── GM Drum Kit (channel 10 / MIDI ch 9) ──────────────────────────────────\n")
+    f.write("// KSHMR Vol.5 samples, N35-N81, 2 velocity layers\n")
+    f.write("<group>\n")
+    f.write("lokey=0 hikey=127 lochan=10 hichan=10\n")
+    f.write("ampeg_attack=0.001 ampeg_release=0.05\n")
+    f.write("\n")
+    written = 0
+    for note, name in DRUM_NOTES:
+        p64  = os.path.join(drum_samples_dir, f"gm_drum_N{note}_v064.wav")
+        p127 = os.path.join(drum_samples_dir, f"gm_drum_N{note}_v127.wav")
+        if not (os.path.exists(p64) and os.path.exists(p127)):
+            continue
+        f.write(f"// {note} — {name}\n")
+        f.write(f"<region> sample={p64}  lokey={note} hikey={note} lovel=0   hivel=80\n")
+        f.write(f"<region> sample={p127} lokey={note} hikey={note} lovel=81  hivel=127\n")
+        written += 1
+    print(f"  drum section: {written} notes written ({written*2} regions)")
+    return written
+
+
 # 128 standard GM instrument names (cleaned for filenames)
 GM_NAMES = [
     "acoustic_grand_piano", "bright_acoustic_piano", "electric_grand_piano", "honky_tonk_piano", "electric_piano_1", "electric_piano_2", "harpsichord", "clavinet",
@@ -499,6 +550,18 @@ def main():
             master_f.write("\n")
             sfizz_sfz_f.write("\n")
             sfizz_proc_f.write("\n")
+
+        # ── Append GM Drum Kit to all three SFZ files ──────────────────────────
+        drum_samples_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                        "General_MIDI_samples_drums")
+        if os.path.isdir(drum_samples_dir):
+            print("\nAppending GM drum kit section...")
+            write_drum_section(master_f, drum_samples_dir)
+            write_drum_section(sfizz_sfz_f, drum_samples_dir)
+            write_drum_section(sfizz_proc_f, drum_samples_dir)
+        else:
+            print(f"Warning: drum samples dir not found: {drum_samples_dir}")
+            print("  Run kshmr_drum_mapping.py first to generate drum samples.")
 
         master_f.close()
         sfizz_sfz_f.close()
