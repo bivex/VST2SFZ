@@ -677,6 +677,7 @@ def main():
         f.write("\n")
 
     total = len(mapping)
+    written_samples: set[str] = set()  # track every WAV we actually write
     for idx, (slot, (syx_path, voice_slot)) in enumerate(sorted(mapping.items())):
         inst_name = GM_NAMES[slot]
         syx_basename = os.path.basename(syx_path)
@@ -799,6 +800,7 @@ def main():
                     SAMPLE_RATE,
                     subtype="PCM_24",
                 )
+                written_samples.add(sample_name)
 
                 xf = (
                     f" xfin_lovel={xfin_lo} xfin_hivel={xfin_hi}"
@@ -839,6 +841,24 @@ def main():
     master_f.close()
     sfizz_f.close()
     sfizz_proc_f.close()
+
+    # ── Sweep orphan samples ─────────────────────────────────────────────────
+    # Pitch-clamp and silent-drop collapse some key zones, so the set of WAVs we
+    # actually wrote this run is smaller than what a previous run left on disk.
+    # Stale orphans are never referenced by any bank but inflate the folder and
+    # corrupt QA scans (an old hot-peak sample looks like a live defect). Delete
+    # any gm_*.wav melodic sample we did NOT write this run. Drum samples
+    # (gm_drum_N*) live in a separate dir and are untouched here.
+    removed = 0
+    for f in glob.glob(os.path.join(samples_dir, "gm_*.wav")):
+        if os.path.basename(f) not in written_samples:
+            try:
+                os.remove(f)
+                removed += 1
+            except OSError:
+                pass
+    print(f"Swept {removed} orphan sample(s); {len(written_samples)} live samples.")
+
     print(
         f"\n✓ Dexed GM pack complete! {total} melodic slots + drum kit → {samples_dir}/"
     )
