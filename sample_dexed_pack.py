@@ -798,7 +798,7 @@ def main():
                     os.path.join(samples_dir, sample_name),
                     audio,
                     SAMPLE_RATE,
-                    subtype="PCM_24",
+                    subtype="PCM_16",
                 )
                 written_samples.add(sample_name)
 
