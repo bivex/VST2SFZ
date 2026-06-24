@@ -1821,9 +1821,8 @@ loprog=95 hiprog=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_095_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_095_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 
-
 // ─── GM Drum Kit (channel 10 / MIDI ch 9) ─────────────────────────────────
-// KSHMR Vol.5 samples, N35-N81, 2 velocity layers
+// KSHMR Vol.5 Complete Edition, N35-N81, 2 real velocity layers
 <group>
 lokey=0 hikey=127 lochan=10 hichan=10
 ampeg_attack=0.001 ampeg_release=0.05
