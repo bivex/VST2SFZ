@@ -50,6 +50,13 @@ import mido
 import sample_gm_pack as sp
 
 
+# Surge XT VST path. Not exposed at module level in sample_gm_pack.py
+# (it's a local variable in main()), so define it here and let main()
+# pass it explicitly to render tasks via the closure.
+VST_PATH = "/Library/Audio/Plug-Ins/VST3/Surge XT.vst3"
+SAMPLE_RATE = 96000
+
+
 # Per-worker state. DawDreamer engines cannot be pickled across processes,
 # so each worker builds its own engine+Surge once and reuses it for every
 # program in its slice.
@@ -63,8 +70,8 @@ def _init_worker():
     old_stderr = os.dup(2)
     os.dup2(devnull.fileno(), 2)
     try:
-        engine = daw.RenderEngine(sp.SR if hasattr(sp, "SR") else 96000, 512)
-        synth = engine.make_plugin_processor("synth", sp.VST_PATH)
+        engine = daw.RenderEngine(SAMPLE_RATE, 512)
+        synth = engine.make_plugin_processor("synth", VST_PATH)
         engine.load_graph([(synth, [])])
         _WORKER["engine"] = engine
         _WORKER["synth"] = synth
@@ -267,9 +274,8 @@ def main():
     # Resolve paths the same way the sequential script does
     factory_dir = "/Library/Application Support/Surge XT/patches_factory"
     preset_mapping = sp.build_preset_mapping(factory_dir)
-    vst_path = sp.VST_PATH if hasattr(sp, "VST_PATH") else "/Library/Audio/Plug-Ins/VST3/Surge XT.vst3"
-    if not os.path.exists(vst_path):
-        print(f"Error: Surge XT not found at {vst_path}")
+    if not os.path.exists(VST_PATH):
+        print(f"Error: Surge XT not found at {VST_PATH}")
         sys.exit(1)
 
     samples_dir = args.samples_dir
@@ -295,7 +301,7 @@ def main():
                     backup.append((src, dst))
 
     print(f"Rendering {len(progs)} programs on {args.workers} workers...")
-    print(f"VST: {vst_path}")
+    print(f"VST: {VST_PATH}")
     print(f"Samples → {samples_dir} (also mirrored to {raw_dir})\n")
 
     tasks = [(p, preset_mapping[p], midi_programs_dir, samples_dir) for p in progs]
