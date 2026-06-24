@@ -78,13 +78,15 @@ def main():
         return
 
     # Default behaviour: regenerate the *_nokeycentered.sfz variants
+    _root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    _sfz = os.path.join(_root, "sfz")
     targets = [
-        ("General_MIDI_sfizz_processed.sfz",
-         "General_MIDI_sfizz_processed_nokeycentered.sfz"),
-        ("General_MIDI_sfizz.sfz",
-         "General_MIDI_sfizz_nokeycentered.sfz"),
-        ("General_MIDI.sfz",
-         "General_MIDI_nokeycentered.sfz"),
+        (os.path.join(_sfz, "General_MIDI_sfizz_processed.sfz"),
+         os.path.join(_sfz, "General_MIDI_sfizz_processed_nokeycentered.sfz")),
+        (os.path.join(_sfz, "General_MIDI_sfizz.sfz"),
+         os.path.join(_sfz, "General_MIDI_sfizz_nokeycentered.sfz")),
+        (os.path.join(_sfz, "General_MIDI.sfz"),
+         os.path.join(_sfz, "General_MIDI_nokeycentered.sfz")),
     ]
     for src, dst in targets:
         if os.path.exists(src):

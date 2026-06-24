@@ -253,9 +253,10 @@ def consensus_offset(rec):
 
 
 def main():
+    _root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input", default="General_MIDI_samples_raw")
-    parser.add_argument("--csv", default="audit_pitch.csv")
+    parser.add_argument("--input", default=os.path.join(_root, "General_MIDI_samples_raw"))
+    parser.add_argument("--csv", default=os.path.join(_root, "data", "audit_pitch.csv"))
     parser.add_argument("--workers", type=int, default=None)
     parser.add_argument("--max-offset", type=float, default=0.5,
                         help="Threshold (semitones) above which an offset is flagged as wrong")

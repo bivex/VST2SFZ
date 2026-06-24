@@ -267,8 +267,8 @@ def main():
                         help=f"Worker processes (default cpu-1={cpu_count()-1})")
     parser.add_argument("--programs", type=int, nargs="*",
                         help="Subset of program indices to render (default: all 0..127)")
-    parser.add_argument("--samples-dir", default="General_MIDI_samples")
-    parser.add_argument("--raw-dir", default="General_MIDI_samples_raw")
+    parser.add_argument("--samples-dir", default=os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "General_MIDI_samples"))
+    parser.add_argument("--raw-dir", default=os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "General_MIDI_samples_raw"))
     args = parser.parse_args()
 
     # Resolve paths the same way the sequential script does
@@ -280,7 +280,8 @@ def main():
 
     samples_dir = args.samples_dir
     raw_dir = args.raw_dir
-    instruments_dir = "General_MIDI_instruments"
+    _root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    instruments_dir = os.path.join(_root, "General_MIDI_instruments")
     midi_programs_dir = os.path.expanduser("~/Documents/Surge XT/Patches/MIDI Programs")
     os.makedirs(samples_dir, exist_ok=True)
     os.makedirs(raw_dir, exist_ok=True)
@@ -320,8 +321,8 @@ def main():
     # the sequential script regardless of which worker finishes first).
     master_paths = {
         f"General_MIDI{sfz_suffix}.sfz": "General_MIDI_samples_raw/",
-        f"General_MIDI_sfizz{sfz_suffix}.sfz": "abs:/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/",
-        f"General_MIDI_sfizz_processed{sfz_suffix}.sfz": "abs:/Volumes/External/Code/VST2SFZ/General_MIDI_samples/",
+        f"General_MIDI_sfizz{sfz_suffix}.sfz": f"abs:{raw_dir}/",
+        f"General_MIDI_sfizz_processed{sfz_suffix}.sfz": f"abs:{samples_dir}/",
     }
     if not is_full_pack:
         print(f"⚠ Subset render: writing to *{sfz_suffix}.sfz (masters left untouched)")
@@ -386,9 +387,9 @@ def main():
                 master_files[master_key].write(
                     f"<region> sample={r['sample_name']} {base}\n")
                 master_files[sfizz_key].write(
-                    f"<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/{r['sample_name']} {base}\n")
+                    f"<region> sample={raw_dir}/{r['sample_name']} {base}\n")
                 master_files[sfizzp_key].write(
-                    f"<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/{r['sample_name']} {base}\n")
+                    f"<region> sample={samples_dir}/{r['sample_name']} {base}\n")
 
     for f in master_files.values():
         f.close()

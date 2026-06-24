@@ -301,8 +301,8 @@ def load_diva_preset(plugin, preset_path: str) -> bool:
 
 
 def main():
-    os.chdir(os.path.dirname(os.path.abspath(__file__)))
-    project_root = os.path.dirname(os.path.abspath(__file__))
+    os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     if not os.path.exists(DIVA_PATH):
         print(f"Error: Diva not found at {DIVA_PATH}")
         sys.exit(1)

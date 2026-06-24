@@ -261,8 +261,10 @@ def main():
     # processed samples into General_MIDI_samples. This keeps raw and processed
     # in sync: General_MIDI_sfizz.sfz points at _raw, General_MIDI_sfizz_processed.sfz
     # points at the processed dir.
-    samples_dir = "General_MIDI_samples_raw"
-    instruments_dir = "General_MIDI_instruments"
+    _root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    samples_dir = os.path.join(_root, "General_MIDI_samples_raw")
+    processed_dir = os.path.join(_root, "General_MIDI_samples")
+    instruments_dir = os.path.join(_root, "General_MIDI_instruments")
     os.makedirs(samples_dir, exist_ok=True)
     os.makedirs(instruments_dir, exist_ok=True)
 
@@ -536,10 +538,8 @@ def main():
                     # Write regions
                     line_indiv     = f"<region> sample={sample_name} {base}\n"
                     line_master    = f"<region> sample={sample_name} {base}\n"
-                    line_sfizz_raw = (f"<region> sample=/Volumes/External/Code/VST2SFZ/"
-                                      f"General_MIDI_samples_raw/{sample_name} {base}\n")
-                    line_sfizz_proc = (f"<region> sample=/Volumes/External/Code/VST2SFZ/"
-                                       f"General_MIDI_samples/{sample_name} {base}\n")
+                    line_sfizz_raw = f"<region> sample={samples_dir}/{sample_name} {base}\n"
+                    line_sfizz_proc = f"<region> sample={processed_dir}/{sample_name} {base}\n"
 
                     indiv_f.write(line_indiv)
                     master_f.write(line_master)

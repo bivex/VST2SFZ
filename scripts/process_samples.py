@@ -118,9 +118,10 @@ def compute_instrument_rms(files_by_program):
 
 
 def main():
+    _root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     parser = argparse.ArgumentParser(description="Studio-process GM samples in place.")
-    parser.add_argument("--input", default="General_MIDI_samples", help="Sample directory to process")
-    parser.add_argument("--backup-dir", default="General_MIDI_samples_raw", help="Backup directory for raw samples")
+    parser.add_argument("--input", default=os.path.join(_root, "General_MIDI_samples"), help="Sample directory to process")
+    parser.add_argument("--backup-dir", default=os.path.join(_root, "General_MIDI_samples_raw"), help="Backup directory for raw samples")
     parser.add_argument("--target-rms", type=float, default=0.08, help="Target per-instrument RMS (0-1)")
     parser.add_argument("--dry-run", action="store_true", help="Analyze and report without writing")
     args = parser.parse_args()

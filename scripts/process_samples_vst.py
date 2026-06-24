@@ -883,11 +883,12 @@ def process_file(
 
 
 def main():
+    _root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     parser = argparse.ArgumentParser(
         description="Single-threaded VST color chain processing."
     )
-    parser.add_argument("--input", default="General_MIDI_samples_raw")
-    parser.add_argument("--output", default="General_MIDI_samples")
+    parser.add_argument("--input", default=os.path.join(_root, "General_MIDI_samples_raw"))
+    parser.add_argument("--output", default=os.path.join(_root, "General_MIDI_samples"))
     args = parser.parse_args()
 
     src_dir, out_dir = args.input, args.output

@@ -25,7 +25,8 @@ import soundfile as sf
 sys.path.insert(0, "/Volumes/External/Code/Birka/.venv/lib/python3.12/site-packages")
 from pysfizz import _sfizz
 
-DEFAULT_SFZ = "/Volumes/External/Code/VST2SFZ/General_MIDI_sfizz_processed.sfz"
+_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DEFAULT_SFZ = os.path.join(_ROOT, "sfz", "General_MIDI_sfizz_processed.sfz")
 SAMPLE_RATE = 44100
 BLOCK_FRAMES = 1024
 

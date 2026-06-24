@@ -207,8 +207,8 @@ def render_drum_samples(engine, inst, out_dir):
 
 
 def main():
-    os.chdir(os.path.dirname(os.path.abspath(__file__)))
-    project_root = os.path.dirname(os.path.abspath(__file__))
+    os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
     samples_dir = os.path.join(project_root, "Apple_GM_samples")
     instruments_dir = os.path.join(project_root, "Apple_GM_instruments")

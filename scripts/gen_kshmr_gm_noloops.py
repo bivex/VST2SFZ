@@ -9,7 +9,7 @@ import os, glob, re
 BASE = (
     "/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition"
 )
-OUT = "/Volumes/External/Code/VST2SFZ/KSHMR_Vol5_128GM_NoLoops.sfz"
+OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "sfz", "KSHMR_Vol5_128GM_NoLoops.sfz")
 
 
 def rel(path):

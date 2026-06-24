@@ -171,11 +171,12 @@ def _process_one(task):
 
 
 def main():
+    _root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     parser = argparse.ArgumentParser(
         description="Parallel VST color chain processing (multiprocessing.Pool)."
     )
-    parser.add_argument("--input", default="General_MIDI_samples_raw")
-    parser.add_argument("--output", default="General_MIDI_samples")
+    parser.add_argument("--input", default=os.path.join(_root, "General_MIDI_samples_raw"))
+    parser.add_argument("--output", default=os.path.join(_root, "General_MIDI_samples"))
     parser.add_argument(
         "--workers", type=int, default=max(1, cpu_count() - 1),
         help=f"Number of worker processes (default: cpu_count-1 = {cpu_count()-1})",

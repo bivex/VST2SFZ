@@ -28,7 +28,7 @@ import glob
 import os
 import sys
 
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Directories whose gm_* contents are deleted; non-gm files inside are kept.
 SAMPLE_DIRS = [

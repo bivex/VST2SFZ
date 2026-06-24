@@ -630,8 +630,8 @@ def normalize_lufs(
 
 
 def main():
-    os.chdir(os.path.dirname(os.path.abspath(__file__)))
-    project_root = os.path.dirname(os.path.abspath(__file__))
+    os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     if not os.path.exists(DEXED_PATH):
         print(f"Error: Dexed not found at {DEXED_PATH}")
         sys.exit(1)

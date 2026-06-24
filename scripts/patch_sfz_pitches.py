@@ -33,11 +33,12 @@ from concurrent.futures import ProcessPoolExecutor
 from pitch_utils import detect_pitch_midi
 
 # Default paths
-DEFAULT_RAW_DIR = "/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw"
+_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DEFAULT_RAW_DIR = os.path.join(_ROOT, "General_MIDI_samples_raw")
 DEFAULT_SFZ_FILES = [
-    "/Volumes/External/Code/VST2SFZ/General_MIDI.sfz",
-    "/Volumes/External/Code/VST2SFZ/General_MIDI_sfizz.sfz",
-    "/Volumes/External/Code/VST2SFZ/General_MIDI_sfizz_processed.sfz",
+    os.path.join(_ROOT, "sfz", "General_MIDI.sfz"),
+    os.path.join(_ROOT, "sfz", "General_MIDI_sfizz.sfz"),
+    os.path.join(_ROOT, "sfz", "General_MIDI_sfizz_processed.sfz"),
 ]
 
 

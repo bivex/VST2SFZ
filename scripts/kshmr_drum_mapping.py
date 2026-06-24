@@ -18,8 +18,9 @@ import shutil
 import glob
 
 KSHMR    = "/Volumes/External/Samples/Dharma Studio - Sounds of KSHMR Vol.5 Complete Edition"
-DRUM_DIR = "/Volumes/External/Code/VST2SFZ/General_MIDI_samples_drums"
-SFZ_PATH = "/Volumes/External/Code/VST2SFZ/General_MIDI_sfizz_drums.sfz"
+_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DRUM_DIR = os.path.join(_ROOT, "General_MIDI_samples_drums")
+SFZ_PATH = os.path.join(_ROOT, "sfz", "General_MIDI_sfizz_drums.sfz")
 
 D = KSHMR + "/Drums"   # shorthand
 
@@ -324,11 +325,12 @@ def main():
     # SEPARATE drum synth), never from an embedded section. So here we only
     # REMOVE any previously-embedded block; we do not re-append one.
     print("\n=== Stripping embedded drum sections from sfizz banks ===")
+    _sfz = os.path.join(_ROOT, "sfz")
     SFZ_FILES = [
-        "/Volumes/External/Code/VST2SFZ/General_MIDI_sfizz.sfz",
-        "/Volumes/External/Code/VST2SFZ/General_MIDI_sfizz_processed.sfz",
-        "/Volumes/External/Code/VST2SFZ/Dexed_MIDI_sfizz.sfz",
-        "/Volumes/External/Code/VST2SFZ/Dexed_MIDI_sfizz_processed.sfz",
+        os.path.join(_sfz, "General_MIDI_sfizz.sfz"),
+        os.path.join(_sfz, "General_MIDI_sfizz_processed.sfz"),
+        os.path.join(_sfz, "Dexed_MIDI_sfizz.sfz"),
+        os.path.join(_sfz, "Dexed_MIDI_sfizz_processed.sfz"),
     ]
     MARKER = "\n// ─── GM Drum Kit"
 
