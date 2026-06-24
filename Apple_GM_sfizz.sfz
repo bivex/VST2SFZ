@@ -1405,3 +1405,975 @@ loprog=75 hiprog=75
 <region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_075_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_075_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_075_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_075_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=76 hiprog=76
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_076_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_076_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_076_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_076_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_076_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_076_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_076_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_076_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_076_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_076_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_076_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_076_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_076_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_076_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_076_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_076_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=77 hiprog=77
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_077_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_077_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_077_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_077_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_077_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_077_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_077_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_077_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_077_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_077_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_077_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_077_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_077_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_077_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_077_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_077_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=78 hiprog=78
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_078_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_078_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_078_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_078_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_078_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_078_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_078_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_078_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_078_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_078_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_078_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_078_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_078_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_078_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_078_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_078_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=79 hiprog=79
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_079_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_079_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_079_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_079_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_079_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_079_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_079_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_079_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_079_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_079_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_079_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_079_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_079_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_079_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_079_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_079_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=80 hiprog=80
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_080_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_080_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_080_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_080_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_080_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_080_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_080_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_080_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_080_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_080_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_080_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_080_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_080_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_080_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_080_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_080_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=81 hiprog=81
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_081_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_081_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_081_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_081_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_081_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_081_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_081_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_081_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_081_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_081_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_081_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_081_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_081_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_081_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_081_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_081_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=82 hiprog=82
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_082_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_082_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_082_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_082_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_082_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_082_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_082_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_082_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_082_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_082_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_082_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_082_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_082_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_082_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_082_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_082_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=83 hiprog=83
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_083_C1_v64.wav pitch_keycenter=17 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_083_C1_v127.wav pitch_keycenter=17 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_083_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_083_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_083_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_083_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_083_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_083_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_083_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_083_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_083_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_083_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_083_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_083_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_083_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_083_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=84 hiprog=84
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_084_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_084_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_084_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_084_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_084_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_084_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_084_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_084_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_084_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_084_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_084_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_084_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_084_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_084_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_084_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_084_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=85 hiprog=85
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_085_C1_v64.wav pitch_keycenter=21 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_085_C1_v127.wav pitch_keycenter=21 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_085_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_085_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_085_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_085_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_085_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_085_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_085_C5_v64.wav pitch_keycenter=71 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_085_C5_v127.wav pitch_keycenter=71 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_085_C6_v64.wav pitch_keycenter=83 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_085_C6_v127.wav pitch_keycenter=83 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_085_C7_v64.wav pitch_keycenter=95 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_085_C7_v127.wav pitch_keycenter=95 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_085_C8_v64.wav pitch_keycenter=107 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_085_C8_v127.wav pitch_keycenter=107 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=86 hiprog=86
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_086_C1_v64.wav pitch_keycenter=31 lokey=0 hikey=36 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_086_C1_v127.wav pitch_keycenter=31 lokey=0 hikey=36 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_086_C3_v64.wav pitch_keycenter=43 lokey=37 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_086_C3_v127.wav pitch_keycenter=43 lokey=37 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_086_C4_v64.wav pitch_keycenter=55 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_086_C4_v127.wav pitch_keycenter=55 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_086_C5_v64.wav pitch_keycenter=67 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_086_C5_v127.wav pitch_keycenter=67 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_086_C6_v64.wav pitch_keycenter=79 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_086_C6_v127.wav pitch_keycenter=79 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_086_C7_v64.wav pitch_keycenter=91 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_086_C7_v127.wav pitch_keycenter=91 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_086_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_086_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=87 hiprog=87
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_087_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_087_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_087_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_087_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_087_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_087_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_087_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_087_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_087_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_087_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_087_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_087_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_087_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_087_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_087_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_087_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=88 hiprog=88
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_088_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_088_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_088_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_088_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_088_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_088_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_088_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_088_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_088_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_088_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_088_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_088_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_088_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_088_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_088_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_088_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=89 hiprog=89
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_089_C1_v64.wav pitch_keycenter=36 lokey=0 hikey=36 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_089_C1_v127.wav pitch_keycenter=36 lokey=0 hikey=36 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_089_C3_v64.wav pitch_keycenter=48 lokey=37 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_089_C3_v127.wav pitch_keycenter=48 lokey=37 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_089_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_089_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_089_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_089_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_089_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_089_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_089_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_089_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_089_C8_v64.wav pitch_keycenter=107 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_089_C8_v127.wav pitch_keycenter=107 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=90 hiprog=90
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_090_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_090_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_090_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_090_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_090_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_090_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_090_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_090_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_090_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_090_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_090_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_090_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_090_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_090_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_090_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_090_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=91 hiprog=91
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_091_C1_v64.wav pitch_keycenter=35 lokey=0 hikey=36 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_091_C1_v127.wav pitch_keycenter=35 lokey=0 hikey=36 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_091_C3_v64.wav pitch_keycenter=48 lokey=37 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_091_C3_v127.wav pitch_keycenter=48 lokey=37 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_091_C4_v64.wav pitch_keycenter=59 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_091_C4_v127.wav pitch_keycenter=59 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_091_C5_v64.wav pitch_keycenter=71 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_091_C5_v127.wav pitch_keycenter=71 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_091_C6_v64.wav pitch_keycenter=83 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_091_C6_v127.wav pitch_keycenter=83 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_091_C7_v64.wav pitch_keycenter=95 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_091_C7_v127.wav pitch_keycenter=95 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_091_C8_v64.wav pitch_keycenter=107 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_091_C8_v127.wav pitch_keycenter=107 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=92 hiprog=92
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_092_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_092_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_092_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_092_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_092_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_092_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_092_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_092_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_092_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_092_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_092_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_092_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_092_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_092_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_092_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_092_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=93 hiprog=93
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_093_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_093_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_093_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_093_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_093_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_093_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_093_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_093_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_093_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_093_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_093_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_093_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_093_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_093_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_093_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_093_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=94 hiprog=94
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_094_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_094_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_094_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_094_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_094_C3_v64.wav pitch_keycenter=47 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_094_C3_v127.wav pitch_keycenter=47 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_094_C4_v64.wav pitch_keycenter=59 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_094_C4_v127.wav pitch_keycenter=59 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_094_C5_v64.wav pitch_keycenter=71 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_094_C5_v127.wav pitch_keycenter=71 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_094_C6_v64.wav pitch_keycenter=83 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_094_C6_v127.wav pitch_keycenter=83 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_094_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_094_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_094_C8_v64.wav pitch_keycenter=107 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_094_C8_v127.wav pitch_keycenter=107 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=95 hiprog=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_095_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_095_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_095_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_095_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_095_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_095_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_095_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_095_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_095_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_095_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_095_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_095_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_095_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_095_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_095_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_095_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=96 hiprog=96
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_096_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_096_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_096_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_096_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_096_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_096_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_096_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_096_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_096_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_096_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_096_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_096_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_096_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_096_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_096_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_096_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=97 hiprog=97
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_097_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_097_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_097_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_097_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_097_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_097_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_097_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_097_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_097_C5_v64.wav pitch_keycenter=71 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_097_C5_v127.wav pitch_keycenter=71 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_097_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_097_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_097_C7_v64.wav pitch_keycenter=95 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_097_C7_v127.wav pitch_keycenter=95 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_097_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_097_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=98 hiprog=98
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_098_C2_v64.wav pitch_keycenter=48 lokey=0 hikey=48 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_098_C2_v127.wav pitch_keycenter=48 lokey=0 hikey=48 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_098_C4_v64.wav pitch_keycenter=60 lokey=49 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_098_C4_v127.wav pitch_keycenter=60 lokey=49 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_098_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_098_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_098_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_098_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_098_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_098_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_098_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_098_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=99 hiprog=99
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_099_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_099_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_099_C2_v64.wav pitch_keycenter=33 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_099_C2_v127.wav pitch_keycenter=33 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_099_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_099_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_099_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_099_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_099_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_099_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_099_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_099_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_099_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_099_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_099_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_099_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=100 hiprog=100
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_100_C1_v64.wav pitch_keycenter=20 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_100_C1_v127.wav pitch_keycenter=20 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_100_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_100_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_100_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_100_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_100_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_100_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_100_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_100_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_100_C6_v64.wav pitch_keycenter=83 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_100_C6_v127.wav pitch_keycenter=83 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_100_C7_v64.wav pitch_keycenter=95 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_100_C7_v127.wav pitch_keycenter=95 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_100_C8_v64.wav pitch_keycenter=107 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_100_C8_v127.wav pitch_keycenter=107 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=101 hiprog=101
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_101_C1_v64.wav pitch_keycenter=36 lokey=0 hikey=36 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_101_C1_v127.wav pitch_keycenter=36 lokey=0 hikey=36 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_101_C3_v64.wav pitch_keycenter=48 lokey=37 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_101_C3_v127.wav pitch_keycenter=48 lokey=37 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_101_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_101_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_101_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_101_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_101_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_101_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_101_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_101_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_101_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_101_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=102 hiprog=102
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_102_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_102_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_102_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_102_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_102_C3_v64.wav pitch_keycenter=47 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_102_C3_v127.wav pitch_keycenter=47 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_102_C4_v64.wav pitch_keycenter=59 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_102_C4_v127.wav pitch_keycenter=59 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_102_C5_v64.wav pitch_keycenter=71 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_102_C5_v127.wav pitch_keycenter=71 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_102_C6_v64.wav pitch_keycenter=83 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_102_C6_v127.wav pitch_keycenter=83 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_102_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_102_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_102_C8_v64.wav pitch_keycenter=107 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_102_C8_v127.wav pitch_keycenter=107 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=103 hiprog=103
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_103_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_103_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_103_C2_v64.wav pitch_keycenter=35 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_103_C2_v127.wav pitch_keycenter=35 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_103_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_103_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_103_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_103_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_103_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_103_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_103_C6_v64.wav pitch_keycenter=83 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_103_C6_v127.wav pitch_keycenter=83 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_103_C7_v64.wav pitch_keycenter=95 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_103_C7_v127.wav pitch_keycenter=95 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_103_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_103_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=104 hiprog=104
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_104_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_104_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_104_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_104_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_104_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_104_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_104_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_104_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_104_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_104_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_104_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_104_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_104_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_104_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_104_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_104_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=105 hiprog=105
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_105_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_105_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_105_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_105_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_105_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_105_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_105_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_105_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_105_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_105_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_105_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_105_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_105_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_105_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_105_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_105_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=106 hiprog=106
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_106_C1_v64.wav pitch_keycenter=43 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_106_C1_v127.wav pitch_keycenter=43 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_106_C2_v64.wav pitch_keycenter=48 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_106_C2_v127.wav pitch_keycenter=48 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_106_C3_v64.wav pitch_keycenter=60 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_106_C3_v127.wav pitch_keycenter=60 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_106_C4_v64.wav pitch_keycenter=72 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_106_C4_v127.wav pitch_keycenter=72 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_106_C5_v64.wav pitch_keycenter=84 lokey=67 hikey=84 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_106_C5_v127.wav pitch_keycenter=84 lokey=67 hikey=84 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_106_C7_v64.wav pitch_keycenter=96 lokey=85 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_106_C7_v127.wav pitch_keycenter=96 lokey=85 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_106_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_106_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=107 hiprog=107
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_107_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_107_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_107_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_107_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_107_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_107_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_107_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_107_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_107_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_107_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_107_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_107_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_107_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_107_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_107_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_107_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=108 hiprog=108
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_108_C1_v64.wav pitch_keycenter=15 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_108_C1_v127.wav pitch_keycenter=15 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_108_C2_v64.wav pitch_keycenter=27 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_108_C2_v127.wav pitch_keycenter=27 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_108_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_108_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_108_C4_v64.wav pitch_keycenter=59 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_108_C4_v127.wav pitch_keycenter=59 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_108_C5_v64.wav pitch_keycenter=63 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_108_C5_v127.wav pitch_keycenter=63 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_108_C6_v64.wav pitch_keycenter=75 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_108_C6_v127.wav pitch_keycenter=75 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_108_C7_v64.wav pitch_keycenter=95 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_108_C7_v127.wav pitch_keycenter=95 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_108_C8_v64.wav pitch_keycenter=90 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_108_C8_v127.wav pitch_keycenter=90 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=109 hiprog=109
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_109_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_109_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_109_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_109_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_109_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_109_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_109_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_109_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_109_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_109_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_109_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_109_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_109_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_109_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_109_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_109_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=110 hiprog=110
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_110_C1_v64.wav pitch_keycenter=20 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_110_C1_v127.wav pitch_keycenter=20 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_110_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_110_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_110_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_110_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_110_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_110_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_110_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_110_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_110_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_110_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_110_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_110_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_110_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_110_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=111 hiprog=111
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_111_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_111_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_111_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_111_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_111_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_111_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_111_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_111_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_111_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_111_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_111_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_111_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_111_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_111_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_111_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_111_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=112 hiprog=112
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_112_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_112_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_112_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_112_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_112_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_112_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_112_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_112_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_112_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_112_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_112_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_112_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_112_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_112_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_112_C8_v64.wav pitch_keycenter=91 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_112_C8_v127.wav pitch_keycenter=91 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=113 hiprog=113
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_113_C1_v64.wav pitch_keycenter=45 lokey=0 hikey=36 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_113_C1_v127.wav pitch_keycenter=45 lokey=0 hikey=36 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_113_C3_v64.wav pitch_keycenter=57 lokey=37 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_113_C3_v127.wav pitch_keycenter=57 lokey=37 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_113_C4_v64.wav pitch_keycenter=68 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_113_C4_v127.wav pitch_keycenter=68 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_113_C5_v64.wav pitch_keycenter=81 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_113_C5_v127.wav pitch_keycenter=81 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_113_C6_v64.wav pitch_keycenter=59 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_113_C6_v127.wav pitch_keycenter=59 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_113_C7_v64.wav pitch_keycenter=72 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_113_C7_v127.wav pitch_keycenter=72 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_113_C8_v64.wav pitch_keycenter=59 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_113_C8_v127.wav pitch_keycenter=59 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=114 hiprog=114
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_114_C1_v64.wav pitch_keycenter=32 lokey=0 hikey=36 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_114_C1_v127.wav pitch_keycenter=32 lokey=0 hikey=36 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_114_C3_v64.wav pitch_keycenter=44 lokey=37 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_114_C3_v127.wav pitch_keycenter=44 lokey=37 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_114_C4_v64.wav pitch_keycenter=56 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_114_C4_v127.wav pitch_keycenter=56 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_114_C5_v64.wav pitch_keycenter=68 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_114_C5_v127.wav pitch_keycenter=68 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_114_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_114_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_114_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_114_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_114_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_114_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=115 hiprog=115
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_115_C1_v64.wav pitch_keycenter=34 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_115_C1_v127.wav pitch_keycenter=34 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_115_C2_v64.wav pitch_keycenter=44 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_115_C2_v127.wav pitch_keycenter=44 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_115_C3_v64.wav pitch_keycenter=56 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_115_C3_v127.wav pitch_keycenter=56 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_115_C4_v64.wav pitch_keycenter=69 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_115_C4_v127.wav pitch_keycenter=69 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_115_C5_v64.wav pitch_keycenter=81 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_115_C5_v127.wav pitch_keycenter=81 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_115_C6_v64.wav pitch_keycenter=92 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_115_C6_v127.wav pitch_keycenter=92 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_115_C7_v64.wav pitch_keycenter=105 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_115_C7_v127.wav pitch_keycenter=105 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_115_C8_v64.wav pitch_keycenter=17 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_115_C8_v127.wav pitch_keycenter=17 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=116 hiprog=116
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_116_C1_v64.wav pitch_keycenter=13 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_116_C1_v127.wav pitch_keycenter=13 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_116_C2_v64.wav pitch_keycenter=17 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_116_C2_v127.wav pitch_keycenter=17 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_116_C3_v64.wav pitch_keycenter=28 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_116_C3_v127.wav pitch_keycenter=28 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_116_C4_v64.wav pitch_keycenter=40 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_116_C4_v127.wav pitch_keycenter=40 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_116_C5_v64.wav pitch_keycenter=52 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_116_C5_v127.wav pitch_keycenter=52 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_116_C6_v64.wav pitch_keycenter=64 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_116_C6_v127.wav pitch_keycenter=64 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_116_C7_v64.wav pitch_keycenter=76 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_116_C7_v127.wav pitch_keycenter=76 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_116_C8_v64.wav pitch_keycenter=88 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_116_C8_v127.wav pitch_keycenter=88 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=117 hiprog=117
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_117_C1_v64.wav pitch_keycenter=14 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_117_C1_v127.wav pitch_keycenter=14 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_117_C2_v64.wav pitch_keycenter=27 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_117_C2_v127.wav pitch_keycenter=27 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_117_C3_v64.wav pitch_keycenter=38 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_117_C3_v127.wav pitch_keycenter=38 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_117_C4_v64.wav pitch_keycenter=49 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_117_C4_v127.wav pitch_keycenter=49 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_117_C5_v64.wav pitch_keycenter=61 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_117_C5_v127.wav pitch_keycenter=61 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_117_C6_v64.wav pitch_keycenter=73 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_117_C6_v127.wav pitch_keycenter=73 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_117_C7_v64.wav pitch_keycenter=85 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_117_C7_v127.wav pitch_keycenter=85 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_117_C8_v64.wav pitch_keycenter=97 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_117_C8_v127.wav pitch_keycenter=97 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=118 hiprog=118
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_118_C1_v64.wav pitch_keycenter=13 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_118_C1_v127.wav pitch_keycenter=13 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_118_C2_v64.wav pitch_keycenter=25 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_118_C2_v127.wav pitch_keycenter=25 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_118_C3_v64.wav pitch_keycenter=36 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_118_C3_v127.wav pitch_keycenter=36 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_118_C4_v64.wav pitch_keycenter=48 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_118_C4_v127.wav pitch_keycenter=48 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_118_C5_v64.wav pitch_keycenter=56 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_118_C5_v127.wav pitch_keycenter=56 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_118_C6_v64.wav pitch_keycenter=68 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_118_C6_v127.wav pitch_keycenter=68 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_118_C7_v64.wav pitch_keycenter=81 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_118_C7_v127.wav pitch_keycenter=81 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_118_C8_v64.wav pitch_keycenter=92 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_118_C8_v127.wav pitch_keycenter=92 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=119 hiprog=119
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_119_C1_v64.wav pitch_keycenter=29 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_119_C1_v127.wav pitch_keycenter=29 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_119_C2_v64.wav pitch_keycenter=42 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_119_C2_v127.wav pitch_keycenter=42 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_119_C3_v64.wav pitch_keycenter=54 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_119_C3_v127.wav pitch_keycenter=54 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_119_C4_v64.wav pitch_keycenter=66 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_119_C4_v127.wav pitch_keycenter=66 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_119_C5_v64.wav pitch_keycenter=78 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_119_C5_v127.wav pitch_keycenter=78 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_119_C6_v64.wav pitch_keycenter=21 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_119_C6_v127.wav pitch_keycenter=21 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_119_C7_v64.wav pitch_keycenter=24 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_119_C7_v127.wav pitch_keycenter=24 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_119_C8_v64.wav pitch_keycenter=36 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_119_C8_v127.wav pitch_keycenter=36 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=120 hiprog=120
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_120_C1_v64.wav pitch_keycenter=18 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_120_C1_v127.wav pitch_keycenter=18 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_120_C2_v64.wav pitch_keycenter=23 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_120_C2_v127.wav pitch_keycenter=23 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_120_C3_v64.wav pitch_keycenter=29 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_120_C3_v127.wav pitch_keycenter=29 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_120_C4_v64.wav pitch_keycenter=35 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_120_C4_v127.wav pitch_keycenter=35 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_120_C5_v64.wav pitch_keycenter=37 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_120_C5_v127.wav pitch_keycenter=37 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_120_C6_v64.wav pitch_keycenter=49 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_120_C6_v127.wav pitch_keycenter=49 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_120_C7_v64.wav pitch_keycenter=34 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_120_C7_v127.wav pitch_keycenter=34 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_120_C8_v64.wav pitch_keycenter=17 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_120_C8_v127.wav pitch_keycenter=17 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=121 hiprog=121
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_121_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_121_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_121_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_121_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_121_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_121_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_121_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_121_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_121_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_121_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_121_C6_v64.wav pitch_keycenter=83 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_121_C6_v127.wav pitch_keycenter=83 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_121_C7_v64.wav pitch_keycenter=95 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_121_C7_v127.wav pitch_keycenter=95 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_121_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_121_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=122 hiprog=122
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_122_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_122_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_122_C2_v64.wav pitch_keycenter=30 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_122_C2_v127.wav pitch_keycenter=30 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_122_C3_v64.wav pitch_keycenter=25 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_122_C3_v127.wav pitch_keycenter=25 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_122_C4_v64.wav pitch_keycenter=36 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_122_C4_v127.wav pitch_keycenter=36 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_122_C5_v64.wav pitch_keycenter=48 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_122_C5_v127.wav pitch_keycenter=48 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_122_C6_v64.wav pitch_keycenter=59 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_122_C6_v127.wav pitch_keycenter=59 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_122_C7_v64.wav pitch_keycenter=33 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_122_C7_v127.wav pitch_keycenter=33 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_122_C8_v64.wav pitch_keycenter=25 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_122_C8_v127.wav pitch_keycenter=25 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=123 hiprog=123
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_123_C1_v64.wav pitch_keycenter=65 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_123_C1_v127.wav pitch_keycenter=65 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_123_C2_v64.wav pitch_keycenter=76 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_123_C2_v127.wav pitch_keycenter=76 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_123_C3_v64.wav pitch_keycenter=83 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_123_C3_v127.wav pitch_keycenter=83 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_123_C4_v64.wav pitch_keycenter=92 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_123_C4_v127.wav pitch_keycenter=92 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_123_C5_v64.wav pitch_keycenter=105 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_123_C5_v127.wav pitch_keycenter=105 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_123_C6_v64.wav pitch_keycenter=44 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_123_C6_v127.wav pitch_keycenter=44 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_123_C7_v64.wav pitch_keycenter=26 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_123_C7_v127.wav pitch_keycenter=26 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_123_C8_v64.wav pitch_keycenter=38 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_123_C8_v127.wav pitch_keycenter=38 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=124 hiprog=124
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_124_C1_v64.wav pitch_keycenter=35 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_124_C1_v127.wav pitch_keycenter=35 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_124_C2_v64.wav pitch_keycenter=23 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_124_C2_v127.wav pitch_keycenter=23 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_124_C3_v64.wav pitch_keycenter=35 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_124_C3_v127.wav pitch_keycenter=35 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_124_C4_v64.wav pitch_keycenter=47 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_124_C4_v127.wav pitch_keycenter=47 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_124_C5_v64.wav pitch_keycenter=59 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_124_C5_v127.wav pitch_keycenter=59 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_124_C6_v64.wav pitch_keycenter=71 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_124_C6_v127.wav pitch_keycenter=71 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_124_C7_v64.wav pitch_keycenter=37 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_124_C7_v127.wav pitch_keycenter=37 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_124_C8_v64.wav pitch_keycenter=49 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_124_C8_v127.wav pitch_keycenter=49 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=125 hiprog=125
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_125_C1_v64.wav pitch_keycenter=13 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_125_C1_v127.wav pitch_keycenter=13 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_125_C2_v64.wav pitch_keycenter=14 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_125_C2_v127.wav pitch_keycenter=14 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_125_C3_v64.wav pitch_keycenter=20 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_125_C3_v127.wav pitch_keycenter=20 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_125_C4_v64.wav pitch_keycenter=30 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_125_C4_v127.wav pitch_keycenter=30 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_125_C5_v64.wav pitch_keycenter=35 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_125_C5_v127.wav pitch_keycenter=35 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_125_C6_v64.wav pitch_keycenter=47 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_125_C6_v127.wav pitch_keycenter=47 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_125_C7_v64.wav pitch_keycenter=59 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_125_C7_v127.wav pitch_keycenter=59 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_125_C8_v64.wav pitch_keycenter=40 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_125_C8_v127.wav pitch_keycenter=40 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=126 hiprog=126
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_126_C1_v64.wav pitch_keycenter=31 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_126_C1_v127.wav pitch_keycenter=31 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_126_C2_v64.wav pitch_keycenter=39 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_126_C2_v127.wav pitch_keycenter=39 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_126_C3_v64.wav pitch_keycenter=53 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_126_C3_v127.wav pitch_keycenter=53 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_126_C4_v64.wav pitch_keycenter=57 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_126_C4_v127.wav pitch_keycenter=57 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_126_C5_v64.wav pitch_keycenter=61 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_126_C5_v127.wav pitch_keycenter=61 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_126_C6_v64.wav pitch_keycenter=54 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_126_C6_v127.wav pitch_keycenter=54 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_126_C7_v64.wav pitch_keycenter=24 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_126_C7_v127.wav pitch_keycenter=24 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_126_C8_v64.wav pitch_keycenter=15 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_126_C8_v127.wav pitch_keycenter=15 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
+<group>
+loprog=127 hiprog=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_127_C1_v64.wav pitch_keycenter=17 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_127_C1_v127.wav pitch_keycenter=17 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_127_C2_v64.wav pitch_keycenter=27 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_127_C2_v127.wav pitch_keycenter=27 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_127_C3_v64.wav pitch_keycenter=34 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_127_C3_v127.wav pitch_keycenter=34 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_127_C4_v64.wav pitch_keycenter=46 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_127_C4_v127.wav pitch_keycenter=46 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_127_C5_v64.wav pitch_keycenter=58 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_127_C5_v127.wav pitch_keycenter=58 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_127_C6_v64.wav pitch_keycenter=70 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_127_C6_v127.wav pitch_keycenter=70 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_127_C7_v64.wav pitch_keycenter=27 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_127_C7_v127.wav pitch_keycenter=27 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_127_C8_v64.wav pitch_keycenter=17 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Apple_GM_samples/gm_127_C8_v127.wav pitch_keycenter=17 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
