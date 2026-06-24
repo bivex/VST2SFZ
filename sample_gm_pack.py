@@ -205,7 +205,12 @@ def main():
     print(f"Using Surge XT at {vst_path}...")
 
     # Directories
-    samples_dir = "General_MIDI_samples"
+    # Raw Surge XT output goes into General_MIDI_samples_raw. The VST mastering
+    # chain (process_samples_vst.py) then reads from here and writes the
+    # processed samples into General_MIDI_samples. This keeps raw and processed
+    # in sync: General_MIDI_sfizz.sfz points at _raw, General_MIDI_sfizz_processed.sfz
+    # points at the processed dir.
+    samples_dir = "General_MIDI_samples_raw"
     instruments_dir = "General_MIDI_instruments"
     os.makedirs(samples_dir, exist_ok=True)
     os.makedirs(instruments_dir, exist_ok=True)
