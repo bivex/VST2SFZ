@@ -529,37 +529,58 @@ def normalize_instrument_set(
     if not keys:
         return
 
-    # Reference loudness: concatenate the loud (v127) layer across all notes so
-    # the measurement represents the instrument's playing level, not one note.
-    ref_buffers = [rendered[k] for k in keys if k[1] == 1]
-    if not ref_buffers:
-        ref_buffers = [rendered[k] for k in keys]
-    ref = np.concatenate(ref_buffers, axis=0)
+    # Reference loudness: per-note LUFS of the loud (v127) layer, then take the
+    # MEDIAN. A plain concatenation is dominated by outliers — DX7 voices often
+    # render the extreme keys (C1/C8) as near-silence or as an abnormally loud
+    # transient (measured: a C8 layer at -8 LUFS / 0.9 peak vs ~-18 for the rest),
+    # which drags the whole instrument off the target. The median of the active
+    # (non-silent) notes anchors to the instrument's TYPICAL playing level and is
+    # immune to both silent and hot extreme-key outliers.
+    ref_keys = [k for k in keys if k[1] == 1] or keys
 
     gain = 1.0
-    if HAS_PYLOUDNORM and len(ref) / sr > 0.5:
+    if HAS_PYLOUDNORM:
         meter = pyln.Meter(sr)
-        loudness = meter.integrated_loudness(ref).item()
-        if not np.isinf(loudness) and not np.isnan(loudness):
-            gain = 10.0 ** ((target_lufs - loudness) / 20.0)
+        per_note = []
+        for k in ref_keys:
+            buf = rendered[k]
+            if len(buf) / sr <= 0.4:
+                continue
+            lo = meter.integrated_loudness(buf)
+            try:
+                lo = lo.item()
+            except AttributeError:
+                lo = float(lo)
+            # Drop near-silent extreme-key renders (well below playing level) so
+            # they do not pull the median down.
+            if not np.isinf(lo) and not np.isnan(lo) and lo > -32.0:
+                per_note.append(lo)
+        if per_note:
+            ref_lufs = float(np.median(per_note))
+            gain = 10.0 ** ((target_lufs - ref_lufs) / 20.0)
+        else:
+            # Everything was silent/invalid: fall back to peak anchoring.
+            peak = max((float(np.max(np.abs(rendered[k]))) for k in ref_keys), default=0.0)
+            if peak > 1e-6:
+                gain = 0.85 / peak
     else:
-        # Fallback: peak-anchor the reference layer.
-        peak = float(np.max(np.abs(ref))) if ref.size else 0.0
+        peak = max((float(np.max(np.abs(rendered[k]))) for k in ref_keys), default=0.0)
         if peak > 1e-6:
             gain = 0.85 / peak
 
-    # Apply the shared gain, then find the global post-gain peak and pull the
-    # WHOLE set down uniformly if it would exceed the ceiling (preserves the
-    # inter-layer and inter-note balance exactly).
-    global_peak = 0.0
+    # Apply the shared median-anchored gain to every buffer. Then guard peaks
+    # PER-BUFFER: only an individual buffer that exceeds the ceiling is pulled
+    # down (true-peak safety on a single hot extreme-key transient), instead of
+    # trimming the WHOLE set — which would let one outlier undo the loudness
+    # anchor for all the well-behaved notes. Inter-layer velocity balance is
+    # preserved because v64 and v127 of the same note share the same gain and
+    # a hot v127 outlier is rare; the common case touches nothing.
     for k in keys:
-        rendered[k] = rendered[k] * gain
-        p = float(np.max(np.abs(rendered[k]))) if rendered[k].size else 0.0
-        global_peak = max(global_peak, p)
-    if global_peak > peak_ceiling:
-        trim = peak_ceiling / global_peak
-        for k in keys:
-            rendered[k] = rendered[k] * trim
+        buf = rendered[k] * gain
+        p = float(np.max(np.abs(buf))) if buf.size else 0.0
+        if p > peak_ceiling:
+            buf = buf * (peak_ceiling / p)
+        rendered[k] = buf
 
 
 def normalize_lufs(

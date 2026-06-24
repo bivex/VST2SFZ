@@ -79,20 +79,20 @@ loprog=3 hiprog=3
 
 <group>
 loprog=4 hiprog=4
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_004_C1_v64.wav pitch_keycenter=17 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_004_C1_v127.wav pitch_keycenter=17 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_004_C1_v64.wav pitch_keycenter=16 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_004_C1_v127.wav pitch_keycenter=16 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_004_C2_v64.wav pitch_keycenter=19 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_004_C2_v127.wav pitch_keycenter=19 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_004_C3_v64.wav pitch_keycenter=38 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_004_C3_v127.wav pitch_keycenter=38 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_004_C4_v64.wav pitch_keycenter=18 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_004_C4_v127.wav pitch_keycenter=18 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_004_C5_v64.wav pitch_keycenter=29 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_004_C5_v127.wav pitch_keycenter=29 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_004_C6_v64.wav pitch_keycenter=40 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_004_C6_v127.wav pitch_keycenter=40 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_004_C7_v64.wav pitch_keycenter=51 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_004_C7_v127.wav pitch_keycenter=51 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_004_C3_v64.wav pitch_keycenter=15 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_004_C3_v127.wav pitch_keycenter=15 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_004_C4_v64.wav pitch_keycenter=23 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_004_C4_v127.wav pitch_keycenter=23 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_004_C5_v64.wav pitch_keycenter=32 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_004_C5_v127.wav pitch_keycenter=32 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_004_C6_v64.wav pitch_keycenter=41 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_004_C6_v127.wav pitch_keycenter=41 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_004_C7_v64.wav pitch_keycenter=52 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_004_C7_v127.wav pitch_keycenter=52 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_004_C8_v64.wav pitch_keycenter=63 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_004_C8_v127.wav pitch_keycenter=63 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 
@@ -136,8 +136,8 @@ loprog=6 hiprog=6
 
 <group>
 loprog=7 hiprog=7
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_007_C1_v64.wav pitch_keycenter=12 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_007_C1_v127.wav pitch_keycenter=12 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_007_C1_v64.wav pitch_keycenter=13 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_007_C1_v127.wav pitch_keycenter=13 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_007_C2_v64.wav pitch_keycenter=24 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_007_C2_v127.wav pitch_keycenter=24 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_007_C3_v64.wav pitch_keycenter=36 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
@@ -269,8 +269,8 @@ loprog=13 hiprog=13
 loprog=14 hiprog=14
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_014_C1_v64.wav pitch_keycenter=17 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_014_C1_v127.wav pitch_keycenter=17 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_014_C2_v64.wav pitch_keycenter=29 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_014_C2_v127.wav pitch_keycenter=29 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_014_C2_v64.wav pitch_keycenter=33 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_014_C2_v127.wav pitch_keycenter=33 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_014_C3_v64.wav pitch_keycenter=45 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_014_C3_v127.wav pitch_keycenter=45 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_014_C4_v64.wav pitch_keycenter=59 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
@@ -279,8 +279,8 @@ loprog=14 hiprog=14
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_014_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_014_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_014_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_014_C7_v64.wav pitch_keycenter=12 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_014_C7_v127.wav pitch_keycenter=12 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_014_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_014_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_014_C8_v64.wav pitch_keycenter=25 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_014_C8_v127.wav pitch_keycenter=25 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 
@@ -341,8 +341,8 @@ loprog=17 hiprog=17
 
 <group>
 loprog=18 hiprog=18
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_018_C1_v64.wav pitch_keycenter=23 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_018_C1_v127.wav pitch_keycenter=23 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_018_C1_v64.wav pitch_keycenter=26 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_018_C1_v127.wav pitch_keycenter=26 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_018_C2_v64.wav pitch_keycenter=38 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_018_C2_v127.wav pitch_keycenter=38 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_018_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
@@ -379,8 +379,8 @@ loprog=19 hiprog=19
 loprog=20 hiprog=20
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_020_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_020_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_020_C2_v64.wav pitch_keycenter=34 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_020_C2_v127.wav pitch_keycenter=34 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_020_C2_v64.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_020_C2_v127.wav pitch_keycenter=36 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_020_C3_v64.wav pitch_keycenter=47 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_020_C3_v127.wav pitch_keycenter=47 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_020_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
@@ -396,8 +396,8 @@ loprog=20 hiprog=20
 
 <group>
 loprog=21 hiprog=21
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_021_C1_v64.wav pitch_keycenter=23 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_021_C1_v127.wav pitch_keycenter=23 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_021_C1_v64.wav pitch_keycenter=26 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_021_C1_v127.wav pitch_keycenter=26 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_021_C2_v64.wav pitch_keycenter=38 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_021_C2_v127.wav pitch_keycenter=38 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_021_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
@@ -453,12 +453,10 @@ loprog=23 hiprog=23
 
 <group>
 loprog=24 hiprog=24
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_024_C1_v64.wav pitch_keycenter=12 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_024_C1_v127.wav pitch_keycenter=12 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_024_C2_v64.wav pitch_keycenter=24 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_024_C2_v127.wav pitch_keycenter=24 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_024_C3_v64.wav pitch_keycenter=36 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_024_C3_v127.wav pitch_keycenter=36 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_024_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=36 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_024_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=36 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_024_C3_v64.wav pitch_keycenter=36 lokey=37 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_024_C3_v127.wav pitch_keycenter=36 lokey=37 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_024_C4_v64.wav pitch_keycenter=48 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_024_C4_v127.wav pitch_keycenter=48 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_024_C5_v64.wav pitch_keycenter=60 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
@@ -520,10 +518,10 @@ loprog=27 hiprog=27
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_027_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_027_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_027_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_027_C6_v64.wav pitch_keycenter=18 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_027_C6_v127.wav pitch_keycenter=18 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_027_C7_v64.wav pitch_keycenter=21 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_027_C7_v127.wav pitch_keycenter=21 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_027_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_027_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_027_C7_v64.wav pitch_keycenter=25 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_027_C7_v127.wav pitch_keycenter=25 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_027_C8_v64.wav pitch_keycenter=19 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_027_C8_v127.wav pitch_keycenter=19 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 
@@ -603,8 +601,8 @@ loprog=31 hiprog=31
 loprog=32 hiprog=32
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_032_C1_v64.wav pitch_keycenter=17 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_032_C1_v127.wav pitch_keycenter=17 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_032_C2_v64.wav pitch_keycenter=29 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_032_C2_v127.wav pitch_keycenter=29 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_032_C2_v64.wav pitch_keycenter=33 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_032_C2_v127.wav pitch_keycenter=33 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_032_C3_v64.wav pitch_keycenter=45 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_032_C3_v127.wav pitch_keycenter=45 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_032_C4_v64.wav pitch_keycenter=59 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
@@ -613,15 +611,15 @@ loprog=32 hiprog=32
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_032_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_032_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_032_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_032_C7_v64.wav pitch_keycenter=12 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_032_C7_v127.wav pitch_keycenter=12 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_032_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_032_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_032_C8_v64.wav pitch_keycenter=25 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_032_C8_v127.wav pitch_keycenter=25 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 
 <group>
 loprog=33 hiprog=33
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_033_C1_v64.wav pitch_keycenter=12 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_033_C1_v127.wav pitch_keycenter=12 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_033_C1_v64.wav pitch_keycenter=13 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_033_C1_v127.wav pitch_keycenter=13 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_033_C2_v64.wav pitch_keycenter=24 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_033_C2_v127.wav pitch_keycenter=24 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_033_C3_v64.wav pitch_keycenter=36 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
@@ -658,12 +656,10 @@ loprog=34 hiprog=34
 
 <group>
 loprog=35 hiprog=35
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_035_C1_v64.wav pitch_keycenter=12 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_035_C1_v127.wav pitch_keycenter=12 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_035_C2_v64.wav pitch_keycenter=24 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_035_C2_v127.wav pitch_keycenter=24 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_035_C3_v64.wav pitch_keycenter=36 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_035_C3_v127.wav pitch_keycenter=36 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_035_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=36 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_035_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=36 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_035_C3_v64.wav pitch_keycenter=36 lokey=37 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_035_C3_v127.wav pitch_keycenter=36 lokey=37 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_035_C4_v64.wav pitch_keycenter=48 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_035_C4_v127.wav pitch_keycenter=48 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_035_C5_v64.wav pitch_keycenter=60 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
@@ -742,8 +738,8 @@ loprog=39 hiprog=39
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_039_C3_v127.wav pitch_keycenter=36 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_039_C4_v64.wav pitch_keycenter=45 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_039_C4_v127.wav pitch_keycenter=45 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_039_C5_v64.wav pitch_keycenter=16 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_039_C5_v127.wav pitch_keycenter=16 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_039_C5_v64.wav pitch_keycenter=59 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_039_C5_v127.wav pitch_keycenter=59 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_039_C6_v64.wav pitch_keycenter=61 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_039_C6_v127.wav pitch_keycenter=61 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_039_C7_v64.wav pitch_keycenter=83 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
@@ -753,8 +749,8 @@ loprog=39 hiprog=39
 
 <group>
 loprog=40 hiprog=40
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_040_C1_v64.wav pitch_keycenter=12 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_040_C1_v127.wav pitch_keycenter=12 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_040_C1_v64.wav pitch_keycenter=13 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_040_C1_v127.wav pitch_keycenter=13 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_040_C2_v64.wav pitch_keycenter=24 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_040_C2_v127.wav pitch_keycenter=24 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_040_C3_v64.wav pitch_keycenter=36 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
@@ -810,8 +806,8 @@ loprog=42 hiprog=42
 
 <group>
 loprog=43 hiprog=43
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_043_C1_v64.wav pitch_keycenter=13 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_043_C1_v127.wav pitch_keycenter=13 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_043_C1_v64.wav pitch_keycenter=31 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_043_C1_v127.wav pitch_keycenter=31 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_043_C2_v64.wav pitch_keycenter=24 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_043_C2_v127.wav pitch_keycenter=24 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_043_C3_v64.wav pitch_keycenter=36 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
@@ -867,12 +863,10 @@ loprog=45 hiprog=45
 
 <group>
 loprog=46 hiprog=46
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_046_C1_v64.wav pitch_keycenter=12 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_046_C1_v127.wav pitch_keycenter=12 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_046_C2_v64.wav pitch_keycenter=24 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_046_C2_v127.wav pitch_keycenter=24 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_046_C3_v64.wav pitch_keycenter=36 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_046_C3_v127.wav pitch_keycenter=36 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_046_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=36 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_046_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=36 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_046_C3_v64.wav pitch_keycenter=36 lokey=37 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_046_C3_v127.wav pitch_keycenter=36 lokey=37 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_046_C4_v64.wav pitch_keycenter=48 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_046_C4_v127.wav pitch_keycenter=48 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_046_C5_v64.wav pitch_keycenter=60 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
@@ -888,8 +882,8 @@ loprog=46 hiprog=46
 loprog=47 hiprog=47
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_047_C1_v64.wav pitch_keycenter=17 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_047_C1_v127.wav pitch_keycenter=17 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_047_C2_v64.wav pitch_keycenter=29 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_047_C2_v127.wav pitch_keycenter=29 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_047_C2_v64.wav pitch_keycenter=33 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_047_C2_v127.wav pitch_keycenter=33 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_047_C3_v64.wav pitch_keycenter=45 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_047_C3_v127.wav pitch_keycenter=45 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_047_C4_v64.wav pitch_keycenter=59 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
@@ -898,8 +892,8 @@ loprog=47 hiprog=47
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_047_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_047_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_047_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_047_C7_v64.wav pitch_keycenter=12 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_047_C7_v127.wav pitch_keycenter=12 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_047_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_047_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_047_C8_v64.wav pitch_keycenter=25 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_047_C8_v127.wav pitch_keycenter=25 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 
@@ -926,8 +920,8 @@ loprog=48 hiprog=48
 loprog=49 hiprog=49
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_049_C1_v64.wav pitch_keycenter=17 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_049_C1_v127.wav pitch_keycenter=17 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_049_C2_v64.wav pitch_keycenter=29 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_049_C2_v127.wav pitch_keycenter=29 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_049_C2_v64.wav pitch_keycenter=33 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_049_C2_v127.wav pitch_keycenter=33 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_049_C3_v64.wav pitch_keycenter=45 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_049_C3_v127.wav pitch_keycenter=45 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_049_C4_v64.wav pitch_keycenter=59 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
@@ -936,8 +930,8 @@ loprog=49 hiprog=49
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_049_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_049_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_049_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_049_C7_v64.wav pitch_keycenter=12 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_049_C7_v127.wav pitch_keycenter=12 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_049_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_049_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_049_C8_v64.wav pitch_keycenter=25 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_049_C8_v127.wav pitch_keycenter=25 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 
@@ -1262,12 +1256,10 @@ loprog=66 hiprog=66
 
 <group>
 loprog=67 hiprog=67
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_067_C1_v64.wav pitch_keycenter=12 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_067_C1_v127.wav pitch_keycenter=12 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_067_C2_v64.wav pitch_keycenter=24 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_067_C2_v127.wav pitch_keycenter=24 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_067_C3_v64.wav pitch_keycenter=36 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_067_C3_v127.wav pitch_keycenter=36 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_067_C1_v64.wav pitch_keycenter=24 lokey=0 hikey=36 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_067_C1_v127.wav pitch_keycenter=24 lokey=0 hikey=36 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_067_C3_v64.wav pitch_keycenter=36 lokey=37 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_067_C3_v127.wav pitch_keycenter=36 lokey=37 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_067_C4_v64.wav pitch_keycenter=48 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_067_C4_v127.wav pitch_keycenter=48 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_067_C5_v64.wav pitch_keycenter=60 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
@@ -1395,8 +1387,8 @@ loprog=73 hiprog=73
 
 <group>
 loprog=74 hiprog=74
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_074_C1_v64.wav pitch_keycenter=23 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_074_C1_v127.wav pitch_keycenter=23 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_074_C1_v64.wav pitch_keycenter=26 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_074_C1_v127.wav pitch_keycenter=26 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_074_C2_v64.wav pitch_keycenter=38 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_074_C2_v127.wav pitch_keycenter=38 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_074_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
@@ -1414,8 +1406,8 @@ loprog=74 hiprog=74
 
 <group>
 loprog=75 hiprog=75
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_075_C1_v64.wav pitch_keycenter=17 lokey=0 hikey=36 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_075_C1_v127.wav pitch_keycenter=17 lokey=0 hikey=36 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_075_C1_v64.wav pitch_keycenter=18 lokey=0 hikey=36 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_075_C1_v127.wav pitch_keycenter=18 lokey=0 hikey=36 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_075_C3_v64.wav pitch_keycenter=22 lokey=37 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_075_C3_v127.wav pitch_keycenter=22 lokey=37 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_075_C4_v64.wav pitch_keycenter=16 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
@@ -1426,25 +1418,27 @@ loprog=75 hiprog=75
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_075_C6_v127.wav pitch_keycenter=47 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_075_C7_v64.wav pitch_keycenter=51 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_075_C7_v127.wav pitch_keycenter=51 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_075_C8_v64.wav pitch_keycenter=34 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_075_C8_v127.wav pitch_keycenter=34 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_075_C8_v64.wav pitch_keycenter=42 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_075_C8_v127.wav pitch_keycenter=42 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 
 <group>
 loprog=76 hiprog=76
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_076_C1_v64.wav pitch_keycenter=20 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_076_C1_v127.wav pitch_keycenter=20 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_076_C2_v64.wav pitch_keycenter=21 lokey=31 hikey=48 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_076_C2_v127.wav pitch_keycenter=21 lokey=31 hikey=48 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_076_C4_v64.wav pitch_keycenter=33 lokey=49 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_076_C4_v127.wav pitch_keycenter=33 lokey=49 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_076_C2_v64.wav pitch_keycenter=15 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_076_C2_v127.wav pitch_keycenter=15 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_076_C3_v64.wav pitch_keycenter=21 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_076_C3_v127.wav pitch_keycenter=21 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_076_C4_v64.wav pitch_keycenter=33 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_076_C4_v127.wav pitch_keycenter=33 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_076_C5_v64.wav pitch_keycenter=39 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_076_C5_v127.wav pitch_keycenter=39 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_076_C6_v64.wav pitch_keycenter=55 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_076_C6_v127.wav pitch_keycenter=55 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_076_C7_v64.wav pitch_keycenter=68 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_076_C7_v127.wav pitch_keycenter=68 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_076_C8_v64.wav pitch_keycenter=20 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_076_C8_v127.wav pitch_keycenter=20 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_076_C8_v64.wav pitch_keycenter=81 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_076_C8_v127.wav pitch_keycenter=81 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 
 <group>
 loprog=77 hiprog=77
@@ -1475,10 +1469,10 @@ loprog=78 hiprog=78
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_078_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_078_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_078_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_078_C6_v64.wav pitch_keycenter=18 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_078_C6_v127.wav pitch_keycenter=18 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_078_C7_v64.wav pitch_keycenter=20 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_078_C7_v127.wav pitch_keycenter=20 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_078_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_078_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_078_C7_v64.wav pitch_keycenter=25 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_078_C7_v127.wav pitch_keycenter=25 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_078_C8_v64.wav pitch_keycenter=19 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_078_C8_v127.wav pitch_keycenter=19 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 
@@ -1577,18 +1571,20 @@ loprog=83 hiprog=83
 loprog=84 hiprog=84
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_084_C1_v64.wav pitch_keycenter=20 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_084_C1_v127.wav pitch_keycenter=20 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_084_C2_v64.wav pitch_keycenter=21 lokey=31 hikey=48 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_084_C2_v127.wav pitch_keycenter=21 lokey=31 hikey=48 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_084_C4_v64.wav pitch_keycenter=33 lokey=49 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_084_C4_v127.wav pitch_keycenter=33 lokey=49 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_084_C2_v64.wav pitch_keycenter=15 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_084_C2_v127.wav pitch_keycenter=15 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_084_C3_v64.wav pitch_keycenter=21 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_084_C3_v127.wav pitch_keycenter=21 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_084_C4_v64.wav pitch_keycenter=33 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_084_C4_v127.wav pitch_keycenter=33 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_084_C5_v64.wav pitch_keycenter=39 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_084_C5_v127.wav pitch_keycenter=39 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_084_C6_v64.wav pitch_keycenter=55 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_084_C6_v127.wav pitch_keycenter=55 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_084_C7_v64.wav pitch_keycenter=68 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_084_C7_v127.wav pitch_keycenter=68 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_084_C8_v64.wav pitch_keycenter=20 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_084_C8_v127.wav pitch_keycenter=20 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_084_C8_v64.wav pitch_keycenter=81 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_084_C8_v127.wav pitch_keycenter=81 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 
 <group>
 loprog=85 hiprog=85
@@ -1647,8 +1643,8 @@ loprog=87 hiprog=87
 
 <group>
 loprog=88 hiprog=88
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_088_C1_v64.wav pitch_keycenter=23 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_088_C1_v127.wav pitch_keycenter=23 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_088_C1_v64.wav pitch_keycenter=26 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_088_C1_v127.wav pitch_keycenter=26 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_088_C2_v64.wav pitch_keycenter=38 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_088_C2_v127.wav pitch_keycenter=38 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_088_C3_v64.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
@@ -1704,8 +1700,8 @@ loprog=90 hiprog=90
 
 <group>
 loprog=91 hiprog=91
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_091_C1_v64.wav pitch_keycenter=12 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_091_C1_v127.wav pitch_keycenter=12 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_091_C1_v64.wav pitch_keycenter=13 lokey=0 hikey=30 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_091_C1_v127.wav pitch_keycenter=13 lokey=0 hikey=30 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_091_C2_v64.wav pitch_keycenter=24 lokey=31 hikey=42 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_091_C2_v127.wav pitch_keycenter=24 lokey=31 hikey=42 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_091_C3_v64.wav pitch_keycenter=36 lokey=43 hikey=54 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
@@ -1796,3 +1792,4 @@ loprog=95 hiprog=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_095_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_095_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=/Volumes/External/Code/VST2SFZ/Dexed_MIDI_samples/gm_095_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+
