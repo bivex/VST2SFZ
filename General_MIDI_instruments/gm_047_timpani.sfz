@@ -12,11 +12,7 @@ prg_num=47
 <region> sample=gm_047_C3_v127.wav pitch_keycenter=48 lokey=43 hikey=54 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
 <region> sample=gm_047_C4_v64.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
 <region> sample=gm_047_C4_v127.wav pitch_keycenter=60 lokey=55 hikey=66 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=gm_047_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=gm_047_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=78 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=gm_047_C6_v64.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=gm_047_C6_v127.wav pitch_keycenter=84 lokey=79 hikey=90 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=gm_047_C7_v64.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=gm_047_C7_v127.wav pitch_keycenter=96 lokey=91 hikey=102 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
-<region> sample=gm_047_C8_v64.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
-<region> sample=gm_047_C8_v127.wav pitch_keycenter=108 lokey=103 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=gm_047_C5_v64.wav pitch_keycenter=72 lokey=67 hikey=84 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=gm_047_C5_v127.wav pitch_keycenter=72 lokey=67 hikey=84 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
+<region> sample=gm_047_C7_v64.wav pitch_keycenter=16 lokey=85 hikey=127 lovel=0 hivel=95 xfin_lovel=0 xfin_hivel=0 xfout_lovel=85 xfout_hivel=95
+<region> sample=gm_047_C7_v127.wav pitch_keycenter=16 lokey=85 hikey=127 lovel=96 hivel=127 xfin_lovel=85 xfin_hivel=95 xfout_lovel=127 xfout_hivel=127
