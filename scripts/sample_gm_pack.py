@@ -309,9 +309,11 @@ def main():
         sr = 96000
 
         # Master SFZ files paths
-        master_sfz_path = "General_MIDI.sfz"
-        sfizz_sfz_path = "General_MIDI_sfizz.sfz"
-        sfizz_proc_sfz_path = "General_MIDI_sfizz_processed.sfz"
+        _sfz_dir = os.path.join(_root, "sfz")
+        os.makedirs(_sfz_dir, exist_ok=True)
+        master_sfz_path = os.path.join(_sfz_dir, "General_MIDI.sfz")
+        sfizz_sfz_path = os.path.join(_sfz_dir, "General_MIDI_sfizz.sfz")
+        sfizz_proc_sfz_path = os.path.join(_sfz_dir, "General_MIDI_sfizz_processed.sfz")
 
         print("Opening master SFZ files...")
         master_f = open(master_sfz_path, "w")

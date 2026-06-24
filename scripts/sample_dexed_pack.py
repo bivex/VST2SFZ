@@ -660,9 +660,11 @@ def main():
 
     # Use absolute paths everywhere — Dexed's load_state() changes the process
     # working directory to its own data folder, breaking relative writes.
-    master_path = os.path.join(project_root, "Dexed_MIDI.sfz")
-    sfizz_path = os.path.join(project_root, "Dexed_MIDI_sfizz.sfz")
-    sfizz_proc_path = os.path.join(project_root, "Dexed_MIDI_sfizz_processed.sfz")
+    sfz_dir = os.path.join(project_root, "sfz")
+    os.makedirs(sfz_dir, exist_ok=True)
+    master_path = os.path.join(sfz_dir, "Dexed_MIDI.sfz")
+    sfizz_path = os.path.join(sfz_dir, "Dexed_MIDI_sfizz.sfz")
+    sfizz_proc_path = os.path.join(sfz_dir, "Dexed_MIDI_sfizz_processed.sfz")
 
     master_f = open(master_path, "w")
     sfizz_f = open(sfizz_path, "w")

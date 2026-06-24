@@ -230,9 +230,11 @@ def main():
         devnull.close()
     print(f"  loaded: {inst.get_name()}")
 
-    master_path = os.path.join(project_root, "Apple_GM.sfz")
-    sfizz_path = os.path.join(project_root, "Apple_GM_sfizz.sfz")
-    sfizz_proc_path = os.path.join(project_root, "Apple_GM_sfizz_processed.sfz")
+    sfz_dir = os.path.join(project_root, "sfz")
+    os.makedirs(sfz_dir, exist_ok=True)
+    master_path = os.path.join(sfz_dir, "Apple_GM.sfz")
+    sfizz_path = os.path.join(sfz_dir, "Apple_GM_sfizz.sfz")
+    sfizz_proc_path = os.path.join(sfz_dir, "Apple_GM_sfizz_processed.sfz")
 
     master_f = open(master_path, "w")
     sfizz_f = open(sfizz_path, "w")

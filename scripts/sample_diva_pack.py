@@ -336,8 +336,10 @@ def main():
         devnull.close()
 
     # Absolute paths everywhere — some plugins chdir on preset load.
-    master_path = os.path.join(project_root, "Diva_pack.sfz")
-    sfizz_path = os.path.join(project_root, "Diva_pack_sfizz.sfz")
+    sfz_dir = os.path.join(project_root, "sfz")
+    os.makedirs(sfz_dir, exist_ok=True)
+    master_path = os.path.join(sfz_dir, "Diva_pack.sfz")
+    sfizz_path = os.path.join(sfz_dir, "Diva_pack_sfizz.sfz")
 
     master_f = open(master_path, "w")
     sfizz_f = open(sfizz_path, "w")
