@@ -700,12 +700,15 @@ def main():
         sfizz_proc_f.write("\n")
 
     # ── Append GM Drum Kit ───────────────────────────────────────────────────
+    # Embedded ONLY in the master bank (its consumer routes channel 10 itself).
+    # NOT embedded into the sfizz banks: pysfizz plays every note on channel 1
+    # and IGNORES the lochan=10 gate, so an embedded section leaks a percussion
+    # hit onto every melodic note in the N35-N81 key range. sfizz consumers get
+    # drums from the standalone General_MIDI_sfizz_drums.sfz (separate synth).
     drum_samples_dir = os.path.join(project_root, "General_MIDI_samples_drums")
     if os.path.isdir(drum_samples_dir):
-        print("\nAppending GM drum kit section...")
+        print("\nAppending GM drum kit section (master bank only)...")
         write_drum_section(master_f, drum_samples_dir)
-        write_drum_section(sfizz_f, drum_samples_dir)
-        write_drum_section(sfizz_proc_f, drum_samples_dir)
     else:
         print(f"Warning: drum samples dir not found: {drum_samples_dir}")
         print("  Run kshmr_drum_mapping.py first to generate drum samples.")

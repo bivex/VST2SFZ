@@ -314,8 +314,16 @@ def main():
         f.writelines(out)
     print(f"  ✓ {len(region_map)} notes, {rc} regions → {os.path.basename(SFZ_PATH)}")
 
-    # 4. Update the embedded drum sections in all Dexed + GM SFZ files
-    print("\n=== Patching embedded drum sections in main SFZ files ===")
+    # 4. Strip any embedded drum section from the sfizz banks.
+    #
+    # The sfizz consumer (pysfizz) plays every note on channel 1 and IGNORES
+    # the lochan=10 gate, so an embedded drum section leaks a percussion hit
+    # onto every melodic note in the N35-N81 key range (verified: melodic
+    # note 60 correlated 0.80 with the bongo sample). sfizz consumers must get
+    # drums from the standalone General_MIDI_sfizz_drums.sfz (loaded into a
+    # SEPARATE drum synth), never from an embedded section. So here we only
+    # REMOVE any previously-embedded block; we do not re-append one.
+    print("\n=== Stripping embedded drum sections from sfizz banks ===")
     SFZ_FILES = [
         "/Volumes/External/Code/VST2SFZ/General_MIDI_sfizz.sfz",
         "/Volumes/External/Code/VST2SFZ/General_MIDI_sfizz_processed.sfz",
@@ -324,37 +332,18 @@ def main():
     ]
     MARKER = "\n// ─── GM Drum Kit"
 
-    drum_block_lines = [
-        "\n",
-        "// ─── GM Drum Kit (channel 10 / MIDI ch 9) ─────────────────────────────────\n",
-        "// KSHMR Vol.5 Complete Edition, N35-N81, 2 real velocity layers\n",
-        "<group>\n",
-        "lokey=0 hikey=127 lochan=10 hichan=10\n",
-        "ampeg_attack=0.001 ampeg_release=0.05\n",
-        "\n",
-    ]
-    for note in sorted(region_map):
-        layers = region_map[note]
-        gm_name = GM_DRUM_NAMES.get(note, f"N{note}")
-        drum_block_lines.append(f"// {note} — {gm_name}\n")
-        if "v064" in layers:
-            drum_block_lines.append(f"<region> sample={layers['v064']}  lokey={note} hikey={note} lovel=0   hivel=80\n")
-        if "v127" in layers:
-            drum_block_lines.append(f"<region> sample={layers['v127']} lokey={note} hikey={note} lovel=81  hivel=127\n")
-
-    drum_block = "".join(drum_block_lines)
-
     for sfz_path in SFZ_FILES:
         if not os.path.exists(sfz_path):
             print(f"  SKIP (not found): {os.path.basename(sfz_path)}")
             continue
         content = open(sfz_path).read()
-        if MARKER in content:
-            content = content[:content.index(MARKER)]
-        content = content.rstrip() + "\n" + drum_block
-        open(sfz_path, "w").write(content)
-        dr = content.count("<region> sample=") - (content.count("<region> sample=") - content.count("gm_drum_N"))
-        print(f"  ✓ {os.path.basename(sfz_path)}: {content.count('<region>')} total regions")
+        had = MARKER in content
+        if had:
+            content = content[:content.index(MARKER)].rstrip() + "\n"
+            open(sfz_path, "w").write(content)
+        state = "stripped embedded drums" if had else "no embedded drums (ok)"
+        print(f"  ✓ {os.path.basename(sfz_path)}: {state}; "
+              f"{content.count('<region>')} melodic regions")
 
 
 if __name__ == "__main__":

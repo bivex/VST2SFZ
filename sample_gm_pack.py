@@ -551,14 +551,21 @@ def main():
             sfizz_sfz_f.write("\n")
             sfizz_proc_f.write("\n")
 
-        # ── Append GM Drum Kit to all three SFZ files ──────────────────────────
+        # ── Append GM Drum Kit ─────────────────────────────────────────────────
+        # IMPORTANT: the drum section is embedded ONLY in the master bank, whose
+        # consumer (render_sfz_midi_gm.py) routes channel 10 itself. It is NOT
+        # embedded into the sfizz banks: the drum regions are gated by
+        # lochan=10, but the sfizz consumer (pysfizz) plays every note on
+        # channel 1 and IGNORES lochan, so an embedded section leaks a
+        # percussion hit onto every melodic note in the N35-N81 key range
+        # (verified: melodic note 60 correlated 0.80 with the bongo sample).
+        # sfizz consumers get drums from the standalone General_MIDI_sfizz_drums.sfz
+        # loaded into a separate drum synth (see kshmr_drum_mapping.py / Birka).
         drum_samples_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                         "General_MIDI_samples_drums")
         if os.path.isdir(drum_samples_dir):
-            print("\nAppending GM drum kit section...")
+            print("\nAppending GM drum kit section (master bank only)...")
             write_drum_section(master_f, drum_samples_dir)
-            write_drum_section(sfizz_sfz_f, drum_samples_dir)
-            write_drum_section(sfizz_proc_f, drum_samples_dir)
         else:
             print(f"Warning: drum samples dir not found: {drum_samples_dir}")
             print("  Run kshmr_drum_mapping.py first to generate drum samples.")
