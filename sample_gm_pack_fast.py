@@ -288,6 +288,12 @@ def main():
     os.makedirs(midi_programs_dir, exist_ok=True)
 
     progs = args.programs if args.programs else list(range(128))
+    is_full_pack = (len(progs) == 128)
+
+    # ⚠ Safety: rendering a subset MUST NOT overwrite the master SFZ files,
+    # otherwise a test run destroys the full pack. Subset runs write to
+    # *_partial.sfz siblings; full runs (all 128) overwrite the masters.
+    sfz_suffix = "" if is_full_pack else "_partial"
 
     # Backup user patches (same logic as sequential script)
     backup = []
@@ -313,16 +319,18 @@ def main():
     # (imap preserves input order, so the master SFZ comes out identical to
     # the sequential script regardless of which worker finishes first).
     master_paths = {
-        "General_MIDI.sfz": "General_MIDI_samples_raw/",
-        "General_MIDI_sfizz.sfz": "abs:/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/",
-        "General_MIDI_sfizz_processed.sfz": "abs:/Volumes/External/Code/VST2SFZ/General_MIDI_samples/",
+        f"General_MIDI{sfz_suffix}.sfz": "General_MIDI_samples_raw/",
+        f"General_MIDI_sfizz{sfz_suffix}.sfz": "abs:/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/",
+        f"General_MIDI_sfizz_processed{sfz_suffix}.sfz": "abs:/Volumes/External/Code/VST2SFZ/General_MIDI_samples/",
     }
+    if not is_full_pack:
+        print(f"⚠ Subset render: writing to *{sfz_suffix}.sfz (masters left untouched)")
     master_files = {p: open(p, "w") for p in master_paths}
     for p, f in master_files.items():
         f.write(f"// General MIDI 128 Instrument Pack\n")
         f.write("// Generated from Surge XT factory presets (2 Velocity Layers, 8 Key Zones)\n\n")
         f.write("<control>\n")
-        if p == "General_MIDI.sfz":
+        if p == f"General_MIDI{sfz_suffix}.sfz":
             f.write(f"default_path={samples_dir}/\n")
         f.write("\n")
 
@@ -356,20 +364,30 @@ def main():
                             f" lovel={r['lovel']} hivel={r['hivel']}{xf}")
                     f.write(f"<region> sample={r['sample_name']} {base}\n")
 
-            # Write master SFZ region lines (3 variants)
+            # Write master SFZ region lines (3 variants). Look up the live
+            # filenames from master_paths keys so the _partial suffix applies
+            # consistently when rendering a subset.
+            #
+            # One <group> header per program (NOT per region) — matches the
+            # sequential script's output. Emitting <group> per region produces
+            # 1926 redundant group blocks instead of 128; functionally valid
+            # for sfizz but wasteful and diverges from the canonical SFZ.
+            master_key   = f"General_MIDI{sfz_suffix}.sfz"
+            sfizz_key    = f"General_MIDI_sfizz{sfz_suffix}.sfz"
+            sfizzp_key   = f"General_MIDI_sfizz_processed{sfz_suffix}.sfz"
+            master_files[sfizz_key].write(f"<group>\nloprog={prog} hiprog={prog}\n")
+            master_files[sfizzp_key].write(f"<group>\nloprog={prog} hiprog={prog}\n")
             for r in result["regions"]:
                 xf = (f" xfin_lovel={r['xfin_lo']} xfin_hivel={r['xfin_hi']}"
                       f" xfout_lovel={r['xfout_lo']} xfout_hivel={r['xfout_hi']}")
                 base = (f"pitch_keycenter={r['pitch_keycenter']}"
                         f" lokey={r['lokey']} hikey={r['hikey']}"
                         f" lovel={r['lovel']} hivel={r['hivel']}{xf}")
-                master_files["General_MIDI.sfz"].write(
+                master_files[master_key].write(
                     f"<region> sample={r['sample_name']} {base}\n")
-                master_files["General_MIDI_sfizz.sfz"].write(
-                    f"<group>\nloprog={prog} hiprog={prog}\n"
+                master_files[sfizz_key].write(
                     f"<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples_raw/{r['sample_name']} {base}\n")
-                master_files["General_MIDI_sfizz_processed.sfz"].write(
-                    f"<group>\nloprog={prog} hiprog={prog}\n"
+                master_files[sfizzp_key].write(
                     f"<region> sample=/Volumes/External/Code/VST2SFZ/General_MIDI_samples/{r['sample_name']} {base}\n")
 
     for f in master_files.values():
