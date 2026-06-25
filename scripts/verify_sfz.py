@@ -78,7 +78,7 @@ class Region:
     __slots__ = ("sample", "lokey", "hikey", "lovel", "hivel",
                  "lochan", "hichan", "loprog", "hiprog",
                  "pitch_keycenter", "line", "exists", "reason",
-                 "_resolved", "_tried")
+                 "_resolved", "_tried", "seq_position")
 
     def __init__(self, sample, opcodes, line):
         self.sample = sample
@@ -89,6 +89,12 @@ class Region:
         self.lochan = g("lochan"); self.hichan = g("hichan")
         self.loprog = g("loprog"); self.hiprog = g("hiprog")
         self.pitch_keycenter = g("pitch_keycenter")
+        # round-robin slot; regions in different seq_position slots are NOT
+        # duplicates even if they share a sample (that's the point of RR).
+        try:
+            self.seq_position = int(opcodes.get("seq_position", 0))
+        except (TypeError, ValueError):
+            self.seq_position = 0
         self.exists = True
         self.reason = None
 
@@ -106,41 +112,54 @@ class Region:
 
 
 def _resolve_sample_path(raw, default_path, sfz_dir):
-    """Resolve an SFZ `sample=` value to an absolute filesystem path.
+    """Resolve an SFZ `sample=` value to candidate absolute paths.
 
-    Per the SFZ spec, relative paths are resolved against the directory
-    that contains the .sfz file. `default_path` (when present) is prefixed
-    onto the sample value first; it too is relative to the .sfz dir if not
-    absolute.
+    Path resolution varies across samplers (sforzando vs sfizz vs hosts),
+    so we are deliberately lenient: a sample is only "missing" if NONE of
+    the reasonable candidates exist on disk. Candidates tried, in order:
 
-    Returns (resolved_path, tried_paths) so the caller can report which
-    candidates failed when nothing exists on disk.
+      1. default_path joined with sample, relative to the .sfz dir (spec)
+      2. sample alone, relative to the .sfz dir (spec)
+      3. default_path joined with sample, relative to the project root
+         (cwd / host behaviour — needed because this repo moved .sfz into
+         sfz/ while samples stayed at the project root)
+      4. sample alone, relative to the project root
+
+    Absolute paths skip straight to candidate 1 only.
+
+    Returns (resolved_path, tried_paths). resolved_path is the first
+    candidate that exists, or the first candidate if none exist.
     """
     p = raw.strip().strip('"')
+    sfz_dir = os.path.abspath(sfz_dir)
+    project_root = os.getcwd()
     tried = []
 
-    candidates = []
     if os.path.isabs(p):
-        candidates.append(p)
-    else:
-        # default_path is applied as a prefix, then resolved against sfz_dir
-        if default_path:
-            dp = default_path
-            if not os.path.isabs(dp):
-                dp = os.path.normpath(os.path.join(sfz_dir, dp))
-            candidates.append(os.path.normpath(os.path.join(dp, p)))
-        # finally, the sample path alone relative to the sfz dir
-        candidates.append(os.path.normpath(os.path.join(sfz_dir, p)))
+        tried.append(p)
+        return p, tried
 
-    # de-dup while preserving order
+    candidates = []
+    if default_path:
+        dp = default_path
+        candidates.append(os.path.normpath(os.path.join(sfz_dir, dp, p)))
+        candidates.append(os.path.normpath(os.path.join(project_root, dp, p)))
+    candidates.append(os.path.normpath(os.path.join(sfz_dir, p)))
+    candidates.append(os.path.normpath(os.path.join(project_root, p)))
+
+    # de-dup while preserving order, pick first that exists
     seen = set()
-    uniq = []
+    first = None
     for c in candidates:
-        if c not in seen:
-            seen.add(c)
-            uniq.append(c)
-            tried.append(c)
-    return uniq[0], tried
+        if c in seen:
+            continue
+        seen.add(c)
+        tried.append(c)
+        if first is None:
+            first = c
+        if os.path.exists(c):
+            return c, tried
+    return first, tried
 
 
 def parse_sfz(path):
@@ -227,19 +246,55 @@ def parse_sfz(path):
     return regions, default_path, sample_paths, errors
 
 
-def _parse_opcodes(text):
-    """Parse 'key=value key=value' tokens into a dict.
+# Known SFZ opcodes that can appear after a value, used to know where a
+# space-containing sample path ends. We only need this for the sample=
+# value; integer/float opcodes never contain spaces.
+OPCODE_NAMES = {
+    "sample", "default_path", "lokey", "hikey", "pitch_keycenter",
+    "lovel", "hivel", "lochan", "hichan", "loprog", "hiprog",
+    "xfin_lovel", "xfin_hivel", "xfout_lovel", "xfout_hivel",
+    "ampeg_attack", "ampeg_release", "ampeg_decay", "ampeg_sustain",
+    "ampeg_hold", "loop_mode", "loop_start", "loop_end",
+    "seq_length", "seq_position", "key", "offset", "end", "tune",
+    "pan", "volume", "amp_veltrack", "trigger", "group", "off_by",
+    "lorand", "hirand", "sw_lokey", "sw_hikey", "sw_last", "sw_default",
+    "on_locc", "on_hicc", "count", "delay", "delay_random",
+}
 
-    Stores the raw sample= value under __sample_raw so it survives the
-    integer-coercion step later.
+
+def _parse_opcodes(text):
+    """Parse SFZ opcodes from a region/group line into a dict.
+
+    SFZ values may contain spaces (file paths) and are not always quoted.
+    We scan left-to-right: each `name=` starts a value that extends until
+    the next ` name=` token (a space followed by a known opcode name and
+    `=`), or end of line. The raw sample path is stored under
+    '__sample_raw'.
     """
     opcodes = {}
-    for tok in re.findall(r'(\w+)=("[^"]*"|\S+)', text):
-        key, val = tok[0].lower(), tok[1].strip('"')
-        if key == "sample":
+    pos = 0
+    # find every " name=" token start
+    token_starts = []
+    # first opcode (no leading space)
+    m = re.match(r"\s*([A-Za-z_]+)=", text)
+    if not m:
+        return opcodes
+    token_starts.append(m.start(1))
+    for tm in re.finditer(r"\s+([A-Za-z_]+)=", text):
+        token_starts.append(tm.start(1))
+
+    for i, start in enumerate(token_starts):
+        # opcode name
+        eq = text.index("=", start)
+        name = text[start:eq].lower()
+        # value: up to next token start, trimmed
+        val_start = eq + 1
+        val_end = token_starts[i + 1] if i + 1 < len(token_starts) else len(text)
+        val = text[val_start:val_end].strip().strip('"')
+        if name == "sample":
             opcodes["__sample_raw"] = val
         else:
-            opcodes[key] = val
+            opcodes[name] = val
     return opcodes
 
 
@@ -310,11 +365,38 @@ def check_velocity_holes(regions):
 
 
 def check_duplicates(regions):
-    """Find regions sharing the same sample file (likely accidental copy)."""
+    """Find regions sharing the same sample AND context (likely a copy).
+
+    Regions that reuse a sample but sit in different round-robin slots
+    (seq_position) are intentional, so they are not flagged. Two regions
+    that overlap on channel+program+key+velocity+seq_position AND share a
+    sample are a genuine accidental duplicate.
+    """
     by_sample = defaultdict(list)
     for r in regions:
         by_sample[r._resolved].append(r)
-    dups = {p: rs for p, rs in by_sample.items() if len(rs) > 1}
+    dups = {}
+    for path, rs in by_sample.items():
+        if len(rs) < 2:
+            continue
+        # group by (chan, prog, key, vel, seq_position) context
+        seen_ctx = set()
+        real_dups = []
+        for r in rs:
+            ctx = (r.lochan, r.hichan, r.loprog, r.hiprog,
+                   r.lokey, r.hikey, r.lovel, r.hivel, r.seq_position)
+            if ctx in seen_ctx:
+                real_dups.append(r)
+            else:
+                seen_ctx.add(ctx)
+        if real_dups:
+            dups[path] = [r for r in rs if r in real_dups or
+                          (r.lochan, r.hichan, r.loprog, r.hiprog,
+                           r.lokey, r.hikey, r.lovel, r.hivel,
+                           r.seq_position) in {
+                              (rr.lochan, rr.hichan, rr.loprog, rr.hiprog,
+                               rr.lokey, rr.hikey, rr.lovel, rr.hivel,
+                               rr.seq_position) for rr in real_dups}]
     return dups
 
 
@@ -388,7 +470,12 @@ def report_file(label, sfz_path, default_path, regions,
         shown = missing[:20]
         for r in shown:
             print(red(f"      L{r.line}: {os.path.basename(r.sample)}"))
-            print(dim(f"          → {r._resolved}"))
+            if len(r._tried) == 1:
+                print(dim(f"          → {r._resolved}"))
+            else:
+                print(dim(f"          tried:"))
+                for t in r._tried:
+                    print(dim(f"            → {t}"))
         if len(missing) > len(shown):
             print(dim(f"      ... and {len(missing) - len(shown)} more"))
     else:
