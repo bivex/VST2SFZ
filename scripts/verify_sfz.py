@@ -107,21 +107,39 @@ class Region:
 def _resolve_sample_path(raw, default_path, sfz_dir):
     """Resolve an SFZ `sample=` value to an absolute filesystem path.
 
-    Handles absolute paths, default_path prefixes, and paths relative to
-    the .sfz file itself.
+    Per the SFZ spec, relative paths are resolved against the directory
+    that contains the .sfz file. `default_path` (when present) is prefixed
+    onto the sample value first; it too is relative to the .sfz dir if not
+    absolute.
+
+    Returns (resolved_path, tried_paths) so the caller can report which
+    candidates failed when nothing exists on disk.
     """
     p = raw.strip().strip('"')
+    tried = []
+
+    candidates = []
     if os.path.isabs(p):
-        return p
-    if default_path:
-        candidate = os.path.join(default_path, p)
-        if os.path.isabs(candidate) or candidate.startswith("./") is False:
-            # default_path is often absolute already; if relative, anchor it
-            # at the sfz dir so the check is meaningful.
-            if not os.path.isabs(candidate):
-                candidate = os.path.normpath(os.path.join(sfz_dir, candidate))
-            return candidate
-    return os.path.normpath(os.path.join(sfz_dir, p))
+        candidates.append(p)
+    else:
+        # default_path is applied as a prefix, then resolved against sfz_dir
+        if default_path:
+            dp = default_path
+            if not os.path.isabs(dp):
+                dp = os.path.normpath(os.path.join(sfz_dir, dp))
+            candidates.append(os.path.normpath(os.path.join(dp, p)))
+        # finally, the sample path alone relative to the sfz dir
+        candidates.append(os.path.normpath(os.path.join(sfz_dir, p)))
+
+    # de-dup while preserving order
+    seen = set()
+    uniq = []
+    for c in candidates:
+        if c not in seen:
+            seen.add(c)
+            uniq.append(c)
+            tried.append(c)
+    return uniq[0], tried
 
 
 def parse_sfz(path):
@@ -192,8 +210,10 @@ def parse_sfz(path):
                             f"line {lineno}: bad integer for {k}={opcodes[k]!r}")
                         opcodes[k] = INT_OPCODES[k]
             region = Region(sm, opcodes, lineno)
-            region._resolved = _resolve_sample_path(
+            resolved, tried = _resolve_sample_path(
                 sm, default_path, os.path.dirname(os.path.abspath(path)))
+            region._resolved = resolved
+            region._tried = tried
             regions.append(region)
             continue
 
