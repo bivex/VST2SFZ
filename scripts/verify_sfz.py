@@ -77,7 +77,8 @@ def midi_to_name(m):
 class Region:
     __slots__ = ("sample", "lokey", "hikey", "lovel", "hivel",
                  "lochan", "hichan", "loprog", "hiprog",
-                 "pitch_keycenter", "line", "exists", "reason", "_resolved")
+                 "pitch_keycenter", "line", "exists", "reason",
+                 "_resolved", "_tried")
 
     def __init__(self, sample, opcodes, line):
         self.sample = sample
